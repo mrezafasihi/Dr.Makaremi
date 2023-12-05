@@ -10,7 +10,7 @@ function BusinessDays() {
   ];
   return (
     <div className="my-20 mx-[7.5%] ">
-      <h6 className="border-r-[1px] text-2xl px-2  border-[#288E87] text-[#064247] basis-1/3">
+      <h6 className="border-r-[1px] text-2xl px-2 mb-[6%] border-[#288E87] text-[#064247] basis-1/3">
         روزهای کاری مطب
       </h6>
       <div className="flex w-full items-center">

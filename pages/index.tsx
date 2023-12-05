@@ -15,22 +15,20 @@ import Blog from "@/components/Blog";
 import ContactUs from "@/components/ContactUs";
 import WebApp from "@/components/WebApp";
 
-
-
 export default function Home() {
   return (
     <div>
       {/* <Background url={"../images/OldMan.png"} /> */}
+      {/* <NavHead /> */}
       <CountCard />
       <Bio />
       <BusinessDays />
       <Insurance />
       <Question />
       <Blog />
-      <WebApp/>
-      {/* <ContactUs /> */}
-      {/* <NavHead />
-      <CountCard/> */}
+      <WebApp />
+
+      <ContactUs />
     </div>
   );
 }

@@ -3,13 +3,13 @@ function Bio() {
     <div>
       <div className="flex mx-[10%] justify-between ">
         <div className="flex flex-col  basis-full sm:basis-2/3">
-          <h6 className="border-r-[1px] text-2xl px-2  border-[#288E87] text-[#064247]">
+          <h6 className="border-r-[1px] text-2xl px-2 font-bold  border-[#288E87] text-[#064247]">
             بیوگرافی
           </h6>
           <p className="text-[#288E87] text-xl mx-4  my-4 md:my-8">
             دکتر علی مکارمی
           </p>
-          <div className=" rounded-2xl shadow-md">
+          <div className=" rounded-2xl shadow-md lg:w-[70%]  mx-auto lg:mr-20">
             <ul className="text-[#064247]  text-justify leading-10 list-disc ">
               <p className="mx-4">تجارب و تحصیلات</p>
               <li className="mx-8">
@@ -19,7 +19,7 @@ function Bio() {
               <li className="mx-8">
                 دوره تکمیلی تومورها و سرطان ‌های چشم در دانشگاه علوم‌پزشکی ایران
               </li>
-              <li className="mx-8">
+              <li className="mx-8 mb-[3%]">
                 شرکت در کنگره‌های داخلی و خارجی در کشورهای مختلف
               </li>
             </ul>

@@ -9,7 +9,6 @@ import MuiAccordionSummary, {
 import MuiAccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 
-
 const Accordion = styled((props: AccordionProps) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
 ))(({ theme }) => ({
@@ -21,8 +20,6 @@ const Accordion = styled((props: AccordionProps) => (
     display: "none",
   },
 }));
-
-
 
 const AccordionSummary = styled((props: AccordionSummaryProps) => (
   <MuiAccordionSummary
@@ -56,8 +53,8 @@ function Question() {
 
   return (
     <div className="bg-[url('/images/Isolation_Mode.svg')]">
-      <div className="my-20 mx-[10%] ">
-        <p className="border-r-[1px] text-2xl px-2   border-[#288E87] text-[#064247] ">
+      <div className="my-16 mx-[10%] ">
+        <p className="border-r-[1px] text-2xl px-2  font-bold border-[#288E87] text-[#064247] ">
           سوالات متداول
         </p>
         <div className=" flex justify-between">

@@ -6,7 +6,7 @@ function Blog() {
     {
       img: "/images/oldManTest.png",
       title: "درمان تنبلی چشم",
-      desc: "تنبلی چشم یکی از انواع اختلالات بینایی است که بر اثر آن در یک چشم به ظاهر سالم، کاهش دید مرکزی به وجود می آید.",
+      desc: "تنبلی چشم یکی از انواع اختلالات بینایی است که بر اثر آن در ی...",
       data: "دوشنبه 19 تیر 1402",
       dataIcon: "/images/timer.svg",
       comment: "2 دیدگاه",
@@ -15,7 +15,7 @@ function Blog() {
     {
       img: "/images/halfWoman.png",
       title: "چشم‌های آبی شما واقعا آبی نیستند",
-      desc: "چشم های آبی شما واقعاً به رنگ آبی نیستند رنگ چشم‌ها را دو فقط عامل می تواننند تعیین کنند",
+      desc: "چشم های آبی شما واقعاً به رنگ آبی نیستند رنگ چشم‌ها را دو...",
       data: "شنبه 17 تیر 1402",
       dataIcon: "/images/timer.svg",
       comment: "2 دیدگاه",
@@ -24,7 +24,7 @@ function Blog() {
     {
       img: "/images/childTest.png",
       title: "معاینه و تست چشم",
-      desc: "انجام معاینه چشم و تست بینایی بخشی مهمی در سالم ماندن است. اما آیا می دانید",
+      desc: "انجام معاینه چشم و تست بینایی بخشی مهمی در سالم ماندن ...",
       data: "شنبه 17 تیر 1402",
       dataIcon: "/images/timer.svg",
       comment: "2 دیدگاه",
@@ -32,34 +32,36 @@ function Blog() {
     },
   ];
   return (
-    <div className="flex flex-col mx-[10%]">
-      <p className="border-r-[1px] text-2xl px-2  border-[#288E87] text-[#064247]">
+    <div className="flex flex-col mx-[7.5%] ">
+      <p className="border-r-[1px] text-2xl px-2  font-bold border-[#288E87] text-[#064247]">
         بلاگ و مقالات
       </p>
-      <div className="flex justify-end">
-        <p className="text-[#83DCD6]">مشاهده همه</p>
+      <div className="flex justify-end ml-[2%] pb-4">
+        <p className="text-[#83DCD6] px-2 ">مشاهده همه</p>
         <img src="/images/back.svg" alt="" />
       </div>
 
-      <div className="flex flex-col gap-[4%] items-center lg:flex-row ">
+      <div className="flex flex-col gap-[6%] items-center  lg:flex-row lg:justify-center max-w-[1224px]">
         {blogData.map((item) => {
           return (
-            <div className="shadow-lg flex flex-col lg:basis-1/3 rounded-[10px]  max-w-[346px] h-[460px] ">
+            <div className="shadow-lg flex flex-col justify-between lg:basis-1/3   rounded-[10px]  max-w-[347px] h-[460px]  ">
               <img
-                className="mx-auto w-80 h-80 rounded-[10px] my-4"
+                className="mx-[1rem]  max-w-[313px] max-h-[313px] rounded-[10px] my-4"
                 src={item.img}
                 alt=""
               />
-              <h4 className="text-[#064247]">{item.title}</h4>
-              <p>{item.desc}</p>
-              <div className="flex justify-between">
+              <div className="mx-[6%] ">
+                <h4 className="text-[#064247] font-bold">{item.title}</h4>
+                <p className="text-xs mt-2 font-light">{item.desc}</p>
+              </div>
+              <div className="flex justify-between  my-[3.5%] mx-[6%]">
                 <div className="flex basis-full items-center">
-                  <img src={item.dataIcon} alt="" />
-                  <p className="text-xs">{item.data}</p>
+                  <img className="ml-2" src={item.dataIcon} alt="" />
+                  <p className="text-xs text-[#757575]">{item.data}</p>
                 </div>
                 <div className="flex basis-full items-center justify-end">
-                  <img src={item.commentIcon} alt="" />
-                  <p className="text-xs">{item.comment}</p>
+                  <img className="ml-2" src={item.commentIcon} alt="" />
+                  <p className="text-xs text-[#757575]">{item.comment}</p>
                 </div>
               </div>
             </div>

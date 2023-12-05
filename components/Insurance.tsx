@@ -6,17 +6,24 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import { LiaAngleLeftSolid } from "react-icons/lia";
+import { LiaAngleLeftSolid ,LiaAngleRightSolid} from "react-icons/lia";
+import { dividerClasses } from "@mui/material";
 
 export const SwiperButton = () => {
   const swiper = useSwiper();
   return (
-    <div
-      onClick={() => swiper.slideNext()}
-      className=" absolute left-0 bg-[#45CBC2] rounded-full top-20 z-10 w-12 h-12 text-white flex items-center justify-center text-xl"
-    >
-      <LiaAngleLeftSolid />
-    </div>
+    <>
+      <div
+        onClick={() => swiper.slideNext()}
+        className=" absolute left-0 bg-[#45CBC2] rounded-full top-20 z-10 w-12 h-12 text-white flex items-center justify-center text-xl"
+      >
+        <LiaAngleLeftSolid />
+      </div>
+      <div
+        onClick={() => swiper.slidePrev()}
+        className=" absolute right-0 bg-[#45CBC2] rounded-full top-20 z-10 w-12 h-12 text-white flex items-center justify-center text-xl"
+      ><LiaAngleRightSolid/></div>
+    </>
   );
 };
 
@@ -88,7 +95,7 @@ function Insurance() {
 
   return (
     <div className=" mx-[7.5%]">
-      <p className="border-r-[1px] text-2xl px-2  border-[#288E87] text-[#064247]">
+      <p className="border-r-[1px] text-2xl px-2 font-bold border-[#288E87] text-[#064247]">
         بیمه‌های طرف قرارداد
       </p>
       <Swiper
@@ -113,7 +120,7 @@ function Insurance() {
           },
           1241: { slidesPerView: 6 },
         }}
-        scrollbar={{ draggable: true }}
+        scrollbar={{ draggable: true, dragSize: "auto" }}
         onSwiper={(swiper) => console.log(swiper)}
         onSlideChange={() => console.log("slide change")}
       >
@@ -121,10 +128,10 @@ function Insurance() {
           return (
             <SwiperSlide>
               <div className="flex flex-col  items-center text-[18px] rounded-[15px] hover:shadow-xl h-52">
-                <div className="h-36">
+                <div className="max-h-36">
                   <img className="h-full " src={item.img} alt={item.alt} />
                 </div>
-                <p className="pb-2">{item.name}</p>
+                <p className="pb-2 pt-4">{item.name}</p>
               </div>
             </SwiperSlide>
           );

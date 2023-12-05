@@ -1,4 +1,16 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import CountUp from 'react-countup';
+
+export const CountUpC = ({ count }: any) => {
+const [state,setState]=useState(0)
+  useEffect(()=>{
+setTimeout(() => {
+  setState(state+1)
+}, 1000);
+  },[state])
+  console.log(state)
+  return <>{state}</>;
+};
 
 function CountCard() {
   const dataCount = [
@@ -6,7 +18,7 @@ function CountCard() {
     {
       icon: "/images/document-normal.png",
       title: "تعداد جراحی سالیانه",
-      count: "8627",
+      count: 8627,
     },
     { icon: "/images/eye.png", title: "تعداد جراحی لیزیک", count: 2720 },
     { icon: "/images/people.png", title: "تعداد مراجعه کننده", count: 14019 },
@@ -36,7 +48,7 @@ function CountCard() {
               <p className="text-[#064247]">{item.title}</p>
             </div>
             <p className="font-kalameh text-[30px] lg:text-[56px] text-[#190C5D]">
-              {item.count}
+              <CountUp start={0} end={item.count}/>
             </p>
           </div>
         );
