@@ -4,11 +4,13 @@ import { IoMenu } from "react-icons/io5";
 
 function Navbar() {
   return (
-    <nav className=" container flex  justify-between text-center font-iranSans items-center  py-10 ">
-      <div className=" lg:w-[10%]">
-        <img src="/images/logoo.png" className=" w-[66.687px] h-[48px]" />
-        <p className="my-[-10px]  ">چشم پزشکی</p>
+    <nav className=" container flex  justify-between text-center font-iranSans items-center  py-10  sticky  ">
+      <div className=" lg:w-[10%] mx-[7.5%]">
+        <img src="/images/logoo.png" className=" w-[66.687px] h-[48px] z-[1]" />
+        <div className="bg-black z-10 absolute top-[65%]">
+        <p className="text-white my-[-10px] z-10 ">چشم پزشکی</p>
         <span className="text-[#45CBC2]">مکارمی</span>
+        </div>
       </div>
       <ul className="hidden lg:font-medium	 lg:flex lg:justify-center text-white w-[60%] lg:gap-[6%]">
         <li>خانه</li>

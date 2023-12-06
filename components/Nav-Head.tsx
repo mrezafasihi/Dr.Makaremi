@@ -15,10 +15,10 @@ import "swiper/css";
 
 function NavHead() {
   return (
-    <div className="  h-[1000px]  ">
+    <div className="h-[1000px]  ">
       <Navbar />
       <Swiper
-        className=""
+        className="mt-[-10px]"
         direction="vertical"
         modules={[Pagination, Scrollbar, A11y, Autoplay]}
         loop={true}

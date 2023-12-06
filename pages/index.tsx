@@ -20,6 +20,7 @@ export default function Home() {
     <div>
       {/* <Background url={"../images/OldMan.png"} /> */}
       {/* <NavHead /> */}
+      {/* <Navbar /> */}
       <CountCard />
       <Bio />
       <BusinessDays />
@@ -27,8 +28,7 @@ export default function Home() {
       <Question />
       <Blog />
       <WebApp />
-
-      <ContactUs />
+     
     </div>
   );
 }
