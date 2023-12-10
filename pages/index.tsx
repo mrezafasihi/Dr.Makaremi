@@ -14,7 +14,10 @@ import Question from "@/components/Question";
 import Blog from "@/components/Blog";
 import ContactUs from "@/components/ContactUs";
 import WebApp from "@/components/WebApp";
-
+import Contact from '@/components/Contact'
+import Line from "@/components/line";
+import Satisfication from "@/components/Satisfication";
+import Adress from '@/components/Adress'
 export default function Home() {
   return (
     <div>
@@ -28,7 +31,10 @@ export default function Home() {
       <Question />
       <Blog />
       <WebApp />
-     
+     <Line/>
+     <Satisfication/>
+     <Contact/>
+     <Adress/>
     </div>
   );
 }
