@@ -18,6 +18,7 @@ import Contact from '@/components/Contact'
 import Line from "@/components/line";
 import Satisfication from "@/components/Satisfication";
 import Adress from '@/components/Adress'
+import Admin from '@/components/Admin'
 export default function Home() {
   return (
     <div>
@@ -35,6 +36,7 @@ export default function Home() {
      <Satisfication/>
      <Contact/>
      <Adress/>
+     <Admin />
     </div>
   );
 }
