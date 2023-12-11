@@ -4,7 +4,7 @@ import { useSwiper } from "swiper/react";
 function Buttonswiper() {
   const swiper = useSwiper();
   return (
-    <div className="flex justify-end ml-[11%] sm:flex hidden ">
+    <div className=" justify-end ml-[11%] md:flex hidden ">
       <button onClick={() => swiper.slideNext()}>
         <svg
           width="40"
