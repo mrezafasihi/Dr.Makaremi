@@ -1,3 +1,4 @@
+
 import React from "react";
 import Logo from "../Logo";
 import { BsPlusCircleFill } from "react-icons/bs";
@@ -14,12 +15,9 @@ function NavbarConfirm() {
       </ul>
       <div className="flex items-center">
         <div className="w-[0.04px] h-10 bg-black" />
-        <select data-te-select-init>
-          <option
-            value="1"
-            data-te-select-icon="/images/logoo.png"
-          >
-            One
+        <select>
+          <option value="1">
+            <img src="/images/edit.png" alt="" />
           </option>
           <option
             value="2"
