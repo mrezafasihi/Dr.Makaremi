@@ -19,7 +19,7 @@ export default function Home() {
   return (
     <div>
       {/* <Background url={"../images/OldMan.png"} /> */}
-      {/* <NavHead /> */}
+      <NavHead />
       {/* <Navbar /> */}
       <CountCard />
       <Bio />

@@ -15,7 +15,7 @@ import "swiper/css";
 
 function NavHead() {
   return (
-    <div className="h-[1000px]  ">
+    <div className="h-[1000px] relative ">
       <Navbar />
       <Swiper
         className="mt-[-10px]"
