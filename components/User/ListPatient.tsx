@@ -68,11 +68,16 @@ function ListPatient() {
               label="کد ملی"
               placeholder="مثال : ۲۲۲۳۳۳۵۰۲۳"
             />
-            <div className="flex md:basis-1/2 w-[393px] ">
-              <select name="" id="">
-                <option value=""></option>
+            <div className="flex md:basis-1/2 w-[393px] justify-between ">
+              <select
+                className="border rounded-[6px] basis-[20%]"
+                name=""
+                id=""
+              >
+                <option value="">01</option>
+                <option value="">02</option>
               </select>
-              <select id="">
+              <select className="border rounded-[6px] basis-[50%]" id="">
                 <option value="فروردین">فروردین</option>
                 <option value="اردیبهشت">اردیبهشت</option>
                 <option value="خرداد">خرداد</option>
@@ -86,8 +91,13 @@ function ListPatient() {
                 <option value="بهمن">بهمن</option>
                 <option value="اسفند">اسفند</option>
               </select>
-              <select name="" id="">
-                <option value=""></option>
+              <select
+                className="border rounded-[6px] basis-[20%]"
+                name=""
+                id=""
+              >
+                <option value="">1402</option>
+                <option value="">1403</option>
               </select>
             </div>
           </div>

@@ -7,17 +7,22 @@ const config: Config = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/**/*.{html,js}",
-    "./node_modules/tw-elements/dist/js/**/*.js"
+    "./node_modules/tw-elements/dist/js/**/*.js",
   ],
   theme: {
-    safelist:[ 'animate-[fade-in-up_1s_ease-in-out]','animate-[fade-in_1s_ease-in-out]'],
+    safelist: [
+      "animate-[fade-in-up_1s_ease-in-out]",
+      "animate-[fade-in_1s_ease-in-out]",
+    ],
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
         oldMan: "url('/images/OldMan.png')",
-        backQ:"",
+        kidEyeTest: "url('/images/kidEyeTest.png')",
+        surgery: "url('/images/surgery.png')",
+        check: "url('/images/checkingPatient.png')",
       },
       colors: {
         rgbBlack: "rgba(0, 0, 0, 0.80)",
@@ -34,7 +39,6 @@ const config: Config = {
     },
   },
   plugins: [require("tw-elements/dist/plugin.cjs")],
-  darkMode: "class"
-
+  darkMode: "class",
 };
 export default config;

@@ -3,10 +3,14 @@ import CustomInput from "@/components/user/CustomInput";
 import Modal from "@/components/user/Modal";
 import Navbar from "@/components/user/Navbar";
 import TextNobat from "@/components/user/TextNobat";
-import { dividerClasses } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import { Datepicker, Input, initTE } from "tw-elements";
-// initTE({ Datepicker, Input }, { allowReinits: true });
+import Slide from "@mui/material/Slide";
+
+const icon = (
+  <div className="flex items-center justify-center my-[-220px] z-10">
+    <Modal />
+  </div>
+);
 
 function userPanel() {
   const [openModal, setOpenModal] = useState(false);
@@ -20,7 +24,7 @@ function userPanel() {
   const handleResendCode = () => {};
   const handleEditNum = () => {};
   return (
-    <div className="">
+    <div className=" ">
       <Navbar />
       <TextNobat mb="mb-[5.5%]" />
 
@@ -45,9 +49,13 @@ function userPanel() {
         style="text-[#288E87] hover:bg-[#303136] bg-white"
       />
 
-      <div className="flex justify-center ">
+      {/* <div className="flex justify-center">
         <div>{openModal ? <Modal /> : null}</div>
-      </div>
+      </div> */}
+
+      <Slide direction="up" in={openModal} >
+        {icon}
+      </Slide>
     </div>
   );
 }

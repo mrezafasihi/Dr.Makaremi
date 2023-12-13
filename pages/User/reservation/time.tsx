@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import "react-modern-calendar-datepicker/lib/DatePicker.css";
 import { Calendar } from "react-modern-calendar-datepicker";
 import { utils } from "react-modern-calendar-datepicker";
-import CustomButton from "@/components/user/CustomButton";
 
 function time() {
   const hour = [
@@ -16,12 +15,13 @@ function time() {
   ];
   const persianToday = utils("fa").getToday();
   console.log(persianToday);
-  const [selectedDay, setSelectedDay] = useState<any>(null);
+  const [selectedDay, setSelectedDay] = useState<any>(persianToday);
+  console.log(selectedDay);
   return (
     <div>
       <NavbarConfirm />
       <div className="flex h-[200px] relative justify-center mt-[8%]  ">
-        <div className="relative left-[13%] top-[0.70rem]">
+        <div className="relative left-[15%] top-[12%]">
           <svg
             className="absolute right-[21px] top-[12px] z-10"
             width="17"
@@ -105,7 +105,7 @@ function time() {
             />
           </svg>
         </div>
-        <div className="relative ">
+        <div className="relative left-[3%]">
           <svg
             className="absolute"
             width="91"
@@ -239,7 +239,7 @@ function time() {
             </g>
           </svg>
         </div>
-        <div className="relative left-[-20%] bottom-[10%] ">
+        <div className="relative left-[-15%] bottom-[7%] ">
           <svg
             className="absolute left-[36%] top-[20%]"
             width="37"
@@ -352,7 +352,7 @@ function time() {
           </svg>
         </div>
         <svg
-          className="absolute top-[50%] -z-10 w-[50%]"
+          className="absolute top-[48%] -z-10 w-[50%]"
           width="382"
           height="4"
           viewBox="0 0 382 4"
@@ -380,7 +380,7 @@ function time() {
         </div>
         <div className="flex flex-col justify-between h-[300px] items-center lg:mr-[9%] ">
           <p className=" flex items-center justify-center w-[251px] h-[55px] border-[#83DCD6] border-[1.4px] rounded-[12.24px] text-[#064247] text-[14px] font-light">
-            ۱۰ آذر
+            {selectedDay.day}
           </p>
           <p className="text-[#064247] text-[14px] font-light">انتخاب ساعت</p>
           <div className="flex justify-between items-center flex-wrap  w-full ">
