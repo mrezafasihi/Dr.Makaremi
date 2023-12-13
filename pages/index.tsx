@@ -17,9 +17,15 @@ import WebApp from "@/components/WebApp";
 import Contact from "@/components/Contact";
 import Line from "@/components/line";
 import Satisfication from "@/components/Satisfication";
+<<<<<<< HEAD
 import Adress from "@/components/Adress";
 import Admin from "@/components/Admin";
 import Header from "@/components/Header";
+=======
+import Adress from '@/components/Adress'
+import Admin from '@/components/Admin'
+// import Pay from "./user/reservation/pay";
+>>>>>>> 40317d1035d08b92fb2200ee9ee8e62e0b28a2bb
 export default function Home() {
   return (
     <div>
@@ -35,10 +41,19 @@ export default function Home() {
       <Question />
       <Blog />
       <WebApp />
+<<<<<<< HEAD
       <Line />
       <Satisfication />
       <Contact />
       <Adress />
+=======
+     <Line/>
+     <Satisfication/>
+     <Contact/>
+     <Adress/>
+     {/* <Pay/> */}
+     
+>>>>>>> 40317d1035d08b92fb2200ee9ee8e62e0b28a2bb
     </div>
   );
 }

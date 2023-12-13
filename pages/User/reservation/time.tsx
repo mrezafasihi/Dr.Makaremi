@@ -1,8 +1,12 @@
-import NavbarConfirm from "@/components/user/NavbarConfirm";
+
 import React, { useState } from "react";
 import "react-modern-calendar-datepicker/lib/DatePicker.css";
 import { Calendar } from "react-modern-calendar-datepicker";
 import { utils } from "react-modern-calendar-datepicker";
+<<<<<<< HEAD
+=======
+import NavbarConfirm from "@/components/user/NavbarConfirm";
+>>>>>>> 40317d1035d08b92fb2200ee9ee8e62e0b28a2bb
 
 function time() {
   const hour = [
@@ -19,7 +23,7 @@ function time() {
   console.log(selectedDay);
   return (
     <div>
-      <NavbarConfirm />
+     <NavbarConfirm/>
       <div className="flex h-[200px] relative justify-center mt-[8%]  ">
         <div className="relative left-[15%] top-[12%]">
           <svg
