@@ -17,7 +17,7 @@ function NavbarConfirm() {
         <div className="w-[0.04px] h-10 bg-black" />
         <select>
           <option value="1">
-            <img src="/images/edit.png" alt="" />
+            {/* <img src="/images/edit.png" alt="" /> */}
           </option>
           <option
             value="2"
