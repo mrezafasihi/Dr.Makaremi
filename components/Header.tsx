@@ -6,7 +6,7 @@ function Header() {
   return (
     <Swiper
       modules={[Navigation, Pagination, Scrollbar, A11y]}
-      spaceBetween={50}
+      spaceBetween={0}
       slidesPerView={1}
       pagination={{ clickable: true }}
       autoplay={{
@@ -16,53 +16,10 @@ function Header() {
       onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={() => console.log("slide change")}
     >
-      <SwiperSlide className=" bg-oldMan text-white">
-        <div className="h-[580px] mx-[10%] justify-between">
+      <SwiperSlide className=" bg-oldMan text-white bg-cover bg-no-repeat ">
+        <div className="h-[650px] mx-[10%]  ">
           <h1 className="font-bold text-[64px] mt-[15%]">
             چشم پزشکی <span className="text-[#45CBC2]">دکتر مکارمی</span>
-          </h1>
-          <p className="text-[20px] flex flex-col">
-            سلامتی چشم‌های خود را در کلینیک دکتر علی مکارمی تضمین کنید.{" "}
-            <span>با دستگاه‌های پیشرفته و روز دنیا</span>
-          </p>
-          <button className="text-[#45CBC2] border border-[#45CBC2] rounded-[10px] flex px-[10px] py-[20px]">
-            <span></span> دربارۀ دکتر علی مکارمی
-          </button>
-        </div>
-      </SwiperSlide>
-      <SwiperSlide className="bg-kidEyeTest text-white">
-        <div className="h-[580px] mx-[10%] justify-between">
-          <h1 className="font-bold text-[64px] mt-[15%]">
-            عمل <span className="text-[#45CBC2]"> لیزیک</span> و{" "}
-            <span className="text-[#45CBC2]">لازک</span>
-          </h1>
-          <p className="text-[20px] flex flex-col">
-            سلامتی چشم‌های خود را در کلینیک دکتر علی مکارمی تضمین کنید.{" "}
-            <span>با دستگاه‌های پیشرفته و روز دنیا</span>
-          </p>
-          <button className="text-[#45CBC2] border border-[#45CBC2] rounded-[10px] flex px-[10px] py-[20px]">
-            <span></span> دربارۀ دکتر علی مکارمی
-          </button>
-        </div>
-      </SwiperSlide>
-      <SwiperSlide className="bg-surgery text-white">
-        <div className="h-[580px] mx-[10%] justify-between">
-          <h1 className="font-bold text-[64px] mt-[15%]">
-            عمل<span className="text-[#45CBC2]"> آب مروارید</span>
-          </h1>
-          <p className="text-[20px] flex flex-col">
-            سلامتی چشم‌های خود را در کلینیک دکتر علی مکارمی تضمین کنید.{" "}
-            <span>با دستگاه‌های پیشرفته و روز دنیا</span>
-          </p>
-          <button className="text-[#45CBC2] border border-[#45CBC2] rounded-[10px] flex px-[10px] py-[20px]">
-            <span></span> مشاهده بیشتر
-          </button>
-        </div>
-      </SwiperSlide>
-      <SwiperSlide className="bg-check text-white">
-        <div className="h-[580px] mx-[10%] justify-between ">
-          <h1 className="font-bold text-[64px] mt-[15%]">
-            عمل<span className="text-[#45CBC2]"> PRK</span>
           </h1>
           <p className="text-[20px] flex flex-col">
             سلامتی چشم‌های خود را در کلینیک دکتر علی مکارمی تضمین کنید.{" "}
@@ -189,6 +146,49 @@ function Header() {
               </svg>
             </span>{" "}
             دربارۀ دکتر علی مکارمی
+          </button>
+        </div>
+      </SwiperSlide>
+      <SwiperSlide className="bg-kidEyeTest text-white">
+        <div className="h-[580px] mx-[10%] justify-between">
+          <h1 className="font-bold text-[64px] mt-[15%]">
+            عمل <span className="text-[#45CBC2]"> لیزیک</span> و{" "}
+            <span className="text-[#45CBC2]">لازک</span>
+          </h1>
+          <p className="text-[20px] flex flex-col">
+            سلامتی چشم‌های خود را در کلینیک دکتر علی مکارمی تضمین کنید.{" "}
+            <span>با دستگاه‌های پیشرفته و روز دنیا</span>
+          </p>
+          <button className="text-[#45CBC2] border border-[#45CBC2] rounded-[10px] flex px-[10px] py-[20px]">
+            <span></span> دربارۀ دکتر علی مکارمی
+          </button>
+        </div>
+      </SwiperSlide>
+      <SwiperSlide className="bg-surgery text-white">
+        <div className="h-[580px] mx-[10%] justify-between">
+          <h1 className="font-bold text-[64px] mt-[15%]">
+            عمل<span className="text-[#45CBC2]"> آب مروارید</span>
+          </h1>
+          <p className="text-[20px] flex flex-col">
+            سلامتی چشم‌های خود را در کلینیک دکتر علی مکارمی تضمین کنید.{" "}
+            <span>با دستگاه‌های پیشرفته و روز دنیا</span>
+          </p>
+          <button className="text-[#45CBC2] border border-[#45CBC2] rounded-[10px] flex px-[10px] py-[20px]">
+            <span></span> مشاهده بیشتر
+          </button>
+        </div>
+      </SwiperSlide>
+      <SwiperSlide className="bg-check text-white">
+        <div className="h-[580px] mx-[10%] justify-between ">
+          <h1 className="font-bold text-[64px] mt-[15%]">
+            عمل<span className="text-[#45CBC2]"> PRK</span>
+          </h1>
+          <p className="text-[20px] flex flex-col">
+            سلامتی چشم‌های خود را در کلینیک دکتر علی مکارمی تضمین کنید.{" "}
+            <span>با دستگاه‌های پیشرفته و روز دنیا</span>
+          </p>
+          <button className="text-[#45CBC2] border border-[#45CBC2] rounded-[10px] flex px-[10px] py-[20px]">
+            <span></span> دربارۀ دکتر علی مکارمی
           </button>
         </div>
       </SwiperSlide>
