@@ -1,4 +1,5 @@
 
+import Fainalpay from '@/pages/user/reservation/Fainalpay'
 import Information from '@/components/Information'
 import Paymenticon from '@/components/paymenticon'
 import NavbarConfirm from '@/components/user/NavbarConfirm'
@@ -10,6 +11,7 @@ function Pay() {
         <NavbarConfirm/>
         <Paymenticon/>
         <Information/>
+       
     </div>
   )
 }

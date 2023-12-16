@@ -19,9 +19,7 @@ function NavbarConfirm() {
     // console.log(test);
     // setImage(test.img);
   };
-  //  useEffect(()=>{
-  //    setValueSelectOption(valueSelectOption)
-  //  },[])
+
 
   return (
     <div className="flex justify-between mx-[5%] items-center mt-[32px] ">
@@ -32,7 +30,7 @@ function NavbarConfirm() {
         <li className="text-[#288E87]">رزرو نوبت</li>
         <li>ارسال پیام</li>
       </ul>
-<<<<<<< HEAD
+
       <div className="flex items-center justify-between basis-[17%]">
         <div className="flex">
           <div className="bg-[#ededee] rounded-full">
@@ -44,8 +42,9 @@ function NavbarConfirm() {
           </div>
           <select
             className="text-[#064247] mr-1 bg-white border-none"
-            onChange={(e) => handleSelect(e.target.value)}
-=======
+            onChange={(e) => handleSelect(e.target.value)}>
+
+            </select>
       <div className="flex items-center">
         <div className="w-[0.04px] h-10 bg-black" />
         <select>
@@ -54,9 +53,10 @@ function NavbarConfirm() {
           </option>
           <option
             value="2"
-            data-te-select-icon="https://tecdn.b-cdn.net/img/Photos/Avatars/avatar-2.webp"
->>>>>>> 40317d1035d08b92fb2200ee9ee8e62e0b28a2bb
-          >
+            data-te-select-icon="https://tecdn.b-cdn.net/img/Photos/Avatars/avatar-2.webp">
+
+            </option>
+          
             {arrayNum.map((item: any) => {
               return <option value={item.img}>{item.name}</option>;
             })}
@@ -96,6 +96,7 @@ function NavbarConfirm() {
           <p className="mr-1">خروج</p>
         </div>
       </div>
+    </div>
     </div>
   );
 }
