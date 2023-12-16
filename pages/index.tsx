@@ -17,10 +17,9 @@ import WebApp from "@/components/WebApp";
 import Contact from "@/components/Contact";
 import Line from "@/components/line";
 import Satisfication from "@/components/Satisfication";
+import Adress from "@/components/Adress";
+import Admin from "@/components/Admin";
 import Header from "@/components/Header";
-import Adress from '@/components/Adress'
-import Admin from '@/components/Admin'
-
 export default function Home() {
   return (
     <div>
