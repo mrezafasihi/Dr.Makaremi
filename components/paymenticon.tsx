@@ -189,91 +189,101 @@ function paymenticon() {
         </div>
       </div>
       <div className=" relative">
-      <hr className="w-[30%] mx-auto mt-[1%] absolute right-[35%] bottom-[-9px] " />
+        <hr className="w-[30%] mx-auto mt-[1%] absolute right-[35%] bottom-[-9px] " />
       </div>
       <div className="text-center mx-auto justify-evenly flex w-[55%] ">
-     <div className=" relative  ">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="12"
-          height="13"
-          viewBox="0 0 12 13"
-          fill="none"
-          className=" absolute top-[15%] right-1 "
-        >
-          <circle cx="6.19991" cy="6.32759" r="5.72408" fill="#288E87" />
-        </svg>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="19"
-          height="19"
-          viewBox="0 0 19 19"
-          fill="none"
-        >
-          <circle
-            cx="9.29406"
-            cy="9.63317"
-            r="8.75447"
-            stroke="#288E87"
-            stroke-width="0.673421"
-          />
-        </svg>
+        <div className=" relative  ">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="12"
+            height="13"
+            viewBox="0 0 12 13"
+            fill="none"
+            className=" absolute top-[15%] right-1 "
+          >
+            <circle cx="6.19991" cy="6.32759" r="5.72408" fill="#288E87" />
+          </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="19"
+            height="19"
+            viewBox="0 0 19 19"
+            fill="none"
+          >
+            <circle
+              cx="9.29406"
+              cy="9.63317"
+              r="8.75447"
+              stroke="#288E87"
+              stroke-width="0.673421"
+            />
+          </svg>
+        </div>
+        <div className=" relative ">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="12"
+            height="13"
+            viewBox="0 0 12 13"
+            fill="none"
+            className=" absolute top-[15%] right-1 "
+          >
+            <circle cx="6.19991" cy="6.32759" r="5.72408" fill="#288E87" />
+          </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="19"
+            height="19"
+            viewBox="0 0 19 19"
+            fill="none"
+          >
+            <circle
+              cx="9.29406"
+              cy="9.63317"
+              r="8.75447"
+              stroke="#288E87"
+              stroke-width="0.673421"
+            />
+          </svg>
+        </div>
+        <div className=" relative ">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="12"
+            height="13"
+            viewBox="0 0 12 13"
+            fill="none"
+            className=" absolute top-[15%] right-1 "
+          >
+            <circle cx="6.19991" cy="6.32759" r="5.72408" fill="#288E87" />
+          </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="19"
+            height="19"
+            viewBox="0 0 19 19"
+            fill="none"
+          >
+            <circle
+              cx="9.29406"
+              cy="9.63317"
+              r="8.75447"
+              stroke="#288E87"
+              stroke-width="0.673421"
+            />
+          </svg>
+        </div>
       </div>
-      <div className=" relative ">
-      <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="12"
-          height="13"
-          viewBox="0 0 12 13"
-          fill="none"
-          className=" absolute top-[15%] right-1 "
-        >
-          <circle cx="6.19991" cy="6.32759" r="5.72408" fill="#288E87" />
-        </svg>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="19"
-          height="19"
-          viewBox="0 0 19 19"
-          fill="none"
-        >
-          <circle
-            cx="9.29406"
-            cy="9.63317"
-            r="8.75447"
-            stroke="#288E87"
-            stroke-width="0.673421"
-          />
-        </svg>
-      </div>
-      <div className=" relative ">
-      <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="12"
-          height="13"
-          viewBox="0 0 12 13"
-          fill="none"
-          className=" absolute top-[15%] right-1 "
-        >
-          <circle cx="6.19991" cy="6.32759" r="5.72408" fill="#288E87" />
-        </svg>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="19"
-          height="19"
-          viewBox="0 0 19 19"
-          fill="none"
-        >
-          <circle
-            cx="9.29406"
-            cy="9.63317"
-            r="8.75447"
-            stroke="#288E87"
-            stroke-width="0.673421"
-          />
-        </svg>
-      </div>
-     
+      <div className="flex w-[30%] mx-auto justify-between ">
+        <p className="text-[#064247] text-[12px] font-[300] font-IRANSansXFaNum">
+          تایید اطلاعات
+        </p>
+        <p className="text-[#064247] text-[12px] font-[300] font-IRANSansXFaNum">
+          تعیین روز و ساعت
+        </p>
+        <p className="text-[#064247] text-[12px] font-[500] font-IRANSansXFaNum">
+          پرداخت
+        </p>
       </div>
     </div>
   );

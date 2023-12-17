@@ -6,7 +6,7 @@ import React from "react";
 
 function Layout({ children }: any) {
   return (
-    <div className="flex justify-between">
+    <div className="flex justify-between overflow-auto">
       <Sidebar />
       <div className="flex flex-col  basis-[72%]">
         <Navbar />
