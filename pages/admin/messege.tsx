@@ -95,7 +95,7 @@ function messege() {
       <div className=" flex flex-col justify-center w-[84.45%] mx-auto">
         {member.map((item) => {
           return (
-            <div className="max-w-[875px] h-[90px] borde-[.5px] border-[.5px] border-stone-200 mt-[10px] flex justify-between">
+            <div className="max-w-[875px] h-[90px] borde-[.5px]  border-stone-200 mt-[10px] flex justify-between">
               <div className="flex flexcol mt-[2%] mr-[2%] w-[35%]" >
                 <img className="w-[63px] h-[63px] rounded-full bg-zinc-100" src={item.img} alt="img" />
 
