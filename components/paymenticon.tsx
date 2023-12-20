@@ -274,6 +274,17 @@ function Paymenticon() {
           </svg>
         </div>
       </div>
+      <div className="flex w-[30%] mx-auto justify-between ">
+        <p className="text-[#064247] text-[12px] font-[300] font-IRANSansXFaNum">
+          تایید اطلاعات
+        </p>
+        <p className="text-[#064247] text-[12px] font-[300] font-IRANSansXFaNum">
+          تعیین روز و ساعت
+        </p>
+        <p className="text-[#064247] text-[12px] font-[500] font-IRANSansXFaNum">
+          پرداخت
+        </p>
+      </div>
     </div>
   );
 }
