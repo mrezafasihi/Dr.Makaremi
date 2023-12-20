@@ -5,101 +5,99 @@ import CustomeImage from "@/components/admin/CustomeImage";
 import Link from "next/link";
 
 function index() {
-  const dataPatients:any = [
+  const dataPatients: any = [
     {
-      id:1,
+      id: 1,
       name: "امیر رئیسی",
       num: 1552,
       date: "۲۳ فروردین ۱۴۰۲",
       img: "/images/landin/smiling.png",
     },
     {
-      id:2,
+      id: 2,
       name: "امیر رئیسی",
       num: 1552,
       date: "۲۳ فروردین ۱۴۰۲",
       img: "/images/landin/smiling.png",
     },
     {
-      id:3,
+      id: 3,
       name: "امیر رئیسی",
       num: 1552,
       date: "۲۳ فروردین ۱۴۰۲",
       img: "/images/landin/smiling.png",
     },
     {
-      id:4,
+      id: 4,
       name: "امیر رئیسی",
       num: 1552,
       date: "۲۳ فروردین ۱۴۰۲",
       img: "/images/landin/smiling.png",
     },
     {
-      id:5,
+      id: 5,
       name: "امیر رئیسی",
       num: 1552,
       date: "۲۳ فروردین ۱۴۰۲",
       img: "/images/landin/smiling.png",
     },
     {
-      id:6,
+      id: 6,
       name: "امیر رئیسی",
       num: 1552,
       date: "۲۳ فروردین ۱۴۰۲",
       img: "/images/landin/smiling.png",
     },
     {
-      id:7,
+      id: 7,
       name: "امیر رئیسی",
       num: 1552,
       date: "۲۳ فروردین ۱۴۰۲",
       img: "/images/landin/smiling.png",
     },
     {
-      id:8,
+      id: 8,
       name: "امیر رئیسی",
       num: 1552,
       date: "۲۳ فروردین ۱۴۰۲",
       img: "/images/landin/smiling.png",
     },
     {
-      id:9,
+      id: 9,
       name: "امیر رئیسی",
       num: 1552,
       date: "۲۳ فروردین ۱۴۰۲",
       img: "/images/landin/smiling.png",
     },
     {
-      id:9,
+      id: 9,
       name: "امیر رئیسی",
       num: 1552,
       date: "۲۳ فروردین ۱۴۰۲",
       img: "/images/landin/smiling.png",
     },
     {
-      id:10,
+      id: 10,
       name: "امیر رئیسی",
       num: 1552,
       date: "۲۳ فروردین ۱۴۰۲",
       img: "/images/landin/smiling.png",
     },
     {
-      id:11,
+      id: 11,
       name: "امیر رئیسی",
       num: 1552,
       date: "۲۳ فروردین ۱۴۰۲",
       img: "/images/landin/smiling.png",
     },
   ];
- 
-  
+
   return (
-    <div>
-      <Layout>
-        <div className="">
-          <p className="text-[#45CBC2] font-bold my-[35px] ">بیماران من</p>
-          <div className="flex mb-[15px] items-center">
-            <div className="border border-[#EDEDEE] p-2 rounded">
+    <Layout>
+      <div className="flex  flex-col w-[84.45%] mx-auto ">
+        <p className="text-[#45CBC2] font-bold my-[35px] ">بیماران من</p>
+        <div className="flex mb-[15px] items-center">
+          <div className="border border-[#EDEDEE] p-2 rounded ">
             <svg
               width="24"
               height="24"
@@ -112,17 +110,17 @@ function index() {
                 fill="#45CBC2"
               />
             </svg>
-            </div>
-            <p className="text-[#064247] mr-[1.5%]">تشکیل پرونده جدید</p>
           </div>
-          <p className="text-[#757575] mb-2">
-            برای مشاهده و ویرایش پرونده روی آن کلیک کنید
-          </p>
-          <div className=" overflow-y-auto flex flex-col   h-[791px] w-full  gap-[14px]">
-            {dataPatients.map((item:any) => {
-              return (
-                <Link href={`/admin/${item.id}`}>
-                <div  className="flex justify-between max-w-[856px]  border border-[#CBCBCB] rounded-lg h-[101px] items-center px-4 py-4 ">
+          <p className="text-[#064247] mr-[1.5%]">تشکیل پرونده جدید</p>
+        </div>
+        <p className="text-[#757575] mb-2">
+          برای مشاهده و ویرایش پرونده روی آن کلیک کنید
+        </p>
+        <div className=" overflow-y-auto flex flex-col  h-[791px] w-full  gap-[14px]">
+          {dataPatients.map((item: any) => {
+            return (
+              <Link href={`/admin/${item.id}`}>
+                <div className="flex justify-between max-w-[856px]  border border-[#CBCBCB] rounded-lg h-[101px] items-center px-4 py-4 ">
                   <div className="flex items-center basis-[15%]">
                     <CustomeImage img={item.img} style="w-[48px] h-[49px]" />
                     <div className="flex flex-col ">
@@ -191,12 +189,12 @@ function index() {
                     </span>
                   </div>
                 </div>
-                </Link> );
-            })}
-          </div>
+              </Link>
+            );
+          })}
         </div>
-      </Layout>
-    </div>
+      </div>
+    </Layout>
   );
 }
 
