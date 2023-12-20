@@ -1,6 +1,6 @@
 import React from "react";
 
-function paymenticon() {
+function Paymenticon() {
   return (
     <div>
       <div className="flex w-[52%] text-center mx-auto justify-evenly mt-[6%] ">
@@ -289,4 +289,4 @@ function paymenticon() {
   );
 }
 
-export default paymenticon;
+export default Paymenticon;

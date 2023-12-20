@@ -101,7 +101,7 @@ function ListPatient() {
               </select>
             </div>
           </div>
-          <div className="flex flex-col  md:flex-row justify-center  gap-8 ">
+          <div className="flex flex-col  md:flex-row justify-center items-center gap-8 ">
             <CustomInput
               style=" flex w-[393px] md:basis-1/2 "
               label="شهر"
@@ -109,13 +109,27 @@ function ListPatient() {
             />
             <div className="flex basis-1/2 w-[393px]">
               <p className="text-[#064247] ml-[9%] font-medium">جنسیت :</p>
-              <div className="block">
-                <input className="" name="gender" type="radio" value="male" />
-                <label htmlFor="male">آقا</label>
+              <div className="flex ">
+                <input
+                  className="w-[20px] h-[20px] "
+                  name="gender"
+                  type="radio"
+                  value="male"
+                />
+                <label className="mr-[6px]" htmlFor="male">
+                  آقا
+                </label>
               </div>
-              <div className="block">
-                <input name="gender" type="radio" value="female" />
-                <label htmlFor="female">خانم</label>
+              <div className=" flex mr-[3%]">
+                <input
+                  className="w-[20px] h-[20px]"
+                  name="gender"
+                  type="radio"
+                  value="female"
+                />
+                <label className="mr-[6px]" htmlFor="female">
+                  خانم
+                </label>
               </div>
             </div>
           </div>

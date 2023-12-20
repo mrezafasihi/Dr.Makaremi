@@ -4,6 +4,7 @@ import React from "react";
 import Logo from "../Logo";
 
 function Sidebar({}: any) {
+  let stroke = "stroke-[#288E87]";
   const layoutData = [
     {
       icon: (
@@ -15,29 +16,30 @@ function Sidebar({}: any) {
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
+            className={`${stroke}`}
             d="M9.16 11.37C9.06 11.36 8.94 11.36 8.83 11.37C6.45 11.29 4.56 9.34 4.56 6.94C4.56 4.49 6.54 2.5 9 2.5C11.45 2.5 13.44 4.49 13.44 6.94C13.43 9.34 11.54 11.29 9.16 11.37Z"
-            stroke="white"
+            stroke="#288E87"
             stroke-width="1.5"
             stroke-linecap="round"
             stroke-linejoin="round"
           />
           <path
             d="M16.41 4.5C18.35 4.5 19.91 6.07 19.91 8C19.91 9.89 18.41 11.43 16.54 11.5C16.46 11.49 16.37 11.49 16.28 11.5"
-            stroke="white"
+            stroke="#288E87"
             stroke-width="1.5"
             stroke-linecap="round"
             stroke-linejoin="round"
           />
           <path
             d="M4.16 15.06C1.74 16.68 1.74 19.32 4.16 20.93C6.91 22.77 11.42 22.77 14.17 20.93C16.59 19.31 16.59 16.67 14.17 15.06C11.43 13.23 6.92 13.23 4.16 15.06Z"
-            stroke="white"
+            stroke="#288E87"
             stroke-width="1.5"
             stroke-linecap="round"
             stroke-linejoin="round"
           />
           <path
             d="M18.34 20.5C19.06 20.35 19.74 20.06 20.3 19.63C21.86 18.46 21.86 16.53 20.3 15.36C19.75 14.94 19.08 14.66 18.37 14.5"
-            stroke="white"
+            stroke="#288E87"
             stroke-width="1.5"
             stroke-linecap="round"
             stroke-linejoin="round"
@@ -46,7 +48,7 @@ function Sidebar({}: any) {
       ),
 
       title: "بیماران من",
-      path: "/admin/patients",
+      path: `/admin`,
     },
     {
       icon: (
@@ -90,7 +92,7 @@ function Sidebar({}: any) {
         </svg>
       ),
       title: "آمار کلی",
-      path: "/admin",
+      path: "/admin/1",
     },
     {
       icon: (
@@ -470,27 +472,40 @@ function Sidebar({}: any) {
     },
   ];
   const route = useRouter();
+  console.log(route);
+  // let color:any;
   let style: any;
   return (
-    <div className="flex flex-col border-l-2 w-[24%] justify-between min-h-screen">
-      <div className="mr-[10%] mt-[8%]">
+    <div className="flex flex-col border-l-2 w-[24%]  min-h-screen   ">
+      <div className="mr-[10%] mt-[6%]">
         <Logo />
       </div>
-      {layoutData.map((item) => {
-        {
-          item.path == route.asPath
-            ? (style = "bg-[#45CBC2] text-white")
-            : (style = "");
-        }
-        return (
-          <div className="flex flex-col mr-[5%]   ">
-            <Link className={`flex  ${style}`} href={item.path}>
-              <span className="ml-2">{item.icon}</span>
-              {item.title}
-            </Link>
-          </div>
-        );
-      })}
+      <div className="flex flex-col justify-between h-[787px] mt-[9%] ">
+        {layoutData.map((item, index) => {
+          {
+            item.path == route.asPath
+              ? (style = "bg-[#288E87]  text-white 	 ")
+              : (style = "");
+            // if(index==layoutData.length-1){
+            //   color="text-[#C70000]"
+            // }
+          }
+
+          return (
+            <div className="flex flex-col mr-[5%]  h-[57px] flex-1 ">
+              <Link
+                className={`flex h-[57px] items-center rounded-lg font-normal ${
+                  index == layoutData.length - 1 && "text-[#C70000]"
+                }  ${style}`}
+                href={item.path}
+              >
+                <span className="ml-2 ">{item.icon}</span>
+                {item.title}
+              </Link>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }

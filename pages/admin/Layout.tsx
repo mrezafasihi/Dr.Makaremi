@@ -10,7 +10,10 @@ function Layout({ children }: any) {
       <Sidebar />
       <div className="flex flex-col  basis-[72%]">
         <Navbar />
+        
+        
         {children}
+       
       </div>
     </div>
   );

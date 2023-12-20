@@ -9,6 +9,7 @@ function index() {
       <NavbarConfirm />
       <TextNobat />
       <ListPatient />
+      
     </div>
   );
 }
