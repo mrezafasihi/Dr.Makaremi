@@ -46,8 +46,8 @@ function Logo() {
         </defs>
       </svg>
 
-      <p className="font-bold text-[8.46px] text-[#054247]">چشم پزشکی</p>
-      <p className="font-bold text-[14.11px] text-[#46cbc2]">مکارمی</p>
+      <p className="font-iranSansBold text-[8.46px] text-[#054247]">چشم پزشکی</p>
+      <p className="font-iranSansBold text-[14.11px] text-[#46cbc2]">مکارمی</p>
     </div>
   );
 }

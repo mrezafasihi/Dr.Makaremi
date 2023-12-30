@@ -1,8 +1,5 @@
 import Image from "next/image";
-
 import Navbar from "@/components/Navbar";
-import Container from "postcss/lib/container";
-import OldMan from "@/components/Nav-Head";
 import NavHead from "@/components/Nav-Head";
 import CountCard from "@/components/CountCard";
 import Background from "@/components/Background";
@@ -20,14 +17,12 @@ import Satisfication from "@/components/Satisfication";
 import Adress from "@/components/Adress";
 import Admin from "@/components/Admin";
 import Header from "@/components/Header";
+import Pay from "./user/reservation/pay";
 export default function Home() {
   return (
     <div>
-      {/* <Background url={"../images/OldMan.png"} /> */}
-      {/* <NavHead /> */}
       <Navbar />
       <Header />
-      {/* <Navbar /> */}
       <CountCard />
       <Bio />
       <BusinessDays />
@@ -35,17 +30,11 @@ export default function Home() {
       <Question />
       <Blog />
       <WebApp />
-      <Line />
-      <Satisfication />
-      <Contact />
-      <Adress />
-
-     <Line/>
+      <Line/>
      <Satisfication/>
      <Contact/>
-     <Adress/>
-     {/* <Pay/> */}
-     
+     <Adress/> 
+       <Pay/>
     </div>
   );
 }

@@ -96,7 +96,7 @@ function index() {
     <Layout>
       <div className="flex  flex-col w-[84.45%] mx-auto ">
         <p className="text-[#45CBC2] font-bold my-[35px] ">بیماران من</p>
-        <div className="flex mb-[15px] items-center">
+        <Link className="flex mb-[15px] items-center" href={"/admin/newfile"}>
           <div className="border border-[#EDEDEE] p-2 rounded ">
             <svg
               width="24"
@@ -111,8 +111,9 @@ function index() {
               />
             </svg>
           </div>
+
           <p className="text-[#064247] mr-[1.5%]">تشکیل پرونده جدید</p>
-        </div>
+        </Link>
         <p className="text-[#757575] mb-2">
           برای مشاهده و ویرایش پرونده روی آن کلیک کنید
         </p>

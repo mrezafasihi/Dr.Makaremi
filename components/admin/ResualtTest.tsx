@@ -7,13 +7,17 @@ function ResualtTest() {
     { title: "عکس‌برداری", date: "۱۴۰۲/۰۲/۰۶" },
   ];
   return (
-    <div className="border  border-[#EDEDEE] rounded-[11.94px] text-center w-[482px] h-[189px] ">
-      <table className="w-full h-full">
-        <thead className="even:bg-black">
+    <div className="border  border-[#EDEDEE] rounded-[11.94px] text-center w-[482px] h-[189px] overflow-y-auto ">
+      <table className=" w-full h-full">
+        <thead className="even:bg-black h-[46px]">
           <tr className="w-full">
-            <th className="text-right border ">نتایج آزمایشات</th>
+            <th className="text-right font-medium text-[12px] text-[#064247] pr-[5%]">
+              نتایج آزمایشات
+            </th>
+            <th></th>
+            <th></th>
             <th className="text-[#45CBC2]">
-              <div className="flex items-center justify-end text-[12px]">
+              <div className="flex items-center justify-end text-[12px] pl-[18%]">
                 <svg
                   width="13"
                   height="12"
@@ -31,15 +35,14 @@ function ResualtTest() {
             </th>
           </tr>
         </thead>
-        <tbody className="h-[46px]">
+        <tbody className="h-[46px] text-center">
           {medicalTest.map((item) => {
             return (
               <tr className=" text-right  odd:bg-[#f3fffe] ">
                 <td className="  pr-[4.9%]">{item.title}</td>
-                <div className="flex justify-between">
-                  <td className=" ">{item.date}</td>
-                  <td className=" ">مشاهده</td>
-                  <td className=" pl-[4.9%]">
+                  <td className=" pr-[5%]">{item.date}</td>
+                  <td className=" pr-[9%]">مشاهده</td>
+                  <td className=" pr-[70%] flex  justify-center h-full flex-col">
                     <svg
                       width="16"
                       height="16"
@@ -89,7 +92,6 @@ function ResualtTest() {
                     </svg>
                     <p className="text-[#C70000] text-[10px] font-light">حذف</p>
                   </td>
-                </div>
               </tr>
             );
           })}

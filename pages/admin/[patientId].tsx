@@ -36,7 +36,7 @@ function PatientId() {
             <ResualtTest />
           </div>
         </div>
-        <h6 className="font-bold text-[#064247]">ویزیت‌ ها</h6>
+        <h6 className="font-bold text-[#064247] mr-[6%] mt-[2%] mb-[1%]">ویزیت‌ ها</h6>
         <TableVisit />
       </div>
     </Layout>
