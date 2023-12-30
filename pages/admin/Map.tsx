@@ -29,10 +29,13 @@ function Map() {
         <div className="flex flex-col">
           <p className="text-[14px] text-[#064247] mb-[2%]">آدرس مطب</p>
 
-          <p className="rounded-[6.422px] border-[1px] border-[#CBCBCB] w-[470px] h-[145px] text-[16px] text-center pt-[3%]">
-            مـازندران، بـابــل، میــدان کشـوری، سـاختمــان پـزشـکـان مهـــر،
-            طبقــه ســوم
-          </p>
+          <input
+            className="rounded-[6.422px] border-[1px] border-[#CBCBCB] w-[470px] h-[145px] text-[16px] text-center pt-[3%]"
+            value=" مـازندران، بـابــل، میــدان کشـوری، سـاختمــان پـزشـکـان مهـــر،
+          طبقــه ســوم"
+            type="text"
+          />
+
           <div className="flex items-center justify-between mt-[5%] mb-[2%]">
             <p className="text-[14px] text-[#064247]">شماره تلفن</p>
             <div className="flex items-center ">
@@ -51,63 +54,75 @@ function Map() {
               <p className=" text-[12px] text-[#45CBC2] ">شماره جدید</p>
             </div>
           </div>
-          <div className="rounded-[6.422px] border-[#CBCBCB] border-[1px] h-[62px] flex items-center pr-[4%]">
-            011 322 88 888
-          </div>
+          <input
+            className="rounded-[6.422px] border-[#CBCBCB] border-[1px] h-[62px] flex items-center pr-[4%]"
+            value="011 322 88 888"
+            type="text"
+          />
+
           <p className="text-[14px] mt-[5%] mb-[2%] ">آدرس صفحه اینستاگرام</p>
-          <div className="rounded-[6.422px] text-[16px] h-[62px] border-[#CBCBCB] border-[1px] pr-[4%] flex items-center">
-            https://instagram.com/drmakaremi
-          </div>
+          <input
+            className="rounded-[6.422px] text-[16px] h-[62px] border-[#CBCBCB] border-[1px] pr-[4%] flex items-center"
+            value=" https://instagram.com/drmakaremi"
+            type="text"
+          />
+
           <p className="text-[14px] mt-[5%] mb-[2%] ">آدرس کانال تلگرام</p>
-          <div className="rounded-[6.422px] text-[16px] h-[62px] border-[#CBCBCB] border-[1px] pr-[4%] flex items-center">
-            t.me/drmakaremi
-          </div>
+          <input
+            className="rounded-[6.422px] text-[16px] h-[62px] border-[#CBCBCB] border-[1px] pr-[4%] flex items-center"
+            value="  t.me/drmakaremi"
+            type="text"
+          />
         </div>
         <div className="flex flex-col mt-[.5%] mr-[4%]">
           <p className="text-[14px] text-[#064247] mb-[2%]">
             آدرس مطب روی نقشه
           </p>
-          <div className="w-[361px] h-[54px] border-[#CBCBCB] border-[1px] text-[#CBCBCB] text-[14px] flex items-center rounded-[6.422px] ">
-            <div className="px-[2%]">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="21"
-                height="21"
-                viewBox="0 0 21 21"
-                fill="none"
-              >
-                <circle
-                  cx="10.2267"
-                  cy="9.7659"
-                  r="8.98856"
-                  stroke="#757575"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M16.4784 16.4844L20.0024 19.9992"
-                  stroke="#757575"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </div>
-            جست و جوی آدرس در نقشه
+          <div className="w-[361px]  flex border-[#CBCBCB] border-[1px] items-center rounded-[6.422px]  ">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="21"
+              height="21"
+              viewBox="0 0 21 21"
+              fill="none"
+              className="mx-[2%]"
+            >
+              <circle
+                cx="10.2267"
+                cy="9.7659"
+                r="8.98856"
+                stroke="#757575"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M16.4784 16.4844L20.0024 19.9992"
+                stroke="#757575"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <input
+              className="w-[361px] h-[50px] text-[#CBCBCB] text-[14px] flex items-center rounded-[6.422px] "
+              value="جست و جوی آدرس در نقشه"
+              type="text"
+            />
           </div>
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23365.09226922734!2d51.45558337770268!3d35.68559885651431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e03f59b014ca5%3A0x76a618025877a10f!2z2YHZhNqp2Ycg2K_ZiNmFINmG24zYsdmI2YfZiNin24zbjA!5e0!3m2!1sen!2s!4v1702980027996!5m2!1sen!2s"
             width="600"
             height="450"
-            
             loading="lazy"
-           className="w-[361.46px] h-[291px] mt-[6%]"
+            className="w-[361.46px] h-[291px] mt-[6%]"
           ></iframe>
           <p className="text-[14px] text-[#064247] mt-[5%] mb-[2%] ">ایمیل</p>
-          <div className="rounded-[6.422px] border-[#CBCBCB] border-[1px] h-[62px] flex items-center pr-[4%]">
-            drmakaremi@gmail.com
-          </div>
+          <input
+            className="rounded-[6.422px] border-[#CBCBCB] border-[1px] h-[62px] flex items-center pr-[4%]"
+            value="drmakaremi@gmail.com"
+            type="text"
+          />
         </div>
       </div>
       <button className="w-[197px] h-[48px] rounded-[6.422px] text-white bg-[#288E87] mt-[5%] mx-auto">
