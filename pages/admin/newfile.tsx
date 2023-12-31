@@ -69,28 +69,31 @@ function newfile() {
             
             <div className="flex items-center mb-4">
               <input
-                id="default-checkbox"
-                type="checkbox"
-                value=""
-                className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                id="man"
+                type="radio"
+                value="man"
+                name="gender"
+                className="w-4 "
               />
               <label
-                for="default-checkbox"
-                class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                htmlFor="man"
+                className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300 "
               >
                 آقا
               </label>
             </div>
             <div className="flex items-center mb-4">
               <input
-                id="default-checkbox"
-                type="checkbox"
-                value=""
-                className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                id="woman"
+                type="radio"
+                value="woman"
+                name="gender"
+                className="w-4 "
+           
               />
               <label
-                for="default-checkbox"
-                class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                htmlFor="woman"
+                className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
               >
                 خانم
               </label>

@@ -1,8 +1,8 @@
 import NavbarConfirm from "@/components/user/NavbarConfirm";
 import React from "react";
-import Layout from "./Layout";
-
-function messege() {
+import Layout from "../Layout";
+import Link from "next/link"
+function index() {
   const member = [
     {
       name: "امیر رئیسی",
@@ -10,6 +10,7 @@ function messege() {
       clock: "16:04",
       notification: 5,
       img: "/images/landin/smiling.png",
+      id:1,
     },
     {
       name: "امیر رئیسی",
@@ -17,6 +18,7 @@ function messege() {
       clock: "16:04",
       notification: 5,
       img: "/images/landin/smiling.png",
+      id:2,
     },
     {
       name: "امیر رئیسی",
@@ -24,6 +26,7 @@ function messege() {
       clock: "16:04",
       notification: 5,
       img: "/images/landin/smiling.png",
+      id:3,
     },
     {
       name: "امیر رئیسی",
@@ -31,6 +34,7 @@ function messege() {
       clock: "16:04",
       notification: 5,
       img: "/images/landin/smiling.png",
+      id:4,
     },
     {
       name: "امیر رئیسی",
@@ -38,6 +42,7 @@ function messege() {
       clock: "16:04",
       notification: 5,
       img: "/images/landin/smiling.png",
+      id:5,
     },
    
     {
@@ -46,6 +51,7 @@ function messege() {
       clock: "16:04",
       notification: 5,
       img: "/images/landin/smiling.png",
+      id:6,
 
     },
     {
@@ -54,6 +60,7 @@ function messege() {
       clock: "16:04",
       notification: 5,
       img: "/images/landin/smiling.png",
+      id:7,
 
     },
     {
@@ -62,6 +69,7 @@ function messege() {
       clock: "16:04",
       notification: 5,
       img: "/images/landin/smiling.png",
+      id:8,
 
     },
     {
@@ -70,6 +78,7 @@ function messege() {
       clock: "16:04",
       notification: 5,
       img: "/images/landin/smiling.png",
+      id:9,
 
     },
     {
@@ -78,6 +87,7 @@ function messege() {
       clock: "16:04",
       notification: 5,
       img: "/images/landin/smiling.png",
+      id:10,
 
     },
     {
@@ -86,6 +96,7 @@ function messege() {
       clock: "16:04",
       notification: 5,
       img: "/images/landin/smiling.png",
+      id:11,
 
     },
    
@@ -93,9 +104,12 @@ function messege() {
   return (
     <Layout>
       <div className=" flex flex-col justify-center w-[84.45%] mx-auto">
+        
         {member.map((item) => {
           return (
+            <Link href={`/admin/messege/${item.id}`}>
             <div className="max-w-[875px] h-[90px] borde-[.5px]  border-stone-200 mt-[10px] flex justify-between">
+                
               <div className="flex flexcol mt-[2%] mr-[2%] w-[35%]" >
                 <img className="w-[63px] h-[63px] rounded-full bg-zinc-100" src={item.img} alt="img" />
 
@@ -114,6 +128,7 @@ function messege() {
                 </p>
               </div>
             </div>
+            </Link>
           );
         })}
       </div>
@@ -121,4 +136,4 @@ function messege() {
   );
 }
 
-export default messege;
+export default index;

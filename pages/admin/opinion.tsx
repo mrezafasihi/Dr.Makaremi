@@ -424,7 +424,7 @@ function opinion() {
   ];
   return (
     <Layout>
-      <div className="mt-[3%] mr-[5%] overflow-y-auto">
+      <div className="mt-[3%] mr-[5%] overflow-y-auto" >
         <div className="flex items-center">
           <p className="text-[16px] text-[#45CBC2]">تغییر اطلاعات</p>
           <svg
@@ -444,14 +444,14 @@ function opinion() {
           </svg>
           <p className="text-[20px] text-[#757575]">نظرات</p>
         </div>
-        <div className="w-[957px] h-[521px] bg-[#D9D2F9] rounded-md mt-[5%] gap-1 overflow-y-auto">
-          <p className="text-[14px] text-[#064247] font-medium pt-[2%] mr-[5%]">
+        <div style={{direction:"ltr"}}  className="w-[957px] h-[521px] bg-[#D9D2F9] rounded-md mt-[5%] gap-1 overflow-y-auto border-[#D9D2F9] border-t-[45px] border-b-[30px] border-r-[30px]" >
+          <p className="text-[14px] text-[#064247] font-medium mr-[5%]">
             نظرات جدید
           </p>
           {idea.map((item) => {
             return (
-              <div className=" bg-white w-[875px] h-[193px] rounded-xl mt-[1%] flex mx-auto ">
-                <div className="  mt-[2%] mr-[1%] ml-[2%]">
+              <div  className=" bg-white w-[875px] h-[193px] rounded-xl mt-[1%] flex mx-auto ">
+                <div className=" mr-[1%] ml-[2%]">
                   <img
                     src={item.img}
                     alt="img"
@@ -480,19 +480,19 @@ function opinion() {
                     <p className="text-[12px] mb-[1%] ml-[3%]"> {item.date}</p>
                     <p className="text-[12px]"> {item.hour}</p>
                   </div>
-                  <p className="text-[14px] text-[#064247]"> {item.text}</p>
+                  <p className="text-[14px] text-[#064247] font-iranSansLight"> {item.text}</p>
                 </div>
               </div>
             );
           })}
         </div>
-        <div className="w-[957px] h-[521px] bg-[#D6F3F1] rounded-md mt-[5%] gap-1 overflow-y-auto">
-          <p className="text-[14px] text-[#064247] pt-[3%] mr-[5%]">
+        <div style={{direction:"ltr"}} className="w-[957px] h-[521px] bg-[#D6F3F1] rounded-md mt-[5%] gap-1 overflow-y-auto border-[#D6F3F1] border-t-[45px] border-b-[30px] border-r-[30px]">
+          <p className="text-[14px] text-[#064247] mr-[5%]">
             نظرات قرارگرفته در سایت
           </p>
           {other.map((item) => {
             return (
-              <div className="flex bg-white rounded-xl w-[875px] max-h-[193px] mx-auto mt-[1%] ">
+              <div dir="rtl" className="flex bg-white rounded-xl w-[875px] max-h-[193px] mx-auto mt-[1%] ">
                 <div className="w-[63px] h-[63px] bg-gray-200 rounded-full  mt-[2%] mr-[1%] ml-[2%]">
                   <img src={item.img} alt="img" className="rounded-full " />
                 </div>

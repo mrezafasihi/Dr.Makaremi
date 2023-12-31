@@ -108,13 +108,14 @@ function statistics() {
         </div>
         <div className="w-[572px] h-[527px] bg-white rounded-[16px] mr-[7%] mt-[4%]">
           <div className="flex flex-col">
-            <div className="flex mt-[3%] mr-[3%]">
+            <div className="flex  ">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
                 height="16"
                 viewBox="0 0 16 16"
                 fill="none"
+                className="mt-[2%]"
               >
                 <path
                   d="M11.9984 4.77301C11.9584 4.76634 11.9118 4.76634 11.8718 4.77301C10.9518 4.73968 10.2184 3.98634 10.2184 3.05301C10.2184 2.09968 10.9851 1.33301 11.9384 1.33301C12.8918 1.33301 13.6584 2.10634 13.6584 3.05301C13.6518 3.98634 12.9184 4.73968 11.9984 4.77301Z"
@@ -174,7 +175,7 @@ function statistics() {
               labels: ["اسفند", "بهمن", "دی", "آذر", "آبان", "مهر"],
               datasets: [
                 {
-                  tension: 0.8,
+                  tension: .8,
                   fill: true,
                   // label: "My First dataset",
                   backgroundColor: "#D6F3F1",
