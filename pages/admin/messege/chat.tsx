@@ -1,12 +1,12 @@
 import React from "react";
-import Layout from "./Layout";
+import Layout from "../Layout";
 
 function chat() {
   return (
     <Layout>
       <div>
-        <p className="text-[#45CBC2] text-[16px]">پیام‌ها</p>
-        <div className="flex items-center">
+        <p className="text-[#45CBC2] text-[16px] mr-[4%] mt-[2%]">پیام‌ها</p>
+        <div className="flex items-center mt-[4%]">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="40"
@@ -33,13 +33,14 @@ function chat() {
           </svg>
           <img
             src="/images/landin/Beautiful.png"
-            className="w-[54px] h-[57px] rounded-full"
+            className="w-[54px] h-[57px] rounded-full mx-[2%]"
           />
           <div className="flex flex-col">
             <p className="text-[16px] text-[#288E87]">فائزه ملکی</p>
             <p className="text-[16px] text-[#757575]">شماره پرونده : 2106</p>
           </div>
         </div>
+        
       </div>
     </Layout>
   );
