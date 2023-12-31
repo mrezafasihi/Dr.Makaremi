@@ -20,7 +20,7 @@ function userPanel() {
   const [isClient, setIsClient] = useState(false);
   const [checkPass, setCheckPass] = useState(false);
   const [pass, setPass] = useState("");
-
+ const [token,setToken]=useState("")
   useEffect(() => {
     setIsClient(true);
   }, []);
@@ -32,8 +32,8 @@ function userPanel() {
           password: pass,
         })
         .then((res: any) => {
-          console.log(res);
-        });
+          setToken(res.data.data.token);
+        }).catch((error)=>console.log(error))
     } else {
       if (phone.length == 11 && phone[0] == "0") {
         axios

@@ -2,9 +2,11 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
 import Logo from "../Logo";
+import { usePathname } from "next/navigation";
 
 function Sidebar({}: any) {
   let stroke = "stroke-[#288E87]";
+  const pathName = usePathname()
   const layoutData = [
     {
       icon: (
@@ -16,7 +18,7 @@ function Sidebar({}: any) {
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            className={`${stroke}`}
+            className={`${pathName === '/admin' ? 'stroke-white' : stroke}`}
             d="M9.16 11.37C9.06 11.36 8.94 11.36 8.83 11.37C6.45 11.29 4.56 9.34 4.56 6.94C4.56 4.49 6.54 2.5 9 2.5C11.45 2.5 13.44 4.49 13.44 6.94C13.43 9.34 11.54 11.29 9.16 11.37Z"
             stroke="#288E87"
             stroke-width="1.5"
@@ -24,6 +26,7 @@ function Sidebar({}: any) {
             stroke-linejoin="round"
           />
           <path
+          className={`${pathName === '/admin' ? 'stroke-white' : stroke}`}
             d="M16.41 4.5C18.35 4.5 19.91 6.07 19.91 8C19.91 9.89 18.41 11.43 16.54 11.5C16.46 11.49 16.37 11.49 16.28 11.5"
             stroke="#288E87"
             stroke-width="1.5"
@@ -31,6 +34,7 @@ function Sidebar({}: any) {
             stroke-linejoin="round"
           />
           <path
+          className={`${pathName === '/admin' ? 'stroke-white' : stroke}`}
             d="M4.16 15.06C1.74 16.68 1.74 19.32 4.16 20.93C6.91 22.77 11.42 22.77 14.17 20.93C16.59 19.31 16.59 16.67 14.17 15.06C11.43 13.23 6.92 13.23 4.16 15.06Z"
             stroke="#288E87"
             stroke-width="1.5"
@@ -38,6 +42,7 @@ function Sidebar({}: any) {
             stroke-linejoin="round"
           />
           <path
+          className={`${pathName === '/admin' ? 'stroke-white' : stroke}`}
             d="M18.34 20.5C19.06 20.35 19.74 20.06 20.3 19.63C21.86 18.46 21.86 16.53 20.3 15.36C19.75 14.94 19.08 14.66 18.37 14.5"
             stroke="#288E87"
             stroke-width="1.5"
@@ -60,6 +65,7 @@ function Sidebar({}: any) {
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
+          className={`${pathName === '/admin/statistics' ? 'stroke-white' : stroke}`}
             d="M22 6.5V8.92C22 10.5 21 11.5 19.42 11.5H16V4.51C16 3.4 16.91 2.5 18.02 2.5C19.11 2.51 20.11 2.95 20.83 3.67C21.55 4.4 22 5.4 22 6.5Z"
             stroke="#288E87"
             stroke-width="1.5"
@@ -68,6 +74,7 @@ function Sidebar({}: any) {
             stroke-linejoin="round"
           />
           <path
+          className={`${pathName === '/admin/statistics' ? 'stroke-white' : stroke}`}
             d="M2 7.5V21.5C2 22.33 2.93998 22.8 3.59998 22.3L5.31 21.02C5.71 20.72 6.27 20.76 6.63 21.12L8.28998 22.79C8.67998 23.18 9.32002 23.18 9.71002 22.79L11.39 21.11C11.74 20.76 12.3 20.72 12.69 21.02L14.4 22.3C15.06 22.79 16 22.32 16 21.5V4.5C16 3.4 16.9 2.5 18 2.5H7H6C3 2.5 2 4.29 2 6.5V7.5Z"
             stroke="#288E87"
             stroke-width="1.5"
@@ -76,6 +83,7 @@ function Sidebar({}: any) {
             stroke-linejoin="round"
           />
           <path
+          className={`${pathName === '/admin/statistics' ? 'stroke-white' : stroke}`}
             d="M6 9.5H12"
             stroke="#288E87"
             stroke-width="1.5"
@@ -83,6 +91,7 @@ function Sidebar({}: any) {
             stroke-linejoin="round"
           />
           <path
+          className={`${pathName === '/admin/statistics' ? 'stroke-white' : stroke}`}
             d="M6.75 13.5H11.25"
             stroke="#288E87"
             stroke-width="1.5"
@@ -92,7 +101,7 @@ function Sidebar({}: any) {
         </svg>
       ),
       title: "آمار کلی",
-      path: "/admin/1",
+      path: "/admin/statistics",
     },
     {
       icon: (
@@ -472,13 +481,17 @@ function Sidebar({}: any) {
     },
   ];
   const route = useRouter();
-  console.log(route);
-  // let color:any;
+  console.log(pathName);
+  console.log(`first${pathName}`)
+  console.log("first"+pathName)
   let style: any;
+  console.log()
   return (
     <div className="flex flex-col border-l-2 w-[24%]  min-h-screen   ">
       <div className="mr-[10%] mt-[6%]">
+        <Link href={"/"}>
         <Logo />
+        </Link>
       </div>
       <div className="flex flex-col justify-between h-[787px] mt-[9%] ">
         {layoutData.map((item, index) => {
@@ -492,14 +505,14 @@ function Sidebar({}: any) {
           }
 
           return (
-            <div className="flex flex-col mr-[5%]  h-[57px] flex-1 ">
+            <div className="flex flex-col mr-[5%]  ml-[5%] h-[57px] flex-1 group: ">
               <Link
                 className={`flex h-[57px] items-center rounded-lg font-normal ${
                   index == layoutData.length - 1 && "text-[#C70000]"
                 }  ${style}`}
                 href={item.path}
               >
-                <span className="ml-2 ">{item.icon}</span>
+                <span className="ml-2 group-hover:stroke-black pr-2">{item.icon}</span>
                 {item.title}
               </Link>
             </div>

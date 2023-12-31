@@ -5,15 +5,15 @@ import Logo from "./Logo";
 
 function Navbar() {
   return (
-    <nav className="  flex  justify-between text-center font-iranSans items-center  py-10  fixed z-10 backdrop-blur-lg backdrop-filter px-[10%] w-full ">
-      <div className=" lg:w-[10%] mx-[7.5%]">
+    <nav className="  flex  justify-between text-center font-iranSans items-center  py-10  fixed z-10 backdrop-blur-sm backdrop-filter  w-full ">
+      <div className=" mx-[7.56%]">
         <img src="/images/logoo.png" className=" w-[66.687px] h-[48px] z-[1]" />
         <div className=" z-10 absolute top-[65%] bg-inherit">
           <p className="text-white my-[-10px] z-10 ">چشم پزشکی</p>
           <span className="text-[#45CBC2]">مکارمی</span>
         </div>
       </div>
-      <ul className="hidden lg:font-medium	 lg:flex lg:justify-center text-white w-[60%] lg:gap-[6%]">
+      <ul className="hidden lg:font-medium	 lg:flex lg:justify-center text-white w-[60%] lg:gap-[6%] basis-[57%]">
         <li className="hover:bg-[#45CBC2] rounded-lg">خانه</li>
         <li className="hover:bg-[#45CBC2] rounded-lg">رضایت مراجعان</li>
         <li className="hover:bg-[#45CBC2] rounded-lg">بیمه های طرف قرارداد</li>

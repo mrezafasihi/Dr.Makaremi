@@ -18,9 +18,10 @@ import Adress from "@/components/Adress";
 import Admin from "@/components/Admin";
 import Header from "@/components/Header";
 import Pay from "./user/reservation/pay";
+import { CChart } from "@coreui/react-chartjs";
 export default function Home() {
   return (
-    <div>
+    <div >
       <Navbar />
       <Header />
       <CountCard />
@@ -31,10 +32,11 @@ export default function Home() {
       <Blog />
       <WebApp />
       <Line/>
-     <Satisfication/>
+     {/* <Satisfication/>
      <Contact/>
      <Adress/> 
-       <Pay/>
+       <Pay/> */}
+      
     </div>
   );
 }

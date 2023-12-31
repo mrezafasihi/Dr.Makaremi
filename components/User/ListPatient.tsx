@@ -1,6 +1,7 @@
 import React from "react";
 import CustomInput from "./CustomInput";
 import CustomButton from "./CustomButton";
+import DatePicker from "./DatePicker";
 
 function ListPatient() {
   const dataPation = [
@@ -8,20 +9,7 @@ function ListPatient() {
     { image: "", name: "محمد جعفری" },
     { image: "", name: "امیر محمدی" },
   ];
-  let arr: any = [];
-  for (let i = 0; i < 3; i++) {
-    for (let j = 0; j <= 9; j++) {
-      if (i == 0 && j == 0) {
-      } else if (i == 0) {
-        arr = [...arr, "0" + j];
-      } else if (i == 1) {
-        arr = [...arr, "1" + j];
-      } else if (i == 2) {
-        arr = [...arr, "2" + j];
-      }
-    }
-  }
-
+  
   return (
     <div>
       <div className="flex justify-between mx-[20%] mt-[3%]">
@@ -68,38 +56,9 @@ function ListPatient() {
               label="کد ملی"
               placeholder="مثال : ۲۲۲۳۳۳۵۰۲۳"
             />
-            <div className="flex md:basis-1/2 w-[393px] justify-between ">
-              <select
-                className="border rounded-[6px] basis-[20%]"
-                name=""
-                id=""
-              >
-                <option value="">01</option>
-                <option value="">02</option>
-              </select>
-              <select className="border rounded-[6px] basis-[50%]" id="">
-                <option value="فروردین">فروردین</option>
-                <option value="اردیبهشت">اردیبهشت</option>
-                <option value="خرداد">خرداد</option>
-                <option value="تیر">تیر</option>
-                <option value="مرداد">مرداد</option>
-                <option value="شهریور">شهریور</option>
-                <option value="مهر">مهر</option>
-                <option value="آبان">آبان</option>
-                <option value="آذر">آذر</option>
-                <option value="دی">دی</option>
-                <option value="بهمن">بهمن</option>
-                <option value="اسفند">اسفند</option>
-              </select>
-              <select
-                className="border rounded-[6px] basis-[20%]"
-                name=""
-                id=""
-              >
-                <option value="">1402</option>
-                <option value="">1403</option>
-              </select>
-            </div>
+            
+              <DatePicker/>
+            
           </div>
           <div className="flex flex-col  md:flex-row justify-center items-center gap-8 ">
             <CustomInput

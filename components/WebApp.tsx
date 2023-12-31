@@ -11,7 +11,7 @@ function WebApp() {
           وب اپلیکیشن دکتر مکارمی قابل نصب بر روی تمامی اپلیکیشن‌ها
         </p>
       </div>
-      <p className="bg-[#45CBC2] mx-auto [@media(min-width:973px)]:absolute top-[60%] left-[20%] [@media(min-width:1110px)]:top-[20%] [@media(min-width:973px)]:bottom-[-10px] [@media(min-width:1110px)]:left-[10%] w-[195px]  text-[20px] px-8 py-8 h-[92px] text-center rounded-[10px] flex justify-center items-center flex-col">
+      <p className="bg-[#45CBC2] mx-auto [@media(min-width:973px)]:absolute top-[60%] left-[20%] [@media(min-width:1110px)]:top-[20%] [@media(min-width:973px)]:bottom-[-10px] [@media(min-width:1110px)]:left-[10%] w-[255px]  text-[20px] px-8 py-8 h-[92px] text-center rounded-[10px] flex justify-center items-center flex-col font-iranSansLight">
         رزرو نوبت آنلاین <span className="block">در وب اپلیکیشن</span>
       </p>
     </div>
