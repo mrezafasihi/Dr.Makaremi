@@ -23,7 +23,7 @@ export default function Home() {
   return (
     <div >
       <Navbar />
-      <Header />
+      <Header  />
       <CountCard />
       <Bio />
       <BusinessDays />

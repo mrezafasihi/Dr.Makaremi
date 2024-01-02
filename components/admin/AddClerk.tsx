@@ -62,7 +62,7 @@ function AddClerk() {
           </svg>
         </div>
       </div>
-      <p className="font-light text-[12px] text-[#757575]">افزودن ادمین جدید</p>
+      <p className="font-iranSansLight opacity-60 mr-[19%] mb-[2%] text-[12px] text-[#757575]">افزودن ادمین جدید</p>
       <div className="flex flex-wrap justify-center  mx-[10%]  ">
         <CustomInput
           label="نام"
@@ -85,9 +85,9 @@ function AddClerk() {
           style="md:w-[37.78%]  w-full md:mt-[3%]"
         />
       </div>
-      <div className={`text-center mt-[4%]`}>
+      <div className={`text-center  mt-[4%]`}>
         <button
-          className={` border-[1px] w-[210px] font-medium text-[14px] border-[#288E87] rounded-[7.98px] px-7 py-4 text-white bg-[#288E87]`}
+          className={` border-[1px] w-[210px] h-[48px] font-iranSansLight text-[16px] border-[#288E87] rounded-[7.98px] px-7  text-white bg-[#288E87]`}
         >
           افزودن منشی
         </button>

@@ -95,7 +95,7 @@ function index() {
   return (
     <Layout>
       <div className="flex  flex-col w-[84.45%] mx-auto ">
-        <p className="text-[#45CBC2] font-bold my-[35px] ">بیماران من</p>
+        <p className="text-[#45CBC2] font-iranSansBold my-[35px] ">بیماران من</p>
         <Link className="flex mb-[15px] items-center" href={"/admin/newfile"}>
           <div className="border border-[#EDEDEE] p-2 rounded ">
             <svg
@@ -112,28 +112,28 @@ function index() {
             </svg>
           </div>
 
-          <p className="text-[#064247] mr-[1.5%]">تشکیل پرونده جدید</p>
+          <p className="text-[#064247] font-iranSansLight text-[14px] mr-[1.5%]">تشکیل پرونده جدید</p>
         </Link>
-        <p className="text-[#757575] mb-2">
+        <p className="text-[#757575] font-iranSansLight text-[12px] mb-2">
           برای مشاهده و ویرایش پرونده روی آن کلیک کنید
         </p>
-        <div className=" overflow-y-auto flex flex-col  h-[791px] w-full  gap-[14px]">
+        <div style={{direction:"ltr"}} className=" overflow-y-auto flex flex-col  h-[791px] w-full  gap-[14px] mb-[10%]">
           {dataPatients.map((item: any) => {
             return (
               <Link href={`/admin/${item.id}`}>
-                <div className="flex justify-between max-w-[856px]  border border-[#CBCBCB] rounded-lg h-[101px] items-center px-4 py-4 ">
-                  <div className="flex items-center basis-[15%]">
+                <div  className="flex justify-between max-w-[856px]  border border-[#CBCBCB] rounded-lg h-[101px] items-center px-4 py-4 ">
+                  <div className="flex items-center basis-[18%] ">
                     <CustomeImage img={item.img} style="w-[48px] h-[49px]" />
-                    <div className="flex flex-col ">
-                      <h6 className="text-[#064247] font-medium ">
+                    <div className="flex flex-col flex-grow items-center">
+                      <h6 className="text-[#064247] font-iranSansMedium text-[14px] ">
                         {item.name}
                       </h6>
-                      <p className="flex flex-col items-center font-light text-xs">
+                      <p className="flex flex-col items-center font-iranSansLight text-[12px] text-[#757575] ">
                         شماره پرونده<span>{item.num}</span>
                       </p>
                     </div>
                   </div>
-                  <div className="flex flex-col text-[#757575] font-light text-[12px]">
+                  <div className="flex flex-col text-[#757575] font-iranSansLight text-[12px]">
                     <p className="">آخرین تاریخ مراجعه</p>
                     <p>{item.date}</p>
                   </div>

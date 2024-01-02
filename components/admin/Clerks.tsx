@@ -16,13 +16,13 @@ function Clerks() {
     { name: "امیر رئیسی", image: "/images/landin/smiling.png" },
   ];
   return (
-    <div className=" flex flex-col overflow-y-auto gap-[14px] h-[331px] mx-[5%]">
+    <div style={{direction:"ltr"}} className=" flex flex-col overflow-y-auto gap-[14px] h-[331px] ml-[11.73%] mb-[17%]">
       {dataClerk.map((item) => {
         return (
-          <div className="max-w-[856px] border flex items-center justify-between h-[101px] px-4 py-4 rounded-lg">
+          <div className="max-w-[856px] border flex items-center justify-between h-[101px] px-4 py-6 rounded-lg">
             <div className="flex items-center">
               <CustomeImage img={item.image} style="w-[48px] h-[49px]" />
-              <p>{item.name}</p>
+              <p className="text-[#064247] opacity-80">{item.name}</p>
             </div>
             <div className="flex">
               <svg

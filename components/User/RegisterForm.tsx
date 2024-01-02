@@ -11,7 +11,7 @@ function RegisterForm() {
         { image: "", name: "محمد جعفری" },
         { image: "", name: "امیر محمدی" },
       ];
-      const {register,handlesubmit}=useForm()
+    //   const {register,handlesubmit}=useForm()
       const confirm =(date:any)=>{
         console.log(date)
       }
@@ -112,7 +112,7 @@ function RegisterForm() {
           <CustomButton
             text="رزرو نوبت"
             style="text-white bg-[#288E87] mt-[30%] mb-[20%]"
-            onClick={handlesubmit(confirm)}
+            // onClick={handlesubmit(confirm)}
           />
         </div>
       </div>
