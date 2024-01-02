@@ -20,7 +20,7 @@ function Header() {
       
       onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={() => console.log("slide change")}
-      direction={'vertical'}
+      // direction={'vertical'}
      
     >
       <SwiperSlide className=" bg-oldMan text-white bg-[length:1440px_700px] bg-no-repeat  ">

@@ -4,11 +4,11 @@ import TextField from "@mui/material/TextField";
 
 function Adress() {
   return (
-    <div style={{ backgroundImage: `url(images/landin/clinic.png)`}} className="py-[51px] bg-cover mt-[12%] sm:bg-cover xl:bg-cover">
+    <div style={{ backgroundImage: `url(images/landin/clinic.png)`}} className="py-[51px] bg-full mt-[12%] sm:bg-full xl:bg-full">
  
  
-      <div className=" h-[25%] flex justify-between px-[108px]">
-        <div className="flex flex-col justify-center flex-1">
+      <div className=" h-[25%] flex justify-between">
+        <div className="flex flex-col justify-center flex-1 mr-[5%]">
           <div>
             <p className="text-[#fff] text-right font-IRANSansXFaNum text-[24px] font-[700] mb-[5%] ">
               آدرس و شمارۀ تلفن
@@ -145,7 +145,7 @@ function Adress() {
             width="360"
             height="290"
             loading="lazy"
-            className="rounded-[10px]"
+            className="rounded-[10px] ml-[10%]"
           ></iframe>
         </div>
       </div>

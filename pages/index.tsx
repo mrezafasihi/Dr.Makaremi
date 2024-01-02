@@ -32,10 +32,10 @@ export default function Home() {
       <Blog />
       <WebApp />
       <Line/>
-     {/* <Satisfication/>
+     <Satisfication/>
      <Contact/>
      <Adress/> 
-       <Pay/> */}
+       {/* <Pay/> */}
       
     </div>
   );

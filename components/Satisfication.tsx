@@ -29,12 +29,12 @@ function Satisfication() {
   ];
 
   return (
-    <div>
+    <div className=" sm:mr-[15%]">
       <Swiper modules={[A11y]} spaceBetween={50} slidesPerView={1}>
         {costomer.map((item) => {
           return (
             <SwiperSlide>
-              <div className="flex md:flex-row flex-col mx-[10%] md:justify-evenly ">
+              <div className="flex md:flex-row flex-col mx-[10%] md:justify-evenly  ">
                   <div className="bg-[#ededee] sm:rounded-full rounded-full w-[258px] h-[258px] mt-[8] justify-center">
                     <img
                       className="rounded-full sm:rounded-full"

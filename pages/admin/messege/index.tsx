@@ -103,12 +103,12 @@ function index() {
   ];
   return (
     <Layout>
-      <div className=" flex flex-col justify-center w-[84.45%] mx-auto">
+      <div className=" flex flex-col justify-center w-[84.45%] mx-auto ">
         
         {member.map((item) => {
           return (
             <Link href={`/admin/messege/${item.id}`}>
-            <div className="max-w-[875px] h-[90px] borde-[.5px]  border-stone-200 mt-[10px] flex justify-between">
+            <div className="max-w-[875px] h-[90px] border-gray-200 border-[1px]  mt-[10px] flex justify-between rounded-md">
                 
               <div className="flex flexcol mt-[2%] mr-[2%] w-[35%]" >
                 <img className="w-[63px] h-[63px] rounded-full bg-zinc-100" src={item.img} alt="img" />
