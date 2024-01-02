@@ -12,7 +12,7 @@ function Navbar() {
     setValueSelectOption(value);
   };
   return (
-    <div className="flex  justify-end items-center border-b-2 mt-[2%] pb-[2%]">
+    <div className="flex  justify-end items-center border-b-[1px] mt-[2%] pb-[2%]">
       <div className="ml-6">
       <svg
         width="24"

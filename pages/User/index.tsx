@@ -7,10 +7,11 @@ import React, { useEffect, useState } from "react";
 import Slide from "@mui/material/Slide";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
+import { useRouter } from "next/router";
 
 const icon = (
   <div className="flex items-center justify-center my-[-220px] z-10">
-    <Modal />
+    <Modal  text="رمز عبور موقت برای شما پیامک شد"/>
   </div>
 );
 
@@ -20,24 +21,28 @@ function userPanel() {
   const [isClient, setIsClient] = useState(false);
   const [checkPass, setCheckPass] = useState(false);
   const [pass, setPass] = useState("");
- const [token,setToken]=useState("")
+ const  [token,setToken]=useState("")
+ const router=useRouter()
   useEffect(() => {
     setIsClient(true);
   }, []);
   const sendPhone = () => {
     if (checkPass) {
       axios
-        .post("https://drmakaremi.v1r.ir/api/check-pass", {
+        .post("http://drmakaremi.v1r.ir/api/check-pass", {
           phone_number: phone,
           password: pass,
         })
         .then((res: any) => {
-          setToken(res.data.data.token);
+          // setToken(res.data.data.token);
+          localStorage.setItem("myTest", res.data.data.token);
+          
+          router.push("/user/reservation/register")
         }).catch((error)=>console.log(error))
     } else {
       if (phone.length == 11 && phone[0] == "0") {
         axios
-          .post("https://drmakaremi.v1r.ir/api/login", {
+          .post("http://drmakaremi.v1r.ir/api/login", {
             phone_number: phone,
           })
           .then((res: any) => {

@@ -1,26 +1,31 @@
-import React from "react";
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+import React, { useRef } from "react";
+import { Autoplay,Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 function Header() {
+  // const test=window.localStorage.getItem("mytest");
+ 
   return (
     <Swiper
+    
       className="h-[screen] lg:h-[700px] -z-10"
       autoplay={{
-        delay: 2500,
+        delay: 3000,
         disableOnInteraction: false,
+        
+        
       }}
+      
       effect={'fade'}
       centeredSlides={true}
-      modules={[Navigation, Pagination, Scrollbar, A11y]}
+      modules={[Autoplay,Navigation, Pagination, Scrollbar, A11y]}
       spaceBetween={0}
       slidesPerView={1}
       pagination={{ clickable: true }}
+      loop={true}
       
       
-      onSwiper={(swiper) => console.log(swiper)}
-      onSlideChange={() => console.log("slide change")}
-      direction={'vertical'}
+     
      
     >
       <SwiperSlide className=" bg-oldMan text-white bg-[length:1440px_700px] bg-no-repeat  ">

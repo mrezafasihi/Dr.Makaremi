@@ -1,28 +1,40 @@
-import React from "react";
+import React, { useRef } from "react";
 import { BsPlusCircleFill } from "react-icons/bs";
 import { IoMenu } from "react-icons/io5";
 import Logo from "./Logo";
+import Link from "next/link";
 
-function Navbar() {
+function Navbar({ref}:any) {
+const home:any=useRef(null)
+const satisfication=useRef(null)
+const insurance=useRef(null)
+const contactUs=useRef(null)
+const blog=useRef(null)
+const register=useRef(null)
+// localStorage.setItem("myTest", home);
+const scroll:any=(elementRef:any)=>{
+window.scrollTo({top:elementRef.current.offsetTop,behavior:"smooth"})
+}
+
   return (
-    <nav className="  flex  justify-between text-center font-iranSans items-center  py-10  fixed z-10 backdrop-blur-sm backdrop-filter  w-full ">
-      <div className=" mx-[7.56%]">
-        <img src="/images/logoo.png" className=" w-[66.687px] h-[48px] z-[1]" />
-        <div className=" z-10 absolute top-[65%] bg-inherit">
+    <nav className="  flex  justify-between  font-iranSans items-center  py-10  fixed z-10 backdrop-blur-sm backdrop-filter  w-full">
+      <div className="  flex flex-col justify-center mr-[7.56%]">
+        <img src="/images/logoo.png" className=" w-[66.687px] h-[48px] z-[1] flex justify-center" />
+        <div className=" z-10  bg-inherit">
           <p className="text-white my-[-10px] z-10 ">چشم پزشکی</p>
-          <span className="text-[#45CBC2]">مکارمی</span>
+          <span className="text-[#45CBC2] flex justify-center">مکارمی</span>
         </div>
       </div>
-      <ul className="hidden lg:font-medium	 lg:flex lg:justify-center text-white w-[60%] lg:gap-[6%] basis-[57%]">
-        <li className="hover:bg-[#45CBC2] rounded-lg">خانه</li>
-        <li className="hover:bg-[#45CBC2] rounded-lg">رضایت مراجعان</li>
-        <li className="hover:bg-[#45CBC2] rounded-lg">بیمه های طرف قرارداد</li>
-        <li className="hover:bg-[#45CBC2] rounded-lg">تماس با ما</li>
-        <li className="hover:bg-[#45CBC2] rounded-lg">بلاگ</li>
-        <li className="hover:bg-[#45CBC2] rounded-lg">ورود / عضویت</li>
+      <ul className="hidden lg:font-medium	 lg:flex lg:justify-center text-white  lg:gap-[1%] basis-[57%]">
+        <li onClick={()=>scroll({ref})} className="hover:bg-[#45CBC2] rounded-lg px-[1.4%] py-[1.5%] flex justify-center items-center ">خانه</li>
+        <li onClick={()=>scroll(satisfication)} className="hover:bg-[#45CBC2] rounded-lg px-[1.4%] py-[1.5%] flex justify-center items-center ">رضایت مراجعان</li>
+        <li onClick={()=>scroll(insurance)} className="hover:bg-[#45CBC2] rounded-lg px-[1.4%] py-[1.5%] flex justify-center items-center ">بیمه های طرف قرارداد</li>
+        <li onClick={()=>scroll(contactUs)} className="hover:bg-[#45CBC2] rounded-lg px-[1.4%] py-[1.5%] flex justify-center items-center ">تماس با ما</li>
+        <li onClick={()=>scroll(blog)} className="hover:bg-[#45CBC2] rounded-lg px-[1.4%] py-[1.5%] flex justify-center items-center ">بلاگ</li>
+        <Link onClick={()=>scroll(register)} href="/user" className="hover:bg-[#45CBC2] rounded-lg px-[1.4%] py-[1.5%] flex justify-center items-center ">ورود / عضویت</Link>
       </ul>
-      <div className="flex justify-end items-center w-[90%] lg:w-[20%]">
-        <button className="flex bg-[#45CBC2] w-[149px] h-[44px]  justify-center items-center text-white rounded-lg hover:bg-[#D6F3F1] hover:text-[#064247] group">
+      <div className="flex  items-center ml-[2%] lg:ml-[7.56%] ">
+        <Link href="./user" className="flex bg-[#45CBC2] w-[149px] h-[44px]  justify-center items-center text-white rounded-lg hover:bg-[#D6F3F1] hover:text-[#064247] group">
           <div className="rounded-full bg-white hover:bg-[#45CBC2]  flex items-center group-hover:bg-[#45CBC2]">
           <svg
             className="z-10"
@@ -48,10 +60,10 @@ function Navbar() {
             />
           </svg>
           </div>
-          <span className="flex mx-[8px] font-iranSansMedium">
+          <span className="flex mr-[8px] font-iranSansLight">
             درخواست نوبت{" "}
           </span>
-        </button>
+        </Link>
         <div className="lg:hidden">
           <IoMenu style={{ fontSize: "2rem" }} />
         </div>
