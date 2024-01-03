@@ -307,7 +307,7 @@ function turnraiting() {
             </p>
           </div>
         </div>
-        <p className="text-[] text-[16px]">اطلاعات ثبت نوبت برای سرکار خانم ستایش الوندی</p>
+        <p className="text-[] text-[16px]">  اطلاعات ثبت نوبت برای سرکار خانم</p>
     </Layout>
   );
 }
