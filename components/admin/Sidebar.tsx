@@ -4,8 +4,9 @@ import React, { useState } from "react";
 import Logo from "../Logo";
 import { usePathname } from "next/navigation";
 import { title } from "process";
+import path from "path";
 
-function Sidebar({}: any) {
+function Sidebar() {
   let stroke = "stroke-[#288E87]";
   const [subMenuOpen, setSubMenuOpen] = useState(false);
   const [value, setValue] = useState();
@@ -22,8 +23,8 @@ function Sidebar({}: any) {
         >
           <path
             className={`group-hover:stroke-white ${
-              pathName?.includes("/admin") ||
-              pathName?.match(`/^\/${"admin"}\/.*[a-zA-Z0-9]/`)
+              pathName?.includes("/admin/myPatient") 
+              
                 ? "stroke-white"
                 : stroke
             }`}
@@ -35,8 +36,8 @@ function Sidebar({}: any) {
           />
           <path
             className={`group-hover:stroke-white ${
-              pathName?.includes("/admin") ||
-              pathName?.match(`/^\/${"admin"}\/.*[a-zA-Z0-9]/`)
+              pathName?.includes("/admin/myPatient") 
+              
                 ? "stroke-white"
                 : stroke
             }`}
@@ -47,9 +48,9 @@ function Sidebar({}: any) {
             stroke-linejoin="round"
           />
           <path
-            className={`group-hover:stroke-white ${
-              pathName?.includes("/admin") ||
-              pathName?.match(`/^\/${"admin"}\/.*[a-zA-Z0-9]/`)
+             className={`group-hover:stroke-white ${
+              pathName?.includes("/admin/myPatient") 
+              
                 ? "stroke-white"
                 : stroke
             }`}
@@ -60,9 +61,9 @@ function Sidebar({}: any) {
             stroke-linejoin="round"
           />
           <path
-            className={`group-hover:stroke-white ${
-              pathName?.includes("/admin") ||
-              pathName?.match(`/^\/${"admin"}\/.*[a-zA-Z0-9]/`)
+             className={`group-hover:stroke-white ${
+              pathName?.includes("/admin/myPatient") 
+              
                 ? "stroke-white"
                 : stroke
             }`}
@@ -76,7 +77,7 @@ function Sidebar({}: any) {
       ),
 
       title: "بیماران من",
-      path: `/admin`,
+      path: `/admin/myPatient`,
     },
     {
       icon: (
@@ -157,8 +158,8 @@ function Sidebar({}: any) {
         >
           <path
             className={`group-hover:stroke-white ${
-              pathName?.includes("/admin/reservation") ||
-              pathName?.match(`/^\/${"/admin/statistics"}\/.*[a-zA-Z0-9]/`)
+              pathName?.includes("/admin/reservation") 
+              
                 ? "stroke-white"
                 : stroke
             }`}
@@ -355,7 +356,7 @@ function Sidebar({}: any) {
         >
           <path
             className={`group-hover:stroke-white ${
-              pathName === "/admin" ? "stroke-white" : stroke
+              pathName === "/admin/messege" ? "stroke-white" : stroke
             }`}
             d="M22 6.75V11.85C22 13.12 21.58 14.19 20.83 14.93C20.09 15.68 19.02 16.1 17.75 16.1V17.91C17.75 18.59 16.99 19 16.43 18.62L15.46 17.98C15.55 17.67 15.59 17.33 15.59 16.97V12.9C15.59 10.86 14.23 9.5 12.19 9.5H5.39999C5.25999 9.5 5.13 9.51002 5 9.52002V6.75C5 4.2 6.7 2.5 9.25 2.5H17.75C20.3 2.5 22 4.2 22 6.75Z"
             stroke="#288E87"
@@ -365,9 +366,9 @@ function Sidebar({}: any) {
             stroke-linejoin="round"
           />
           <path
-            className={`group-hover:stroke-white ${
-              pathName === "/admin" ? "stroke-white" : stroke
-            }`}
+           className={`group-hover:stroke-white ${
+            pathName === "/admin/messege" ? "stroke-white" : stroke
+          }`}
             d="M15.59 12.9V16.97C15.59 17.33 15.55 17.67 15.46 17.98C15.09 19.45 13.87 20.37 12.19 20.37H9.47L6.45 22.38C6 22.69 5.39999 22.36 5.39999 21.82V20.37C4.37999 20.37 3.53 20.03 2.94 19.44C2.34 18.84 2 17.99 2 16.97V12.9C2 11 3.18 9.69002 5 9.52002C5.13 9.51002 5.25999 9.5 5.39999 9.5H12.19C14.23 9.5 15.59 10.86 15.59 12.9Z"
             stroke="#288E87"
             stroke-width="1.5"
@@ -471,7 +472,7 @@ function Sidebar({}: any) {
         </svg>
       ),
       title: "نظرات کاربران",
-      path: "/admin/vote",
+      path: "/admin/liara deploy --debug",
     },
     {
       icon: (
@@ -594,7 +595,7 @@ function Sidebar({}: any) {
       path: "",
       subMenu: true,
       subMenuItems: [
-        { title: "بیوگرافی دکتر", path: "/admin/changeInfo/bio" },
+        { title: "بیوگرافی دکتر", path: "/admin/changeInfo/Biografi" },
         { title: "روزهای کاری مطب", path: "" },
         { title: "بیمه‌های طرف قرارداد", path: "/admin/changeInfo/insurance" },
         { title: "سوالات متداول", path: "/admin/changeInfo/commonQ" },
@@ -636,7 +637,7 @@ function Sidebar({}: any) {
         </svg>
       ),
       title: "خروج از حساب کاربری",
-      path: "//",
+      path: "/admin/1",
     },
   ];
   const route = useRouter();
@@ -651,21 +652,23 @@ function Sidebar({}: any) {
         </Link>
       </div>
       <div className="flex flex-col justify-between h-fit mt-[9%] ">
-        {layoutData.map((item, index) => {
+        {layoutData.map((item: any, index) => {
+          const test = pathName?.includes(item.path);
+
+        
           {
-            pathName?.includes(item.path) ||
-            pathName?.match(`^\/${item.path}(\/[a-zA-Z0-9]+)?$`)
-              ? (style = "bg-[#288E87]  text-white  ")
+            pathName?.includes(item.path) 
+              ? // ||
+                // pathName?.match(`^\/${item.path}(\/[a-zA-Z0-9]+)?$`)
+                (style = "bg-[#288E87]  text-white  ")
               : (style = "");
             // if(index==layoutData.length-1){
             //   color="text-[#C70000]"
             // }
-            //  const test=pathName?.includes(item.path)||pathName?.match(`/^\/${item.path}\/.*/`)
-            //  console.log(test)
           }
 
           return (
-            <div className="flex flex-col mr-[5%]  ml-[5%]  flex-1      group">
+            <div className="flex flex-col mr-[5%]  ml-[5%] my-[2%] flex-1      group">
               {item.subMenu ? (
                 <>
                   <div
@@ -678,7 +681,7 @@ function Sidebar({}: any) {
                   </div>
 
                   {subMenuOpen &&
-                    item.subMenuItems?.map((item) => {
+                    item.subMenuItems?.map((item: any) => {
                       return (
                         <Link
                           href={item.path}
@@ -691,7 +694,7 @@ function Sidebar({}: any) {
                 </>
               ) : (
                 <Link
-                  className={`flex h-[57px] items-center rounded-lg font-iranSansLight hover:bg-[#288E87] hover:text-white hover:rounded-lg ${
+                  className={`flex h-[57px] max-w-[298px] items-center rounded-lg font-iranSansLight hover:bg-[#288E87] hover:text-white hover:rounded-lg ${
                     index == layoutData.length - 1 && "text-[#C70000]"
                   }  ${style}`}
                   href={item.path}

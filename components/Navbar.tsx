@@ -17,7 +17,7 @@ window.scrollTo({top:elementRef.current.offsetTop,behavior:"smooth"})
 }
 
   return (
-    <nav className="  flex  justify-between  font-iranSans items-center  py-10  fixed z-10 backdrop-blur-sm backdrop-filter  w-full">
+    <nav className="  flex  justify-between  font-iranSans items-center  py-10  fixed z-10 backdrop-blur-md   backdrop-filter  w-full">
       <div className="  flex flex-col justify-center mr-[7.56%]">
         <img src="/images/logoo.png" className=" w-[66.687px] h-[48px] z-[1] flex justify-center" />
         <div className=" z-10  bg-inherit">

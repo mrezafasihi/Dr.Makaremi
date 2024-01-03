@@ -50,7 +50,7 @@ function PatientInfo() {
             alt=""
           />
         </div>
-        <p className="text-[#288E87]">آنلاین</p>
+        
       </div>
       <div className="flex flex-col items-center">
         <p className="text-[#064247] font-bold text-[24px] mt-[-10%] mb-[10%]">امیر رئیسی</p>

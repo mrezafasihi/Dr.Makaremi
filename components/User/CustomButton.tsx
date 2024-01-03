@@ -3,7 +3,7 @@ import React, { MouseEventHandler } from "react";
 interface Props {
   onClick?: MouseEventHandler;
 }
-function CustomButton({ text,style,styleContainer }: any,{onClick}:Props) {
+function CustomButton({ text,style,styleContainer,onClick }: any) {
   return (
     <div className={`text-center ${styleContainer}`}>
       <button

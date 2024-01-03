@@ -1,12 +1,13 @@
 import React, { use, useEffect, useState } from "react";
 import Logo from "../Logo";
 import { BsPlusCircleFill } from "react-icons/bs";
+import Link from "next/link";
 
 function NavbarConfirm() {
   const arrayNum: any = [
     { id: 1, name: " فائزه ملکی", img: "/images/landin/Beautiful.png" },
     { id: 2, name: "حسين ملکی", img: "/images/landin/smiling.png" },
-    { id: 3, name: "هرچیی", img: "/images/landin/young_man.png" },
+    { id: 3, name: "امیر محمدی", img: "/images/landin/young_man.png" },
   ];
   const [valueSelectOption, setValueSelectOption] = useState(arrayNum[0].img);
   const handleSelect = (value: any) => {
@@ -26,14 +27,14 @@ function NavbarConfirm() {
   return (
     <div className="flex justify-between mx-[5%] items-center mt-[32px] ">
       <Logo />
-      <ul className="flex justify-between basis-[22%] font-medium mr-[8%] ">
-        <li>خانه</li>
-        <li>پرونده من</li>
-        <li className="text-[#288E87]">رزرو نوبت</li>
+      <ul className="flex justify-between basis-[28.96%] font-medium mr-[8%] ">
+        <Link href={"/"}>خانه</Link>
+        <Link href={"/user/reservation/Fainalpay"}>پرونده من</Link>
+        <Link href={"/user/reservation"} className="text-[#288E87]">رزرو نوبت</Link>
         <li>ارسال پیام</li>
       </ul>
-      <div className="flex items-center justify-between basis-[17%]">
-        <div className="flex">
+      <div className="flex items-center justify-between basis-[18.25%]">
+        <div className="flex ml-[4%]">
           <div className="bg-[#ededee] rounded-full">
             <img
               className="w-[60px] rounded-full"
@@ -42,7 +43,7 @@ function NavbarConfirm() {
             />
           </div>
           <select
-            className="text-[#064247] mr-1 bg-white border-none"
+            className="text-[#064247] mr-1 bg-white border-none w-[88px]"
             onChange={(e) => handleSelect(e.target.value)}
           >
             {arrayNum.map((item: any) => {
@@ -50,7 +51,7 @@ function NavbarConfirm() {
             })}
           </select>
         </div>
-        <div className="w-[0.04px] h-[50px] bg-black " />
+        <div className="w-[0.04px] h-[50px] bg-black ml-[4%]" />
         <div className="flex items-center  ">
           <svg
             width="16"
@@ -58,6 +59,7 @@ function NavbarConfirm() {
             viewBox="0 0 16 17"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
+            
           >
             <path
               d="M5.93335 5.54016C6.14002 3.14016 7.37335 2.16016 10.0733 2.16016H10.16C13.14 2.16016 14.3334 3.35349 14.3334 6.33349V10.6802C14.3334 13.6602 13.14 14.8535 10.16 14.8535H10.0733C7.39335 14.8535 6.16002 13.8868 5.94002 11.5268"
@@ -81,7 +83,7 @@ function NavbarConfirm() {
               stroke-linejoin="round"
             />
           </svg>
-          <p className="mr-1">خروج</p>
+          <p className="mr-2 font-iranSansLight">خروج</p>
         </div>
       </div>
     </div>

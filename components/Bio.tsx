@@ -1,9 +1,9 @@
 function Bio() {
   return (
-    <div>
+    <div className="mt-[4%]">
       <div className="flex mx-[10%] justify-between ">
         <div className="flex flex-col  basis-full sm:basis-2/3">
-          <h6 className="border-r-[1px] text-2xl px-2 font-bold  border-[#288E87] text-[#064247]">
+          <h6 className="border-r-[1px] text-2xl px-2 font-bold  border-[#288E87] text-[#064247] font-iranSansBold">
             بیوگرافی
           </h6>
           <p className="text-[#288E87] text-xl mx-4  my-4 md:my-8">

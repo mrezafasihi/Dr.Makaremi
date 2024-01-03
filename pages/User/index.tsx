@@ -27,6 +27,7 @@ function userPanel() {
     setIsClient(true);
   }, []);
   const sendPhone = () => {
+    console.log("first")
     if (checkPass) {
       axios
         .post("http://drmakaremi.v1r.ir/api/check-pass", {
@@ -41,6 +42,7 @@ function userPanel() {
         }).catch((error)=>console.log(error))
     } else {
       if (phone.length == 11 && phone[0] == "0") {
+        console.log("first")
         axios
           .post("http://drmakaremi.v1r.ir/api/login", {
             phone_number: phone,

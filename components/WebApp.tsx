@@ -3,11 +3,11 @@ import React from "react";
 function WebApp() {
   return (
     <div className=" relative">
-      <div className="w-[85%] min-h-[166px] mt-[9%]  border-t-[#45CBC2] border-b-[#45CBC2] border-l-[#45CBC2] font-kalameh text-[#064247]   font-bold rounded-tl-[8px] rounded-bl-[8px] border-[1px]">
-        <p className="mx-[7.5%] text-[32px]  my-[2%]">
+      <div className="w-[85%] min-h-[166px] mt-[9%]  border-t-[#45CBC2] border-b-[#45CBC2] border-l-[#45CBC2]  text-[#064247]   font-bold rounded-tl-[8px] rounded-bl-[8px] border-[1px]">
+        <p className="mx-[7.5%] text-[32px]  my-[2%] font-kalameh">
           هم اکنون عضو خانوادۀ بزرگ کلینیک دکتر مکارمی شوید!
         </p>
-        <p className="mx-[7.5%] text-[20px]  ">
+        <p className="mx-[7.5%] text-[20px]  font-iranSansMedium">
           وب اپلیکیشن دکتر مکارمی قابل نصب بر روی تمامی اپلیکیشن‌ها
         </p>
       </div>

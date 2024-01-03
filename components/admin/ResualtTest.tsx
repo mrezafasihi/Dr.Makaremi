@@ -2,16 +2,16 @@ import React from "react";
 
 function ResualtTest() {
   const medicalTest = [
-    { title: "اپتومتیک", date: "۱۴۰۲/۰۲/۲۸" },
-    { title: "آزمایش فشار چشم", date: "۱۴۰۲/۰۲/۱۰" },
-    { title: "عکس‌برداری", date: "۱۴۰۲/۰۲/۰۶" },
+    { title: "اپتومتیک", date:"1402 / 02 / 28" },
+    { title: "آزمایش فشار چشم", date: "1402 / 02 / 10" },
+    { title: "عکس‌برداری", date: "1402 / 02 / 06" },
   ];
   return (
     <div className="border  border-[#EDEDEE] rounded-[11.94px] text-center w-[482px] h-[189px] overflow-y-auto ">
       <table className=" w-full h-full">
         <thead className="even:bg-black h-[46px]">
           <tr className="w-full">
-            <th className="text-right font-medium text-[12px] text-[#064247] pr-[5%]">
+            <th className="text-right font-iranSansMedium text-[12px] text-[#064247] pr-[5%]">
               نتایج آزمایشات
             </th>
             <th></th>
@@ -24,6 +24,7 @@ function ResualtTest() {
                   viewBox="0 0 13 12"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
+                  className="ml-[5%]"
                 >
                   <path
                     d="M11.9482 6.8251H7.68252V11.0908C7.68252 11.56 7.29861 11.9439 6.82938 11.9439C6.36016 11.9439 5.97625 11.56 5.97625 11.0908V6.8251H1.71056C1.24133 6.8251 0.857422 6.44119 0.857422 5.97196C0.857422 5.50274 1.24133 5.11883 1.71056 5.11883H5.97625V0.853138C5.97625 0.383912 6.36016 0 6.82938 0C7.29861 0 7.68252 0.383912 7.68252 0.853138V5.11883H11.9482C12.4174 5.11883 12.8013 5.50274 12.8013 5.97196C12.8013 6.44119 12.4174 6.8251 11.9482 6.8251Z"
@@ -39,10 +40,10 @@ function ResualtTest() {
           {medicalTest.map((item) => {
             return (
               <tr className=" text-right  odd:bg-[#f3fffe] ">
-                <td className="  pr-[4.9%]">{item.title}</td>
-                  <td className=" pr-[5%]">{item.date}</td>
-                  <td className=" pr-[9%]">مشاهده</td>
-                  <td className=" pr-[70%] flex  justify-center h-full flex-col">
+                <td className=" text-[#757575]  pr-[4.9%] text-[12px]">{item.title}</td>
+                  <td style={{direction:"ltr"}} className="text-[#757575] font-iranSansLight pr-[5%] text-[12px] ">{item.date}</td>
+                  <td className="text-[#0D0630] pr-[9%] opacity-80 text-[12px] font-iranSansMedium">مشاهده</td>
+                  <td className=" pr-[50%]  flex  justify-center items-center h-full flex-col ">
                     <svg
                       width="16"
                       height="16"
@@ -90,7 +91,7 @@ function ResualtTest() {
                         stroke-linejoin="round"
                       />
                     </svg>
-                    <p className="text-[#C70000] text-[10px] font-light">حذف</p>
+                    <p className="text-[#C70000] text-[10px] font-iranSansLight">حذف</p>
                   </td>
               </tr>
             );

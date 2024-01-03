@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
-import NavHead from "@/components/Nav-Head";
+
 import CountCard from "@/components/CountCard";
-import Background from "@/components/Background";
+
 import Content from "@/components/Content";
 import Bio from "@/components/Bio";
 import BusinessDays from "@/components/BusinessDays";
@@ -21,9 +21,9 @@ import Pay from "./user/reservation/pay";
 import { CChart } from "@coreui/react-chartjs";
 export default function Home() {
   return (
-    <div >
+    <div>
       <Navbar />
-      <Header  />
+      <Header />
       <CountCard />
       <Bio />
       <BusinessDays />
@@ -31,12 +31,10 @@ export default function Home() {
       <Question />
       <Blog />
       <WebApp />
-      <Line/>
-     <Satisfication/>
-     <Contact/>
-     <Adress/> 
-       {/* <Pay/> */}
-      
+      <Line />
+      <Satisfication />
+      <Contact />
+      <Adress />
     </div>
   );
 }
