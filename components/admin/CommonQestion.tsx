@@ -28,7 +28,7 @@ function CommonQestion() {
     },
   ];
   return (
-    <div className="flex flex-col h-[476px] overflow-auto  max-w-[824px] justify-between gap-[5%]">
+    <div style={{direction:"ltr"}} className="flex flex-col h-[476px] overflow-auto  max-w-[824px] justify-between gap-[5%]">
       {dataCommonQ.map((item) => {
         return (
           <div className="flex flex-col h-[167px] max-w-[802px] justify-between ">
