@@ -4,13 +4,14 @@ import PatientInfo from "@/components/admin/PatientInfo";
 import PersonalInfoPatient from "@/components/admin/PersonalInfoPatient";
 import ResualtTest from "@/components/admin/ResualtTest";
 import TableVisit from "@/components/admin/TableVisit";
+import Link from "next/link";
 
 function PatientId() {
   return (
     <Layout>
       <div>
         <div className="flex items-center mb-[2%] mt-[4%] mr-[6%]">
-          <p className="ml-[1%] text-[#45CBC2] font-bold">بیماران من</p>
+          <Link href={"/admin/myPatient"} className="ml-[1%] text-[#45CBC2] font-bold">بیماران من</Link>
           <svg
             width="9"
             height="13"
