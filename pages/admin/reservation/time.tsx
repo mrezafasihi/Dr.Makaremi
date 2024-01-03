@@ -5,6 +5,7 @@ import { Calendar } from "react-modern-calendar-datepicker";
 import { utils } from "react-modern-calendar-datepicker";
 import NavbarConfirm from "@/components/user/NavbarConfirm";
 import Layout from "../Layout";
+import Link from "next/link";
 
 function time() {
   const hour = [
@@ -62,8 +63,28 @@ function time() {
   }
   return (
     <Layout>
-     
+     <div className="flex items-center mb-[2%] mt-[4%] mr-[6%]">
+          <Link href={"/admin/reservation"} className="ml-[1%] text-[#45CBC2] font-bold">نوبت دهی</Link>
+          <svg
+            width="9"
+            height="13"
+            viewBox="0 0 9 13"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8 1L2 6.5L8 12"
+              stroke="#288E87"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+          </svg>
+          <p className="mr-[1%] text-[#757575] font-bold text-[20px]">
+             ستایش الوندی
+          </p>
+        </div>
       <div className="flex h-[200px] relative justify-center mt-[8%]  ">
+      
         <div className="relative left-[15%] top-[12%]">
           <svg
             className="absolute right-[21px] top-[12px] z-10"

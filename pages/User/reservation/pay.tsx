@@ -8,7 +8,7 @@ function Pay() {
   return (
     <div>
       <NavbarConfirm />
-      <Paymenticon />
+      <Paymenticon/>
       <Information />
     </div>
   );
