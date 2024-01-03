@@ -1,11 +1,12 @@
 import React from "react";
 import Layout from "./Layout";
 import CustomInput from "@/components/user/test";
+import DatePicker from "@/components/user/DatePicker";
 
 function newfile() {
   return (
     <Layout>
-      <div className="flex flex-col mr-[10%]">
+      <div className="flex flex-col mr-[10%] mt-[3%]">
         <div className="flex items-center">
           <p className="text-[#45CBC2] max-w-[71px] h-[24px] text-[16px] ">
             بیماران من
@@ -54,41 +55,44 @@ function newfile() {
               placeholder="مثال : 0123456789"
               style="text-[12px] w-[393px]"
             />
-            <p className="text-[#757575] text-[14px]">تاریخ تولد</p>
-            <input type="text" />
+           <div className="flex flex-col">
+           <p className="text-[#757575] text-[14px] mb-[3%]">تاریخ تولد</p>
+           <DatePicker/>
+           </div>
           </div>
-          <div className="flex justify-between ml-[30%] mt-[3%] ">
+          <div className="flex justify-between  mt-[3%] w-full ">
             <CustomInput
               label="شماره تلفن"
               placeholder="مثال : 09351112114"
               style="text-[12px] text-[#CBCBCB] w-[393px]"
             />
-            <p className="text-[14px] font-[500] font-IRANSansXFaNum text-[#757575]">
+          <div className="flex items-center flex-grow  mr-[5%]">
+          <p className="text-[14px] font-[500] font-IRANSansXFaNum text-[#757575] ">
               جنسیت :
             </p>
             
-            <div className="flex items-center mb-4">
+            <div className="mx-[4%] flex items-center">
               <input
                 id="man"
                 type="radio"
                 value="man"
                 name="gender"
-                className="w-4 "
+                className="h-[20px] w-[20px] "
               />
               <label
                 htmlFor="man"
-                className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300 "
+                className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300  "
               >
                 آقا
               </label>
             </div>
-            <div className="flex items-center mb-4">
+            <div className="flex items-center">
               <input
                 id="woman"
                 type="radio"
                 value="woman"
                 name="gender"
-                className="w-4 "
+                className="h-[20px] w-[20px] "
            
               />
               <label
@@ -98,6 +102,8 @@ function newfile() {
                 خانم
               </label>
             </div>
+          </div>
+           
           </div>
         </div>
       </div>
