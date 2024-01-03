@@ -1,5 +1,6 @@
 import React from "react";
 import Layout from "../Layout";
+import Link from "next/link";
 
 function Search() {
   const patient = [
@@ -149,10 +150,12 @@ function Search() {
                 <p className="text-[12px] text-[#757575]"> {item.lasttime}</p>
                 <p className="text-[12px] font-light"> {item.lastdate}</p>
               </div>
-              <button className="text-[#45CBC2] text-[16px] border-[1px] border-[#45CBC2] w-[161px] h-[48px] mr-[10%]  rounded-[6.422px]">
+              <Link href={"/admin/reservation/time"}>
+              <button className="text-[#45CBC2] text-[16px] border-[1px] border-[#45CBC2] w-[161px] h-[48px] mr-[40%]  rounded-[6.422px]">
                
                 {item.button}
               </button>
+              </Link>
             </div>
           );
         })}
