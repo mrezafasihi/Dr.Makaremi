@@ -9,8 +9,8 @@ function BusinessDays() {
     { day: "چهارشنبه", time: " 8:00 الی 23:00" },
   ];
   return (
-    <div className="my-20 mx-[7.5%] ">
-      <h6 className="border-r-[1px] text-2xl px-2 mb-[6%] border-[#288E87] text-[#064247] basis-1/3">
+    <div className="mt-[7%] mb-[10%] mx-[7.5%] ">
+      <h6 className="border-r-[1px] text-2xl px-2 mb-[6%]  border-[#288E87] text-[#064247] basis-1/3 font-iranSansBold">
         روزهای کاری مطب
       </h6>
       <div className="flex w-full items-center">
@@ -30,13 +30,14 @@ function BusinessDays() {
               );
             })}
           </div>
-          <div className="flex items-center">
+          <div className="flex items-center mt-[2%]">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
               height="16"
               viewBox="0 0 16 16"
               fill="none"
+              className="ml-[1%]"
             >
               <circle cx="8" cy="8" r="8" fill="#FF7F48" />
               <path
@@ -48,7 +49,7 @@ function BusinessDays() {
                 fill="white"
               />
             </svg>
-            <p>روزهای کاری ثابت نیستند و بر اساس شرایط ممکن است تغییر کنند.</p>
+            <p className="text-[#064247] font-iranSansLight">روزهای کاری ثابت نیستند و بر اساس شرایط ممکن است تغییر کنند.</p>
           </div>
         </div>
       </div>

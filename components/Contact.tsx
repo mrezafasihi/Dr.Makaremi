@@ -10,21 +10,21 @@ function Contact({ placeholder, style, label }: any) {
           شما می توانید در این قسمت با ما در تماس باشید
         </p>
 
-        <div className="mt-[2%] mx-auto flex  w-[100%] sm:flex-col">
-          <div className="flex w-[100%] justify-between">
+        
+          <div className="flex w-[100%] justify-between items-center  flex-col sm:flex-row">
             <CustomInput
               label="نام و نام خانوادگی"
               placeholder="مثال : امیر رئیسی"
-              style="w-[45%] sm:w-[50%]"
+              style="w-[100%] sm:w-[50%] "
             />
             <CustomInput
               label="شماره تلفن"
               placeholder="09223620356 :مثال"
-              style="w-[45%] sm:w-[50%] mr-[3%] "
+              style="w-[100%] sm:w-[50%] sm:mr-[3%] mt-[2%] sm:mt-[0px] "
             />
           </div>
          
-        </div>
+       
         
         <textarea
             className=" text-right w-[100%] h-[220px] border-[1px]  rounded-[4.73px] mt-[2%]"

@@ -16,9 +16,50 @@ function time() {
     { time: "۱۶:۰۰" },
   ];
   const persianToday = utils("fa").getToday();
-  console.log(persianToday);
+  
   const [selectedDay, setSelectedDay] = useState<any>(persianToday);
-  console.log(selectedDay);
+ 
+  let month
+  switch(selectedDay.month) {
+    case 1:
+      month="فروردین"
+      break;
+    case 2:
+      month="اردیبهشت"
+      break;
+      case 3:
+        month="خرداد"
+      break;
+      case 4:
+        month="تیر"
+      break;
+      case 5:
+        month="مرداد"
+      break;
+      case 6:
+        month="شهریور"
+      break;
+      case 7:
+        month="مهر"
+      break;
+      case 8:
+        month="آبان"
+      break;
+      case 9:
+        month="آذر"
+      break;
+      case 10:
+        month="دی"
+      break;
+      case 11:
+        month="بهمن"
+      break;
+      case 12:
+        month="اسفند"
+        break;
+    default:
+      // code block
+  }
   return (
     <Layout>
      
@@ -378,17 +419,27 @@ function time() {
             onChange={setSelectedDay}
             shouldHighlightWeekends
             locale="fa"
+            colorPrimary="#45CBC2"
+            customDaysClassName={[
+              
+              { year: 1402, month: 10, day: 4, className: 'bg-[#45CBC2]' },
+              { year: 1402, month: 10, day: 12, className: 'bg-[#45CBC2]' },
+              { year: 1402, month: 10, day: 18, className: 'bg-[#45CBC2]' },
+              { year: 1402, month: 10, day: 26, className: 'bg-[#45CBC2]' },
+            ]}
           />
         </div>
         <div className="flex flex-col justify-between h-[300px] items-center lg:mr-[9%] ">
           <p className=" flex items-center justify-center w-[251px] h-[55px] border-[#83DCD6] border-[1.4px] rounded-[12.24px] text-[#064247] text-[14px] font-light">
             {selectedDay.day}
+            <span className="mr-[2%]">{month}</span>
           </p>
           <p className="text-[#064247] text-[14px] font-light">انتخاب ساعت</p>
           <div className="flex justify-between items-center flex-wrap  w-full ">
-            {hour.map((item) => {
+            {hour.map((item,index) => {
+              
               return (
-                <div className="flex basis-[30%] justify-center items-center h-[50px] text-[14px] font-light bg-[#D6F3F1] border-[1.4px] border-[#D6F3F1] my-[2%] rounded-[15.07px] mx-[1%] hover:bg-white">
+                <div className={`${index==1?"bg-white":"bg-[#D6F3F1]"} flex basis-[30%] justify-center items-center h-[50px] text-[14px] font-light bg-[#D6F3F1] border-[1.4px] border-[#D6F3F1] my-[2%] rounded-[15.07px] mx-[1%] `}>
                   {item.time}
                 </div>
               );

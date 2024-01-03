@@ -1,5 +1,5 @@
 import React from "react";
-import Layout from "./Layout";
+import Layout from "../Layout";
 import CustomInput from "@/components/user/test";
 import DatePicker from "@/components/user/DatePicker";
 

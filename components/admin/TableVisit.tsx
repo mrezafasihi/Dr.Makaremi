@@ -3,12 +3,12 @@ import React from "react";
 export default function TableVisit() {
   const visit = [
     { reason: "ضعیفی چشم", date: "1402 / 02 / 28", time: "12:00" },
-    { reason: "ضعیفی چشم", date: "1402 / 02 / 28", time: "12:00" },
-    { reason: "ضعیفی چشم", date: "1402 / 02 / 28", time: "12:00" },
+    { reason: "کدورت چشم", date: "1402 / 02 / 28", time: "12:00" },
+    { reason: "عمل لازک", date: "1402 / 02 / 28", time: "12:00" },
     { reason: "ضعیفی چشم", date: "1402 / 02 / 28", time: "12:00" },
   ];
   return (
-    <div className="border rounded-[11.9px] text-center w-[86.15%] mx-[6.92%]">
+    <div className="border rounded-[11.9px] text-center w-[86.15%] mx-[6.92%] mb-[10%]">
       <table className="  w-full  ">
         <thead className="w-full h-[44px]">
           <tr className="w-full text-[12px] font-medium ">
@@ -39,7 +39,7 @@ export default function TableVisit() {
             return (
               <tr className="text-[#757575] text-[12px] font-medium odd:bg-[#f3fffe] h-[44px] max-w-[896px] ">
                 <td className=" ">{item.reason}</td>
-                <td className=" ">{item.date}</td>
+                <td style={{direction:"ltr"}} className=" ">{item.date}</td>
                 <td className="pr-[10%] ">{item.time}</td>
                 <td className=" text-[#0D0630] font-medium  pr-[40%]">
                   مشاهده
@@ -93,7 +93,7 @@ export default function TableVisit() {
                       stroke-linejoin="round"
                     />
                   </svg>
-                  <p className="text-[#C70000] text-[10px] font-light">حذف</p>
+                  <p className="text-[#C70000] text-[10px] font-iranSansLight">حذف</p>
                 </td>
               </tr>
             );

@@ -3,7 +3,7 @@ import Layout from "../Layout";
 
 import CustomInput from "@/components/user/test";
 import CustomButton from "@/components/user/CustomButton";
-import Paymenticon from "@/components/Paymenticon";
+import Paymenticon from "@/components/paymenticon";
 
 function payment() {
   return (
@@ -28,7 +28,7 @@ function payment() {
           </svg>
           <p className="text-[#757575] font-bold text-[20px]">ستایش الوندی</p>
         </div>
-        <Paymenticon/>
+       <Paymenticon/>
         <div className="mt-[7%]">
           <p className="mr-[13%] mb-[7%]">
             اطلاعات ثبت نوبت برای سرکار خانم{" "}

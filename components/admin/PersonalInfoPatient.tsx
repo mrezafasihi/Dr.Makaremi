@@ -4,7 +4,7 @@ function PersonalInfoPatient() {
   return (
     <div className="flex flex-col text-[#757575] max-w-[482px] border rounded-[11.94px] h-[289px]">
       <div className="flex justify-center mt-[25px]">
-        <p className="font-bold">اطلاعات شخصی</p>
+        <p className="font-iranSansBold">اطلاعات شخصی</p>
         <div className="flex flex-col items-center mr-[39%]">
           <svg
             width="21"
@@ -21,9 +21,9 @@ function PersonalInfoPatient() {
           <p className="text-[#190C5D] ">ویرایش اطلاعات</p>
         </div>
       </div>
-      <div className="flex justify-center">
+      <div className="flex justify-center ">
         <div className="flex flex-col ml-[4%] ">
-          <label className="">تاریخ تولد</label>
+          <label className="font-iranSansLight">تاریخ تولد</label>
           <input
             className="border rounded-[3.1px] h-[28.67px] "
             type="text"
@@ -31,7 +31,7 @@ function PersonalInfoPatient() {
           />
         </div>
         <div className="flex flex-col mr-[4%]">
-          <label className="block">آدرس</label>
+          <label className="block font-iranSansLight">آدرس</label>
           <input
             className="border rounded-[3.1px] h-[28.67px]"
             type="text"
@@ -40,8 +40,8 @@ function PersonalInfoPatient() {
         </div>
       </div>
       <div className="flex justify-center">
-        <div className="flex flex-col ml-[4%]">
-          <label htmlFor="">شهر</label>
+        <div className="flex flex-col ml-[4%] ">
+          <label className="font-iranSansLight" htmlFor="">شهر</label>
           <input
             className="border rounded-[3.1px]"
             type="text"
@@ -49,7 +49,7 @@ function PersonalInfoPatient() {
           />
         </div>
         <div className="flex flex-col mr-[4%]">
-          <label htmlFor="">جنسیت</label>
+          <label className="font-iranSansLight" htmlFor="">جنسیت</label>
           <input
             className="border rounded-[3.1px]"
             type="text"
@@ -59,15 +59,15 @@ function PersonalInfoPatient() {
       </div>
       <div className="flex justify-center">
         <div className="flex flex-col ml-[4%]">
-          <label htmlFor="">تاریخ اولین ویزیت</label>
+          <label className="font-iranSansLight" htmlFor="">تاریخ اولین ویزیت</label>
           <input
-            className="border rounded-[3.1px] "
+            className="border rounded-[3.1px] placeholder:font-iranSansLight"
             type="text"
             value={"۱۴۰۲/۰۵/۱۰"}
           />
         </div>
         <div className="flex flex-col mr-[4%]">
-          <label htmlFor="">شماره تلفن </label>
+          <label className="font-iranSansLight" htmlFor="">شماره تلفن </label>
           <input
             className="border rounded-[3.1px]"
             type="text"

@@ -1,5 +1,5 @@
 import React from "react";
-import Layout from "./Layout";
+import Layout from "../Layout";
 import PatientInfo from "@/components/admin/PatientInfo";
 import PersonalInfoPatient from "@/components/admin/PersonalInfoPatient";
 import ResualtTest from "@/components/admin/ResualtTest";

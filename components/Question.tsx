@@ -53,8 +53,8 @@ function Question() {
 
   return (
     <div className="bg-[url('/images/Isolation_Mode.svg')]">
-      <div className="my-16 mx-[10%] ">
-        <p className="border-r-[1px] text-2xl px-2  font-bold border-[#288E87] text-[#064247] ">
+      <div className="my-16  mx-[10%] pt-[1.5%] ">
+        <p className="border-r-[1px] text-2xl px-2  font-bold border-[#288E87] text-[#064247] font-iranSansBold">
           سوالات متداول
         </p>
         <div className=" flex justify-between">
@@ -67,7 +67,7 @@ function Question() {
                 aria-controls="panel1d-content"
                 id="panel1d-header"
               >
-                <Typography paddingX={3}>
+                <Typography className="font-iranSansLight text-[#190C5D]" paddingX={3}>
                   بعد از عمل لازک چشم چه علایم موقتی پدیدار می شود؟
                 </Typography>
               </AccordionSummary>
@@ -97,12 +97,12 @@ function Question() {
                 aria-controls="panel2d-content"
                 id="panel2d-header"
               >
-                <Typography paddingX={3}>
+                <Typography paddingX={3} className="font-iranSansLight text-[#190C5D]">
                   بعد از عمل لازک چشم چه علایم موقتی پدیدار می شود؟
                 </Typography>
               </AccordionSummary>
               <AccordionDetails>
-                <Typography paddingX={3}>
+                <Typography className="font-iranSansLight" paddingX={3}>
                   لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
                   استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و
                   مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی
@@ -126,12 +126,12 @@ function Question() {
                 aria-controls="panel3d-content"
                 id="panel3d-header"
               >
-                <Typography paddingX={3}>
+                <Typography paddingX={3} className="font-iranSansLight text-[#190C5D]">
                   بعد از عمل لازک چشم چه علایم موقتی پدیدار می شود؟
                 </Typography>
               </AccordionSummary>
               <AccordionDetails>
-                <Typography paddingX={3}>
+                <Typography className="font-iranSansLight" paddingX={3}>
                   لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
                   استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و
                   مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی
@@ -155,12 +155,12 @@ function Question() {
                 aria-controls="panel4d-content"
                 id="panel4d-header"
               >
-                <Typography paddingX={3}>
+                <Typography paddingX={3} className="font-iranSansLight text-[#190C5D]">
                   بعد از عمل لازک چشم چه علایم موقتی پدیدار می شود؟
                 </Typography>
               </AccordionSummary>
               <AccordionDetails>
-                <Typography paddingX={3}>
+                <Typography className="font-iranSansLight" paddingX={3}>
                   لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
                   استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و
                   مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی

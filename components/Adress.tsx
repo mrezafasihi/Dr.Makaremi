@@ -8,7 +8,7 @@ function Adress() {
  
  
       <div className=" h-[25%] flex justify-between">
-        <div className="flex flex-col justify-center flex-1 mr-[5%]">
+        <div className="flex flex-col justify-center flex-1 mr-[5%] w-full ">
           <div>
             <p className="text-[#fff] text-right font-IRANSansXFaNum text-[24px] font-[700] mb-[5%] ">
               آدرس و شمارۀ تلفن
@@ -73,7 +73,7 @@ function Adress() {
             <p className="text-[#fff]">شماره تلفن : ۸۸۸ ۸۸ ۳۲۲ – ۰۱۱</p>
           </div>
 
-          <div className="flex gap-8 mt-[10%]">
+          <div className="flex   sm:gap-8 mt-[10%]">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="32"
@@ -139,13 +139,12 @@ function Adress() {
           </div>
         </div>
 
-        <div className="flex flex-1 justify-end ">
+        <div className=" flex-1 justify-end hidden sm:flex ">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3205.622282188456!2d52.689509!3d36.539106!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8f89075f939e51%3A0x265bae2cdd0ee150!2sKeshvari%20Square!5e0!3m2!1sen!2sus!4v1702119361628!5m2!1sen!2sus"
-            width="360"
-            height="290"
+           
             loading="lazy"
-            className="rounded-[10px] ml-[10%]"
+            className="rounded-[10px] hidden sm:flex w-[360px]  h-[290px] ml-[10%]"
           ></iframe>
         </div>
       </div>

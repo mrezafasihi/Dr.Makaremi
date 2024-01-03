@@ -60,7 +60,7 @@ function Insurance() {
       alt: "dana_insurance",
     },
     {
-      img: "/images/insurance/sina.png",
+      img: "/images/insurance/sina2.png",
       name: "بیمه سینا",
       alt: "sina_insurance",
     },
@@ -95,7 +95,7 @@ function Insurance() {
 
   return (
     <div className=" mx-[7.5%]">
-      <p className="border-r-[1px] text-2xl px-2 font-bold border-[#288E87] text-[#064247]">
+      <p className="border-r-[1px] text-2xl px-2 font-iranSansBold border-[#288E87] text-[#064247] ">
         بیمه‌های طرف قرارداد
       </p>
       <Swiper
@@ -128,7 +128,7 @@ function Insurance() {
           return (
             <SwiperSlide>
               <div className="flex flex-col  items-center text-[18px] rounded-[15px] hover:shadow-xl h-52">
-                <div className="max-h-36">
+                <div className="h-36">
                   <img className="h-full " src={item.img} alt={item.alt} />
                 </div>
                 <p className="pb-2 pt-4">{item.name}</p>
