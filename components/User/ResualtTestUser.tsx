@@ -7,7 +7,7 @@ function ResualtTestUser() {
     { title: "عکس‌برداری", date: "1402 / 02 / 06" },
   ];
   return (
-    <div className="max-w-[482px] ">
+    <div className="w-[482px] ">
       <p className="text-[12px] text-[#064247]">نتایج آزمایشات</p>
       <div className="border  border-[#EDEDEE] rounded-[11.94px] text-center w-full h-[138px] overflow-auto ">
         <table className=" w-full h-full">

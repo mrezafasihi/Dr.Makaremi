@@ -1,22 +1,34 @@
-import React, { use, useEffect, useState } from "react";
+// 'use client'
+import React, { useEffect, useState } from "react";
 import Logo from "../Logo";
-import { BsPlusCircleFill } from "react-icons/bs";
+
 import Link from "next/link";
 import apiRequests from "@/Axios/config";
 
 function NavbarConfirm() {
+  const [patient,setPatient]=useState<any>([])
   useEffect(() => {
-    // apiRequests.get("/api/document",{}).then((res) => console.log(res));
+    getData();
   }, []);
+  const getData = async () => {
+    const id = localStorage.getItem("id");
+    const token = localStorage.getItem("token");
+
+    const response = await apiRequests.get(`/api/document/${id}`, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    console.log(response)
+    setPatient([response.data.data])
+  };
   const arrayNum: any = [
     { id: 1, name: " فائزه ملکی", img: "/images/landin/Beautiful.png" },
     { id: 2, name: "حسين ملکی", img: "/images/landin/smiling.png" },
     { id: 3, name: "امیر محمدی", img: "/images/landin/young_man.png" },
   ];
   const [valueSelectOption, setValueSelectOption] = useState(arrayNum[0].img);
-  const handleSelect = (value: any) => {
-    console.log(value);
-    setValueSelectOption(value);
+  const handleSelect = (index: any) => {
+    console.log(index);
+    setValueSelectOption(index);
 
     // const test = arrayNum.find((item: any) => {
     //   return item.id == valueSelectOption;
@@ -27,7 +39,7 @@ function NavbarConfirm() {
   //  useEffect(()=>{
   //    setValueSelectOption(valueSelectOption)
   //  },[])
-
+console.log(patient)
   return (
     <div className="flex justify-between mx-[5%] items-center mt-[32px] ">
       <Logo />
@@ -52,8 +64,8 @@ function NavbarConfirm() {
             className="text-[#064247] mr-1 bg-white border-none w-[100px]"
             onChange={(e) => handleSelect(e.target.value)}
           >
-            {arrayNum.map((item: any) => {
-              return <option value={item.img}>{item.name}</option>;
+            {patient.map((item: any,index:any) => {
+              return <option key={item.id} value={index}>{item.first_name}{item.last_name}</option>;
             })}
           </select>
         </div>
