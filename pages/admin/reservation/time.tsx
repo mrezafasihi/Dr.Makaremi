@@ -434,7 +434,7 @@ function time() {
         </svg>
       </div>
       <div className="flex flex-col lg:flex-row justify-center items-center">
-        <div className="flex  mr-[9%] mt-[2%] ">
+        <div className="flex  mr-[9%] mt-[2%] ml-[10%]">
           <Calendar
             value={selectedDay}
             onChange={setSelectedDay}

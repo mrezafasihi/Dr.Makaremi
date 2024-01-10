@@ -29,7 +29,7 @@ function Satisfication() {
   ];
 
   return (
-    <div className=" sm:mr-[15%]">
+    <div className=" sm:mr-[1%]">
       <Swiper modules={[A11y]} spaceBetween={50} slidesPerView={1}>
         {costomer.map((item) => {
           return (

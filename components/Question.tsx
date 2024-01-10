@@ -67,7 +67,10 @@ function Question() {
                 aria-controls="panel1d-content"
                 id="panel1d-header"
               >
-                <Typography className="font-iranSansLight text-[#190C5D]" paddingX={3}>
+                <Typography
+                  className="font-iranSansLight text-[#190C5D]"
+                  paddingX={3}
+                >
                   بعد از عمل لازک چشم چه علایم موقتی پدیدار می شود؟
                 </Typography>
               </AccordionSummary>
@@ -97,8 +100,11 @@ function Question() {
                 aria-controls="panel2d-content"
                 id="panel2d-header"
               >
-                <Typography paddingX={3} className="font-iranSansLight text-[#190C5D]">
-                  بعد از عمل لازک چشم چه علایم موقتی پدیدار می شود؟
+                <Typography
+                  paddingX={3}
+                  className="font-iranSansLight text-[#190C5D]"
+                >
+                  بیمه تکمیلی شامل چه افرادی جهت عمل لازک چشم می باشد؟
                 </Typography>
               </AccordionSummary>
               <AccordionDetails>
@@ -126,8 +132,11 @@ function Question() {
                 aria-controls="panel3d-content"
                 id="panel3d-header"
               >
-                <Typography paddingX={3} className="font-iranSansLight text-[#190C5D]">
-                  بعد از عمل لازک چشم چه علایم موقتی پدیدار می شود؟
+                <Typography
+                  paddingX={3}
+                  className="font-iranSansLight text-[#190C5D]"
+                >
+                  بعد از عمل لازک چشم چند روز نیاز به استراحت است؟
                 </Typography>
               </AccordionSummary>
               <AccordionDetails>
@@ -155,8 +164,11 @@ function Question() {
                 aria-controls="panel4d-content"
                 id="panel4d-header"
               >
-                <Typography paddingX={3} className="font-iranSansLight text-[#190C5D]">
-                  بعد از عمل لازک چشم چه علایم موقتی پدیدار می شود؟
+                <Typography
+                  paddingX={3}
+                  className="font-iranSansLight text-[#190C5D]"
+                >
+                  بعد از عمل تاچند وقت نیاز به استفاده از عینک آفتابیست؟
                 </Typography>
               </AccordionSummary>
               <AccordionDetails>
