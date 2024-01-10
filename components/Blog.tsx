@@ -33,7 +33,7 @@ function Blog() {
   ];
   return (
     <div className="flex flex-col mx-[7.5%] ">
-      <p className="border-r-[1px] text-2xl px-2  font-bold border-[#288E87] text-[#064247]">
+      <p className="border-r-[1px] text-2xl px-2  font-bold border-[#288E87] text-[#064247] font-iranSansBold">
         بلاگ و مقالات
       </p>
       <div className="flex justify-end ml-[2%] pb-4">

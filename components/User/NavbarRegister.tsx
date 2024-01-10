@@ -2,16 +2,11 @@ import React, { use, useEffect, useState } from "react";
 import Logo from "../Logo";
 import { BsPlusCircleFill } from "react-icons/bs";
 import Link from "next/link";
-import apiRequests from "@/Axios/config";
 
-function NavbarConfirm() {
-  useEffect(() => {
-    // apiRequests.get("/api/document",{}).then((res) => console.log(res));
-  }, []);
+function NavbarRegister() {
   const arrayNum: any = [
-    { id: 1, name: " فائزه ملکی", img: "/images/landin/Beautiful.png" },
-    { id: 2, name: "حسين ملکی", img: "/images/landin/smiling.png" },
-    { id: 3, name: "امیر محمدی", img: "/images/landin/young_man.png" },
+    { id: 1, name: " کاربر", img: "/images/karbar.png" },
+   
   ];
   const [valueSelectOption, setValueSelectOption] = useState(arrayNum[0].img);
   const handleSelect = (value: any) => {
@@ -33,11 +28,9 @@ function NavbarConfirm() {
       <Logo />
       <ul className="flex justify-between basis-[28.96%] font-medium mr-[8%] ">
         <Link href={"/"}>خانه</Link>
-        <Link href={"/user/reservation/Fainalpay"}>پرونده من</Link>
-        <Link href={"/user/reservation"} className="text-[#288E87]">
-          رزرو نوبت
-        </Link>
-        <li>ارسال پیام</li>
+        <li className="text-[#CBCBCB]" >پرونده من</li>
+        <Link href={"/user/reservation/register"} className="text-[#288E87]">رزرو نوبت</Link>
+        <li className="text-[#CBCBCB]">ارسال پیام</li>
       </ul>
       <div className="flex items-center justify-between basis-[18.25%]">
         <div className="flex ml-[4%]">
@@ -49,7 +42,7 @@ function NavbarConfirm() {
             />
           </div>
           <select
-            className="text-[#064247] mr-1 bg-white border-none w-[100px]"
+            className="text-[#064247] mr-1 bg-white border-none w-[88px]"
             onChange={(e) => handleSelect(e.target.value)}
           >
             {arrayNum.map((item: any) => {
@@ -65,6 +58,7 @@ function NavbarConfirm() {
             viewBox="0 0 16 17"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
+            
           >
             <path
               d="M5.93335 5.54016C6.14002 3.14016 7.37335 2.16016 10.0733 2.16016H10.16C13.14 2.16016 14.3334 3.35349 14.3334 6.33349V10.6802C14.3334 13.6602 13.14 14.8535 10.16 14.8535H10.0733C7.39335 14.8535 6.16002 13.8868 5.94002 11.5268"
@@ -95,4 +89,4 @@ function NavbarConfirm() {
   );
 }
 
-export default NavbarConfirm;
+export default NavbarRegister;

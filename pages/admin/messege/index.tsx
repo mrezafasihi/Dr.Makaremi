@@ -129,7 +129,6 @@ function index() {
                         />
                         <div className="w-[12px] h-[12px] absolute translate-y-12 -translate-x-1 ">
                           {" "}
-                          {item.circle}
                         </div>
                       </div>
                       <div className="mr-[5%]">
@@ -163,7 +162,6 @@ function index() {
                       />
                       <div className="w-[12px] h-[12px] absolute translate-y-12 -translate-x-1 ">
                         {" "}
-                        {item.circle}
                       </div>
                     </div>
                     <div className="mr-[5%]">

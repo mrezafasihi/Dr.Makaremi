@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 
 function DatePicker() {
   
-
+const [test,setTest]=useState()
   let day: any = [];
   for (let i = 0; i < 3; i++) {
     for (let j = 0; j <= 9; j++) {
@@ -40,7 +40,7 @@ function DatePicker() {
       <select className="border rounded-[6px] basis-[20%]" name="" id="">
         {day.map((item: any) => {
           
-          return <option value={item}>{item}</option>;
+          return <option value={item} >{item}</option>;
         })}
       </select>
       <select className="border rounded-[6px] basis-[50%]" id="">

@@ -19,7 +19,7 @@ const icon = (
   </div>
 );
 
-function userPanel() {
+function register() {
   const [phone, setPhone] = useState("");
   const [openModal, setOpenModal] = useState(false);
   const [isClient, setIsClient] = useState(false);
@@ -39,7 +39,7 @@ function userPanel() {
           password: pass,
         })
         .then((res: any) => {
-          localStorage.setItem("token", res.data.data.token);
+           
           localStorage.setItem("phone", phone);
           console.log(res);
           router.push("/user/setPass");
@@ -51,7 +51,7 @@ function userPanel() {
       // const res=apiRequests.post("/api/login",{data:{phone_number:phone}})
       if (phone.length == 11 && phone[0] == "0") {
         apiRequests
-          .post("/api/forget-password", {
+          .post("/api/register", {
             phone_number: phone,
           })
           .then((res: any) => {
@@ -63,10 +63,9 @@ function userPanel() {
             console.log(res);
           })
           .catch((error: any) => {
-            console.log(error),
-              error.response.data.message == "Phone number not found."
-                ? toast.error("شماره ی یافت نشد!")
-                : toast.error(error.response.data.message);
+            error.response.data.message == "User already registered."
+              ? toast.error("قبلا ثبت نام کردید")
+              : toast.error(error.response.data.message);
           });
       } else {
         toast.error("شماره خود را به درستی وارد نمایید");
@@ -106,11 +105,8 @@ function userPanel() {
           <>
             <p onClick={handleResendCode}>ارسال مجدد رمز</p>
             <span>
-              {" "}
-              <Countdown
-                date={Date.now() + 180000}
-                renderer={handleCountDown}
-              />
+              تا{" "}
+              <Countdown date={Date.now() + 10000} renderer={handleCountDown} />
             </span>
             <p
               className="hover:text-green-500 cursor-pointer"
@@ -138,4 +134,4 @@ function userPanel() {
   );
 }
 
-export default userPanel;
+export default register;
