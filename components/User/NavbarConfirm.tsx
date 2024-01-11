@@ -4,21 +4,21 @@ import Logo from "../Logo";
 
 import Link from "next/link";
 import apiRequests from "@/Axios/config";
+import { useRouter } from "next/router";
 
 function NavbarConfirm() {
-  const [patient,setPatient]=useState<any>([])
+  const [patient, setPatient] = useState<any>([]);
+  const router = useRouter();
   useEffect(() => {
     getData();
   }, []);
   const getData = async () => {
-    const id = localStorage.getItem("id");
-    const token = localStorage.getItem("token");
-
-    const response = await apiRequests.get(`/api/document/${id}`, {
+    const token = localStorage.getItem("token");    
+    const response = await apiRequests.get(`/api/user-document`, {
       headers: { Authorization: `Bearer ${token}` },
     });
-    console.log(response)
-    setPatient([response.data.data])
+    console.log(response);
+    setPatient(response.data.data); 
   };
   const arrayNum: any = [
     { id: 1, name: " فائزه ملکی", img: "/images/landin/Beautiful.png" },
@@ -26,9 +26,14 @@ function NavbarConfirm() {
     { id: 3, name: "امیر محمدی", img: "/images/landin/young_man.png" },
   ];
   const [valueSelectOption, setValueSelectOption] = useState(arrayNum[0].img);
-  const handleSelect = (index: any) => {
-    console.log(index);
-    setValueSelectOption(index);
+  const handleSelect = (id: any) => {
+    localStorage.setItem("id", id);
+  
+    setValueSelectOption(id);
+    console.log(id)
+    //@ts-ignore
+    window.location.replace(`http://localhost:3000/user/reservation/${id}`)
+    // router.push(`/user/reservation/${id}`)
 
     // const test = arrayNum.find((item: any) => {
     //   return item.id == valueSelectOption;
@@ -39,7 +44,7 @@ function NavbarConfirm() {
   //  useEffect(()=>{
   //    setValueSelectOption(valueSelectOption)
   //  },[])
-console.log(patient)
+
   return (
     <div className="flex justify-between mx-[5%] items-center mt-[32px] ">
       <Logo />
@@ -64,8 +69,13 @@ console.log(patient)
             className="text-[#064247] mr-1 bg-white border-none w-[100px]"
             onChange={(e) => handleSelect(e.target.value)}
           >
-            {patient.map((item: any,index:any) => {
-              return <option key={item.id} value={index}>{item.first_name}{item.last_name}</option>;
+            {patient?.map((item: any, index: any) => {
+              return (
+                <option  key={item.id} value={item.id}>
+                  {item.first_name}
+                  {item.last_name}
+                </option>
+              );
             })}
           </select>
         </div>

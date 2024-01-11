@@ -2,9 +2,9 @@ import React from "react";
 
 function ResualtTestUser() {
   const medicalTest = [
-    { title: "اپتومتیک", date: "1402 / 02 / 28" },
-    { title: "آزمایش فشار چشم", date: "1402 / 02 / 10" },
-    { title: "عکس‌برداری", date: "1402 / 02 / 06" },
+    { title: "اپتومتیک", date: "1402 / 02 / 28", id: 1 },
+    { title: "آزمایش فشار چشم", date: "1402 / 02 / 10", id: 2 },
+    { title: "عکس‌برداری", date: "1402 / 02 / 06", id: 3 },
   ];
   return (
     <div className="w-[482px] ">
@@ -14,7 +14,7 @@ function ResualtTestUser() {
           <tbody className="w-full h-[46px] text-center">
             {medicalTest.map((item) => {
               return (
-                <tr className=" text-right  odd:bg-[#f3fffe] ">
+                <tr key={item.id} className=" text-right  odd:bg-[#f3fffe] ">
                   <td className=" text-[#757575]  pr-[4.9%] text-[12px]">
                     {item.title}
                   </td>
@@ -27,7 +27,6 @@ function ResualtTestUser() {
                   <td className="text-[#0D0630] pr-[9%] opacity-80 text-[12px] font-iranSansMedium">
                     مشاهده
                   </td>
-                  
                 </tr>
               );
             })}

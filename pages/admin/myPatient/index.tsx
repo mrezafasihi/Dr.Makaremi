@@ -1,98 +1,111 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import { useRouter } from "next/router";
 import CustomeImage from "@/components/admin/CustomeImage";
 import Link from "next/link";
 import Layout from "../Layout";
+import apiRequests from "@/Axios/config";
 
 function index() {
-  const dataPatients: any = [
-    {
-      id: 1,
-      name: "امیر رئیسی",
-      num: 1552,
-      date: "۲۳ فروردین ۱۴۰۲",
-      img: "/images/landin/smiling.png",
-    },
-    {
-      id: 2,
-      name: "امیر رئیسی",
-      num: 1552,
-      date: "۲۳ فروردین ۱۴۰۲",
-      img: "/images/landin/smiling.png",
-    },
-    {
-      id: 3,
-      name: "امیر رئیسی",
-      num: 1552,
-      date: "۲۳ فروردین ۱۴۰۲",
-      img: "/images/landin/smiling.png",
-    },
-    {
-      id: 4,
-      name: "امیر رئیسی",
-      num: 1552,
-      date: "۲۳ فروردین ۱۴۰۲",
-      img: "/images/landin/smiling.png",
-    },
-    {
-      id: 5,
-      name: "امیر رئیسی",
-      num: 1552,
-      date: "۲۳ فروردین ۱۴۰۲",
-      img: "/images/landin/smiling.png",
-    },
-    {
-      id: 6,
-      name: "امیر رئیسی",
-      num: 1552,
-      date: "۲۳ فروردین ۱۴۰۲",
-      img: "/images/landin/smiling.png",
-    },
-    {
-      id: 7,
-      name: "امیر رئیسی",
-      num: 1552,
-      date: "۲۳ فروردین ۱۴۰۲",
-      img: "/images/landin/smiling.png",
-    },
-    {
-      id: 8,
-      name: "امیر رئیسی",
-      num: 1552,
-      date: "۲۳ فروردین ۱۴۰۲",
-      img: "/images/landin/smiling.png",
-    },
-    {
-      id: 9,
-      name: "امیر رئیسی",
-      num: 1552,
-      date: "۲۳ فروردین ۱۴۰۲",
-      img: "/images/landin/smiling.png",
-    },
-    {
-      id: 9,
-      name: "امیر رئیسی",
-      num: 1552,
-      date: "۲۳ فروردین ۱۴۰۲",
-      img: "/images/landin/smiling.png",
-    },
-    {
-      id: 10,
-      name: "امیر رئیسی",
-      num: 1552,
-      date: "۲۳ فروردین ۱۴۰۲",
-      img: "/images/landin/smiling.png",
-    },
-    {
-      id: 11,
-      name: "امیر رئیسی",
-      num: 1552,
-      date: "۲۳ فروردین ۱۴۰۲",
-      img: "/images/landin/smiling.png",
-    },
-  ];
-
+  // const dataPatients: any = [
+  //   {
+  //     id: 1,
+  //     name: "امیر رئیسی",
+  //     num: 1552,
+  //     date: "۲۳ فروردین ۱۴۰۲",
+  //     img: "/images/landin/smiling.png",
+  //   },
+  //   {
+  //     id: 2,
+  //     name: "امیر رئیسی",
+  //     num: 1552,
+  //     date: "۲۳ فروردین ۱۴۰۲",
+  //     img: "/images/landin/smiling.png",
+  //   },
+  //   {
+  //     id: 3,
+  //     name: "امیر رئیسی",
+  //     num: 1552,
+  //     date: "۲۳ فروردین ۱۴۰۲",
+  //     img: "/images/landin/smiling.png",
+  //   },
+  //   {
+  //     id: 4,
+  //     name: "امیر رئیسی",
+  //     num: 1552,
+  //     date: "۲۳ فروردین ۱۴۰۲",
+  //     img: "/images/landin/smiling.png",
+  //   },
+  //   {
+  //     id: 5,
+  //     name: "امیر رئیسی",
+  //     num: 1552,
+  //     date: "۲۳ فروردین ۱۴۰۲",
+  //     img: "/images/landin/smiling.png",
+  //   },
+  //   {
+  //     id: 6,
+  //     name: "امیر رئیسی",
+  //     num: 1552,
+  //     date: "۲۳ فروردین ۱۴۰۲",
+  //     img: "/images/landin/smiling.png",
+  //   },
+  //   {
+  //     id: 7,
+  //     name: "امیر رئیسی",
+  //     num: 1552,
+  //     date: "۲۳ فروردین ۱۴۰۲",
+  //     img: "/images/landin/smiling.png",
+  //   },
+  //   {
+  //     id: 8,
+  //     name: "امیر رئیسی",
+  //     num: 1552,
+  //     date: "۲۳ فروردین ۱۴۰۲",
+  //     img: "/images/landin/smiling.png",
+  //   },
+  //   {
+  //     id: 9,
+  //     name: "امیر رئیسی",
+  //     num: 1552,
+  //     date: "۲۳ فروردین ۱۴۰۲",
+  //     img: "/images/landin/smiling.png",
+  //   },
+  //   {
+  //     id: 9,
+  //     name: "امیر رئیسی",
+  //     num: 1552,
+  //     date: "۲۳ فروردین ۱۴۰۲",
+  //     img: "/images/landin/smiling.png",
+  //   },
+  //   {
+  //     id: 10,
+  //     name: "امیر رئیسی",
+  //     num: 1552,
+  //     date: "۲۳ فروردین ۱۴۰۲",
+  //     img: "/images/landin/smiling.png",
+  //   },
+  //   {
+  //     id: 11,
+  //     name: "امیر رئیسی",
+  //     num: 1552,
+  //     date: "۲۳ فروردین ۱۴۰۲",
+  //     img: "/images/landin/smiling.png",
+  //   },
+  // ];
+  const [dataPatients, setDataPatients] = useState<any>([]);
+  useEffect(() => {
+    getData();
+  }, []);
+  const getData = async () => {
+    const token = localStorage.getItem("token");
+    const response = await apiRequests.get("/api/document ", {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    console.log(response);
+    setDataPatients(response.data.data);
+  };
+  console.log(dataPatients)
   return (
     <Layout>
       <div className="flex  flex-col w-[84.45%] mx-auto ">
@@ -129,7 +142,7 @@ function index() {
           style={{ direction: "ltr" }}
           className=" overflow-y-auto flex flex-col  h-[791px] w-full  gap-[14px] mb-[10%]"
         >
-          {dataPatients.map((item: any) => {
+          {dataPatients?.map((item: any) => {
             return (
               <Link href={`/admin/myPatient/${item.id}`}>
                 <div className="flex justify-between max-w-[856px]  border border-[#CBCBCB] rounded-lg h-[101px] items-center px-4 py-4 ">
@@ -163,37 +176,37 @@ function index() {
                       <path
                         d="M18.7622 5.15682C15.8902 4.87221 13.0009 4.72559 10.1203 4.72559C8.4126 4.72559 6.70491 4.81183 4.99723 4.98433L3.23779 5.15682"
                         stroke="#C70000"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       />
                       <path
                         d="M7.9816 4.28711L8.17134 3.15728C8.30934 2.33794 8.41283 1.72559 9.8704 1.72559H12.1301C13.5876 1.72559 13.6998 2.37244 13.8291 3.16591L14.0189 4.28711"
                         stroke="#C70000"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       />
                       <path
                         d="M16.9082 7.8833L16.3476 16.5683C16.2528 17.9224 16.1751 18.9746 13.7689 18.9746H8.23182C5.82553 18.9746 5.74791 17.9224 5.65304 16.5683L5.09244 7.8833"
                         stroke="#C70000"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       />
                       <path
                         d="M9.55975 14.2305H12.4318"
                         stroke="#C70000"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       />
                       <path
                         d="M8.8436 10.7812H13.1559"
                         stroke="#C70000"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       />
                     </svg>
                     <span className="text-[#C70000] font-light text-[12px]">

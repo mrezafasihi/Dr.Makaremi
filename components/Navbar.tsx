@@ -11,7 +11,7 @@ function Navbar({ ref }: any) {
   const contactUs = useRef(null);
   const blog = useRef(null);
   const register = useRef(null);
-  // localStorage.setItem("myTest", home);
+ 
   const scroll: any = (elementRef: any) => {
     window.scrollTo({ top: elementRef.current.offsetTop, behavior: "smooth" });
   };

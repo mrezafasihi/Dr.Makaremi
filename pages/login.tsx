@@ -60,24 +60,27 @@ function login() {
         })
         .then((res) => {
           localStorage.setItem("token", res.data.data.token),
-            localStorage.setItem("id", res.data.data.user.id),
             localStorage.setItem("phone", data.user);
-          console.log(res.data.data.role[0]);
           if (res.data.data.role[0] == "doctor") {
             router.push("/admin/myPatient");
           } else {
-            apiRequests
-              .get(`/api/document/:${res.data.data.user.id}`, {
-                headers: { Authorization: `Bearer ${res.data.data.token}` },
-              })
-              .then((res) => console.log(res))
-              .catch((err) => {
-                err.response.data.message == "Document not found."
-                  ? router.push("/user/reservation/register")
-                  : toast.error(err.response.data.message);
-              });
+            {
+              console.log(res.data.data.document.length)
+              res.data.data.document.length!==0
+                ? router.push("/user/reservation")
+                : router.push("/user/reservation/register");
+            }
+            // apiRequests
+            //   .get(`/api/document/:${res.data.data.user.id}`, {
+            //     headers: { Authorization: `Bearer ${res.data.data.token}` },
+            //   })
+            //   .then((res) => console.log(res))
+            //   .catch((err) => {
+            //     err.response.data.message == "Document not found."
+            //       ? router.push("/user/reservation/register")
+            //       : toast.error(err.response.data.message);
+            //   });
           }
-          // router.push("/user/reservation");
         })
         .catch((err) => {
           err.response.data.message == "Incorrect inputs."

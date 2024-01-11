@@ -2,22 +2,29 @@ import React, { useEffect, useState } from "react";
 import apiRequests from "@/Axios/config";
 
 const Info = () => {
-  const [patient, setPatient] = useState();
-  // useEffect(() => {
-  //   const id = localStorage.getItem("id");
-  //   const token = localStorage.getItem("token");
-  //   console.log(id);
-  //   console.log(token);
+  const [patient, setPatient] = useState<any>();
+  const [test, setTest] = useState<any>();
+  
+  useEffect(() => {
+    const id = localStorage.getItem("id");
+    const token = localStorage.getItem("token");
+    console.log(id);
+    console.log(token);
 
-  //   apiRequests
-  //     .get(`/api/document/${id}`, {
-  //       headers: { Authorization: `Bearer ${token}` },
-  //     })
-  //     .then((res) => {
-  //       console.log(res), setPatient(res.data.data);
-  //     })
-  //     .catch((err) => console.log(err));
-  // }, []);
+    apiRequests
+      .get(`/api/document/${id}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .then((res) => {
+        console.log(res), setPatient(res.data.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
+  
+  console.log(patient)
   return (
     <div className="flex  w-[389px] h-[138px]  rounded-[12px] border-[0.5px] justify-evenly items-center shadow-[0_4px_10px_0_rgba(0,0,0,0.07)] ">
       <div className="relative bg-[#ededee] sm:rounded-full rounded-full w-[90px] h-[90px] mt-[8] justify-center">
@@ -63,7 +70,10 @@ const Info = () => {
         <img className="rounded-full" src="/images/landin/smiling.png" alt="" />
       </div>
       <div className="flex flex-col">
-        <h3 className="text-[#064247] font-iranSansBold">فائزه ملکی</h3>
+        <h3 className="text-[#064247] font-iranSansBold">
+          {patient?.first_name}
+          {patient?.last_name}
+        </h3>
         <p className="text-[#757575]  text-[12px] font-iranSansLight">
           شماره پرونده : <span>23664</span>
         </p>

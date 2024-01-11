@@ -2,11 +2,15 @@ import React, { useEffect, useState } from "react";
 import CustomInput from "./CustomInput";
 import CustomButton from "./CustomButton";
 import DatePicker from "./DatePicker";
+import Link from "next/link";
+import { useForm } from "react-hook-form";
+import apiRequests from "@/Axios/config";
 
 function ListPatient() {
-  const[phone,setPhone]=useState<any>()
+  const [phone, setPhone] = useState<any>();
+  const { register, handleSubmit } = useForm();
   useEffect(() => {
-    setPhone(localStorage.getItem("phone"))
+    setPhone(localStorage.getItem("phone"));
   }, []);
 
   const dataPation = [
@@ -15,6 +19,30 @@ function ListPatient() {
     { image: "", name: "امیر محمدی" },
   ];
 
+  const confirm = (data: any) => {
+    const token = localStorage.getItem("token");
+
+    apiRequests
+      .post(
+        `/api/document`,
+        {
+          first_name: data.name,
+          last_name: data.lastName,
+          national_id: data.nationalId,
+          gender: data.gender,
+          birth_date: "2004/1/25",
+          city: data.city,
+          address: data.addres,
+        },
+        { headers: { Authorization: `Bearer ${token}` } }
+      )
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   return (
     <div>
       <div className="flex justify-between mx-[20%] mt-[3%]">
@@ -26,7 +54,7 @@ function ListPatient() {
           <p>لطفا جهت نوبت گرفتن، فرد مورد نظر را انتخاب کنید</p>
         </div>
         <div>
-          <select>
+          <select className="flex flex-col">
             {dataPation.map((item) => {
               return (
                 <option>
@@ -36,6 +64,12 @@ function ListPatient() {
               );
             })}
           </select>
+          <Link
+            href={"/user/changePass"}
+            className="text-[#288E87] font-iranSansLight text-[14px]"
+          >
+            تغییر رمز عبور
+          </Link>
         </div>
       </div>
       <div className="flex flex-col  text-center items-center mx-[24%] justify-between ">
@@ -48,11 +82,13 @@ function ListPatient() {
               style="w-[393px] md:basis-1/2 "
               label="نام"
               placeholder="مثال : علی"
+              hookForm={register("name")}
             />
             <CustomInput
               style="w-[393px]  md:basis-1/2"
               label="نام خانوادگی"
               placeholder="مثال : علوی"
+              hookForm={register("lastName")}
             />
           </div>
           <div className=" flex  flex-col  md:flex-row justify-center  gap-8 ">
@@ -60,6 +96,7 @@ function ListPatient() {
               style="flex w-[393px] md:basis-1/2"
               label="کد ملی"
               placeholder="مثال : ۲۲۲۳۳۳۵۰۲۳"
+              hookForm={register("nationalId")}
             />
 
             <DatePicker />
@@ -69,15 +106,16 @@ function ListPatient() {
               style=" flex w-[393px] md:basis-1/2 "
               label="شهر"
               placeholder="مثال : تهران"
+              hookForm={register("city")}
             />
             <div className="flex basis-1/2 w-[393px]">
               <p className="text-[#064247] ml-[9%] font-medium">جنسیت :</p>
               <div className="flex ">
                 <input
                   className="w-[20px] h-[20px] "
-                  name="gender"
                   type="radio"
-                  value="male"
+                  value="مرد"
+                  {...register("gender")}
                 />
                 <label className="mr-[6px]" htmlFor="male">
                   آقا
@@ -86,9 +124,9 @@ function ListPatient() {
               <div className=" flex mr-[3%]">
                 <input
                   className="w-[20px] h-[20px]"
-                  name="gender"
                   type="radio"
-                  value="female"
+                  value="خانم"
+                  {...register("gender")}
                 />
                 <label className="mr-[6px]" htmlFor="female">
                   خانم
@@ -101,6 +139,7 @@ function ListPatient() {
               <textarea
                 className="placeholder:absolute placeholder:top-[30%] peer w-full h-[121px] bg-transparent text-blue-gray-700  font-medium outline outline-0 focus:outline-0 disabled:bg-blue-gray-50 disabled:border-0 transition-all placeholder-shown:border-[1.5px] placeholder-shown:border-blue-gray-200 placeholder-shown:border-[#EDEDEE] border focus:border-2 border-t-transparent focus:border-t-transparent text-sm px-3 py-2.5 rounded-[4.73px]  focus:border-gray-900 resize-none		"
                 placeholder="مثال : میدان هروی، بلوار پناهی نیا، پلاک 2"
+                {...register("addres")}
               ></textarea>
               <label className="flex w-full h-full select-none pointer-events-none absolute  font-semibold !overflow-visible truncate peer-placeholder-shown:text-[#0D0630] leading-tight peer-focus:leading-tight peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500 transition-all -top-[5%] peer-placeholder-shown:text-sm text-[12px] peer-focus:text-[11px] before:content[' '] before:block before:box-border before:w-2.5 before:h-1.5 before:mt-[6.5px] before:mr-1 peer-placeholder-shown:before:border-transparent before:rounded-tl-md before:border-t peer-focus:before:border-t-2 before:border-l peer-focus:before:border-l-2 before:pointer-events-none before:transition-all peer-disabled:before:border-transparent after:content[' '] after:block after:flex-grow after:box-border after:w-2.5 after:h-1.5 after:mt-[6.5px] after:ml-1 peer-placeholder-shown:after:border-transparent after:rounded-tr-md after:border-t peer-focus:after:border-t-2 after:border-r peer-focus:after:border-r-2 after:pointer-events-none after:transition-all peer-disabled:after:border-transparent peer-placeholder-shown:leading-[3.75] text-gray-500 peer-focus:text-gray-900 before:border-blue-gray-200 peer-focus:before:![border-gray-900] after:border-blue-gray-200 peer-focus:after:!border-gray-900">
                 نشانی
@@ -110,6 +149,7 @@ function ListPatient() {
           <CustomButton
             text="رزرو نوبت"
             style="text-white bg-[#288E87] mt-[30%] mb-[20%]"
+            onClick={handleSubmit(confirm)}
           />
         </div>
       </div>

@@ -34,12 +34,12 @@ function userPanel() {
   const sendPhone = () => {
     if (checkPass) {
       apiRequests
-        .post("/api/check-pass", {
+        .post("/api/check_reset_pass", {
           phone_number: phone,
-          password: pass,
+          code: pass,
         })
         .then((res: any) => {
-          localStorage.setItem("token", res.data.data.token);
+          
           localStorage.setItem("phone", phone);
           console.log(res);
           router.push("/user/setPass");
@@ -76,11 +76,11 @@ function userPanel() {
   const handleResendCode = () => {};
   const handleCountDown = ({ minutes, seconds, completed }: any) => {
     if (completed) {
-      return;
+      return <span>ارسال مجدد رمز </span>;
     } else {
       return (
         <span>
-          تا: {minutes}:{seconds}
+          ارسال مجدد رمز تا: {minutes}:{seconds}
         </span>
       );
     }
@@ -104,7 +104,6 @@ function userPanel() {
       <div className="flex justify-between text-[#45CBC2] mx-[24.4%]">
         {checkPass ? (
           <>
-            <p onClick={handleResendCode}>ارسال مجدد رمز</p>
             <span>
               {" "}
               <Countdown

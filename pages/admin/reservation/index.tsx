@@ -85,7 +85,7 @@ function Search() {
   return (
     <Layout>
       <div className="mr-[8%] mt-[3%]">
-        <p className="text-[#45CBC2] text-[16px] font-bold mb-[2%]">نوبت‌دهی</p>
+        <p className="text-[#45CBC2] text-[16px] font-bold mb-[2%]">  </p>
         <p className="text-[16px] text-[#064247] mb-[1%]">جست‌و‌جوی بیمار</p>
        <div className="flex border-[1px] border-[#c5c4c4] rounded-[6.422px] w-[30%] h-[8%] items-center ">
        <svg
@@ -101,16 +101,16 @@ function Search() {
             cy="9.76688"
             r="8.98856"
             stroke="#757575"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             d="M16.0183 16.4854L19.5423 20.0002"
             stroke="#757575"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
         </svg>
        <input
@@ -135,25 +135,25 @@ function Search() {
                   {item.name}
                 </p>
                 <p className="text-[#757575)] text-[12px] font-light">
-                  {item.parvande}
+                  شماره پرونده
                 </p>
                 <p className=" text-[12px] font-light"> {item.shomare}</p>
               </div>
               <div className="flex flex-col text-center ml-[10%]">
                 <p className="text-[#757575] text-[12px] font-light">
-                  {item.codemeli}
+                کد ملی
                 </p>
 
                 <p className="text-[12px] font-light"> {item.shomaremeli}</p>
               </div>
               <div className="flex flex-col text-center ml-[10%]">
-                <p className="text-[12px] text-[#757575]"> {item.lasttime}</p>
+                <p className="text-[12px] text-[#757575]"> آخرین تاریخ مراجعه</p>
                 <p className="text-[12px] font-light"> {item.lastdate}</p>
               </div>
               <Link href={"/admin/reservation/time"}>
               <button className="text-[#45CBC2] text-[16px] border-[1px] border-[#45CBC2] w-[161px] h-[48px] mr-[40%]  rounded-[6.422px]">
                
-                {item.button}
+              نوبت بده!
               </button>
               </Link>
             </div>
