@@ -4,13 +4,11 @@ import apiRequests from "@/Axios/config";
 import Info from "@/components/user/Info";
 import ResualtTestUser from "@/components/user/ResualtTestUser";
 import TableVisitUser from "@/components/user/TableVisitUser";
+import { useSearchParams } from "next/navigation";
 
 function Fainalpay() {
-
- 
-  
-
-  
+  const test=useSearchParams()
+  console.log(test)
   return (
     <div>
       <NavbarConfirm />

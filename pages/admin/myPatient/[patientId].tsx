@@ -1,17 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Layout from "../Layout";
 import PatientInfo from "@/components/admin/PatientInfo";
 import PersonalInfoPatient from "@/components/admin/PersonalInfoPatient";
 import ResualtTest from "@/components/admin/ResualtTest";
 import TableVisit from "@/components/admin/TableVisit";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
+import { useRouter } from "next/router";
+import apiRequests from "@/Axios/config";
 
 function PatientId() {
+  const router = useRouter();
+  
+
+  
   return (
     <Layout>
       <div>
         <div className="flex items-center mb-[2%] mt-[4%] mr-[6%]">
-          <Link href={"/admin/myPatient"} className="ml-[1%] text-[#45CBC2] font-bold">بیماران من</Link>
+          <Link
+            href={"/admin/myPatient"}
+            className="ml-[1%] text-[#45CBC2] font-bold"
+          >
+            بیماران من
+          </Link>
           <svg
             width="9"
             height="13"
@@ -22,8 +34,8 @@ function PatientId() {
             <path
               d="M8 1L2 6.5L8 12"
               stroke="#288E87"
-              stroke-width="2"
-              stroke-linecap="round"
+              strokeWidth="2"
+              strokeLinecap="round"
             />
           </svg>
           <p className="mr-[1%] text-[#757575] font-bold text-[20px]">
@@ -37,7 +49,9 @@ function PatientId() {
             <ResualtTest />
           </div>
         </div>
-        <h6 className="font-bold text-[#064247] mr-[6%] mt-[2%] mb-[1%]">ویزیت‌ ها</h6>
+        <h6 className="font-bold text-[#064247] mr-[6%] mt-[2%] mb-[1%]">
+          ویزیت‌ ها
+        </h6>
         <TableVisit />
       </div>
     </Layout>

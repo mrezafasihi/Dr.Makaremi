@@ -98,14 +98,19 @@ function index() {
     getData();
   }, []);
   const getData = async () => {
+    
     const token = localStorage.getItem("token");
     const response = await apiRequests.get("/api/document ", {
       headers: { Authorization: `Bearer ${token}` },
     });
     console.log(response);
+    // const idDocument=localStorage.setItem("idDocument",JSON.stringify(response.data.data))
     setDataPatients(response.data.data);
   };
-  console.log(dataPatients)
+ 
+  const deleteData=()=>{
+    const response = apiRequests.delete(`/api/document/`)
+  }
   return (
     <Layout>
       <div className="flex  flex-col w-[84.45%] mx-auto ">
@@ -150,10 +155,11 @@ function index() {
                     <CustomeImage img={item.img} style="w-[48px] h-[49px]" />
                     <div className="flex flex-col flex-grow items-center">
                       <h6 className="text-[#064247] font-iranSansMedium text-[14px] ">
-                        {item.name}
+                        {item.first_name}
+                        {item.last_name}
                       </h6>
                       <p className="flex flex-col items-center font-iranSansLight text-[12px] text-[#757575] ">
-                        شماره پرونده<span>{item.num}</span>
+                        شماره پرونده<span>{item.id}</span>
                       </p>
                     </div>
                   </div>

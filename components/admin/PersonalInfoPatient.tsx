@@ -1,6 +1,24 @@
-import React from "react";
+import apiRequests from "@/Axios/config";
+import { useRouter } from "next/router";
+import React, { useEffect, useState } from "react";
 
 function PersonalInfoPatient() {
+  const [patient, setPatient] = useState<any>([]);
+  const router = useRouter();
+  const query = router.query.patientId;
+  console.log(query)
+  useEffect(() => {
+    getData();
+  }, []);
+  const getData = async () => {
+    const token = localStorage.getItem("token");
+    const response = await apiRequests.get(`/api/document/${query}`, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    console.log(response);
+    setPatient(response.data.data);
+  };
+
   return (
     <div className="flex flex-col text-[#757575] max-w-[482px] border rounded-[11.94px] h-[289px]">
       <div className="flex justify-center mt-[25px]">
@@ -41,7 +59,9 @@ function PersonalInfoPatient() {
       </div>
       <div className="flex justify-center">
         <div className="flex flex-col ml-[4%] ">
-          <label className="font-iranSansLight" htmlFor="">شهر</label>
+          <label className="font-iranSansLight" htmlFor="">
+            شهر
+          </label>
           <input
             className="border rounded-[3.1px]"
             type="text"
@@ -49,7 +69,9 @@ function PersonalInfoPatient() {
           />
         </div>
         <div className="flex flex-col mr-[4%]">
-          <label className="font-iranSansLight" htmlFor="">جنسیت</label>
+          <label className="font-iranSansLight" htmlFor="">
+            جنسیت
+          </label>
           <input
             className="border rounded-[3.1px]"
             type="text"
@@ -59,7 +81,9 @@ function PersonalInfoPatient() {
       </div>
       <div className="flex justify-center">
         <div className="flex flex-col ml-[4%]">
-          <label className="font-iranSansLight" htmlFor="">تاریخ اولین ویزیت</label>
+          <label className="font-iranSansLight" htmlFor="">
+            تاریخ اولین ویزیت
+          </label>
           <input
             className="border rounded-[3.1px] placeholder:font-iranSansLight"
             type="text"
@@ -67,7 +91,9 @@ function PersonalInfoPatient() {
           />
         </div>
         <div className="flex flex-col mr-[4%]">
-          <label className="font-iranSansLight" htmlFor="">شماره تلفن </label>
+          <label className="font-iranSansLight" htmlFor="">
+            شماره تلفن{" "}
+          </label>
           <input
             className="border rounded-[3.1px]"
             type="text"

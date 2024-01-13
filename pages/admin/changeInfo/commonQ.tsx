@@ -20,15 +20,17 @@ function commonQ() {
             <path
               d="M8 1L2 6.5L8 12"
               stroke="#288E87"
-              stroke-width="2"
-              stroke-linecap="round"
+              strokeWidth="2"
+              strokeLinecap="round"
             />
           </svg>
           <p className="text-[#757575] font-bold text-[20px]">سوالات متداول</p>
         </div>
         <div className="text-[#064247] mb-[8%] ">
           <div className="flex flex-col mb-6">
-            <label className="text-[12px] font-medium mr-[1%] mb-[1%]">متن سوال</label>
+            <label className="text-[12px] font-medium mr-[1%] mb-[1%]">
+              متن سوال
+            </label>
             <input
               className="border border-[#CBCBCB] rounded-[4.73px] placeholder:px-[2%] placeholder:py-[2%] placeholder:text-[12px] placeholder:font-semibold h-[63px] max-w-[824px]"
               type="text"
@@ -36,7 +38,9 @@ function commonQ() {
             />
           </div>
           <div className="flex flex-col mb-[3%]">
-            <label className="text-[12px] font-medium mr-[1%] mb-[1%] ">پاسخ سوال متداول</label>
+            <label className="text-[12px] font-medium mr-[1%] mb-[1%] ">
+              پاسخ سوال متداول
+            </label>
             <input
               className="border border-[#CBCBCB] rounded-[4.73px] placeholder:px-[2%] placeholder:py-[2%] placeholder:text-[12px] placeholder:font-semibold h-[63px] max-w-[824px]"
               type="text"

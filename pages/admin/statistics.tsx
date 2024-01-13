@@ -29,15 +29,15 @@ function statistics() {
                   d="M6.66668 3.99967H9.33334C10.6667 3.99967 10.6667 3.33301 10.6667 2.66634C10.6667 1.33301 10 1.33301 9.33334 1.33301H6.66668C6.00001 1.33301 5.33334 1.33301 5.33334 2.66634C5.33334 3.99967 6.00001 3.99967 6.66668 3.99967Z"
                   stroke="#064247"
                   stroke-miterlimit="10"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
                 <path
                   d="M10.6667 2.67969C12.8867 2.79969 14 3.61969 14 6.66635V10.6664C14 13.333 13.3333 14.6664 10 14.6664H6C2.66667 14.6664 2 13.333 2 10.6664V6.66635C2 3.62635 3.11333 2.79969 5.33333 2.67969"
                   stroke="#064247"
                   stroke-miterlimit="10"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
               </svg>
               <p className="text-[12px] text-[#064247] mr-[1%]">
@@ -60,14 +60,14 @@ function statistics() {
                 <path
                   d="M10.3867 8.49995C10.3867 9.81995 9.32001 10.8866 8.00001 10.8866C6.68001 10.8866 5.61334 9.81995 5.61334 8.49995C5.61334 7.17995 6.68001 6.11328 8.00001 6.11328C9.32001 6.11328 10.3867 7.17995 10.3867 8.49995Z"
                   stroke="#064247"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
                 <path
                   d="M7.99999 14.0138C10.3533 14.0138 12.5467 12.6271 14.0733 10.2271C14.6733 9.28714 14.6733 7.70714 14.0733 6.76714C12.5467 4.36714 10.3533 2.98047 7.99999 2.98047C5.64665 2.98047 3.45332 4.36714 1.92665 6.76714C1.32665 7.70714 1.32665 9.28714 1.92665 10.2271C3.45332 12.6271 5.64665 14.0138 7.99999 14.0138Z"
                   stroke="#064247"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
               </svg>
               <p className="text-[#064247] text-[12px] mr-[1%]">
@@ -120,38 +120,38 @@ function statistics() {
                 <path
                   d="M11.9984 4.77301C11.9584 4.76634 11.9118 4.76634 11.8718 4.77301C10.9518 4.73968 10.2184 3.98634 10.2184 3.05301C10.2184 2.09968 10.9851 1.33301 11.9384 1.33301C12.8918 1.33301 13.6584 2.10634 13.6584 3.05301C13.6518 3.98634 12.9184 4.73968 11.9984 4.77301Z"
                   stroke="#064247"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
                 <path
                   d="M11.3117 9.62645C12.225 9.77978 13.2317 9.61978 13.9384 9.14645C14.8784 8.51978 14.8784 7.49312 13.9384 6.86645C13.225 6.39312 12.205 6.23311 11.2917 6.39311"
                   stroke="#064247"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
                 <path
                   d="M3.97836 4.77301C4.01836 4.76634 4.06503 4.76634 4.10503 4.77301C5.02503 4.73968 5.75836 3.98634 5.75836 3.05301C5.75836 2.09968 4.99169 1.33301 4.03836 1.33301C3.08503 1.33301 2.31836 2.10634 2.31836 3.05301C2.32503 3.98634 3.05836 4.73968 3.97836 4.77301Z"
                   stroke="#064247"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
                 <path
                   d="M4.66498 9.62645C3.75165 9.77978 2.74498 9.61978 2.03831 9.14645C1.09831 8.51978 1.09831 7.49312 2.03831 6.86645C2.75165 6.39312 3.77164 6.23311 4.68498 6.39311"
                   stroke="#064247"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
                 <path
                   d="M7.99997 9.75348C7.95997 9.74681 7.9133 9.74681 7.8733 9.75348C6.9533 9.72015 6.21997 8.96681 6.21997 8.03348C6.21997 7.08014 6.98664 6.31348 7.93997 6.31348C8.8933 6.31348 9.65997 7.08681 9.65997 8.03348C9.6533 8.96681 8.91997 9.72681 7.99997 9.75348Z"
                   stroke="#064247"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
                 <path
                   d="M6.05998 11.8532C5.11998 12.4799 5.11998 13.5066 6.05998 14.1332C7.12665 14.8466 8.87331 14.8466 9.93998 14.1332C10.88 13.5066 10.88 12.4799 9.93998 11.8532C8.87998 11.1466 7.12665 11.1466 6.05998 11.8532Z"
                   stroke="#064247"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
               </svg>
               <p className="text-[14px] text-[#CBCBCB] mr-[2%]">
@@ -175,7 +175,7 @@ function statistics() {
               labels: ["اسفند", "بهمن", "دی", "آذر", "آبان", "مهر"],
               datasets: [
                 {
-                  tension: .8,
+                  tension: 0.8,
                   fill: true,
                   // label: "My First dataset",
                   backgroundColor: "#D6F3F1",

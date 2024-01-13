@@ -79,8 +79,8 @@ function insurance() {
           <path
             d="M8 1L2 6.5L8 12"
             stroke="#288E87"
-            stroke-width="2"
-            stroke-linecap="round"
+            strokeWidth="2"
+            strokeLinecap="round"
           />
         </svg>
         <p className="text-[#757575] font-bold text-[20px]">
@@ -102,23 +102,23 @@ function insurance() {
                   <path
                     d="M26.1033 38H51.4367"
                     stroke="#757575"
-                    stroke-width="4"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeWidth="4"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   />
                   <path
                     d="M38.77 50.6673V25.334"
                     stroke="#757575"
-                    stroke-width="4"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeWidth="4"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   />
                   <path
                     d="M29.27 69.6663H48.27C64.1033 69.6663 70.4367 63.333 70.4367 47.4997V28.4997C70.4367 12.6663 64.1033 6.33301 48.27 6.33301H29.27C13.4367 6.33301 7.10333 12.6663 7.10333 28.4997V47.4997C7.10333 63.333 13.4367 69.6663 29.27 69.6663Z"
                     stroke="#757575"
-                    stroke-width="4"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeWidth="4"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   />
                 </svg>
                 <p>افزودن بیمه</p>

@@ -61,11 +61,14 @@ function login() {
         .then((res) => {
           localStorage.setItem("token", res.data.data.token),
             localStorage.setItem("phone", data.user);
+            
           if (res.data.data.role[0] == "doctor") {
+            console.log(res)
+            // localStorage.setItem("document",res.data.data)
             router.push("/admin/myPatient");
           } else {
             {
-              console.log(res.data.data.document.length)
+              console.log(res)
               res.data.data.document.length!==0
                 ? router.push("/user/reservation")
                 : router.push("/user/reservation/register");

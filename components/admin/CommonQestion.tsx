@@ -28,7 +28,10 @@ function CommonQestion() {
     },
   ];
   return (
-    <div style={{direction:"ltr"}} className="flex flex-col h-[476px] overflow-auto  max-w-[824px] justify-between gap-[5%]">
+    <div
+      style={{ direction: "ltr" }}
+      className="flex flex-col h-[476px] overflow-auto  max-w-[824px] justify-between gap-[5%]"
+    >
       {dataCommonQ.map((item) => {
         return (
           <div className="flex flex-col h-[167px] max-w-[802px] justify-between ">
@@ -44,30 +47,32 @@ function CommonQestion() {
                 <path
                   d="M13.26 3.60022L5.05 12.2902C4.74 12.6202 4.44 13.2702 4.38 13.7202L4.01 16.9602C3.88 18.1302 4.72 18.9302 5.88 18.7302L9.1 18.1802C9.55 18.1002 10.18 17.7702 10.49 17.4302L18.7 8.74022C20.12 7.24022 20.76 5.53022 18.55 3.44022C16.35 1.37022 14.68 2.10022 13.26 3.60022Z"
                   stroke="#0D0630"
-                  stroke-width="1.5"
+                  strokeWidth="1.5"
                   stroke-miterlimit="10"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
                 <path
                   d="M11.89 5.0498C12.32 7.8098 14.56 9.9198 17.34 10.1998"
                   stroke="#064247"
-                  stroke-width="1.5"
+                  strokeWidth="1.5"
                   stroke-miterlimit="10"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
                 <path
                   d="M3 22H21"
                   stroke="#292D32"
-                  stroke-width="1.5"
+                  strokeWidth="1.5"
                   stroke-miterlimit="10"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
               </svg>
             </div>
-            <p className="text-[14px] font-light text-[#757575] h-[62px] mr-[1.5%]">{item.desc}</p>
+            <p className="text-[14px] font-light text-[#757575] h-[62px] mr-[1.5%]">
+              {item.desc}
+            </p>
             <hr className="w-[417px] mr-[2%]" />
           </div>
         );

@@ -17,14 +17,13 @@ function Buttonswiper() {
           <path
             d="M16.5 13L23.5 20L16.5 27"
             stroke="white"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
         </svg>
       </button>
       <button className=" mr-[1%]" onClick={() => swiper.slidePrev()}>
-        
         <svg
           width="40"
           height="40"
@@ -36,9 +35,9 @@ function Buttonswiper() {
           <path
             d="M23.5 27L16.5 20L23.5 13"
             stroke="white"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
         </svg>
       </button>

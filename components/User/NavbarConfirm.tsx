@@ -13,12 +13,12 @@ function NavbarConfirm() {
     getData();
   }, []);
   const getData = async () => {
-    const token = localStorage.getItem("token");    
+    const token = localStorage.getItem("token");
     const response = await apiRequests.get(`/api/user-document`, {
       headers: { Authorization: `Bearer ${token}` },
     });
     console.log(response);
-    setPatient(response.data.data); 
+    setPatient(response.data.data);
   };
   const arrayNum: any = [
     { id: 1, name: " فائزه ملکی", img: "/images/landin/Beautiful.png" },
@@ -28,11 +28,11 @@ function NavbarConfirm() {
   const [valueSelectOption, setValueSelectOption] = useState(arrayNum[0].img);
   const handleSelect = (id: any) => {
     localStorage.setItem("id", id);
-  
+
     setValueSelectOption(id);
-    console.log(id)
+    console.log(id);
     //@ts-ignore
-    window.location.replace(`http://localhost:3000/user/reservation/${id}`)
+    window.location.replace(`http://localhost:3000/user/reservation/${id}`);
     // router.push(`/user/reservation/${id}`)
 
     // const test = arrayNum.find((item: any) => {
@@ -71,7 +71,7 @@ function NavbarConfirm() {
           >
             {patient?.map((item: any, index: any) => {
               return (
-                <option  key={item.id} value={item.id}>
+                <option key={item.id} value={item.id}>
                   {item.first_name}
                   {item.last_name}
                 </option>
@@ -91,23 +91,23 @@ function NavbarConfirm() {
             <path
               d="M5.93335 5.54016C6.14002 3.14016 7.37335 2.16016 10.0733 2.16016H10.16C13.14 2.16016 14.3334 3.35349 14.3334 6.33349V10.6802C14.3334 13.6602 13.14 14.8535 10.16 14.8535H10.0733C7.39335 14.8535 6.16002 13.8868 5.94002 11.5268"
               stroke="#C70000"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               d="M9.99951 8.5H2.41284"
               stroke="#C70000"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               d="M3.90008 6.26709L1.66675 8.50042L3.90008 10.7338"
               stroke="#C70000"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
           </svg>
           <p className="mr-2 font-iranSansLight">خروج</p>

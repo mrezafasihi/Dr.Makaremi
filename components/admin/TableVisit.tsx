@@ -39,14 +39,15 @@ export default function TableVisit() {
             return (
               <tr className="text-[#757575] text-[12px] font-medium odd:bg-[#f3fffe] h-[44px] max-w-[896px] ">
                 <td className=" ">{item.reason}</td>
-                <td style={{direction:"ltr"}} className=" ">{item.date}</td>
+                <td style={{ direction: "ltr" }} className=" ">
+                  {item.date}
+                </td>
                 <td className="pr-[10%] ">{item.time}</td>
                 <td className=" text-[#0D0630] font-medium  pr-[40%]">
                   مشاهده
                 </td>
                 <td className=" flex flex-col items-center justify-center mt-[4%] h-full  pr-[65%] ">
                   <svg
-                  
                     width="16"
                     height="16"
                     viewBox="0 0 16 16"
@@ -60,40 +61,42 @@ export default function TableVisit() {
                     <path
                       d="M13.9999 3.98617C11.7799 3.76617 9.54655 3.65283 7.31988 3.65283C5.99988 3.65283 4.67988 3.7195 3.35988 3.85283L1.99988 3.98617"
                       stroke="#C70000"
-                      stroke-width="1.3"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeWidth="1.3"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     />
                     <path
                       d="M5.66663 3.3135L5.81329 2.44016C5.91996 1.80683 5.99996 1.3335 7.12663 1.3335H8.87329C9.99996 1.3335 10.0866 1.8335 10.1866 2.44683L10.3333 3.3135"
                       stroke="#C70000"
-                      stroke-width="1.3"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeWidth="1.3"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     />
                     <path
                       d="M12.5667 6.09326L12.1334 12.8066C12.06 13.8533 12 14.6666 10.14 14.6666H5.86002C4.00002 14.6666 3.94002 13.8533 3.86668 12.8066L3.43335 6.09326"
                       stroke="#C70000"
-                      stroke-width="1.3"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeWidth="1.3"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     />
                     <path
                       d="M6.88672 11H9.10672"
                       stroke="#C70000"
-                      stroke-width="1.3"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeWidth="1.3"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     />
                     <path
                       d="M6.33337 8.3335H9.66671"
                       stroke="#C70000"
-                      stroke-width="1.3"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeWidth="1.3"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     />
                   </svg>
-                  <p className="text-[#C70000] text-[10px] font-iranSansLight">حذف</p>
+                  <p className="text-[#C70000] text-[10px] font-iranSansLight">
+                    حذف
+                  </p>
                 </td>
               </tr>
             );

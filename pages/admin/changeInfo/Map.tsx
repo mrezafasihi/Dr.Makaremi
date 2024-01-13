@@ -19,8 +19,8 @@ function Map() {
           <path
             d="M8 1.5L2 7L8 12.5"
             stroke="#064247"
-            stroke-width="2"
-            stroke-linecap="round"
+            strokeWidth="2"
+            strokeLinecap="round"
           />
         </svg>
         <p className="font-bold text-[20px] text-[#757575]">آدرس و تلفن</p>
@@ -92,16 +92,16 @@ function Map() {
                 cy="9.7659"
                 r="8.98856"
                 stroke="#757575"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
               <path
                 d="M16.4784 16.4844L20.0024 19.9992"
                 stroke="#757575"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
             </svg>
             <input

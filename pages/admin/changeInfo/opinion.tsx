@@ -17,16 +17,16 @@ function opinion() {
           <path
             d="M6.49166 4.99948C6.49166 5.82448 5.825 6.49115 5 6.49115C4.175 6.49115 3.50833 5.82448 3.50833 4.99948C3.50833 4.17448 4.175 3.50781 5 3.50781C5.825 3.50781 6.49166 4.17448 6.49166 4.99948Z"
             stroke="#288E87"
-            stroke-width="0.8"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="0.8"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             d="M5 8.44662C6.47083 8.44662 7.84166 7.57995 8.79583 6.07995C9.17083 5.49245 9.17083 4.50495 8.79583 3.91745C7.84166 2.41745 6.47083 1.55078 5 1.55078C3.52916 1.55078 2.15833 2.41745 1.20416 3.91745C0.829163 4.50495 0.829163 5.49245 1.20416 6.07995C2.15833 7.57995 3.52916 8.44662 5 8.44662Z"
             stroke="#288E87"
-            stroke-width="0.8"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="0.8"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
         </svg>
       ),
@@ -69,16 +69,16 @@ function opinion() {
           <path
             d="M6.49166 4.99948C6.49166 5.82448 5.825 6.49115 5 6.49115C4.175 6.49115 3.50833 5.82448 3.50833 4.99948C3.50833 4.17448 4.175 3.50781 5 3.50781C5.825 3.50781 6.49166 4.17448 6.49166 4.99948Z"
             stroke="#288E87"
-            stroke-width="0.8"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="0.8"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             d="M5 8.44662C6.47083 8.44662 7.84166 7.57995 8.79583 6.07995C9.17083 5.49245 9.17083 4.50495 8.79583 3.91745C7.84166 2.41745 6.47083 1.55078 5 1.55078C3.52916 1.55078 2.15833 2.41745 1.20416 3.91745C0.829163 4.50495 0.829163 5.49245 1.20416 6.07995C2.15833 7.57995 3.52916 8.44662 5 8.44662Z"
             stroke="#288E87"
-            stroke-width="0.8"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="0.8"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
         </svg>
       ),
@@ -122,16 +122,16 @@ function opinion() {
           <path
             d="M6.49166 4.99948C6.49166 5.82448 5.825 6.49115 5 6.49115C4.175 6.49115 3.50833 5.82448 3.50833 4.99948C3.50833 4.17448 4.175 3.50781 5 3.50781C5.825 3.50781 6.49166 4.17448 6.49166 4.99948Z"
             stroke="#288E87"
-            stroke-width="0.8"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="0.8"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             d="M5 8.44662C6.47083 8.44662 7.84166 7.57995 8.79583 6.07995C9.17083 5.49245 9.17083 4.50495 8.79583 3.91745C7.84166 2.41745 6.47083 1.55078 5 1.55078C3.52916 1.55078 2.15833 2.41745 1.20416 3.91745C0.829163 4.50495 0.829163 5.49245 1.20416 6.07995C2.15833 7.57995 3.52916 8.44662 5 8.44662Z"
             stroke="#288E87"
-            stroke-width="0.8"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="0.8"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
         </svg>
       ),
@@ -176,16 +176,16 @@ function opinion() {
           <path
             d="M6.49166 4.99948C6.49166 5.82448 5.825 6.49115 5 6.49115C4.175 6.49115 3.50833 5.82448 3.50833 4.99948C3.50833 4.17448 4.175 3.50781 5 3.50781C5.825 3.50781 6.49166 4.17448 6.49166 4.99948Z"
             stroke="#064247"
-            stroke-width="0.8"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="0.8"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             d="M5 8.44662C6.47083 8.44662 7.84166 7.57995 8.79583 6.07995C9.17083 5.49245 9.17083 4.50495 8.79583 3.91745C7.84166 2.41745 6.47083 1.55078 5 1.55078C3.52916 1.55078 2.15833 2.41745 1.20416 3.91745C0.829163 4.50495 0.829163 5.49245 1.20416 6.07995C2.15833 7.57995 3.52916 8.44662 5 8.44662Z"
             stroke="#064247"
-            stroke-width="0.8"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="0.8"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
         </svg>
       ),
@@ -201,44 +201,44 @@ function opinion() {
           <path
             d="M6.05416 3.94531L3.94583 6.05365C3.675 5.78281 3.50833 5.41198 3.50833 4.99948C3.50833 4.17448 4.175 3.50781 5 3.50781C5.4125 3.50781 5.78333 3.67448 6.05416 3.94531Z"
             stroke="#C70000"
-            stroke-width="0.8"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="0.8"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             d="M7.425 2.40469C6.69583 1.85469 5.8625 1.55469 5 1.55469C3.52916 1.55469 2.15833 2.42135 1.20416 3.92135C0.829163 4.50885 0.829163 5.49635 1.20416 6.08385C1.53333 6.60052 1.91666 7.04635 2.33333 7.40469"
             stroke="#C70000"
-            stroke-width="0.8"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="0.8"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             d="M3.50833 8.13802C3.98333 8.33802 4.4875 8.44635 5 8.44635C6.47083 8.44635 7.84167 7.57969 8.79583 6.07969C9.17083 5.49219 9.17083 4.50469 8.79583 3.91719C8.65833 3.70052 8.50833 3.49635 8.35416 3.30469"
             stroke="#C70000"
-            stroke-width="0.8"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="0.8"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             d="M6.46251 5.29102C6.35417 5.87852 5.87501 6.35768 5.28751 6.46602"
             stroke="#C70000"
-            stroke-width="0.8"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="0.8"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             d="M3.94584 6.05469L0.833344 9.16719"
             stroke="#C70000"
-            stroke-width="0.8"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="0.8"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             d="M9.16667 0.833984L6.05417 3.94648"
             stroke="#C70000"
-            stroke-width="0.8"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="0.8"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
         </svg>
       ),
@@ -262,16 +262,16 @@ function opinion() {
           <path
             d="M6.49166 4.99948C6.49166 5.82448 5.825 6.49115 5 6.49115C4.175 6.49115 3.50833 5.82448 3.50833 4.99948C3.50833 4.17448 4.175 3.50781 5 3.50781C5.825 3.50781 6.49166 4.17448 6.49166 4.99948Z"
             stroke="#064247"
-            stroke-width="0.8"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="0.8"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             d="M5 8.44662C6.47083 8.44662 7.84166 7.57995 8.79583 6.07995C9.17083 5.49245 9.17083 4.50495 8.79583 3.91745C7.84166 2.41745 6.47083 1.55078 5 1.55078C3.52916 1.55078 2.15833 2.41745 1.20416 3.91745C0.829163 4.50495 0.829163 5.49245 1.20416 6.07995C2.15833 7.57995 3.52916 8.44662 5 8.44662Z"
             stroke="#064247"
-            stroke-width="0.8"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="0.8"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
         </svg>
       ),
@@ -287,44 +287,44 @@ function opinion() {
           <path
             d="M6.05416 3.94531L3.94583 6.05365C3.675 5.78281 3.50833 5.41198 3.50833 4.99948C3.50833 4.17448 4.175 3.50781 5 3.50781C5.4125 3.50781 5.78333 3.67448 6.05416 3.94531Z"
             stroke="#C70000"
-            stroke-width="0.8"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="0.8"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             d="M7.425 2.40469C6.69583 1.85469 5.8625 1.55469 5 1.55469C3.52916 1.55469 2.15833 2.42135 1.20416 3.92135C0.829163 4.50885 0.829163 5.49635 1.20416 6.08385C1.53333 6.60052 1.91666 7.04635 2.33333 7.40469"
             stroke="#C70000"
-            stroke-width="0.8"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="0.8"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             d="M3.50833 8.13802C3.98333 8.33802 4.4875 8.44635 5 8.44635C6.47083 8.44635 7.84167 7.57969 8.79583 6.07969C9.17083 5.49219 9.17083 4.50469 8.79583 3.91719C8.65833 3.70052 8.50833 3.49635 8.35416 3.30469"
             stroke="#C70000"
-            stroke-width="0.8"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="0.8"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             d="M6.46251 5.29102C6.35417 5.87852 5.87501 6.35768 5.28751 6.46602"
             stroke="#C70000"
-            stroke-width="0.8"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="0.8"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             d="M3.94584 6.05469L0.833344 9.16719"
             stroke="#C70000"
-            stroke-width="0.8"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="0.8"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             d="M9.16667 0.833984L6.05417 3.94648"
             stroke="#C70000"
-            stroke-width="0.8"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="0.8"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
         </svg>
       ),
@@ -348,16 +348,16 @@ function opinion() {
           <path
             d="M6.49166 4.99948C6.49166 5.82448 5.825 6.49115 5 6.49115C4.175 6.49115 3.50833 5.82448 3.50833 4.99948C3.50833 4.17448 4.175 3.50781 5 3.50781C5.825 3.50781 6.49166 4.17448 6.49166 4.99948Z"
             stroke="#064247"
-            stroke-width="0.8"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="0.8"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             d="M5 8.44662C6.47083 8.44662 7.84166 7.57995 8.79583 6.07995C9.17083 5.49245 9.17083 4.50495 8.79583 3.91745C7.84166 2.41745 6.47083 1.55078 5 1.55078C3.52916 1.55078 2.15833 2.41745 1.20416 3.91745C0.829163 4.50495 0.829163 5.49245 1.20416 6.07995C2.15833 7.57995 3.52916 8.44662 5 8.44662Z"
             stroke="#064247"
-            stroke-width="0.8"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="0.8"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
         </svg>
       ),
@@ -373,44 +373,44 @@ function opinion() {
           <path
             d="M6.05416 3.94531L3.94583 6.05365C3.675 5.78281 3.50833 5.41198 3.50833 4.99948C3.50833 4.17448 4.175 3.50781 5 3.50781C5.4125 3.50781 5.78333 3.67448 6.05416 3.94531Z"
             stroke="#C70000"
-            stroke-width="0.8"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="0.8"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             d="M7.425 2.40469C6.69583 1.85469 5.8625 1.55469 5 1.55469C3.52916 1.55469 2.15833 2.42135 1.20416 3.92135C0.829163 4.50885 0.829163 5.49635 1.20416 6.08385C1.53333 6.60052 1.91666 7.04635 2.33333 7.40469"
             stroke="#C70000"
-            stroke-width="0.8"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="0.8"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             d="M3.50833 8.13802C3.98333 8.33802 4.4875 8.44635 5 8.44635C6.47083 8.44635 7.84167 7.57969 8.79583 6.07969C9.17083 5.49219 9.17083 4.50469 8.79583 3.91719C8.65833 3.70052 8.50833 3.49635 8.35416 3.30469"
             stroke="#C70000"
-            stroke-width="0.8"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="0.8"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             d="M6.46251 5.29102C6.35417 5.87852 5.87501 6.35768 5.28751 6.46602"
             stroke="#C70000"
-            stroke-width="0.8"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="0.8"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             d="M3.94584 6.05469L0.833344 9.16719"
             stroke="#C70000"
-            stroke-width="0.8"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="0.8"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             d="M9.16667 0.833984L6.05417 3.94648"
             stroke="#C70000"
-            stroke-width="0.8"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="0.8"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
         </svg>
       ),
@@ -424,7 +424,7 @@ function opinion() {
   ];
   return (
     <Layout>
-      <div className="mt-[3%] mr-[5%] overflow-y-auto" >
+      <div className="mt-[3%] mr-[5%] overflow-y-auto">
         <div className="flex items-center">
           <p className="text-[16px] text-[#45CBC2]">تغییر اطلاعات</p>
           <svg
@@ -438,19 +438,22 @@ function opinion() {
             <path
               d="M8 1.5L2 7L8 12.5"
               stroke="#064247"
-              stroke-width="2"
-              stroke-linecap="round"
+              strokeWidth="2"
+              strokeLinecap="round"
             />
           </svg>
           <p className="text-[20px] text-[#757575]">نظرات</p>
         </div>
-        <div style={{direction:"ltr"}}  className="w-[957px] h-[521px] bg-[#D9D2F9] rounded-md mt-[5%] gap-1 overflow-y-auto border-[#D9D2F9] border-t-[45px] border-b-[30px] border-r-[30px]" >
+        <div
+          style={{ direction: "ltr" }}
+          className="w-[957px] h-[521px] bg-[#D9D2F9] rounded-md mt-[5%] gap-1 overflow-y-auto border-[#D9D2F9] border-t-[45px] border-b-[30px] border-r-[30px]"
+        >
           <p className="text-[14px] text-[#064247] font-medium mr-[5%]">
             نظرات جدید
           </p>
           {idea.map((item) => {
             return (
-              <div  className=" bg-white w-[875px] h-[193px] rounded-xl mt-[1%] flex mx-auto ">
+              <div className=" bg-white w-[875px] h-[193px] rounded-xl mt-[1%] flex mx-auto ">
                 <div className=" mr-[1%] ml-[2%]">
                   <img
                     src={item.img}
@@ -462,53 +465,67 @@ function opinion() {
                   <div className="flex items-center mt-[2%]">
                     {item.svg}
                     <button className="text-[#064247] text-[12px] mx-[1%] ">
-                    
                       {item.show}
                     </button>
                     <p className="mx-[1%]"> {item.svg2}</p>
                     <button className="text-[#C70000] text-[12px]">
-                     
                       {item.delite}
                     </button>
                   </div>
                   <p className="text-[18px] mt-[1%] mb-[1%]"> {item.name}</p>
                   <p className="text-[#0D0630] text-[12px] mb-[1%]">
-                  
                     {item.resault}
                   </p>
                   <div className=" flex ">
                     <p className="text-[12px] mb-[1%] ml-[3%]"> {item.date}</p>
                     <p className="text-[12px]"> {item.hour}</p>
                   </div>
-                  <p className="text-[14px] text-[#064247] font-iranSansLight"> {item.text}</p>
+                  <p className="text-[14px] text-[#064247] font-iranSansLight">
+                    {" "}
+                    {item.text}
+                  </p>
                 </div>
               </div>
             );
           })}
         </div>
-        <div style={{direction:"ltr"}} className="w-[957px] h-[521px] bg-[#D6F3F1] rounded-md mt-[5%] gap-1 overflow-y-auto border-[#D6F3F1] border-t-[45px] border-b-[30px] border-r-[30px]">
+        <div
+          style={{ direction: "ltr" }}
+          className="w-[957px] h-[521px] bg-[#D6F3F1] rounded-md mt-[5%] gap-1 overflow-y-auto border-[#D6F3F1] border-t-[45px] border-b-[30px] border-r-[30px]"
+        >
           <p className="text-[14px] text-[#064247] mr-[5%]">
             نظرات قرارگرفته در سایت
           </p>
           {other.map((item) => {
             return (
-              <div dir="rtl" className="flex bg-white rounded-xl w-[875px] max-h-[193px] mx-auto mt-[1%] ">
+              <div
+                dir="rtl"
+                className="flex bg-white rounded-xl w-[875px] max-h-[193px] mx-auto mt-[1%] "
+              >
                 <div className="w-[63px] h-[63px] bg-gray-200 rounded-full  mt-[2%] mr-[1%] ml-[2%]">
                   <img src={item.img} alt="img" className="rounded-full " />
                 </div>
                 <div className="flex flex-col w-[85%]">
                   <div className="flex items-center  mt-[2%]">
-                   {item.svg}
-                    <button className="mx-[1%] text-[12px] text-[#064247] font-medium">{item.namayesh}</button>
-                   <p className="mx-[1%] "> {item.svg2}</p>
-                   <button className="text-[#C70000] text-[12px] font-medium"> {item.dontnamayesh}</button>
+                    {item.svg}
+                    <button className="mx-[1%] text-[12px] text-[#064247] font-medium">
+                      {item.namayesh}
+                    </button>
+                    <p className="mx-[1%] "> {item.svg2}</p>
+                    <button className="text-[#C70000] text-[12px] font-medium">
+                      {" "}
+                      {item.dontnamayesh}
+                    </button>
                   </div>
-                  <p className="text-[18px] font-light my-[1%]"> {item.flname}</p>
+                  <p className="text-[18px] font-light my-[1%]">
+                    {" "}
+                    {item.flname}
+                  </p>
                   <p className="text-[12px]"> {item.elat}</p>
-                 <div className="flex my-[1%]">
-                 <p className="text-[12px] ml-[1%]">{item.tarikh}</p>
-                  <p className="text-[12px]"> {item.saat}</p>
-                 </div>
+                  <div className="flex my-[1%]">
+                    <p className="text-[12px] ml-[1%]">{item.tarikh}</p>
+                    <p className="text-[12px]"> {item.saat}</p>
+                  </div>
                   <p className="text-[14px] text-[#064247]"> {item.matn}</p>
                 </div>
               </div>

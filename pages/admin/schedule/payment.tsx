@@ -22,13 +22,13 @@ function payment() {
             <path
               d="M8 1L2 6.5L8 12"
               stroke="#288E87"
-              stroke-width="2"
-              stroke-linecap="round"
+              strokeWidth="2"
+              strokeLinecap="round"
             />
           </svg>
           <p className="text-[#757575] font-bold text-[20px]">ستایش الوندی</p>
         </div>
-       <Paymenticon/>
+        <Paymenticon />
         <div className="mt-[7%]">
           <p className="mr-[13%] mb-[7%]">
             اطلاعات ثبت نوبت برای سرکار خانم{" "}
@@ -62,8 +62,13 @@ function payment() {
               type="text"
               placeholder="کد پیگیری"
             />
-            <p className="text-[#525252] mt-[1%] mb-[2%]">کد پیگیری رسید پرداخت را وارد کنید.</p>
-            <CustomButton text="تایید و رزرو نهایی"  style="bg-[#288E87] text-white"/>
+            <p className="text-[#525252] mt-[1%] mb-[2%]">
+              کد پیگیری رسید پرداخت را وارد کنید.
+            </p>
+            <CustomButton
+              text="تایید و رزرو نهایی"
+              style="bg-[#288E87] text-white"
+            />
           </div>
         </div>
       </div>

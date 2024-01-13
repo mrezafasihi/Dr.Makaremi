@@ -18,8 +18,8 @@ function Biografi() {
             <path
               d="M8 1.5L2 7L8 12.5"
               stroke="#064247"
-              stroke-width="2"
-              stroke-linecap="round"
+              strokeWidth="2"
+              strokeLinecap="round"
             />
           </svg>
           <p className="text-[20px] text-[#757575]">بیوگرافی</p>
@@ -44,8 +44,8 @@ function Biografi() {
             <path
               d="M62 2.5L62 21.5"
               stroke="#83DCD6"
-              stroke-width="0.5"
-              stroke-linecap="round"
+              strokeWidth="0.5"
+              strokeLinecap="round"
             />
             <path
               d="M89.4 13.1205C89.4 13.1205 86.7 16.0455 86.7 17.8455C86.6951 18.205 86.761 18.5619 86.894 18.896C87.0271 19.23 87.2246 19.5345 87.4753 19.7922C87.9816 20.3126 88.674 20.6106 89.4 20.6205C90.126 20.6304 90.8263 20.3516 91.3467 19.8452C91.6044 19.5945 91.8102 19.2955 91.9523 18.9652C92.0944 18.635 92.1701 18.28 92.175 17.9205V17.8455C92.175 16.0455 89.4 13.1205 89.4 13.1205ZM88.2975 12.1028L88.7993 11.5598L87.075 6.75H85.575L81.825 17.25H83.325L84.3975 14.25H86.6048C87.1138 13.4932 87.6786 12.7754 88.2945 12.1028H88.2975ZM86.325 8.85L87.72 12.75H84.933L86.325 8.85Z"
@@ -88,7 +88,7 @@ function Biografi() {
               fill="black"
             />
           </svg>
-          <hr className="w-full border-[#45CBC2] mt-[1.5%]"/>
+          <hr className="w-full border-[#45CBC2] mt-[1.5%]" />
           <p className="text-[#45CBC2] mt-[2%] mr-[4%]">تجارب و تحصیلات</p>
           <div className="flex mt-[3%] mr-[4%]">
             <li />

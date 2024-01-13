@@ -16,11 +16,13 @@ function Information() {
         اطلاعات ثبت نوبت برای سرکار خانم
         <span className="mr-[.5%] text-[16px] font-[700]  ">زهرا محمدی</span>
       </p>
-      <div >
-        <table className=" w-[862px] h-[116.086px]  mx-auto mt-[7%] font-IRANSansXFaNum  border-[.5px] border-stone-200   rounded-[10px]
-         text-center ">
+      <div>
+        <table
+          className=" w-[862px] h-[116.086px]  mx-auto mt-[7%] font-IRANSansXFaNum  border-[.5px] border-stone-200   rounded-[10px]
+         text-center "
+        >
           <thead className="mt-[5%] h-[50%] ">
-            <tr >
+            <tr>
               <th className="font-[700] text-[16px]">دکتر</th>
               <th className="font-[700] text-[16px]">روز</th>
               <th className="font-[700] text-[16px]">ساعت مراجعه</th>
@@ -71,7 +73,7 @@ function Information() {
                   viewBox="0 0 20 20"
                   fill="currentColor"
                   stroke="currentColor"
-                  stroke-width="1"
+                  strokeWidth="1"
                 >
                   <path
                     fill-rule="evenodd"

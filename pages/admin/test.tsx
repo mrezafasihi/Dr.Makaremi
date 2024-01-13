@@ -4,32 +4,46 @@ import { useForm } from "react-hook-form";
 import { Calendar } from "react-modern-calendar-datepicker";
 import "react-modern-calendar-datepicker/lib/DatePicker.css";
 function test() {
-  const { register, handleSubmit } = useForm();
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { isSubmitSuccessful },
+  } = useForm();
   const [allSelectedDay, setAllSelectedDay] = useState<any>([]);
-  const [selectdedDay, setSelectedDay] = useState<any>([]);
-  const [select, setSelect] = useState();
-  const harchi = {
-    [selectdedDay.lenght - 1]: {
-      start_time: "08:00",
-      end_time: "16:00",
-      visit_length: "15",
-      rest_time: "5",
-      visit_cost: "300",
-    },
-  };
-
-  console.log(harchi);
-
+  const [selectdedDay, setSelectedDay] = useState<any>();
+  // const [select, setSelect] = useState<any>();
+  const [test,setTest]=useState<any>()
+  useEffect(() => {
+    reset({
+      lenght: "",
+      rest: "",
+      startTime: "",
+      endTime: "",
+      cost: "",
+    });
+  }, [isSubmitSuccessful]);
   const confirm = (data: any) => {
-    setSelect(data);
+    setAllSelectedDay([...allSelectedDay, { [selectdedDay?.day]: data }]);
+    reset();
+    setTest(allSelectedDay.map((item: any) => {
+      return item;
+    }))
   };
 
+  
+// console.log(allSelectedDay)
+
+console.log(test)
   // useEffect(() => {
   //   localStorage.getItem("token");
 
   //   getData();
   // }, []);
-  // useEffect(()=>{},[selectdedDay])
+  // useEffect(() => {
+  //   reset(
+  //    )
+  // }, [isSubmitSuccessful])
 
   const getData = async () => {
     const token = localStorage.getItem("token");
@@ -64,12 +78,10 @@ function test() {
   // for(let i=0;i<selectdedDay.length;i++){ bodyApi={[i]:selectdedDay[i].day}}
   // console.log(bodyApi)
   // const bodyApi={selectdedDay[i].day:
-  const AddDay = () => {
-    allSelectedDay?.push({
-      [selectdedDay[selectdedDay.length - 1]?.day]: select,
-    });
-  };
-  console.log(allSelectedDay);
+  // const AddDay = () => {
+  //   setAllSelectedDay([...select,selectdedDay])
+  // };
+
   // console.log(selectdedDay[selectdedDay.length-1]?.day)
   return (
     <div>
@@ -78,7 +90,7 @@ function test() {
       <input className="border" type="text" {...register("startTime")} />
       <input className="border" type="text" {...register("endTime")} />
       <input className="border" type="text" {...register("cost")} />
-      <button onClick={AddDay}>تایید</button>
+      <button onClick={handleSubmit(confirm)}>تایید</button>
       <Calendar
         value={selectdedDay}
         onChange={setSelectedDay}
@@ -86,7 +98,7 @@ function test() {
         locale="fa"
         colorPrimary="#45CBC2"
       />
-      <button onClick={handleSubmit(confirm)}>جدول</button>
+      <button>جدول</button>
     </div>
   );
 }

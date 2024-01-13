@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import "react-modern-calendar-datepicker/lib/DatePicker.css";
 import { Calendar } from "react-modern-calendar-datepicker";
@@ -17,74 +16,78 @@ function time() {
     { time: "۱۶:۰۰" },
   ];
   const persianToday = utils("fa").getToday();
-  
+
   const [selectedDay, setSelectedDay] = useState<any>(persianToday);
- 
-  let month
-  switch(selectedDay.month) {
+
+  let month;
+  switch (selectedDay.month) {
     case 1:
-      month="فروردین"
+      month = "فروردین";
       break;
     case 2:
-      month="اردیبهشت"
+      month = "اردیبهشت";
       break;
-      case 3:
-        month="خرداد"
+    case 3:
+      month = "خرداد";
       break;
-      case 4:
-        month="تیر"
+    case 4:
+      month = "تیر";
       break;
-      case 5:
-        month="مرداد"
+    case 5:
+      month = "مرداد";
       break;
-      case 6:
-        month="شهریور"
+    case 6:
+      month = "شهریور";
       break;
-      case 7:
-        month="مهر"
+    case 7:
+      month = "مهر";
       break;
-      case 8:
-        month="آبان"
+    case 8:
+      month = "آبان";
       break;
-      case 9:
-        month="آذر"
+    case 9:
+      month = "آذر";
       break;
-      case 10:
-        month="دی"
+    case 10:
+      month = "دی";
       break;
-      case 11:
-        month="بهمن"
+    case 11:
+      month = "بهمن";
       break;
-      case 12:
-        month="اسفند"
-        break;
+    case 12:
+      month = "اسفند";
+      break;
     default:
-      // code block
+    // code block
   }
   return (
     <Layout>
-     <div className="flex items-center mb-[2%] mt-[4%] mr-[6%]">
-          <Link href={"/admin/reservation"} className="ml-[1%] text-[#45CBC2] font-bold">نوبت دهی</Link>
-          <svg
-            width="9"
-            height="13"
-            viewBox="0 0 9 13"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M8 1L2 6.5L8 12"
-              stroke="#288E87"
-              stroke-width="2"
-              stroke-linecap="round"
-            />
-          </svg>
-          <p className="mr-[1%] text-[#757575] font-bold text-[20px]">
-             ستایش الوندی
-          </p>
-        </div>
+      <div className="flex items-center mb-[2%] mt-[4%] mr-[6%]">
+        <Link
+          href={"/admin/reservation"}
+          className="ml-[1%] text-[#45CBC2] font-bold"
+        >
+          نوبت دهی
+        </Link>
+        <svg
+          width="9"
+          height="13"
+          viewBox="0 0 9 13"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M8 1L2 6.5L8 12"
+            stroke="#288E87"
+            strokeWidth="2"
+            strokeLinecap="round"
+          />
+        </svg>
+        <p className="mr-[1%] text-[#757575] font-bold text-[20px]">
+          ستایش الوندی
+        </p>
+      </div>
       <div className="flex h-[200px] relative justify-center mt-[8%]  ">
-      
         <div className="relative left-[15%] top-[12%]">
           <svg
             className="absolute right-[21px] top-[12px] z-10"
@@ -124,17 +127,17 @@ function time() {
                       id="Vector"
                       d="M7.16873 1.48703L3.84206 2.74036C3.0754 3.02703 2.44873 3.9337 2.44873 4.74703V9.70036C2.44873 10.487 2.96873 11.5204 3.60206 11.9937L6.46873 14.1337C7.40873 14.8404 8.9554 14.8404 9.8954 14.1337L12.7621 11.9937C13.3954 11.5204 13.9154 10.487 13.9154 9.70036V4.74703C13.9154 3.92703 13.2887 3.02036 12.5221 2.7337L9.1954 1.48703C8.62873 1.28036 7.72206 1.28036 7.16873 1.48703Z"
                       stroke="white"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     />
                     <path
                       id="Vector_2"
                       d="M6.20874 7.91345L7.28207 8.98678L10.1487 6.12012"
                       stroke="white"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     />
                   </g>
                 </g>
@@ -158,7 +161,7 @@ function time() {
               cy="67.2644"
               r="7.34141"
               stroke="#288E87"
-              stroke-width="0.564724"
+              strokeWidth="0.564724"
               className="relative"
             />
             <circle cx="31.0589" cy="67.264" r="4.80015" fill="#288E87" />
@@ -198,7 +201,7 @@ function time() {
               cy="92.3406"
               r="7.34141"
               stroke="#288E87"
-              stroke-width="0.564724"
+              strokeWidth="0.564724"
             />
             <circle cx="46.1825" cy="92.3402" r="4.80015" fill="#288E87" />
           </svg>
@@ -241,61 +244,61 @@ function time() {
                       id="Vector"
                       d="M8.17529 2V5"
                       stroke="white"
-                      stroke-width="1.5"
+                      strokeWidth="1.5"
                       stroke-miterlimit="10"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     />
                     <path
                       id="Vector_2"
                       d="M16.1753 2V5"
                       stroke="white"
-                      stroke-width="1.5"
+                      strokeWidth="1.5"
                       stroke-miterlimit="10"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     />
                     <path
                       id="Vector_3"
                       d="M3.67529 9.08984H20.6753"
                       stroke="white"
-                      stroke-width="1.5"
+                      strokeWidth="1.5"
                       stroke-miterlimit="10"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     />
                     <path
                       id="Vector_4"
                       d="M21.1753 8.5V17C21.1753 20 19.6753 22 16.1753 22H8.17529C4.67529 22 3.17529 20 3.17529 17V8.5C3.17529 5.5 4.67529 3.5 8.17529 3.5H16.1753C19.6753 3.5 21.1753 5.5 21.1753 8.5Z"
                       stroke="white"
-                      stroke-width="1.5"
+                      strokeWidth="1.5"
                       stroke-miterlimit="10"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     />
                     <path
                       id="Vector_5"
                       d="M12.1708 13.7002H12.1798"
                       stroke="white"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     />
                     <path
                       id="Vector_6"
                       d="M8.4696 13.7002H8.47859"
                       stroke="white"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     />
                     <path
                       id="Vector_7"
                       d="M8.46973 16.7002H8.47871"
                       stroke="white"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     />
                   </g>
                 </g>
@@ -322,7 +325,7 @@ function time() {
               cy="64.0046"
               r="7.34141"
               stroke="#83DCD6"
-              stroke-width="0.564724"
+              strokeWidth="0.564724"
             />
             <circle
               cx="18.7411"
@@ -330,7 +333,7 @@ function time() {
               r="4.51779"
               fill="#83DCD6"
               stroke="#83DCD6"
-              stroke-width="0.564724"
+              strokeWidth="0.564724"
             />
             <circle cx="18.9315" cy="17.7562" r="17.7562" fill="#83DCD6" />
             <path
@@ -377,37 +380,37 @@ function time() {
                         id="Vector"
                         d="M1.50854 6.37891H14.8419"
                         stroke="white"
-                        stroke-width="1.5"
+                        strokeWidth="1.5"
                         stroke-miterlimit="10"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       />
                       <path
                         id="Vector_2"
                         d="M4.17529 12.3789H5.50863"
                         stroke="white"
-                        stroke-width="1.5"
+                        strokeWidth="1.5"
                         stroke-miterlimit="10"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       />
                       <path
                         id="Vector_3"
                         d="M7.17529 12.3789H9.84196"
                         stroke="white"
-                        stroke-width="1.5"
+                        strokeWidth="1.5"
                         stroke-miterlimit="10"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       />
                     </g>
                     <path
                       id="Vector_4"
                       d="M4.46855 2.62891H11.8752C14.2485 2.62891 14.8419 3.28891 14.8419 5.92141V12.0789C14.8419 14.7114 14.2485 15.3714 11.8819 15.3714H4.46855C2.10188 15.3789 1.50854 14.7189 1.50854 12.0864V5.92141C1.50854 3.28891 2.10188 2.62891 4.46855 2.62891Z"
                       stroke="white"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     />
                   </g>
                 </g>
@@ -429,7 +432,7 @@ function time() {
             y2="-0.230654"
             transform="matrix(0.999969 0.00783731 -0.00781928 0.999969 0.0473633 0.517578)"
             stroke="#D6F3F1"
-            stroke-width="0.461309"
+            strokeWidth="0.461309"
           />
         </svg>
       </div>
@@ -442,11 +445,10 @@ function time() {
             locale="fa"
             colorPrimary="#45CBC2"
             customDaysClassName={[
-              
-              { year: 1402, month: 10, day: 4, className: 'bg-[#45CBC2]' },
-              { year: 1402, month: 10, day: 12, className: 'bg-[#45CBC2]' },
-              { year: 1402, month: 10, day: 18, className: 'bg-[#45CBC2]' },
-              { year: 1402, month: 10, day: 26, className: 'bg-[#45CBC2]' },
+              { year: 1402, month: 10, day: 4, className: "bg-[#45CBC2]" },
+              { year: 1402, month: 10, day: 12, className: "bg-[#45CBC2]" },
+              { year: 1402, month: 10, day: 18, className: "bg-[#45CBC2]" },
+              { year: 1402, month: 10, day: 26, className: "bg-[#45CBC2]" },
             ]}
           />
         </div>
@@ -457,10 +459,13 @@ function time() {
           </p>
           <p className="text-[#064247] text-[14px] font-light">انتخاب ساعت</p>
           <div className="flex justify-between items-center flex-wrap  w-full ">
-            {hour.map((item,index) => {
-              
+            {hour.map((item, index) => {
               return (
-                <div className={`${index==1?"bg-white":"bg-[#D6F3F1]"} flex basis-[30%] justify-center items-center h-[50px] text-[14px] font-light bg-[#D6F3F1] border-[1.4px] border-[#D6F3F1] my-[2%] rounded-[15.07px] mx-[1%] `}>
+                <div
+                  className={`${
+                    index == 1 ? "bg-white" : "bg-[#D6F3F1]"
+                  } flex basis-[30%] justify-center items-center h-[50px] text-[14px] font-light bg-[#D6F3F1] border-[1.4px] border-[#D6F3F1] my-[2%] rounded-[15.07px] mx-[1%] `}
+                >
                   {item.time}
                 </div>
               );

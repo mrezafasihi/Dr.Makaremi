@@ -17,18 +17,18 @@ function chat() {
             <path
               d="M24.05 10.3838L34.1667 20.5005L24.05 30.6171"
               stroke="#45CBC2"
-              stroke-width="3"
+              strokeWidth="3"
               stroke-miterlimit="10"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               d="M5.83333 20.5H33.8833"
               stroke="#45CBC2"
-              stroke-width="3"
+              strokeWidth="3"
               stroke-miterlimit="10"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
           </svg>
           <img
@@ -40,7 +40,6 @@ function chat() {
             <p className="text-[16px] text-[#757575]">شماره پرونده : 2106</p>
           </div>
         </div>
-        
       </div>
     </Layout>
   );
