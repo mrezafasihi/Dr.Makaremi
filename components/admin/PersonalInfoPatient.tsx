@@ -6,19 +6,24 @@ function PersonalInfoPatient() {
   const [patient, setPatient] = useState<any>([]);
   const router = useRouter();
   const query = router.query.patientId;
-  console.log(query)
+
   useEffect(() => {
     getData();
   }, []);
-  const getData = async () => {
+  const getData = () => {
     const token = localStorage.getItem("token");
-    const response = await apiRequests.get(`/api/document/${query}`, {
-      headers: { Authorization: `Bearer ${token}` },
-    });
-    console.log(response);
-    setPatient(response.data.data);
+    apiRequests
+      .get(`/api/document/${query}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .then((res) => {
+        setPatient(res.data.data), console.log(res);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
-
+  console.log(patient);
   return (
     <div className="flex flex-col text-[#757575] max-w-[482px] border rounded-[11.94px] h-[289px]">
       <div className="flex justify-center mt-[25px]">
@@ -53,7 +58,7 @@ function PersonalInfoPatient() {
           <input
             className="border rounded-[3.1px] h-[28.67px]"
             type="text"
-            value={"میدان هروی، بلوار پناهی‌نیا، پلاک 12 "}
+            value={patient.address}
           />
         </div>
       </div>
@@ -65,7 +70,7 @@ function PersonalInfoPatient() {
           <input
             className="border rounded-[3.1px]"
             type="text"
-            value={"تهران"}
+            value={patient.city}
           />
         </div>
         <div className="flex flex-col mr-[4%]">
@@ -75,7 +80,7 @@ function PersonalInfoPatient() {
           <input
             className="border rounded-[3.1px]"
             type="text"
-            value={"خانم"}
+            value={patient.gender}
           />
         </div>
       </div>
@@ -97,7 +102,7 @@ function PersonalInfoPatient() {
           <input
             className="border rounded-[3.1px]"
             type="text"
-            value={"09352269867"}
+            value={patient.phone_number}
           />
         </div>
       </div>

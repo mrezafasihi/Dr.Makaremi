@@ -98,19 +98,17 @@ function index() {
     getData();
   }, []);
   const getData = async () => {
-    
     const token = localStorage.getItem("token");
     const response = await apiRequests.get("/api/document ", {
       headers: { Authorization: `Bearer ${token}` },
     });
     console.log(response);
-    // const idDocument=localStorage.setItem("idDocument",JSON.stringify(response.data.data))
     setDataPatients(response.data.data);
   };
- 
-  const deleteData=()=>{
-    const response = apiRequests.delete(`/api/document/`)
-  }
+
+  const deleteData = () => {
+    const response = apiRequests.delete(`/api/document/`);
+  };
   return (
     <Layout>
       <div className="flex  flex-col w-[84.45%] mx-auto ">
@@ -152,7 +150,7 @@ function index() {
               <Link href={`/admin/myPatient/${item.id}`}>
                 <div className="flex justify-between max-w-[856px]  border border-[#CBCBCB] rounded-lg h-[101px] items-center px-4 py-4 ">
                   <div className="flex items-center basis-[18%] ">
-                    <CustomeImage img={item.img} style="w-[48px] h-[49px]" />
+                    <CustomeImage img={item.avatar} style="w-[48px] h-[49px]" />
                     <div className="flex flex-col flex-grow items-center">
                       <h6 className="text-[#064247] font-iranSansMedium text-[14px] ">
                         {item.first_name}

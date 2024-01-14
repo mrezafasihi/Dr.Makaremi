@@ -64,7 +64,6 @@ function login() {
             
           if (res.data.data.role[0] == "doctor") {
             console.log(res)
-            // localStorage.setItem("document",res.data.data)
             router.push("/admin/myPatient");
           } else {
             {
