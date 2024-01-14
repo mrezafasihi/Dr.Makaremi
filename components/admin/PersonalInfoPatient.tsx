@@ -6,6 +6,7 @@ function PersonalInfoPatient() {
   const [patient, setPatient] = useState<any>([]);
   const router = useRouter();
   const query = router.query.patientId;
+<<<<<<< HEAD
   console.log(query)
   // useEffect(() => {
   //   getData();
@@ -19,6 +20,26 @@ function PersonalInfoPatient() {
   //   setPatient(response.data.data);
   // };
 
+=======
+
+  useEffect(() => {
+    getData();
+  }, []);
+  const getData = () => {
+    const token = localStorage.getItem("token");
+    apiRequests
+      .get(`/api/document/${query}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .then((res) => {
+        setPatient(res.data.data), console.log(res);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+  console.log(patient);
+>>>>>>> 830dce0b4a5d5fa5c341daf7e03036d74ac73175
   return (
     <div className="flex flex-col text-[#757575] max-w-[482px] border rounded-[11.94px] h-[289px]">
       <div className="flex justify-center mt-[25px]">
@@ -53,7 +74,7 @@ function PersonalInfoPatient() {
           <input
             className="border rounded-[3.1px] h-[28.67px]"
             type="text"
-            value={"میدان هروی، بلوار پناهی‌نیا، پلاک 12 "}
+            value={patient.address}
           />
         </div>
       </div>
@@ -65,7 +86,7 @@ function PersonalInfoPatient() {
           <input
             className="border rounded-[3.1px]"
             type="text"
-            value={"تهران"}
+            value={patient.city}
           />
         </div>
         <div className="flex flex-col mr-[4%]">
@@ -75,7 +96,7 @@ function PersonalInfoPatient() {
           <input
             className="border rounded-[3.1px]"
             type="text"
-            value={"خانم"}
+            value={patient.gender}
           />
         </div>
       </div>
@@ -97,7 +118,7 @@ function PersonalInfoPatient() {
           <input
             className="border rounded-[3.1px]"
             type="text"
-            value={"09352269867"}
+            value={patient.phone_number}
           />
         </div>
       </div>

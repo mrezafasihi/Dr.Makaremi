@@ -1,5 +1,4 @@
 import CustomButton from "@/components/user/CustomButton";
-
 import Modal from "@/components/user/Modal";
 import Navbar from "@/components/user/Navbar";
 import TextNobat from "@/components/user/TextNobat";
@@ -14,7 +13,7 @@ import Countdown from "react-countdown";
 import CustomInput from "@/components/user/test";
 
 const icon = (
-  <div className="flex items-center justify-center my-[-220px] z-10">
+  <div className="flex items-center justify-center my-auto z-10">
     <Modal text="رمز عبور موقت برای شما پیامک شد" />
   </div>
 );
@@ -39,7 +38,6 @@ function register() {
           password: pass,
         })
         .then((res: any) => {
-           
           localStorage.setItem("phone", phone);
           console.log(res);
           router.push("/user/setPass");
@@ -75,7 +73,7 @@ function register() {
   const handleResendCode = () => {};
   const handleCountDown = ({ minutes, seconds, completed }: any) => {
     if (completed) {
-      return;
+      return <span>ارسال مجدد رمز </span>;
     } else {
       return (
         <span>

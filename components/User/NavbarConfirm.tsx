@@ -72,8 +72,7 @@ function NavbarConfirm() {
             {patient?.map((item: any, index: any) => {
               return (
                 <option key={item.id} value={item.id}>
-                  {item.first_name}
-                  {item.last_name}
+                  {item.first_name} <span>{item.last_name}</span>
                 </option>
               );
             })}

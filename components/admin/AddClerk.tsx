@@ -1,8 +1,28 @@
 import React from "react";
 import CustomInput from "../user/CustomInput";
-import CustomButton from "../user/CustomButton";
+import { useForm } from "react-hook-form";
+import apiRequests from "@/Axios/config";
 
 function AddClerk() {
+  const { register, handleSubmit } = useForm();
+  const confirm = (data: any) => {
+    const token = localStorage.getItem("token");
+    apiRequests
+      .post(
+        "/api/user/clerk",
+        {
+          phone_number: data.phoneNum,
+          name: data.name,
+          family: data.lastName,
+          national_id: data.nationalId,
+        },
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      )
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
+  };
   return (
     <div className="mt-[11.24%] mb-[9%]">
       <div className="flex justify-center relative">
@@ -69,26 +89,31 @@ function AddClerk() {
           label="نام"
           placeholder="مثال: کوروش "
           style="md:w-[37.78%]  w-full md:ml-[3%]  "
+          hookForm={register("name")}
         />
         <CustomInput
           label="نام خانوادگی"
           placeholder="مثال : هخامنشی"
           style="md:w-[37.78%]  w-full"
+          hookForm={register("lastName")}
         />
         <CustomInput
           label="کد ملی"
           placeholder="مثال : 0123456789"
           style="md:w-[37.78%]  w-full md:ml-[3%] md:mt-[3%]"
+          hookForm={register("nationalId")}
         />
         <CustomInput
           label="شماره تلفن"
           placeholder="مثال : 09351112114"
           style="md:w-[37.78%]  w-full md:mt-[3%]"
+          hookForm={register("phoneNum")}
         />
       </div>
       <div className={`text-center  mt-[4%]`}>
         <button
           className={` border-[1px] w-[210px] h-[48px] font-iranSansLight text-[16px] border-[#288E87] rounded-[7.98px] px-7  text-white bg-[#288E87]`}
+          onClick={handleSubmit(confirm)}
         >
           افزودن منشی
         </button>

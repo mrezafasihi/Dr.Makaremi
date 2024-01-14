@@ -1,28 +1,66 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import CustomeImage from "./CustomeImage";
+import apiRequests from "@/Axios/config";
+import { useRouter } from "next/router";
 
 function Clerks() {
-  const dataClerk = [
-    { name: "امیر رئیسی", image: "/images/landin/smiling.png" },
-    { name: "امیر رئیسی", image: "/images/landin/smiling.png" },
-    { name: "امیر رئیسی", image: "/images/landin/smiling.png" },
-    { name: "امیر رئیسی", image: "/images/landin/smiling.png" },
-    { name: "امیر رئیسی", image: "/images/landin/smiling.png" },
-    { name: "امیر رئیسی", image: "/images/landin/smiling.png" },
-    { name: "امیر رئیسی", image: "/images/landin/smiling.png" },
-    { name: "امیر رئیسی", image: "/images/landin/smiling.png" },
-    { name: "امیر رئیسی", image: "/images/landin/smiling.png" },
-    { name: "امیر رئیسی", image: "/images/landin/smiling.png" },
-    { name: "امیر رئیسی", image: "/images/landin/smiling.png" },
-  ];
+  // const dataClerk = [
+  //   { name: "امیر رئیسی", image: "/images/landin/smiling.png" },
+  //   { name: "امیر رئیسی", image: "/images/landin/smiling.png" },
+  //   { name: "امیر رئیسی", image: "/images/landin/smiling.png" },
+  //   { name: "امیر رئیسی", image: "/images/landin/smiling.png" },
+  //   { name: "امیر رئیسی", image: "/images/landin/smiling.png" },
+  //   { name: "امیر رئیسی", image: "/images/landin/smiling.png" },
+  //   { name: "امیر رئیسی", image: "/images/landin/smiling.png" },
+  //   { name: "امیر رئیسی", image: "/images/landin/smiling.png" },
+  //   { name: "امیر رئیسی", image: "/images/landin/smiling.png" },
+  //   { name: "امیر رئیسی", image: "/images/landin/smiling.png" },
+  //   { name: "امیر رئیسی", image: "/images/landin/smiling.png" },
+  // ];
+  const [clerks, setClerk] = useState<any>();
+  const router = useRouter();
+  useEffect(() => {
+    getData();
+  }, []);
+
+  const getData = () => {
+    const token = localStorage.getItem("token");
+    apiRequests
+      .get("/api/user/clerk", {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .then((res) => {
+        console.log(res), setClerk(res.data.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+  const deleteData = (id: any) => {
+    const token = localStorage.getItem("token");
+    apiRequests
+      .delete(`/api/user/clerk/${id}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .then((res) => {
+        console.log(res), router.reload();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
     <div
       style={{ direction: "ltr" }}
       className=" flex flex-col overflow-y-auto gap-[14px] h-[331px] ml-[11.73%] mb-[17%]"
     >
-      {dataClerk.map((item) => {
+      {clerks?.map((item: any) => {
         return (
-          <div className="max-w-[856px] border flex items-center justify-between h-[101px] px-4 py-6 rounded-lg">
+          <div
+            key={item.id}
+            className="max-w-[856px] border flex items-center justify-between h-[101px] px-4 py-6 rounded-lg"
+          >
             <div className="flex items-center">
               <CustomeImage img={item.image} style="w-[48px] h-[49px]" />
               <p className="text-[#064247] opacity-80">{item.name}</p>
@@ -66,6 +104,7 @@ function Clerks() {
                 viewBox="0 0 21 21"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
+                onClick={() => deleteData(item.id)}
               >
                 <path
                   d="M18.1118 5.1578C15.2398 4.87318 12.3505 4.72656 9.46989 4.72656C7.76221 4.72656 6.05452 4.81281 4.34684 4.9853L2.5874 5.1578"

@@ -99,13 +99,11 @@ function index() {
     getData();
   }, []);
   const getData = async () => {
-    
     const token = localStorage.getItem("token");
     const response = await apiRequests.get("/api/document ", {
       headers: { Authorization: `Bearer ${token}` },
     });
     console.log(response);
-    // const idDocument=localStorage.setItem("idDocument",JSON.stringify(response.data.data))
     setDataPatients(response.data.data);
   };
  
