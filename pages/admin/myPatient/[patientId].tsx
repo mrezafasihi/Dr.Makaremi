@@ -12,7 +12,8 @@ import axios from "axios";
 
 function PatientId() {
   const router = useRouter();
-  
+  const [sharedData,setSharedData]=useState([])
+  console.log(sharedData)
   return (
     <Layout>
       <div>
@@ -42,10 +43,10 @@ function PatientId() {
           </p>
         </div>
         <div className="flex justify-center">
-          <PatientInfo />
+          <PatientInfo  />
           <div className="flex flex-col basis-[46.34%] mr-[2%] justify-between">
-            <PersonalInfoPatient />
-            <ResualtTest />
+            <PersonalInfoPatient onDataUpdate={(data:any)=>setSharedData(data)} />
+            <ResualtTest data={sharedData} />
           </div>
         </div>
         <h6 className="font-bold text-[#064247] mr-[6%] mt-[2%] mb-[1%]">

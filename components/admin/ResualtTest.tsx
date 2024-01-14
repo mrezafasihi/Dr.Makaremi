@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
@@ -21,12 +21,31 @@ const style = {
   p: 4,
 };
 
-function ResualtTest() {
+function ResualtTest({data}:any) {
   const [titleResult, setTitleResult] = useState<any>();
   const [desc, setDesc] = useState<any>();
-
+  const [testResult, setTestResult] = useState<any>([]);
   const route = useRouter();
-  console.log(route.query.patientId);
+  useEffect(() => {
+    // getTestResult();
+    // setTestResult(data)
+  }, []);
+  const getTestResult = () => {
+    const idTestResult = localStorage.getItem("idTestResult");
+    console.log(idTestResult)
+    const token = localStorage.getItem("token");
+    apiRequests
+      .get(`/api/results/${idTestResult}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .then((res) => {
+        console.log(res),
+         setTestResult([res.data.data]);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   const medicalTest = [
     { title: "اپتومتیک", date: "1402 / 02 / 28" },
     { title: "آزمایش فشار چشم", date: "1402 / 02 / 10" },
@@ -48,9 +67,12 @@ function ResualtTest() {
           headers: { Authorization: `Bearer ${token}` },
         }
       )
-      .then((res) => console.log(res))
+      .then((res) => {
+        console.log(res);
+      })
       .catch((res) => console.log(res));
   };
+  console.log(data.test_result);
   return (
     <div className="border  border-[#EDEDEE] rounded-[11.94px] text-center w-[482px] h-[189px] overflow-y-auto ">
       <table className=" w-full h-full">
@@ -82,11 +104,11 @@ function ResualtTest() {
           </tr>
         </thead>
         <tbody className="h-[46px] text-center">
-          {medicalTest.map((item) => {
+          {data.test_result?.map((item: any) => {
             return (
-              <tr className=" text-right  odd:bg-[#f3fffe] ">
+              <tr className=" text-right  odd:bg-[#f3fffe] " key={item.id}>
                 <td className=" text-[#757575]  pr-[4.9%] text-[12px]">
-                  {item.title}
+                  {item.test_name}
                 </td>
                 <td
                   style={{ direction: "ltr" }}
