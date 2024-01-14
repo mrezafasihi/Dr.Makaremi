@@ -7,6 +7,7 @@ import Layout from "../Layout";
 import apiRequests from "@/Axios/config";
 
 function index() {
+  const router=useRouter()
   // const dataPatients: any = [
   //   {
   //     id: 1,
@@ -108,8 +109,13 @@ function index() {
     setDataPatients(response.data.data);
   };
  
-  const deleteData=()=>{
-    const response = apiRequests.delete(`/api/document/`)
+  const deleteData= async (id:any)=>{
+    const token = localStorage.getItem("token");
+    const response =await apiRequests.delete(`/api/document/${id}`,{
+      headers: { Authorization: `Bearer ${token}` },
+    })
+    console.log(response)
+    router.reload()
   }
   return (
     <Layout>
@@ -140,7 +146,7 @@ function index() {
             تشکیل پرونده جدید
           </p>
         </Link>
-        <p className="text-[#757575] font-iranSansLight text-[12px] mb-2">
+        <p className="text-[#757575] font-iranSansLight text-[12px] mb-2 mr-8">
           برای مشاهده و ویرایش پرونده روی آن کلیک کنید
         </p>
         <div
@@ -149,9 +155,10 @@ function index() {
         >
           {dataPatients?.map((item: any) => {
             return (
-              <Link href={`/admin/myPatient/${item.id}`}>
+              
                 <div className="flex justify-between max-w-[856px]  border border-[#CBCBCB] rounded-lg h-[101px] items-center px-4 py-4 ">
-                  <div className="flex items-center basis-[18%] ">
+                  <Link href={`/admin/myPatient/${item.id}`} className="flex justify-between w-[90%]">
+                  <div className="flex items-center basis-[18%]">
                     <CustomeImage img={item.img} style="w-[48px] h-[49px]" />
                     <div className="flex flex-col flex-grow items-center">
                       <h6 className="text-[#064247] font-iranSansMedium text-[14px] ">
@@ -163,10 +170,11 @@ function index() {
                       </p>
                     </div>
                   </div>
-                  <div className="flex flex-col text-[#757575] font-iranSansLight text-[12px]">
+                  <div className="flex flex-col text-[#757575] font-iranSansLight text-[12px] w-[45%]">
                     <p className="">آخرین تاریخ مراجعه</p>
                     <p>{item.date}</p>
                   </div>
+                  </Link>
                   <div className="flex flex-col">
                     <svg
                       width="22"
@@ -174,7 +182,8 @@ function index() {
                       viewBox="0 0 22 21"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
-                    >
+                      onClick={()=>deleteData(item.id)}
+                      >
                       <path
                         d="M18.7622 5.15682C15.8902 4.87221 13.0009 4.72559 10.1203 4.72559C8.4126 4.72559 6.70491 4.81183 4.99723 4.98433L3.23779 5.15682"
                         fill="#C70000"
@@ -220,7 +229,7 @@ function index() {
                     </span>
                   </div>
                 </div>
-              </Link>
+             
             );
           })}
         </div>

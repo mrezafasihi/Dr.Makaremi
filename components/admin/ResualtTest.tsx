@@ -5,6 +5,7 @@ import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import { borderRadius, height } from "@mui/system";
 import apiRequests from "@/Axios/config";
+import { useRouter } from "next/router";
 
 const style = {
   position: "absolute" as "absolute",
@@ -15,7 +16,7 @@ const style = {
   height: 465,
 
   bgcolor: "#F9F9F9",
-  borderRadius:10,
+  borderRadius: 10,
   boxShadow: 24,
   p: 4,
 };
@@ -24,6 +25,8 @@ function ResualtTest() {
   const [titleResult, setTitleResult] = useState<any>();
   const [desc, setDesc] = useState<any>();
 
+  const route = useRouter();
+  console.log(route.query.patientId);
   const medicalTest = [
     { title: "اپتومتیک", date: "1402 / 02 / 28" },
     { title: "آزمایش فشار چشم", date: "1402 / 02 / 10" },
@@ -35,14 +38,18 @@ function ResualtTest() {
 
   const sendResult = () => {
     const token = localStorage.getItem("token");
-    const id = localStorage.getItem("id");
-    apiRequests.post(
-      "/api/results",
-      { test_name: titleResult, result: desc, document_id: id },
-      {
-        headers: { Authorization: `Bearer ${token}` },
-      }
-    );
+
+    const idDocument = route.query.patientId;
+    apiRequests
+      .post(
+        "/api/results",
+        { test_name: titleResult, result: desc, document_id: idDocument },
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      )
+      .then((res) => console.log(res))
+      .catch((res) => console.log(res));
   };
   return (
     <div className="border  border-[#EDEDEE] rounded-[11.94px] text-center w-[482px] h-[189px] overflow-y-auto ">

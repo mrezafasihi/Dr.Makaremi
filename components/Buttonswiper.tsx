@@ -3,6 +3,7 @@ import { useSwiper } from "swiper/react";
 
 function Buttonswiper() {
   const swiper = useSwiper();
+
   return (
     <div className=" justify-end ml-[11%] md:flex hidden ">
       <button onClick={() => swiper.slideNext()}>

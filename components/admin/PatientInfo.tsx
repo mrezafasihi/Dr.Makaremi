@@ -7,17 +7,17 @@ function PatientInfo() {
   const router = useRouter();
   const query = router.query.patientId;
 
-  useEffect(() => {
-    getData();
-  }, []);
-  const getData = async () => {
-    const token = localStorage.getItem("token");
-    const response = await apiRequests.get(`/api/document/${query}`, {
-      headers: { Authorization: `Bearer ${token}` },
-    });
-    console.log(response);
-    setPatient(response.data.data);
-  };
+  // useEffect(() => {
+  //   getData();
+  // }, []);
+  // const getData = async () => {
+  //   const token = localStorage.getItem("token");
+  //   const response = await apiRequests.get(`/api/document/${query}`, {
+  //     headers: { Authorization: `Bearer ${token}` },
+  //   });
+  //   console.log(response);
+  //   setPatient(response.data.data);
+  // };
   return (
     <div className="flex flex-col justify-between items-center basis-[38.3%] border rounded-[11.94px] h-[497px] py-[3%]">
       <div className="flex flex-col items-center">

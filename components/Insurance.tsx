@@ -120,7 +120,7 @@ function Insurance() {
           },
           1241: { slidesPerView: 6 },
         }}
-        scrollbar={{ draggable: true, dragSize: "auto" }}
+        scrollbar={{ draggable:true, dragSize: "auto"}}
         onSwiper={(swiper) => console.log(swiper)}
         onSlideChange={() => console.log("slide change")}
       >

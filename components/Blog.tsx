@@ -44,7 +44,7 @@ function Blog() {
       <div className="flex flex-col gap-[6%] items-center  lg:flex-row lg:justify-center max-w-[1224px]">
         {blogData.map((item) => {
           return (
-            <div className="shadow-lg flex flex-col justify-between lg:basis-1/3   rounded-[10px]  max-w-[347px] h-[460px]  ">
+            <div className="shadow-lg flex flex-col justify-between lg:basis-1/3   rounded-[10px]  max-w-[347px] h-[460px] hover:shadow-[0_8px_8px_rgb(211,211,211)] text-black bg-white ease-out hover:translate-y-3 transition-all">
               <img
                 className="mx-[1rem]  max-w-[313px] max-h-[313px] rounded-[10px] my-4"
                 src={item.img}
