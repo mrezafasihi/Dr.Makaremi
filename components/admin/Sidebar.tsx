@@ -661,13 +661,28 @@ function Sidebar() {
                      `}
                   >
                     <span className="ml-2  pr-2 ">{item.icon}</span>{" "}
-                    {item.title}
+                    {item.title}{" "}
+                    <svg
+                      width="11"
+                      height="6"
+                      viewBox="0 0 11 6"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className={`mr-[3%]  ${subMenuOpen?"rotate-180":null}`}
+                    >
+                      <path
+                        d="M5.5 6C5.2557 6 5.0114 5.91646 4.81853 5.73744L0.279661 1.52461C-0.0932203 1.17852 -0.0932203 0.605669 0.279661 0.259572C0.652542 -0.0865241 1.26973 -0.0865241 1.64261 0.259572L5.5 3.83988L9.35739 0.259572C9.73028 -0.0865241 10.3475 -0.0865241 10.7203 0.259572C11.0932 0.605669 11.0932 1.17852 10.7203 1.52461L6.18147 5.73744C5.9886 5.91646 5.7443 6 5.5 6Z"
+                        fill="#064247"
+                        className="group-hover:fill-white"
+                      />
+                    </svg>
                   </div>
 
                   {subMenuOpen &&
                     item.subMenuItems?.map((item: any) => {
                       return (
                         <Link
+                          key={item.path}
                           href={item.path}
                           className="flex flex-col mr-[7%] font-iranSansLight  my-[6%] cursor-pointer hover:text-[#45CBC2]"
                         >

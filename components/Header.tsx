@@ -9,11 +9,11 @@ import {
 
 import { Swiper, SwiperSlide } from "swiper/react";
 function Header() {
-  // const test=window.localStorage.getItem("mytest");
 
   return (
     <Swiper
       className="h-[screen] lg:h-[700px] -z-10"
+      id="home"
       autoplay={{
         delay: 3000,
         disableOnInteraction: false,

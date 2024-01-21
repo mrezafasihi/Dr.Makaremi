@@ -3,7 +3,7 @@ import CustomeImage from "./CustomeImage";
 import apiRequests from "@/Axios/config";
 import { useRouter } from "next/router";
 
-function Clerks() {
+function Clerks({editClerk}:any) {
   // const dataClerk = [
   //   { name: "امیر رئیسی", image: "/images/landin/smiling.png" },
   //   { name: "امیر رئیسی", image: "/images/landin/smiling.png" },
@@ -18,6 +18,7 @@ function Clerks() {
   //   { name: "امیر رئیسی", image: "/images/landin/smiling.png" },
   // ];
   const [clerks, setClerk] = useState<any>();
+  // const [idEdit,setIdEdit]=useState<any>()
   const router = useRouter();
   useEffect(() => {
     getData();
@@ -49,7 +50,22 @@ function Clerks() {
         console.log(err);
       });
   };
-
+  const editData = (id: any) => {
+    const token = localStorage.getItem("token");
+    apiRequests.put(
+      `/api/user/clerk/`,
+      {
+        phone_number: "09981415131",
+        name: "Mohammad",
+        family: "Abdoli",
+        national_id: "0100124563",
+      },
+      {
+        headers: { Authorization: `Bearer ${token}` },
+      }
+    );
+  };
+  console.log(clerks);
   return (
     <div
       style={{ direction: "ltr" }}
@@ -61,17 +77,22 @@ function Clerks() {
             key={item.id}
             className="max-w-[856px] border flex items-center justify-between h-[101px] px-4 py-6 rounded-lg"
           >
-            <div className="flex items-center">
-              <CustomeImage img={item.image} style="w-[48px] h-[49px]" />
-              <p className="text-[#064247] opacity-80">{item.name}</p>
+            <div className="flex items-center   ">
+              <CustomeImage img={item.image} style="w-[48px] h-[49px] " />
+              <p className="text-[#064247] opacity-80">
+                {item.name}
+                <span>{item.family}</span>
+              </p>
             </div>
-            <div className="flex">
+            <div className="flex justify-between ">
               <svg
                 width="20"
                 height="19"
                 viewBox="0 0 20 19"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
+                className="cursor-pointer ml-2"
+                onClick={()=>editClerk(item)}
               >
                 <path
                   d="M11.1967 2.85021L4.69712 9.7298C4.4517 9.99105 4.2142 10.5056 4.1667 10.8619L3.87379 13.4269C3.77087 14.3531 4.43587 14.9865 5.3542 14.8281L7.90337 14.3927C8.25962 14.3294 8.75837 14.0681 9.00379 13.799L15.5034 6.91938C16.6275 5.73188 17.1342 4.37813 15.3846 2.72355C13.643 1.0848 12.3209 1.66271 11.1967 2.85021Z"
@@ -104,6 +125,7 @@ function Clerks() {
                 viewBox="0 0 21 21"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
+                className="cursor-pointer"
                 onClick={() => deleteData(item.id)}
               >
                 <path

@@ -71,8 +71,8 @@ const Info = () => {
       </div>
       <div className="flex flex-col">
         <h3 className="text-[#064247] font-iranSansBold">
-          {patient?.first_name}
-          {patient?.last_name}
+          {patient?.first_name} <span>{patient?.last_name}</span>
+          
         </h3>
         <p className="text-[#757575]  text-[12px] font-iranSansLight">
           شماره پرونده : <span>23664</span>

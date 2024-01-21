@@ -69,10 +69,11 @@ function ResualtTest({data}:any) {
       )
       .then((res) => {
         console.log(res);
+        route.reload()
       })
       .catch((res) => console.log(res));
   };
-  console.log(data.test_result);
+  console.log(data);
   return (
     <div className="border  border-[#EDEDEE] rounded-[11.94px] text-center w-[482px] h-[189px] overflow-y-auto ">
       <table className=" w-full h-full">
@@ -103,10 +104,10 @@ function ResualtTest({data}:any) {
             </th>
           </tr>
         </thead>
-        <tbody className="h-[46px] text-center">
+        <tbody className="h-[141px]  text-center overflow-auto">
           {data.test_result?.map((item: any) => {
             return (
-              <tr className=" text-right  odd:bg-[#f3fffe] " key={item.id}>
+              <tr className=" text-right h-[47px]   odd:bg-[#f3fffe] " key={item.id}>
                 <td className=" text-[#757575]  pr-[4.9%] text-[12px]">
                   {item.test_name}
                 </td>

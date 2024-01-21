@@ -1,9 +1,6 @@
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
-
 import CountCard from "@/components/CountCard";
-
-import Content from "@/components/Content";
 import Bio from "@/components/Bio";
 import BusinessDays from "@/components/BusinessDays";
 import Insurance from "@/components/Insurance";
@@ -19,7 +16,13 @@ import Admin from "@/components/Admin";
 import Header from "@/components/Header";
 import Pay from "./user/reservation/pay";
 import { CChart } from "@coreui/react-chartjs";
+import { useRef } from "react";
 export default function Home() {
+  // const satisfic = useRef(null);
+  // const handleScroll = (
+
+  // ) => {};
+
   return (
     <div>
       <Navbar />

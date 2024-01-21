@@ -94,7 +94,7 @@ function Insurance() {
   const swiper = useSwiper();
 
   return (
-    <div className=" mx-[7.5%]">
+    <div className=" mx-[7.5%]" >
       <p className="border-r-[1px] text-2xl px-2 font-iranSansBold border-[#288E87] text-[#064247] ">
         بیمه‌های طرف قرارداد
       </p>

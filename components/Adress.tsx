@@ -7,6 +7,7 @@ function Adress() {
     <div
       style={{ backgroundImage: `url(images/landin/clinic.png)` }}
       className="py-[51px] bg-full mt-[12%] sm:bg-full xl:bg-full"
+      id="contactUs"
     >
       <div className=" h-[25%] flex justify-between">
         <div className="flex flex-col justify-center flex-1 mr-[5%] w-full ">

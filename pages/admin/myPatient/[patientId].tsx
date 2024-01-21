@@ -5,7 +5,7 @@ import PersonalInfoPatient from "@/components/admin/PersonalInfoPatient";
 import ResualtTest from "@/components/admin/ResualtTest";
 import TableVisit from "@/components/admin/TableVisit";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
+
 import { useRouter } from "next/router";
 import apiRequests from "@/Axios/config";
 import axios from "axios";
@@ -13,7 +13,7 @@ import axios from "axios";
 function PatientId() {
   const router = useRouter();
   const [sharedData,setSharedData]=useState([])
-  console.log(sharedData)
+  
   return (
     <Layout>
       <div>

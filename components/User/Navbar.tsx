@@ -13,7 +13,7 @@ function Navbar() {
         </Link>
         <li className="cursor-pointer">تماس با ما</li>
         <Link
-          href={"/user/login"}
+          href={"/login"}
           className="text-[#288E87] font-iranSansMedium cursor-pointer"
         >
           ورود / عضویت
