@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import Layout from "../Layout";
 import DatePicker, { Calendar } from "react-modern-calendar-datepicker";
 import { useForm } from "react-hook-form";
-
 import "react-modern-calendar-datepicker/lib/DatePicker.css";
 function setPattern() {
   // const [selectedDay, setSelectedDay] = useState<any>();

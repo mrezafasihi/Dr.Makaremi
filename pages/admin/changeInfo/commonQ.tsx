@@ -2,8 +2,24 @@ import React from "react";
 import Layout from "../Layout";
 import CustomButton from "@/components/user/CustomButton";
 import CommonQestion from "@/components/admin/CommonQestion";
+import { useForm } from "react-hook-form";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+import apiRequests from "@/Axios/config";
 
 function commonQ() {
+  const { register, handleSubmit } = useForm();
+  const onSubmit = (data: any) => {
+    
+    const token=localStorage.getItem("token")
+    apiRequests.post("/api/questions", {
+      question: data.question,
+      answer: data.amswerQuestion,
+    },{
+      headers: { Authorization: `Bearer ${token}` },
+    }).then((res)=>{console.log(res)});
+    
+  };
   return (
     <Layout>
       <div className="flex flex-col">
@@ -35,6 +51,7 @@ function commonQ() {
               className="border border-[#CBCBCB] rounded-[4.73px] placeholder:px-[2%] placeholder:py-[2%] placeholder:text-[12px] placeholder:font-semibold h-[63px] max-w-[824px]"
               type="text"
               placeholder="متن سوال متداول را اینجا وارد کنید."
+              {...register("question")}
             />
           </div>
           <div className="flex flex-col mb-[3%]">
@@ -45,12 +62,16 @@ function commonQ() {
               className="border border-[#CBCBCB] rounded-[4.73px] placeholder:px-[2%] placeholder:py-[2%] placeholder:text-[12px] placeholder:font-semibold h-[63px] max-w-[824px]"
               type="text"
               placeholder="پاسخ سوال متداول را اینجا وارد کنید."
+              {...register("amswerQuestion")}
             />
           </div>
           <CustomButton
             text="ثبت"
             style="bg-[#288E87] text-white "
             styleContainer="flex justify-between mx-[30%] "
+            type="onSubmit"
+            onClick={handleSubmit(onSubmit)}
+            
           />
         </div>
         <CommonQestion />

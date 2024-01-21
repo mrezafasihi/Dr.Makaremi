@@ -1,7 +1,25 @@
 import React from "react";
 import Layout from "../Layout";
+import apiRequests from "@/Axios/config";
+import { useForm } from "react-hook-form";
 
 function Map() {
+  const { register, handleSubmit } = useForm();
+  const onSubmit = (data: any) => {
+    
+    const token=localStorage.getItem("token")
+    apiRequests.post("/api/options", {
+      key:"drMakaremi",
+      value: data.adress,
+      phonenumber:data.phonenumber,
+      instagram:data.instagram,
+      telegram:data.telegram,
+      email:data.email
+  },{
+      headers: { Authorization: `Bearer ${token}` },
+    }).then((res)=>{console.log(res)});
+  console.log(data)
+  };
   return (
     <Layout>
       <div className="flex items-center font-IRANSansXFaNum mr-[8%] mt-[4%]">
@@ -31,9 +49,10 @@ function Map() {
 
           <input
             className="rounded-[6.422px] border-[1px] border-[#CBCBCB] w-[470px] h-[145px] text-[16px] text-center pt-[3%]"
-            value=" مـازندران، بـابــل، میــدان کشـوری، سـاختمــان پـزشـکـان مهـــر،
+            defaultValue=" مـازندران، بـابــل، میــدان کشـوری، سـاختمــان پـزشـکـان مهـــر،
           طبقــه ســوم"
             type="text"
+            {...register("adress")}
           />
 
           <div className="flex items-center justify-between mt-[5%] mb-[2%]">
@@ -56,22 +75,25 @@ function Map() {
           </div>
           <input
             className="rounded-[6.422px] border-[#CBCBCB] border-[1px] h-[62px] flex items-center pr-[4%]"
-            value="011 322 88 888"
+            defaultValue="011 322 88 888"
             type="text"
+            {...register("phonenumber")}
           />
 
           <p className="text-[14px] mt-[5%] mb-[2%] ">آدرس صفحه اینستاگرام</p>
           <input
             className="rounded-[6.422px] text-[16px] h-[62px] border-[#CBCBCB] border-[1px] pr-[4%] flex items-center"
-            value=" https://instagram.com/drmakaremi"
+            defaultValue=" https://instagram.com/drmakaremi"
             type="text"
+            {...register("instagram")}
           />
 
           <p className="text-[14px] mt-[5%] mb-[2%] ">آدرس کانال تلگرام</p>
           <input
             className="rounded-[6.422px] text-[16px] h-[62px] border-[#CBCBCB] border-[1px] pr-[4%] flex items-center"
-            value="  t.me/drmakaremi"
+            defaultValue="  t.me/drmakaremi"
             type="text"
+            {...register("telegram")}
           />
         </div>
         <div className="flex flex-col mt-[.5%] mr-[4%]">
@@ -106,8 +128,9 @@ function Map() {
             </svg>
             <input
               className="w-[361px] h-[50px] text-[#CBCBCB] text-[14px] flex items-center rounded-[6.422px] "
-              value="جست و جوی آدرس در نقشه"
+              defaultValue="جست و جوی آدرس در نقشه"
               type="text"
+              {...register("search")}
             />
           </div>
           <iframe
@@ -120,12 +143,15 @@ function Map() {
           <p className="text-[14px] text-[#064247] mt-[5%] mb-[2%] ">ایمیل</p>
           <input
             className="rounded-[6.422px] border-[#CBCBCB] border-[1px] h-[62px] flex items-center pr-[4%]"
-            value="drmakaremi@gmail.com"
+            defaultValue="drmakaremi@gmail.com"
             type="text"
+            {...register("email")}
+
           />
         </div>
       </div>
-      <button className="w-[197px] h-[48px] rounded-[6.422px] text-white bg-[#288E87] mt-[5%] mx-auto">
+      <button className="w-[197px] h-[48px] rounded-[6.422px] text-white bg-[#288E87] mt-[5%] mx-auto"
+            onClick={handleSubmit(onSubmit)}>
         ویرایش
       </button>
     </Layout>
