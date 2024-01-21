@@ -86,6 +86,29 @@ function RegisterForm() {
       .then(() => router.push("/user/reservation"))
       .catch((err) => console.log(err));
   }
+
+  const sendImage = (e: any) => {
+    const token = localStorage.getItem("token");
+    const id = localStorage.getItem("id");
+    console.log(e.target.files[0]);
+    apiRequests
+      .post(
+        "/api/document/add-document-avatar",
+        { document_id: id, avatar: e.target.files[0] },
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      )
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   return (
     <div>
       <div className="flex justify-between mx-[20%] mt-[3%]">
@@ -114,6 +137,7 @@ function RegisterForm() {
           تشکیل پرونده برای فرد جدید
         </p>
         <div className="flex flex-col gap-7 items-center">
+          
           <div className=" flex flex-col  md:flex-row justify-center  gap-8">
             <CustomInput
               style="w-[393px] md:basis-1/2 "

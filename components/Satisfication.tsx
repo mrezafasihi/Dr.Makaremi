@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { A11y } from "swiper/modules";
 import Buttonswiper from "./Buttonswiper";
 
-function Satisfication() {
+function Satisfication({satisfic}:any) {
   const costomer = [
     {
       img: "/images/landin/smiling.png",
@@ -29,7 +29,7 @@ function Satisfication() {
   ];
 
   return (
-    <div className=" sm:mr-[1%]">
+    <div className=" sm:mr-[1%]" >
       <Swiper modules={[A11y]} spaceBetween={50} slidesPerView={1}>
         {costomer.map((item) => {
           return (

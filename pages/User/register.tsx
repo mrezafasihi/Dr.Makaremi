@@ -70,14 +70,30 @@ function register() {
       }
     }
   };
-  const handleResendCode = () => {};
+  const handleResendCode = () => {
+    apiRequests
+      .post("/api/register", {
+        phone_number: phone,
+      })
+      .then((res: any) => {
+        setOpenModal(true);
+        setTimeout(() => {
+          setOpenModal(false);
+        }, 2000);
+      })
+      .catch((err) => console.log(err));
+  };
   const handleCountDown = ({ minutes, seconds, completed }: any) => {
     if (completed) {
-      return <span>ارسال مجدد رمز </span>;
+      return (
+        <span onClick={handleResendCode} className="cursor-pointer">
+          ارسال مجدد رمز{" "}
+        </span>
+      );
     } else {
       return (
         <span>
-          تا: {minutes}:{seconds}
+          ارسال مجدد رمز تا {minutes}:{seconds}دیگر
         </span>
       );
     }
@@ -101,10 +117,8 @@ function register() {
       <div className="flex justify-between text-[#45CBC2] mx-[24.4%]">
         {checkPass ? (
           <>
-            <p onClick={handleResendCode}>ارسال مجدد رمز</p>
             <span>
-              تا{" "}
-              <Countdown date={Date.now() + 10000} renderer={handleCountDown} />
+              <Countdown date={Date.now() + 180000} renderer={handleCountDown} />
             </span>
             <p
               className="hover:text-green-500 cursor-pointer"

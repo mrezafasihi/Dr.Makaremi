@@ -1,28 +1,64 @@
-import React from "react";
+import React, { useEffect } from "react";
 import CustomInput from "../user/CustomInput";
 import { useForm } from "react-hook-form";
 import apiRequests from "@/Axios/config";
+import { useRouter } from "next/router";
 
-function AddClerk() {
-  const { register, handleSubmit } = useForm();
+function AddClerk({ dataClerk }: any) {
+  useEffect(() => {
+    dataClerk && setValue("name", dataClerk.name),
+      setValue("lastName", dataClerk.family),
+      setValue("nationalId", dataClerk.national_id),
+      setValue("phoneNum", dataClerk.phone_number);
+  }, [dataClerk]);
+  const { register, handleSubmit, setValue } = useForm();
+  const router = useRouter();
   const confirm = (data: any) => {
     const token = localStorage.getItem("token");
-    apiRequests
-      .post(
-        "/api/user/clerk",
-        {
-          phone_number: data.phoneNum,
-          name: data.name,
-          family: data.lastName,
-          national_id: data.nationalId,
-        },
-        {
-          headers: { Authorization: `Bearer ${token}` },
-        }
-      )
-      .then((res) => console.log(res))
-      .catch((err) => console.log(err));
+    if (dataClerk.length !== 0) {
+      apiRequests
+        .put(
+          `/api/user/clerk/${dataClerk.id}`,
+          {
+            phone_number: data.phoneNum,
+            name: data.name,
+            family: data.lastName,
+            national_id: data.nationalId,
+          },
+          {
+            headers: { Authorization: `Bearer ${token}` },
+          }
+        )
+        .then((res) => {
+          console.log(res), router.reload();
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    } else {
+      apiRequests
+        .post(
+          "/api/user/clerk",
+          {
+            phone_number: data.phoneNum,
+            name: data.name,
+            family: data.lastName,
+            national_id: data.nationalId,
+          },
+          {
+            headers: { Authorization: `Bearer ${token}` },
+          }
+        )
+        .then((res) => {
+          console.log(res), router.reload();
+        })
+        .catch((err) => console.log(err));
+    }
   };
+  const handleEdit = () => {
+    console.log("first");
+  };
+  console.log(dataClerk);
   return (
     <div className="mt-[11.24%] mb-[9%]">
       <div className="flex justify-center relative">
@@ -115,7 +151,7 @@ function AddClerk() {
           className={` border-[1px] w-[210px] h-[48px] font-iranSansLight text-[16px] border-[#288E87] rounded-[7.98px] px-7  text-white bg-[#288E87]`}
           onClick={handleSubmit(confirm)}
         >
-          افزودن منشی
+          {dataClerk.length !== 0 ? "ثبت تغییرات" : "افزودن منشی"}
         </button>
       </div>
     </div>

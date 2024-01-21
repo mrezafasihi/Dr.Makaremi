@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "react-modern-calendar-datepicker/lib/DatePicker.css";
 import { Calendar } from "react-modern-calendar-datepicker";
 import { utils } from "react-modern-calendar-datepicker";
 import NavbarConfirm from "@/components/user/NavbarConfirm";
+import apiRequests from "@/Axios/config";
 
 function time() {
+  const [reserveData,setReserveData]=useState<any>()
   const hour = [
     { time: "۱۵:۰۰" },
     { time: "۱۰:۰۰" },
@@ -58,7 +60,21 @@ function time() {
     default:
     // code block
   }
-
+  useEffect(() => {
+    getData();
+  }, []);
+  const getData = () => {
+    const token = localStorage.getItem("token");
+    apiRequests
+      .get("/api/time", {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .then((res:any) => {
+        console.log(res),setReserveData(res.data.data),console.log(res.data.data[0].day.date);
+      })
+  };
+  
+  console.log(reserveData)
   return (
     <div>
       <NavbarConfirm />
@@ -412,10 +428,11 @@ function time() {
         </svg>
       </div>
       <div className="flex flex-col lg:flex-row justify-center items-center">
-        <div className="flex  mr-[9%] mt-[2%] ">
+        <div className="flex   mt-[2%] ">
           <Calendar
             value={selectedDay}
             onChange={setSelectedDay}
+            minimumDate={utils("fa").getToday()}
             shouldHighlightWeekends
             locale="fa"
           />

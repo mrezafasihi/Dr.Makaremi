@@ -9,7 +9,7 @@ function BusinessDays() {
     { day: "چهارشنبه", time: " 8:00 الی 23:00" },
   ];
   return (
-    <div className="mt-[7%] mb-[10%] mx-[7.5%] ">
+    <div className="mt-[7%] mb-[10%] mx-[7.5%] " >
       <h6 className="border-r-[1px] text-2xl px-2 mb-[6%] mr-[2%] border-[#288E87] text-[#064247] basis-1/3 font-iranSansBold">
         روزهای کاری مطب
       </h6>
@@ -49,7 +49,7 @@ function BusinessDays() {
                 fill="white"
               />
             </svg>
-            <p className="text-[#064247] font-iranSansLight">
+            <p className="text-[#064247] font-iranSansLight" id="insurance">
               روزهای کاری ثابت نیستند و بر اساس شرایط ممکن است تغییر کنند.
             </p>
           </div>

@@ -1,16 +1,19 @@
 // 'use client'
+//@ts-nocheck
 import React, { useEffect, useState } from "react";
 import Logo from "../Logo";
-
 import Link from "next/link";
 import apiRequests from "@/Axios/config";
 import { useRouter } from "next/router";
+import { usePathname } from "next/navigation";
 
 function NavbarConfirm() {
   const [patient, setPatient] = useState<any>([]);
   const router = useRouter();
+  const pathName=usePathname()
+  const query=router.query
   useEffect(() => {
-    getData();
+    // getData();
   }, []);
   const getData = async () => {
     const token = localStorage.getItem("token");
@@ -50,8 +53,8 @@ function NavbarConfirm() {
       <Logo />
       <ul className="flex justify-between basis-[28.96%] font-medium mr-[8%] ">
         <Link href={"/"}>خانه</Link>
-        <Link href={"/user/reservation/Fainalpay"}>پرونده من</Link>
-        <Link href={"/user/reservation"} className="text-[#288E87]">
+        <Link href={"/user/reservation/Fainalpay"} className={pathName=="/user/reservation/Fainalpay"?"text-[#288E87]":null}>پرونده من</Link>
+        <Link href={"/user/reservation"} className={pathName=="/user/reservation"?"text-[#288E87]":null}>
           رزرو نوبت
         </Link>
         <li>ارسال پیام</li>
@@ -68,6 +71,7 @@ function NavbarConfirm() {
           <select
             className="text-[#064247] mr-1 bg-white border-none w-[100px]"
             onChange={(e) => handleSelect(e.target.value)}
+            value={query}
           >
             {patient?.map((item: any, index: any) => {
               return (
