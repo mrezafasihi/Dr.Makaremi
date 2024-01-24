@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Layout from "../Layout";
 import Link from "next/link";
+import apiRequests from "@/Axios/config";
+import { useRouter } from "next/router";
 
 function Search() {
+  const route =useRouter()
   const patient = [
     {
       name: "ستایش الوندی",
@@ -82,48 +85,66 @@ function Search() {
       img: "/images/landin/smiling.png",
     },
   ];
+  useEffect(() => {
+    getData();
+  }, []);
+  const [illness, setIllness] = useState<any>([]);
+  const getData = async () => {
+    const token = localStorage.getItem("token");
+    const response = await apiRequests.get(`/api/document`, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    console.log(response);
+    setIllness(response.data.data);
+  };
+  console.log(illness)
+  const [share,setShare]=useState<any>()
+  const reserve=(value:any)=>{
+    localStorage.setItem("selectedpatient",JSON.stringify(value))   
+    route.push("/admin/reservation/time") 
+    }
+    
   return (
     <Layout>
       <div className="mr-[8%] mt-[3%]">
-        <p className="text-[#45CBC2] text-[16px] font-bold mb-[2%]">  </p>
+        <p className="text-[#45CBC2] text-[16px] font-bold mb-[2%]"> </p>
         <p className="text-[16px] text-[#064247] mb-[1%]">جست‌و‌جوی بیمار</p>
-       <div className="flex border-[1px] border-[#c5c4c4] rounded-[6.422px] w-[30%] h-[8%] items-center ">
-       <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="21"
-          height="21"
-          viewBox="0 0 21 21"
-          fill="none"
-          className="m-[2%]"
-        >
-          <circle
-            cx="9.76663"
-            cy="9.76688"
-            r="8.98856"
-            stroke="#757575"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
+        <div className="flex border-[1px] border-[#c5c4c4] rounded-[6.422px] w-[30%] h-[8%] items-center ">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="21"
+            height="21"
+            viewBox="0 0 21 21"
+            fill="none"
+            className="m-[2%]"
+          >
+            <circle
+              cx="9.76663"
+              cy="9.76688"
+              r="8.98856"
+              stroke="#757575"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            <path
+              d="M16.0183 16.4854L19.5423 20.0002"
+              stroke="#757575"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+          <input
+            type="text"
+            placeholder="جست و جوی نام بیمار، شماره پرونده و ..."
           />
-          <path
-            d="M16.0183 16.4854L19.5423 20.0002"
-            stroke="#757575"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
-       <input
-          type="text"
-          placeholder="جست و جوی نام بیمار، شماره پرونده و ..."
-        />
-        
-       </div>
+        </div>
         <div className="flex mt-[1%] mb-[5%]">
           <p className="text-[12px] text-[#064247]">بیمار وجود ندارد؟</p>
           <p className="text-[12px] text-[#064247]">تشکیل پرونده جدید</p>
         </div>
-        {patient.map((item) => {
+        {illness.map((item: any) => {
           return (
             <div className="mt-[2%] flex border-[1px] border-gray-200 w-[90%] h-[14%] items-center  rounded-[6.422px] ">
               <img
@@ -132,30 +153,27 @@ function Search() {
               />
               <div className="flex flex-col mr-[2%] ml-[10%] text-center">
                 <p className="text-[#0D0630] text-[16px] font-IRANSansXFaNum font-medium">
-                  {item.name}
+                  {item.first_name} <span>{item.last_name}</span>
                 </p>
                 <p className="text-[#757575)] text-[12px] font-light">
                   شماره پرونده
                 </p>
-                <p className=" text-[12px] font-light"> {item.shomare}</p>
+                <p className=" text-[12px] font-light"> {item.id}</p>
               </div>
               <div className="flex flex-col text-center ml-[10%]">
-                <p className="text-[#757575] text-[12px] font-light">
-                کد ملی
-                </p>
+                <p className="text-[#757575] text-[12px] font-light">کد ملی</p>
 
-                <p className="text-[12px] font-light"> {item.shomaremeli}</p>
+                <p className="text-[12px] font-light"> {item.national_id}</p>
               </div>
               <div className="flex flex-col text-center ml-[10%]">
-                <p className="text-[12px] text-[#757575]"> آخرین تاریخ مراجعه</p>
+                <p className="text-[12px] text-[#757575]">آخرین تاریخ مراجعه</p>
                 <p className="text-[12px] font-light"> {item.lastdate}</p>
               </div>
-              <Link href={"/admin/reservation/time"}>
-              <button className="text-[#45CBC2] text-[16px] border-[1px] border-[#45CBC2] w-[161px] h-[48px] mr-[40%]  rounded-[6.422px]">
-               
-              نوبت بده!
-              </button>
-              </Link>
+             
+                <button className="text-[#45CBC2] text-[16px] border-[1px] border-[#45CBC2] w-[161px] h-[48px] mr-[40%]  rounded-[6.422px]" onClick={()=>reserve(item)}>
+                  نوبت بده!
+                </button>
+              
             </div>
           );
         })}

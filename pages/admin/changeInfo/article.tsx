@@ -381,7 +381,7 @@ function article() {
                   />
                 </div>
                 <p className="text-[16px] text-[#064247] font-bold mt-[5%] mr-[5%]">
-                  {" "}
+                  
                   {item.p}
                 </p>
                 <p className="text-[12px] mr-[5%]"> {item.des}</p>

@@ -78,7 +78,7 @@ function addarticle() {
             <input
               type="file"
               className="h-24 absolute opacity-0"
-              // {...register("image")}
+             
               onChange={(e:any)=>setFile(e.target.files[0])}
             />
             {file ? (

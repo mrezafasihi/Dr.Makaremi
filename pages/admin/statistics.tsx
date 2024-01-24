@@ -1,21 +1,30 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Layout from "./Layout";
 import { CChart } from "@coreui/react-chartjs";
+import { useForm } from "react-hook-form";
+import apiRequests from "@/Axios/config";
 
 function statistics() {
-  // function bgGradient(ctx:any,chartArea:any,scales:any){
-  //     const {left,rightmtop,bottom,width,height}=chartArea;
-  //     const {x,y}=scales;
-  //     const gradientBackground=ctx.createLinearGradient(0,top,0,bottom);
-  //     gradientBackground.addColorStop(0,'rgba(255,26,104,1)')
-  //     gradientBackground.addColorStop(1,'rgba(255,26,104,0)')
-  //     return gradientBackground
-  // }
+  const { register, handleSubmit } = useForm();
+ 
+  const onSubmit = () => {
+    const token = localStorage.getItem("token");
+    apiRequests.post(
+      `/api/statistics`,
+      {
+        surgery_count: "surgery",
+        credible_article_count: "article",
+        lasik_surgery_count: "count",
+      },
+      { headers: { Authorization: `Bearer ${token}` } }
+    ).then((res)=>console.log(res))
+    console.log(onSubmit)
+  };
   return (
     <Layout>
       <div className="bg-[#EDF8F7] h-full pt-[5%] pr-[12%] flex font-IRANSansXFaNum">
         <div>
-          <p className="text-[16px] text-[#288E87]">آمار کلی</p>
+          <p className="text-[16px] text-[#288E87] mb-[10%]">آمار کلی</p>
           <div className="flex flex-col mt-[5%] mr-[2%]">
             <div className="flex">
               <svg
@@ -44,9 +53,11 @@ function statistics() {
                 تعداد جراحی سالیانه
               </p>
             </div>
-            <div className="w-[259px] h-[70px] text-[#064247] bg-white rounded-[10px] mt-[2%] flex items-center pr-[2%]">
-              13,635
-            </div>
+            <input
+              className="w-[259px] h-[70px] text-[#064247] bg-white rounded-[10px] mt-[2%] flex items-center pr-[2%]"
+              defaultValue="13,635"
+              {...register("surgery")}
+            />
           </div>
           <div className="flex flex-col mr-[2%]">
             <div className="flex mt-[18%]">
@@ -74,9 +85,11 @@ function statistics() {
                 تعداد جراحی لیزیک
               </p>
             </div>
-            <div className="text-[#064247] text-[16px] bg-white w-[263px] h-[70px] rounded-[10px] mt-[1%] flex items-center pr-[2%]">
-              8,635
-            </div>
+            <input
+              className="text-[#064247] text-[16px] bg-white w-[263px] h-[70px] rounded-[10px] mt-[1%] flex items-center pr-[2%]"
+              defaultValue="8,635"
+              {...register("count")}
+            />
           </div>
           <div className="w-[263px] h-[192px] bg-white rounded-[10px] mt-[35%] mr-[2%] pr-[4%] pt-[4%] ">
             <svg
@@ -103,12 +116,16 @@ function statistics() {
             <p className="text-[#288E87] text-[16px] mt-[12%]">
               تعداد مقاله‌های معتبر
             </p>
-            <p className="text-[#064247] text-[16px] mt-[5%]">12 مقاله</p>
+            <input
+              className="text-[#064247] text-[16px] mt-[5%]"
+              defaultValue={"12 مقاله"}
+              {...register("article")}
+            />
           </div>
         </div>
         <div className="w-[572px] h-[527px] bg-white rounded-[16px] mr-[7%] mt-[4%]">
           <div className="flex flex-col">
-            <div className="flex  ">
+            <div className="flex items-center mt-[2%] mr-[3%]">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
@@ -233,9 +250,11 @@ function statistics() {
     ],
   }}
   
+  
 /> */}
         </div>
       </div>
+      <button onClick={handleSubmit(onSubmit)}>ثبت</button>
     </Layout>
   );
 }

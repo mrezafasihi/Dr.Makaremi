@@ -1,5 +1,7 @@
 import React from "react";
 import Layout from "../Layout";
+import apiRequests from "@/Axios/config";
+import id from "../messege/[id]";
 
 function opinion() {
   const idea = [
@@ -422,6 +424,12 @@ function opinion() {
       matn: "من مشکل بینایی داشتم. بعد از سه ماه رفتن به دکترهای دیگر به هیچ نتیجه‌‌ای نرسیدم. به آقای دکتر مکارمی مراجعه کردم و ایشان به بهترین نحو مشکل بینایی منو به صورت کامل برطرف کردن. از لطف و زحمات ایشون بسیار سپاسگزارم.",
     },
   ];
+  const deleted=(id:any)=>{
+    const token=localStorage.getItem("token")
+    apiRequests.delete(`/api/user/comments/${id}`,{ headers: {
+    Authorization: `Bearer ${token}`,
+  },}).then((res)=>console.log(res))
+  }
   return (
     <Layout>
       <div className="mt-[3%] mr-[5%] overflow-y-auto">
@@ -451,7 +459,7 @@ function opinion() {
           <p className="text-[14px] text-[#064247] font-medium mr-[5%]">
             نظرات جدید
           </p>
-          {idea.map((item) => {
+          {idea.map((item:any) => {
             return (
               <div className=" bg-white w-[875px] h-[193px] rounded-xl mt-[1%] flex mx-auto ">
                 <div className=" mr-[1%] ml-[2%]">
@@ -468,7 +476,7 @@ function opinion() {
                       {item.show}
                     </button>
                     <p className="mx-[1%]"> {item.svg2}</p>
-                    <button className="text-[#C70000] text-[12px]">
+                    <button className="text-[#C70000] text-[12px]" onClick={()=>deleted(item.id)}>
                       {item.delite}
                     </button>
                   </div>
@@ -481,7 +489,7 @@ function opinion() {
                     <p className="text-[12px]"> {item.hour}</p>
                   </div>
                   <p className="text-[14px] text-[#064247] font-iranSansLight">
-                    {" "}
+                    
                     {item.text}
                   </p>
                 </div>
@@ -513,12 +521,12 @@ function opinion() {
                     </button>
                     <p className="mx-[1%] "> {item.svg2}</p>
                     <button className="text-[#C70000] text-[12px] font-medium">
-                      {" "}
+                     
                       {item.dontnamayesh}
                     </button>
                   </div>
                   <p className="text-[18px] font-light my-[1%]">
-                    {" "}
+                    
                     {item.flname}
                   </p>
                   <p className="text-[12px]"> {item.elat}</p>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "react-modern-calendar-datepicker/lib/DatePicker.css";
 import { Calendar } from "react-modern-calendar-datepicker";
 import { utils } from "react-modern-calendar-datepicker";
@@ -16,9 +16,13 @@ function time() {
     { time: "۱۶:۰۰" },
   ];
   const persianToday = utils("fa").getToday();
-
+  const [name, setName] = useState<any>();
   const [selectedDay, setSelectedDay] = useState<any>(persianToday);
-
+  useEffect(() => {
+    const selectPatient: any = localStorage.getItem("selectedpatient");
+    setName(JSON.parse(selectPatient));
+  }, []);
+  console.log(name);
   let month;
   switch (selectedDay.month) {
     case 1:
@@ -83,9 +87,10 @@ function time() {
             strokeLinecap="round"
           />
         </svg>
-        <p className="mr-[1%] text-[#757575] font-bold text-[20px]">
-          ستایش الوندی
-        </p>
+        <div className="mr-[1%] text-[#757575] font-bold text-[20px]">
+         <span> {name?.first_name}</span>
+         <span> {name?.last_name}</span>
+        </div>
       </div>
       <div className="flex h-[200px] relative justify-center mt-[8%]  ">
         <div className="relative left-[15%] top-[12%]">
