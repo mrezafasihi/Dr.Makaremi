@@ -2,34 +2,35 @@ import apiRequests from "@/Axios/config";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 
-function PersonalInfoPatient({onDataUpdate}:any) {
+function PersonalInfoPatient({ onDataUpdate }: any) {
   const [patient, setPatient] = useState<any>([]);
-  // const  [token,setToken]=useState<any>()
+
   const router = useRouter();
+  console.log(router);
   const query = router.query.patientId;
-  console.log(query)
-let token:any
+  console.log(query);
+
   useEffect(() => {
-    
     getData();
   }, []);
   const getData = () => {
     const token = localStorage.getItem("token");
-    console.log(query)
+    const query = router.query.patientId;
+    console.log(query);
     apiRequests
       .get(`/api/document/${query}`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => {
         setPatient(res.data.data), console.log(res);
-       onDataUpdate(res.data.data) 
+        onDataUpdate(res.data.data);
         // localStorage.setItem("idTestResult", res.data.data.test_result);
       })
       .catch((error) => {
         console.log(error);
       });
   };
-  
+
   return (
     <div className="flex flex-col text-[#757575] max-w-[482px] border rounded-[11.94px] h-[289px]">
       <div className="flex justify-center mt-[25px]">

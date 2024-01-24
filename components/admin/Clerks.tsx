@@ -3,7 +3,7 @@ import CustomeImage from "./CustomeImage";
 import apiRequests from "@/Axios/config";
 import { useRouter } from "next/router";
 
-function Clerks({editClerk}:any) {
+function Clerks({ editClerk }: any) {
   // const dataClerk = [
   //   { name: "امیر رئیسی", image: "/images/landin/smiling.png" },
   //   { name: "امیر رئیسی", image: "/images/landin/smiling.png" },
@@ -92,13 +92,13 @@ function Clerks({editClerk}:any) {
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
                 className="cursor-pointer ml-2"
-                onClick={()=>editClerk(item)}
+                onClick={() => editClerk(item)}
               >
                 <path
                   d="M11.1967 2.85021L4.69712 9.7298C4.4517 9.99105 4.2142 10.5056 4.1667 10.8619L3.87379 13.4269C3.77087 14.3531 4.43587 14.9865 5.3542 14.8281L7.90337 14.3927C8.25962 14.3294 8.75837 14.0681 9.00379 13.799L15.5034 6.91938C16.6275 5.73188 17.1342 4.37813 15.3846 2.72355C13.643 1.0848 12.3209 1.66271 11.1967 2.85021Z"
                   stroke="#0D0630"
                   strokeWidth="1.5"
-                  stroke-miterlimit="10"
+                  strokeMiterlimit="10"
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 />
@@ -106,7 +106,7 @@ function Clerks({editClerk}:any) {
                   d="M10.1121 3.99805C10.4525 6.18305 12.2259 7.85346 14.4267 8.07513"
                   stroke="#064247"
                   strokeWidth="1.5"
-                  stroke-miterlimit="10"
+                  strokeMiterlimit="10"
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 />
@@ -114,7 +114,7 @@ function Clerks({editClerk}:any) {
                   d="M3.07422 17.416H17.3242"
                   stroke="#292D32"
                   strokeWidth="1.5"
-                  stroke-miterlimit="10"
+                  strokeMiterlimit="10"
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 />

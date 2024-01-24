@@ -15,10 +15,10 @@
 <g id="vuesax/twotone/calendar-2">
 <g id="vuesax/twotone/calendar-2_2">
 <g id="calendar-2">
-<path id="Vector" d="M24.1753 18V21" stroke="white" strokeWidth="1.5" stroke-miterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
-<path id="Vector_2" d="M32.1753 18V21" stroke="white" strokeWidth="1.5" stroke-miterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
-<path id="Vector_3" d="M19.6753 25.0898H36.6753" stroke="white" strokeWidth="1.5" stroke-miterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
-<path id="Vector_4" d="M37.1753 24.5V33C37.1753 36 35.6753 38 32.1753 38H24.1753C20.6753 38 19.1753 36 19.1753 33V24.5C19.1753 21.5 20.6753 19.5 24.1753 19.5H32.1753C35.6753 19.5 37.1753 21.5 37.1753 24.5Z" stroke="white" strokeWidth="1.5" stroke-miterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+<path id="Vector" d="M24.1753 18V21" stroke="white" strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+<path id="Vector_2" d="M32.1753 18V21" stroke="white" strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+<path id="Vector_3" d="M19.6753 25.0898H36.6753" stroke="white" strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+<path id="Vector_4" d="M37.1753 24.5V33C37.1753 36 35.6753 38 32.1753 38H24.1753C20.6753 38 19.1753 36 19.1753 33V24.5C19.1753 21.5 20.6753 19.5 24.1753 19.5H32.1753C35.6753 19.5 37.1753 21.5 37.1753 24.5Z" stroke="white" strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
 <path id="Vector_5" d="M28.1708 29.7002H28.1798" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
 <path id="Vector_6" d="M24.4696 29.7002H24.4786" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
 <path id="Vector_7" d="M24.4697 32.7002H24.4787" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>

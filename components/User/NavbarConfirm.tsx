@@ -53,8 +53,8 @@ function NavbarConfirm() {
       <Logo />
       <ul className="flex justify-between basis-[28.96%] font-medium mr-[8%] ">
         <Link href={"/"}>خانه</Link>
-        <Link href={"/user/reservation/Fainalpay"} className={pathName=="/user/reservation/Fainalpay"?"text-[#288E87]":null}>پرونده من</Link>
-        <Link href={"/user/reservation"} className={pathName=="/user/reservation"?"text-[#288E87]":null}>
+        <Link href={"/user/reservation/Fainalpay"} className={pathName=="/user/reservation/Fainalpay"?"text-[#288E87]":""}>پرونده من</Link>
+        <Link href={"/user/reservation"} className={pathName=="/user/reservation"?"text-[#288E87]":""}>
           رزرو نوبت
         </Link>
         <li>ارسال پیام</li>

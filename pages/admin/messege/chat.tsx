@@ -18,7 +18,7 @@ function chat() {
               d="M24.05 10.3838L34.1667 20.5005L24.05 30.6171"
               stroke="#45CBC2"
               strokeWidth="3"
-              stroke-miterlimit="10"
+              strokeMiterlimit="10"
               strokeLinecap="round"
               strokeLinejoin="round"
             />
@@ -26,7 +26,7 @@ function chat() {
               d="M5.83333 20.5H33.8833"
               stroke="#45CBC2"
               strokeWidth="3"
-              stroke-miterlimit="10"
+              strokeMiterlimit="10"
               strokeLinecap="round"
               strokeLinejoin="round"
             />

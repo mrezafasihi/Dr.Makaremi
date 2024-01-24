@@ -1,5 +1,5 @@
 import React from "react";
-import Layout from "../Layout";
+import Layout from "../../Layout";
 
 function article() {
   const text = [
@@ -71,7 +71,7 @@ function article() {
             d="M6.32013 1.52637H10.3201"
             stroke="#0D0630"
             strokeWidth="1.5"
-            stroke-miterlimit="10"
+            strokeMiterlimit="10"
             strokeLinecap="round"
             strokeLinejoin="round"
           />
@@ -89,7 +89,7 @@ function article() {
             d="M15.6316 7.77702V9.90202C15.6316 12.7354 14.2982 14.152 11.6316 14.152H11.2982C11.0916 14.152 10.8916 14.2583 10.7649 14.4354L9.76488 15.852C9.32488 16.4754 8.60488 16.4754 8.16488 15.852L7.16488 14.4354C7.05822 14.2795 6.81155 14.152 6.63155 14.152H6.29822C3.63155 14.152 2.29822 13.4437 2.29822 9.90202V6.36035C2.29822 3.52702 3.63155 2.11035 6.29822 2.11035H10.2982"
             stroke="#064247"
             strokeWidth="1.5"
-            stroke-miterlimit="10"
+            strokeMiterlimit="10"
             strokeLinecap="round"
             strokeLinejoin="round"
           />
@@ -162,7 +162,7 @@ function article() {
             d="M6.27612 1.50977H10.2761"
             stroke="#0D0630"
             strokeWidth="1.5"
-            stroke-miterlimit="10"
+            strokeMiterlimit="10"
             strokeLinecap="round"
             strokeLinejoin="round"
           />
@@ -180,7 +180,7 @@ function article() {
             d="M15.5876 7.76042V9.88542C15.5876 12.7187 14.2543 14.1354 11.5876 14.1354H11.2543C11.0476 14.1354 10.8476 14.2417 10.7209 14.4187L9.72094 15.8354C9.28094 16.4587 8.56094 16.4587 8.12094 15.8354L7.12094 14.4187C7.01427 14.2629 6.76761 14.1354 6.58761 14.1354H6.25427C3.58761 14.1354 2.25427 13.4271 2.25427 9.88542V6.34375C2.25427 3.51042 3.58761 2.09375 6.25427 2.09375H10.2543"
             stroke="#064247"
             strokeWidth="1.5"
-            stroke-miterlimit="10"
+            strokeMiterlimit="10"
             strokeLinecap="round"
             strokeLinejoin="round"
           />
@@ -253,7 +253,7 @@ function article() {
             d="M6.27618 1.50977H10.2762"
             stroke="#0D0630"
             strokeWidth="1.5"
-            stroke-miterlimit="10"
+            strokeMiterlimit="10"
             strokeLinecap="round"
             strokeLinejoin="round"
           />
@@ -271,7 +271,7 @@ function article() {
             d="M15.5876 7.76042V9.88542C15.5876 12.7187 14.2543 14.1354 11.5876 14.1354H11.2543C11.0476 14.1354 10.8476 14.2417 10.7209 14.4187L9.72094 15.8354C9.28094 16.4587 8.56094 16.4587 8.12094 15.8354L7.12094 14.4187C7.01427 14.2629 6.76761 14.1354 6.58761 14.1354H6.25427C3.58761 14.1354 2.25427 13.4271 2.25427 9.88542V6.34375C2.25427 3.51042 3.58761 2.09375 6.25427 2.09375H10.2543"
             stroke="#064247"
             strokeWidth="1.5"
-            stroke-miterlimit="10"
+            strokeMiterlimit="10"
             strokeLinecap="round"
             strokeLinejoin="round"
           />

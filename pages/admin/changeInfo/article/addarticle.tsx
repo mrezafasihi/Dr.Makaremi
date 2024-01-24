@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Layout from "../Layout";
+import Layout from "../../Layout";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 // import Editor from "ckeditor5-custom-build";
@@ -12,7 +12,7 @@ function addarticle() {
   const onSubmit = (data: any) => {
     console.log(data);
     const token = localStorage.getItem("token");
-    
+
     apiRequests
       .post(
         "/api/article",
@@ -30,8 +30,7 @@ function addarticle() {
       )
       .then((res) => console.log(res));
   };
-  
-  
+
   return (
     <Layout>
       <div className="mt-[3%] mr-[5%]">
@@ -79,10 +78,14 @@ function addarticle() {
               type="file"
               className="h-24 absolute opacity-0"
               // {...register("image")}
-              onChange={(e:any)=>setFile(e.target.files[0])}
+              onChange={(e: any) => setFile(e.target.files[0])}
             />
             {file ? (
-              <img className="w-[70%] h-[80%]" src={URL.createObjectURL(file)} alt="" />
+              <img
+                className="w-[70%] h-[80%]"
+                src={URL.createObjectURL(file)}
+                alt=""
+              />
             ) : (
               <svg
                 xmlns="http://www.w3.org/2000/svg"

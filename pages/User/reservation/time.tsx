@@ -1,24 +1,22 @@
 import React, { useEffect, useState } from "react";
-import "react-modern-calendar-datepicker/lib/DatePicker.css";
-import { Calendar } from "react-modern-calendar-datepicker";
+import "@hassanmojab/react-modern-calendar-datepicker/lib/DatePicker.css";
+import { Calendar } from "@hassanmojab/react-modern-calendar-datepicker";
 import { utils } from "react-modern-calendar-datepicker";
 import NavbarConfirm from "@/components/user/NavbarConfirm";
 import apiRequests from "@/Axios/config";
-
+import moment from "jalali-moment";
+import { useRouter } from "next/router";
+import toast, { Toaster } from "react-hot-toast";
 function time() {
-  const [reserveData,setReserveData]=useState<any>()
-  const hour = [
-    { time: "۱۵:۰۰" },
-    { time: "۱۰:۰۰" },
-    { time: "۱۲:۰۰" },
-    { time: "۱۸:۰۰" },
-    { time: "۱۴:۰۰" },
-    { time: "۱۶:۰۰" },
-  ];
+  const route = useRouter();
+  const [reserveId, setReserveId] = useState<any>();
+  const [times, setTimes] = useState<any>();
+
   const persianToday = utils("fa").getToday();
 
   const [selectedDay, setSelectedDay] = useState<any>(persianToday);
-
+  const [allDate, setAllDate] = useState<any>();
+  const [test, setTest] = useState<any>();
   let month;
   switch (selectedDay.month) {
     case 1:
@@ -62,19 +60,68 @@ function time() {
   }
   useEffect(() => {
     getData();
+    getTime();
   }, []);
+
   const getData = () => {
+    const token = localStorage.getItem("token");
+    apiRequests
+      .get("/api/work-days", {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .then((res: any) => {
+        let dateVariable: any = [];
+
+        res.data.data?.map((item: any) => {
+          dateVariable?.push({
+            year: +moment(item.date, "YYYY/MM/DD").locale("fa").format("YYYY"),
+            month: +moment(item.date, "YYYY/MM/DD").locale("fa").format("MM"),
+            day: +moment(item.date, "YYYY/MM/DD").locale("fa").format("DD"),
+          });
+
+          setTest(dateVariable);
+        });
+      });
+  };
+  const getTime = () => {
     const token = localStorage.getItem("token");
     apiRequests
       .get("/api/time", {
         headers: { Authorization: `Bearer ${token}` },
       })
-      .then((res:any) => {
-        console.log(res),setReserveData(res.data.data),console.log(res.data.data[0].day.date);
-      })
+      .then((res) => {
+        console.log(res.data.data), setAllDate(res.data.data);
+      });
   };
-  
-  console.log(reserveData)
+  // const disabledDays = test;
+
+  // const handleDisabledSelect = (disabledDay: any) => {
+  //   console.log("Tried selecting a disabled day", disabledDay);
+  // };
+  const handleDate = (selectedDay: any) => {
+    setSelectedDay(selectedDay);
+
+    const test = `${selectedDay.year}-${selectedDay.month}-${selectedDay.day}`;
+    console.log(
+      moment.from(test, "fa", "YYYY/MM/DD").locale("en").format("YYYY-MM-DD")
+    );
+    const date = allDate?.filter((item: any) => {
+      return (
+        item.day.date ==
+        moment.from(test, "fa", "YYYY/MM/DD").locale("en").format("YYYY-MM-DD")
+      );
+    });
+    setTimes(date);
+  };
+
+  const confirmDate = () => {
+    if (!reserveId || !selectedDay) {
+      toast.error("لطفا روز و ساعت را انتخاب نمایید");
+    } else {
+      localStorage.setItem("idReserve", reserveId),
+        route.push("/user/reservation/pay");
+    }
+  };
   return (
     <div>
       <NavbarConfirm />
@@ -236,7 +283,7 @@ function time() {
                       d="M8.17529 2V5"
                       stroke="white"
                       strokeWidth="1.5"
-                      stroke-miterlimit="10"
+                      strokeMiterlimit="10"
                       strokeLinecap="round"
                       strokeLinejoin="round"
                     />
@@ -245,7 +292,7 @@ function time() {
                       d="M16.1753 2V5"
                       stroke="white"
                       strokeWidth="1.5"
-                      stroke-miterlimit="10"
+                      strokeMiterlimit="10"
                       strokeLinecap="round"
                       strokeLinejoin="round"
                     />
@@ -254,7 +301,7 @@ function time() {
                       d="M3.67529 9.08984H20.6753"
                       stroke="white"
                       strokeWidth="1.5"
-                      stroke-miterlimit="10"
+                      strokeMiterlimit="10"
                       strokeLinecap="round"
                       strokeLinejoin="round"
                     />
@@ -263,7 +310,7 @@ function time() {
                       d="M21.1753 8.5V17C21.1753 20 19.6753 22 16.1753 22H8.17529C4.67529 22 3.17529 20 3.17529 17V8.5C3.17529 5.5 4.67529 3.5 8.17529 3.5H16.1753C19.6753 3.5 21.1753 5.5 21.1753 8.5Z"
                       stroke="white"
                       strokeWidth="1.5"
-                      stroke-miterlimit="10"
+                      strokeMiterlimit="10"
                       strokeLinecap="round"
                       strokeLinejoin="round"
                     />
@@ -372,7 +419,7 @@ function time() {
                         d="M1.50854 6.37891H14.8419"
                         stroke="white"
                         strokeWidth="1.5"
-                        stroke-miterlimit="10"
+                        strokeMiterlimit="10"
                         strokeLinecap="round"
                         strokeLinejoin="round"
                       />
@@ -381,7 +428,7 @@ function time() {
                         d="M4.17529 12.3789H5.50863"
                         stroke="white"
                         strokeWidth="1.5"
-                        stroke-miterlimit="10"
+                        strokeMiterlimit="10"
                         strokeLinecap="round"
                         strokeLinejoin="round"
                       />
@@ -390,7 +437,7 @@ function time() {
                         d="M7.17529 12.3789H9.84196"
                         stroke="white"
                         strokeWidth="1.5"
-                        stroke-miterlimit="10"
+                        strokeMiterlimit="10"
                         strokeLinecap="round"
                         strokeLinejoin="round"
                       />
@@ -431,23 +478,29 @@ function time() {
         <div className="flex   mt-[2%] ">
           <Calendar
             value={selectedDay}
-            onChange={setSelectedDay}
+            onChange={handleDate}
             minimumDate={utils("fa").getToday()}
             shouldHighlightWeekends
             locale="fa"
+            // disabledDays={disabledDays}
+            // onDisabledDayError={handleDisabledSelect}
           />
         </div>
         <div className="flex flex-col justify-between h-[300px] items-center lg:mr-[9%] ">
           <p className=" flex items-center justify-center w-[251px] h-[55px] border-[#83DCD6] border-[1.4px] rounded-[12.24px] text-[#064247] text-[14px] font-light">
-            {selectedDay.day}
+            {selectedDay?.day}
             <span className="mr-[2%]">{month}</span>
           </p>
           <p className="text-[#064247] text-[14px] font-light">انتخاب ساعت</p>
-          <div className="flex justify-between items-center flex-wrap  w-full ">
-            {hour.map((item) => {
+          <div className="flex justify-between items-center flex-wrap h-[118.462px] overflow-auto w-[262.561px]  ">
+            {times?.map((item: any) => {
               return (
-                <div className="flex basis-[30%] justify-center items-center h-[50px] text-[14px] font-light bg-[#D6F3F1] border-[1.4px] border-[#D6F3F1] my-[2%] rounded-[15.07px] mx-[1%] ">
-                  {item.time}
+                <div
+                  className="flex w-[78.68px] justify-center items-center h-[50px] text-[14px] font-light bg-[#D6F3F1] border-[1.4px] border-[#D6F3F1] my-[2%] rounded-[15.07px] mx-[1%] cursor-pointer hover:shadow-[5px_5px_0px_0px_rgba(186,227,223)]"
+                  onClick={() => setReserveId(item.id)}
+                  key={item.id}
+                >
+                  {item.start_time}
                 </div>
               );
             })}
@@ -455,12 +508,14 @@ function time() {
           <div className={`text-center `}>
             <button
               className={` border-[1px] w-[176px] font-light text-[14px] border-[#288E87] rounded-[7.98px] px-7 py-4 text-white bg-[#288E87] `}
+              onClick={confirmDate}
             >
               تایید
             </button>
           </div>
         </div>
       </div>
+      <Toaster />
     </div>
   );
 }

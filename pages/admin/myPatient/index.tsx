@@ -54,7 +54,6 @@ function index() {
               />
             </svg>
           </div>
-
           <p className="text-[#064247] font-iranSansLight text-[14px] mr-[1.5%]">
             تشکیل پرونده جدید
           </p>
@@ -68,12 +67,12 @@ function index() {
         >
           {dataPatients?.map((item: any) => {
             return (
-              <div className="flex justify-between max-w-[856px]  border border-[#CBCBCB] rounded-lg h-[101px] items-center px-4 py-4 ">
+              <div className="flex justify-between w-full border border-[#CBCBCB] rounded-lg h-[101px] items-center px-4 py-4 ">
                 <Link
                   href={`/admin/myPatient/${item.id}`}
                   className="flex justify-between w-[90%]"
                 >
-                  <div className="flex items-center basis-[18%]">
+                  <div className="flex items-center basis-[22%] ">
                     <CustomeImage img={item.avatar} style="w-[48px] h-[49px]" />
                     <div className="flex flex-col flex-grow items-center">
                       <h6 className="text-[#064247] font-iranSansMedium text-[14px] ">
@@ -84,10 +83,10 @@ function index() {
                       </p>
                     </div>
                   </div>
-                  <div className="flex flex-col text-[#757575] font-iranSansLight text-[12px] w-[45%]">
+                  <div className="flex flex-col text-[#757575] justify-center font-iranSansLight text-[12px] w-[45%]">
                     <p className="">آخرین تاریخ مراجعه</p>
                     {/* <p>{item.date}</p> */}
-                    <p>۲۳ دی ۱۴۰۲</p>
+                    <p className="mr-[4%]">۲۳ دی ۱۴۰۲</p>
                   </div>
                 </Link>
                 <div className="flex flex-col cursor-pointer">

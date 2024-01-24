@@ -28,14 +28,14 @@ function statistics() {
                 <path
                   d="M6.66668 3.99967H9.33334C10.6667 3.99967 10.6667 3.33301 10.6667 2.66634C10.6667 1.33301 10 1.33301 9.33334 1.33301H6.66668C6.00001 1.33301 5.33334 1.33301 5.33334 2.66634C5.33334 3.99967 6.00001 3.99967 6.66668 3.99967Z"
                   stroke="#064247"
-                  stroke-miterlimit="10"
+                  strokeMiterlimit="10"
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 />
                 <path
                   d="M10.6667 2.67969C12.8867 2.79969 14 3.61969 14 6.66635V10.6664C14 13.333 13.3333 14.6664 10 14.6664H6C2.66667 14.6664 2 13.333 2 10.6664V6.66635C2 3.62635 3.11333 2.79969 5.33333 2.67969"
                   stroke="#064247"
-                  stroke-miterlimit="10"
+                  strokeMiterlimit="10"
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 />

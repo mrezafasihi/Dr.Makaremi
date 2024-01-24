@@ -1,20 +1,43 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import NavbarConfirm from "./user/NavbarConfirm";
-
+import apiRequests from "@/Axios/config";
+import moment from "jalali-moment";
 function Information() {
-  const dataofpayment = [
-    {
-      name: "علی مکارمی",
-      date: "1402 / 02 / 28",
-      lasttimes: "12:00",
-      money: "300 هزار تومان",
-    },
-  ];
+  const [shamsi, setShamsi] = useState<any>();
+  const [selectedPatient, setSelectedPatient] = useState<any>({});
+  const [accept, setAccept] = useState<any>(false);
+  const [infoDate, setInfoDate] = useState<any>();
+  useEffect(() => {
+    getData();
+    let text: any = localStorage.getItem("selectedPatient");
+    setSelectedPatient(JSON.parse(text));
+    // setTest(infoDate.day.date)
+  }, []);
+  const getData = () => {
+    const idReserve = localStorage.getItem("idReserve");
+    const token = localStorage.getItem("token");
+    apiRequests
+      .get(`/api/time/${idReserve}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .then((res) => {
+        console.log(res);
+        let date = res.data.data.day.date;
+        setInfoDate(res.data.data);
+        setShamsi(moment(date, "YYYY-MM-DD").locale("fa").format("YYYY/MM/DD"));
+      });
+  };
+
   return (
     <div>
-      <p className="1440px text-[16px] font-[400] mr-[23%] mt-[5%] ">
-        اطلاعات ثبت نوبت برای سرکار خانم
-        <span className="mr-[.5%] text-[16px] font-[700]  ">زهرا محمدی</span>
+      <p className=" text-[16px]  mr-[23%] mt-[5%] text-[#0D0630] ">
+        اطلاعات ثبت نوبت برای{" "}
+        <span className="text-[#0D0630]">
+          {selectedPatient.gender == "مرد" ? "جناب آقای" : "سرکار خانم"}
+        </span>{" "}
+        <span className=" text-[16px] font-iranSansBold text-[#064247] ">
+          {selectedPatient.first_name} <span>{selectedPatient.last_name}</span>
+        </span>
       </p>
       <div>
         <table
@@ -30,21 +53,17 @@ function Information() {
             </tr>
           </thead>
 
-          {dataofpayment.map((item) => {
-            return (
-              <tbody className="even:bg-[#F2FFFE]">
-                <tr>
-                  <td className="font-[400] text-[16px]">{item.name}</td>
-                  <td className="font-[400] text-[16px]">{item.date}</td>
-                  <td className="font-[400] text-[16px]">{item.lasttimes}</td>
-                  <td className="font-[400] text-[16px]"> {item.money}</td>
-                </tr>
-              </tbody>
-            );
-          })}
+          <tbody className="even:bg-[#F2FFFE]">
+            <tr>
+              <td className="font-[400] text-[16px]">علی مکارمی</td>
+              <td className="font-[400] text-[16px]">{shamsi}</td>
+              <td className="font-[400] text-[16px]">{infoDate?.start_time}</td>
+              <td className="font-[400] text-[16px]"> {infoDate?.cost}</td>
+            </tr>
+          </tbody>
         </table>
       </div>
-      <p></p>
+
       <div className="w-[862px] h-[235.815px] border-[.5px] border-stone-200 rounded-[10px] mx-auto mt-[5%]">
         <p className=" pr-[5%] pt-[3%]">
           به مرکز اجازه تصرف پیش‌پرداخت را می‌دهم.
@@ -65,6 +84,7 @@ function Information() {
                 type="checkbox"
                 className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-gray-900 checked:bg-gray-900 checked:before:bg-gray-900 hover:before:opacity-10"
                 id="check"
+                onClick={() => setAccept(!accept)}
               />
               <span className="absolute text-white transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
                 <svg
@@ -76,9 +96,9 @@ function Information() {
                   strokeWidth="1"
                 >
                   <path
-                    fill-rule="evenodd"
+                    fillRule="evenodd"
                     d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                    clip-rule="evenodd"
+                    clipRule="evenodd"
                   ></path>
                 </svg>
               </span>

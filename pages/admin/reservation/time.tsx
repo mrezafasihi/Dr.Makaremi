@@ -245,7 +245,7 @@ function time() {
                       d="M8.17529 2V5"
                       stroke="white"
                       strokeWidth="1.5"
-                      stroke-miterlimit="10"
+                      strokeMiterlimit="10"
                       strokeLinecap="round"
                       strokeLinejoin="round"
                     />
@@ -254,7 +254,7 @@ function time() {
                       d="M16.1753 2V5"
                       stroke="white"
                       strokeWidth="1.5"
-                      stroke-miterlimit="10"
+                      strokeMiterlimit="10"
                       strokeLinecap="round"
                       strokeLinejoin="round"
                     />
@@ -263,7 +263,7 @@ function time() {
                       d="M3.67529 9.08984H20.6753"
                       stroke="white"
                       strokeWidth="1.5"
-                      stroke-miterlimit="10"
+                      strokeMiterlimit="10"
                       strokeLinecap="round"
                       strokeLinejoin="round"
                     />
@@ -272,7 +272,7 @@ function time() {
                       d="M21.1753 8.5V17C21.1753 20 19.6753 22 16.1753 22H8.17529C4.67529 22 3.17529 20 3.17529 17V8.5C3.17529 5.5 4.67529 3.5 8.17529 3.5H16.1753C19.6753 3.5 21.1753 5.5 21.1753 8.5Z"
                       stroke="white"
                       strokeWidth="1.5"
-                      stroke-miterlimit="10"
+                      strokeMiterlimit="10"
                       strokeLinecap="round"
                       strokeLinejoin="round"
                     />
@@ -381,7 +381,7 @@ function time() {
                         d="M1.50854 6.37891H14.8419"
                         stroke="white"
                         strokeWidth="1.5"
-                        stroke-miterlimit="10"
+                        strokeMiterlimit="10"
                         strokeLinecap="round"
                         strokeLinejoin="round"
                       />
@@ -390,7 +390,7 @@ function time() {
                         d="M4.17529 12.3789H5.50863"
                         stroke="white"
                         strokeWidth="1.5"
-                        stroke-miterlimit="10"
+                        strokeMiterlimit="10"
                         strokeLinecap="round"
                         strokeLinejoin="round"
                       />
@@ -399,7 +399,7 @@ function time() {
                         d="M7.17529 12.3789H9.84196"
                         stroke="white"
                         strokeWidth="1.5"
-                        stroke-miterlimit="10"
+                        strokeMiterlimit="10"
                         strokeLinecap="round"
                         strokeLinejoin="round"
                       />

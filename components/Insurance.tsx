@@ -15,7 +15,7 @@ export const SwiperButton = () => {
     <>
       <div
         onClick={() => swiper.slideNext()}
-        className=" absolute left-0 bg-[#45CBC2] rounded-full top-20 z-10 w-12 h-12 text-white flex items-center justify-center text-xl"
+        className={` absolute left-0 bg-[#45CBC2] rounded-full top-20 z-10 w-12 h-12 text-white flex items-center justify-center text-xl`}
       >
         <LiaAngleLeftSolid />
       </div>
@@ -124,7 +124,8 @@ function Insurance() {
         onSwiper={(swiper) => console.log(swiper)}
         onSlideChange={() => console.log("slide change")}
       >
-        {insurance.map((item) => {
+        {insurance.map((item,index) => {
+console.log("hjjghg",index==insurance.length-1)
           return (
             <SwiperSlide>
               <div className="flex flex-col  items-center text-[18px] rounded-[15px] hover:shadow-xl h-52">

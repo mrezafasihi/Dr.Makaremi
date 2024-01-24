@@ -59,6 +59,7 @@ function ResualtTest({data}:any) {
     const token = localStorage.getItem("token");
 
     const idDocument = route.query.patientId;
+    
     apiRequests
       .post(
         "/api/results",

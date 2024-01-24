@@ -81,7 +81,7 @@ function Paymenticon() {
               d="M5.33325 1.33301V3.33301"
               stroke="white"
               strokeWidth="1.5"
-              stroke-miterlimit="10"
+              strokeMiterlimit="10"
               strokeLinecap="round"
               strokeLinejoin="round"
             />
@@ -89,7 +89,7 @@ function Paymenticon() {
               d="M10.6667 1.33301V3.33301"
               stroke="white"
               strokeWidth="1.5"
-              stroke-miterlimit="10"
+              strokeMiterlimit="10"
               strokeLinecap="round"
               strokeLinejoin="round"
             />
@@ -97,7 +97,7 @@ function Paymenticon() {
               d="M2.33325 6.05957H13.6666"
               stroke="white"
               strokeWidth="1.5"
-              stroke-miterlimit="10"
+              strokeMiterlimit="10"
               strokeLinecap="round"
               strokeLinejoin="round"
             />
@@ -105,7 +105,7 @@ function Paymenticon() {
               d="M14 5.66634V11.333C14 13.333 13 14.6663 10.6667 14.6663H5.33333C3 14.6663 2 13.333 2 11.333V5.66634C2 3.66634 3 2.33301 5.33333 2.33301H10.6667C13 2.33301 14 3.66634 14 5.66634Z"
               stroke="white"
               strokeWidth="1.5"
-              stroke-miterlimit="10"
+              strokeMiterlimit="10"
               strokeLinecap="round"
               strokeLinejoin="round"
             />
@@ -158,7 +158,7 @@ function Paymenticon() {
               d="M2 8.50488H22"
               stroke="white"
               strokeWidth="1.5"
-              stroke-miterlimit="10"
+              strokeMiterlimit="10"
               strokeLinecap="round"
               strokeLinejoin="round"
             />
@@ -166,7 +166,7 @@ function Paymenticon() {
               d="M6 16.5049H8"
               stroke="white"
               strokeWidth="1.5"
-              stroke-miterlimit="10"
+              strokeMiterlimit="10"
               strokeLinecap="round"
               strokeLinejoin="round"
             />
@@ -174,7 +174,7 @@ function Paymenticon() {
               d="M10.5 16.5049H14.5"
               stroke="white"
               strokeWidth="1.5"
-              stroke-miterlimit="10"
+              strokeMiterlimit="10"
               strokeLinecap="round"
               strokeLinejoin="round"
             />

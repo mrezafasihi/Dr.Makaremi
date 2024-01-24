@@ -7,8 +7,7 @@ import TableVisit from "@/components/admin/TableVisit";
 import Link from "next/link";
 
 import { useRouter } from "next/router";
-import apiRequests from "@/Axios/config";
-import axios from "axios";
+
 
 function PatientId() {
   const router = useRouter();
