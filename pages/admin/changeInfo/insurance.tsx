@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Layout from "../Layout";
+import ServerModal from "../../../components/admin/InsuModal";
+import apiRequests from "@/Axios/config";
 
 function insurance() {
   const insurance = [
@@ -64,6 +66,24 @@ function insurance() {
       alt: "parsianin_surance",
     },
   ];
+  const [open, setOpen] = useState<any>();
+  const [insu,setInsu]=useState<any>([])
+  const addInsurance = () => {
+    setOpen(true);
+  };
+  useEffect(() => {
+    showInsu();
+  },[])
+    
+  const showInsu = () => {
+    const token = localStorage.getItem("token");
+    apiRequests.get(`/api/insurances`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }).then((res)=>setInsu(res.data.data))
+  };
+  console.log(insu)
   return (
     <Layout>
       <div className="flex  items-center mr-[6.9%] mb-[8%] mt-[2%]">
@@ -88,10 +108,13 @@ function insurance() {
         </p>
       </div>
       <div className="flex flex-wrap justify-center mx-[15%] gap-[3%] max-w-[727px] overflow-y-auto ">
-        {insurance.map((item, index) => {
+        {insu.map((item:any, index:any) => {
           if (index == 0) {
             return (
-              <div className="flex flex-col justify-center items-center w-[157px] bg-[#EDEDEE] rounded-[10px]">
+              <div
+                className="flex flex-col justify-center items-center w-[157px] bg-[#EDEDEE] rounded-[10px]"
+                onClick={addInsurance}
+              >
                 <svg
                   width="77"
                   height="76"
@@ -125,16 +148,19 @@ function insurance() {
               </div>
             );
           }
+          
           return (
-            <div className="flex flex-col w-[157px] justify-center h-[196px] items-center rounded-[10px] hover:bg-black hover:opacity-40  ">
+            <div className="flex flex-col w-[157px] justify-center h-[196px] items-center rounded-[10px] group  ">
+              <div className="group-hover:visible invisible bg-slate-400">hi</div>
               <div className="h-[144px] w-[100px] flex items-center">
-                <img className="" src={item.img} alt="" />
+                <img className="" src={item.image} alt="" />
               </div>
               <p>{item.name}</p>
             </div>
           );
         })}
       </div>
+      <ServerModal open={open} setOpen={setOpen} />
     </Layout>
   );
 }

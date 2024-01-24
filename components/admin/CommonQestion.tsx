@@ -1,10 +1,12 @@
 import apiRequests from "@/Axios/config";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
-
 function CommonQestion() {
   const [dataCommonQestion, setDataCommnQestion] = useState<any>([]);
-const route=useRouter()
+  const [idEdit, setIdEdit] = useState<any>();
+  const [editValue,setEditValue]=useState<any>()
+  const [editAnswer,setEditAnswer]=useState<any>()
+  const route = useRouter();
   useEffect(() => {
     qestion();
   }, []);
@@ -16,25 +18,29 @@ const route=useRouter()
       })
       .then((res) => setDataCommnQestion(res.data.data));
   };
-  console.log(dataCommonQestion);
-//   const edit =()=>{
-//     const token = localStorage.getItem("token");
-// apiRequests.put('/api/questions/:question_id',{
-//   "question": "question edited",
-//   "answer": "answer edited"
-// }, {
-//   headers: { Authorization: `Bearer ${token}` },
-// })
-//   }
+  const editInput=(id:any)=>{
+    console.log(id)
+    const token = localStorage.getItem("token");
+    apiRequests.put(`/api/questions/${id}`,{
+      question: editValue ,
+      answer: editAnswer,
+    },{headers: { Authorization: `Bearer ${token}` }}).then((res)=>route.reload())
+  }
 
-
-  const deleteQ=(idQ:any)=>{
+  const deleteQ = (idQ: any) => {
     const token = localStorage.getItem("token");
 
-apiRequests.delete(`/api/questions/${idQ}`,{
-  headers: { Authorization: `Bearer ${token}` },
-}).then((res)=>route.reload())
-  }
+    apiRequests
+      .delete(`/api/questions/${idQ}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .then((res) => route.reload());
+  };
+  const editQuestion = (value: any) => {
+    setIdEdit(value.id);
+    setEditValue(value.question)
+    setEditAnswer(value.answer)
+  };
   // const dataCommonQ = [
   //   {
   //     title: "بعد از عمل لازک چشم چه علایم موقتی پدیدار می شود؟",
@@ -68,16 +74,22 @@ apiRequests.delete(`/api/questions/${idQ}`,{
     >
       {dataCommonQestion?.map((item: any) => {
         return (
-          <div className="flex flex-col h-[167px] max-w-[802px] justify-between ">
+          <div
+            className="flex flex-col h-[167px] max-w-[802px] justify-between "
+            key={item.id}
+          >
             <div className="flex text-[#3F1EE3] justify-between h-[24px] mb-6 ">
-              <h4 key={item.id}> {item.question}</h4>
+              {item.id == idEdit ? <>
+              
+              <input className="border" type="text" value={editValue} onChange={(e)=>setEditValue(e.target.value)}/> <button onClick={()=>editInput(item.id)}>ثبت تغییرات</button>
+              </> : <h4> {item.question}</h4>}
               <svg
                 width="24"
                 height="24"
                 viewBox="0 0 24 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                // onClick={edit}
+                onClick={() => editQuestion(item)}
               >
                 <path
                   d="M13.26 3.60022L5.05 12.2902C4.74 12.6202 4.44 13.2702 4.38 13.7202L4.01 16.9602C3.88 18.1302 4.72 18.9302 5.88 18.7302L9.1 18.1802C9.55 18.1002 10.18 17.7702 10.49 17.4302L18.7 8.74022C20.12 7.24022 20.76 5.53022 18.55 3.44022C16.35 1.37022 14.68 2.10022 13.26 3.60022Z"
@@ -110,7 +122,7 @@ apiRequests.delete(`/api/questions/${idQ}`,{
                 height="21"
                 viewBox="0 0 22 21"
                 fill="none"
-                onClick={()=>deleteQ(item.id)}
+                onClick={() => deleteQ(item.id)}
               >
                 <path
                   d="M18.7622 5.15682C15.8902 4.87221 13.0009 4.72559 10.1203 4.72559C8.4126 4.72559 6.70491 4.81183 4.99723 4.98433L3.23779 5.15682"
@@ -154,7 +166,8 @@ apiRequests.delete(`/api/questions/${idQ}`,{
               </svg>
             </div>
             <p className="text-[14px] font-light text-[#757575] h-[62px] mr-[1.5%]">
-              {item.answer}
+              {item.id==idEdit?<><input type="text" className="border" value={editAnswer} onChange={(e)=>setEditAnswer(e.target.value)}/></>:<h4>{item.answer}</h4>}
+              
             </p>
             <hr className="w-[417px] mr-[2%]" />
           </div>

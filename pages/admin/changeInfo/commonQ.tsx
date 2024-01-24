@@ -6,8 +6,10 @@ import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import apiRequests from "@/Axios/config";
-
+import { useRouter } from "next/router";
 function commonQ() {
+  const route = useRouter();
+
   const { register, handleSubmit } = useForm();
   const onSubmit = (data: any) => {
     
@@ -17,7 +19,7 @@ function commonQ() {
       answer: data.amswerQuestion,
     },{
       headers: { Authorization: `Bearer ${token}` },
-    }).then((res)=>{console.log(res)});
+    }).then((res)=>{route.reload()});
     
   };
   return (

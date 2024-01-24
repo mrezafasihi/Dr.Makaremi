@@ -9,7 +9,7 @@ import apiRequests from "@/Axios/config";
 function index() {
   const router = useRouter();
 
-  const [dataPatients, setDataPatients] = useState<any>([]);
+  const [dataPatients,setDataPatients] = useState<any>([]);
   useEffect(() => {
     getData();
   }, []);

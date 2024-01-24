@@ -77,8 +77,13 @@ function addarticle() {
             <input
               type="file"
               className="h-24 absolute opacity-0"
+<<<<<<< HEAD:pages/admin/changeInfo/article/addarticle.tsx
               // {...register("image")}
               onChange={(e: any) => setFile(e.target.files[0])}
+=======
+             
+              onChange={(e:any)=>setFile(e.target.files[0])}
+>>>>>>> 417d36851f7326d022ccec187ca2404278a92847:pages/admin/changeInfo/addarticle.tsx
             />
             {file ? (
               <img
