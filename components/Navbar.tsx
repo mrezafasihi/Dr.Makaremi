@@ -1,21 +1,27 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { BsPlusCircleFill } from "react-icons/bs";
 import { IoMenu } from "react-icons/io5";
 import Logo from "./Logo";
 import Link from "next/link";
+import apiRequests from "@/Axios/config";
+import { Hidden } from "@mui/material";
 
 function Navbar({ ref }: any) {
-  // const home: any = useRef(null);
-  // const satisfication = useRef(null);
-  // const insurance = useRef(null);
-  // const contactUs = useRef(null);
-  // const blog = useRef(null);
-  // const register = useRef(null);
+  const [token,setToken]=useState<any>()
 
-  // const scroll: any = (elementRef: any) => {
-  //   window.scrollTo({ top: elementRef.current.offsetTop, behavior: "smooth" });
-  // };
+useEffect(()=>{getData(), setToken(localStorage.getItem("token"))
+},[])
 
+  const getData=()=>{
+    const token=localStorage.getItem("token")
+    if (token) {
+      apiRequests.get(`/api/user-document`, { headers: { Authorization: `Bearer ${token}` } }).then((res)=>console.log(res))
+
+    }
+   
+
+  }
+  
   return (
     <nav className="  flex  justify-between  font-iranSans items-center  py-5  fixed z-10 backdrop-blur-sm  backdrop-filter shadow-2xl bg-black bg-opacity-25  w-full">
       <div className="  flex flex-col justify-center mr-[7.56%]">
@@ -35,44 +41,44 @@ function Navbar({ ref }: any) {
 
       <ul className="hidden lg:font-medium	 lg:flex lg:justify-center text-white  lg:gap-[1%] basis-[57%]">
         <a href="#home"
-          // onClick={() => scroll({ ref })}
+         
           className="hover:bg-[#45CBC2] rounded-lg px-[1.4%] py-[1.5%] flex justify-center items-center "
         >
           خانه
         </a>
         <a href="#satisfication"
-          // onClick={() => scroll(satisfication)}
+          
           className="hover:bg-[#45CBC2] rounded-lg px-[1.4%] py-[1.5%] flex justify-center items-center "
         >
           رضایت مراجعان
         </a>
         <a href="#insurance"
-          // onClick={() => scroll(insurance)}
+         
           className="hover:bg-[#45CBC2] rounded-lg px-[1.4%] py-[1.5%] flex justify-center items-center "
         >
           بیمه های طرف قرارداد
         </a>
         <a href="#contactUs"
-          // onClick={() => scroll(contactUs)}
+          
           className="hover:bg-[#45CBC2] rounded-lg px-[1.4%] py-[1.5%] flex justify-center items-center "
         >
           تماس با ما
         </a>
         <a
-          // onClick={() => scroll(blog)}
+          
           className="hover:bg-[#45CBC2] rounded-lg px-[1.4%] py-[1.5%] flex justify-center items-center "
         >
           بلاگ
         </a>
         <Link
-          // onClick={() => scroll(register)}
+          
           href="/login"
-          className="hover:bg-[#45CBC2] rounded-lg px-[1.4%] py-[1.5%] flex justify-center items-center "
+          className={`hover:bg-[#45CBC2] rounded-lg px-[1.4%] py-[1.5%] flex justify-center items-center  ${token?"hidden":"flex"}`}
         >
           ورود / عضویت
         </Link>
       </ul>
-      <div className="flex  items-center ml-[2%] lg:ml-[7.56%] ">
+      {token?"salam": <div className="flex  items-center ml-[2%] lg:ml-[7.56%] ">
         <Link
           href="./login"
           className="flex bg-[#45CBC2] w-[149px] h-[44px]  justify-center items-center text-white rounded-lg hover:bg-[#D6F3F1] hover:text-[#064247] group"
@@ -109,7 +115,8 @@ function Navbar({ ref }: any) {
         <div className="lg:hidden">
           <IoMenu style={{ fontSize: "2rem" }} />
         </div>
-      </div>
+      </div>}
+     
     </nav>
   );
 }

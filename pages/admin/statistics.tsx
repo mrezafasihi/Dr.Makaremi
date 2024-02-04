@@ -3,26 +3,30 @@ import Layout from "./Layout";
 import { CChart } from "@coreui/react-chartjs";
 import { useForm } from "react-hook-form";
 import apiRequests from "@/Axios/config";
+import * as yup from 'yup';
 
 function statistics() {
   const { register, handleSubmit } = useForm();
- 
-  const onSubmit = () => {
+  // const schema=yup.object().shape({
+
+  // })
+  const onSubmit = (data:any) => {
+    console.log(data.lasik_surgery_count)
     const token = localStorage.getItem("token");
     apiRequests.post(
       `/api/statistics`,
       {
-        surgery_count: "surgery",
-        credible_article_count: "article",
-        lasik_surgery_count: "count",
+        surgery_count:+data.surgery_count,
+        credible_article_count: +data.credible_article_count,
+        lasik_surgery_count: +data.lasik_surgery_count,
       },
       { headers: { Authorization: `Bearer ${token}` } }
     ).then((res)=>console.log(res))
-    console.log(onSubmit)
+    
   };
   return (
     <Layout>
-      <div className="bg-[#EDF8F7] h-full pt-[5%] pr-[12%] flex font-IRANSansXFaNum">
+      <form className="bg-[#EDF8F7] h-full pt-[5%] pr-[12%] flex font-IRANSansXFaNum" onSubmit={handleSubmit(onSubmit)}>
         <div>
           <p className="text-[16px] text-[#288E87] mb-[10%]">آمار کلی</p>
           <div className="flex flex-col mt-[5%] mr-[2%]">
@@ -55,8 +59,8 @@ function statistics() {
             </div>
             <input
               className="w-[259px] h-[70px] text-[#064247] bg-white rounded-[10px] mt-[2%] flex items-center pr-[2%]"
-              defaultValue="13,635"
-              {...register("surgery")}
+              defaultValue="13635"
+              {...register("surgery_count")}
             />
           </div>
           <div className="flex flex-col mr-[2%]">
@@ -87,8 +91,8 @@ function statistics() {
             </div>
             <input
               className="text-[#064247] text-[16px] bg-white w-[263px] h-[70px] rounded-[10px] mt-[1%] flex items-center pr-[2%]"
-              defaultValue="8,635"
-              {...register("count")}
+              defaultValue="8635"
+              {...register("lasik_surgery_count")}
             />
           </div>
           <div className="w-[263px] h-[192px] bg-white rounded-[10px] mt-[35%] mr-[2%] pr-[4%] pt-[4%] ">
@@ -118,8 +122,8 @@ function statistics() {
             </p>
             <input
               className="text-[#064247] text-[16px] mt-[5%]"
-              defaultValue={"12 مقاله"}
-              {...register("article")}
+              defaultValue={"12"}
+              {...register("credible_article_count")}
             />
           </div>
         </div>
@@ -194,14 +198,7 @@ function statistics() {
                 {
                   tension: 0.8,
                   fill: true,
-                  // label: "My First dataset",
                   backgroundColor: "#D6F3F1",
-                  //   (context:any)=>{
-                  //     const chart= context.chart;
-                  //     const {ctx,chartArea,scales}=chart;
-                  //     if (!chartArea){return null}
-                  //     return bgGradient(ctx,chartArea,scales)
-                  //   },
                   borderColor: "#064247",
                   pointBackgroundColor: "rgba(220, 220, 220, 1)",
                   pointBorderColor: "#fff",
@@ -215,46 +212,9 @@ function statistics() {
               },
             }}
           />
-          {/* <CChart 
-  type="radar"
-  data={{
-    labels: [
-      'Eating',
-      'Drinking',
-      'Sleeping',
-      'Designing',
-      'Coding',
-      'Cycling',
-      'Running',
-    ],
-    datasets: [
-      {
-        label: 'My First dataset',
-        backgroundColor: 'black',
-        borderColor: 'rgba(220, 220, 220, 1)',
-        pointBackgroundColor: 'rgba(220, 220, 220, 1)',
-        pointBorderColor: '#fff',
-      
-        data: [65, 59, 90, 81, 56, 55, 40],
-      },
-      {
-        label: 'My Second dataset',
-        backgroundColor: 'red',
-        borderColor: 'rgba(151, 187, 205, 1)',
-        pointBackgroundColor: 'rgba(151, 187, 205, 1)',
-        pointBorderColor: '#fff',
-        fill:true,
-        
-        data: [28, 48, 40, 19, 96, 27, 100],
-      },
-    ],
-  }}
-  
-  
-/> */}
         </div>
-      </div>
-      <button onClick={handleSubmit(onSubmit)}>ثبت</button>
+      <button>ثبت</button>
+      </form>
     </Layout>
   );
 }

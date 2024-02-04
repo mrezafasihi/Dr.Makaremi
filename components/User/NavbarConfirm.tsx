@@ -5,7 +5,7 @@ import Logo from "../Logo";
 import Link from "next/link";
 import apiRequests from "@/Axios/config";
 import { useRouter } from "next/router";
-import { usePathname } from "next/navigation";
+import { redirect, usePathname } from "next/navigation";
 
 function NavbarConfirm() {
   const [patient, setPatient] = useState<any>([]);
@@ -47,7 +47,11 @@ function NavbarConfirm() {
   //  useEffect(()=>{
   //    setValueSelectOption(valueSelectOption)
   //  },[])
-
+const logOut=()=>{
+  
+ localStorage.removeItem("token"),router.push("/")
+  
+}
   return (
     <div className="flex justify-between mx-[5%] items-center mt-[32px] ">
       <Logo />
@@ -113,7 +117,7 @@ function NavbarConfirm() {
               strokeLinejoin="round"
             />
           </svg>
-          <p className="mr-2 font-iranSansLight">خروج</p>
+          <p className="mr-2 font-iranSansLight" onClick={logOut}>خروج</p>
         </div>
       </div>
     </div>
