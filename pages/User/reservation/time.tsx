@@ -7,6 +7,7 @@ import apiRequests from "@/Axios/config";
 import moment from "jalali-moment";
 import { useRouter } from "next/router";
 import toast, { Toaster } from "react-hot-toast";
+import { all } from "axios";
 function time() {
   const route = useRouter();
   const [reserveId, setReserveId] = useState<any>();
@@ -100,17 +101,24 @@ function time() {
   // };
   const handleDate = (selectedDay: any) => {
     setSelectedDay(selectedDay);
-
-    const test = `${selectedDay.year}-${selectedDay.month}-${selectedDay.day}`;
+    const changeToMiladi = `${selectedDay.year}-${selectedDay.month}-${selectedDay.day}`;
     console.log(
-      moment.from(test, "fa", "YYYY/MM/DD").locale("en").format("YYYY-MM-DD")
+      moment
+        .from(changeToMiladi, "fa", "YYYY/MM/DD")
+        .locale("en")
+        .format("YYYY-MM-DD")
     );
+
     const date = allDate?.filter((item: any) => {
       return (
         item.day.date ==
-        moment.from(test, "fa", "YYYY/MM/DD").locale("en").format("YYYY-MM-DD")
+        moment
+          .from(changeToMiladi, "fa", "YYYY/MM/DD")
+          .locale("en")
+          .format("YYYY-MM-DD")
       );
     });
+    console.log(date);
     setTimes(date);
   };
 
@@ -479,7 +487,7 @@ function time() {
           <Calendar
             value={selectedDay}
             onChange={handleDate}
-            minimumDate={utils("fa").getToday()}
+            // minimumDate={utils("fa").getToday()}
             shouldHighlightWeekends
             locale="fa"
             // disabledDays={disabledDays}
@@ -494,9 +502,12 @@ function time() {
           <p className="text-[#064247] text-[14px] font-light">انتخاب ساعت</p>
           <div className="flex justify-between items-center flex-wrap h-[118.462px] overflow-auto w-[262.561px]  ">
             {times?.map((item: any) => {
+              console.log(item.status);
               return (
                 <div
-                  className="flex w-[78.68px] justify-center items-center h-[50px] text-[14px] font-light bg-[#D6F3F1] border-[1.4px] border-[#D6F3F1] my-[2%] rounded-[15.07px] mx-[1%] cursor-pointer hover:shadow-[5px_5px_0px_0px_rgba(186,227,223)]"
+                  className={`
+                  ${item.status ? "bg-[#D6F3F1]" : "bg-white"}
+                  flex w-[78.68px] justify-center items-center h-[50px] text-[14px] font-light  border-[1.4px] border-[#D6F3F1] my-[2%] rounded-[15.07px] mx-[1%] cursor-pointer hover:shadow-[5px_5px_0px_0px_rgba(186,227,223)]`}
                   onClick={() => setReserveId(item.id)}
                   key={item.id}
                 >

@@ -8,14 +8,15 @@ function ChatList() {
     { name: "مرتضی حمیدی", image: "", id: "3" },
   ];
   return (
-    <div className="bg-slate-400 w-[27.01%] h-screen">
+    <div  className=" w-[27.01%] h-screen">
       {person.map((item) => {
         return (
           <div
+          
             key={item.id}
             className="flex mr-[17.99%] w-[75.83%] h-[63px] border bg-[#D6F3F1] mb-[4px] items-center rounded-[10px] pr-[5.42%]"
           >
-            <CustomImage />
+            <CustomImage styleContainer={'w-[31px] h-[31px]'} />
             <p className="mr-[8px] font-iranSansLight text-[#064247]">{item.name}</p>
           </div>
         );

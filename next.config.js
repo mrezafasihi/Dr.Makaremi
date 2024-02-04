@@ -5,5 +5,5 @@ const nextConfig = {
 
 module.exports = {
   nextConfig,
-  extends: ["plugin:@tanstack/eslint-plugin-query/recommended"],
+  // extends: ["plugin:@tanstack/eslint-plugin-query/recommended"],
 };

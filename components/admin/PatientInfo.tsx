@@ -70,7 +70,8 @@ function PatientInfo() {
       </div>
       <div className="flex flex-col items-center">
         <p className="text-[#064247] font-bold text-[24px] mt-[-10%] mb-[10%]">
-          {patient.first_name}{patient.last_name}
+          {patient.first_name}
+          {patient.last_name}
         </p>
         <p className="text-[#757575] font-light ">
           شماره پرونده : <span>{patient.id}</span>
