@@ -10,8 +10,8 @@ import { redirect, usePathname } from "next/navigation";
 function NavbarConfirm() {
   const [patient, setPatient] = useState<any>([]);
   const router = useRouter();
-  const pathName=usePathname()
-  const query=router.query
+  const pathName = usePathname();
+  const query = router.query;
   useEffect(() => {
     // getData();
   }, []);
@@ -57,8 +57,18 @@ const logOut=()=>{
       <Logo />
       <ul className="flex justify-between basis-[28.96%] font-medium mr-[8%] ">
         <Link href={"/"}>خانه</Link>
-        <Link href={"/user/reservation/Fainalpay"} className={pathName=="/user/reservation/Fainalpay"?"text-[#288E87]":""}>پرونده من</Link>
-        <Link href={"/user/reservation"} className={pathName=="/user/reservation"?"text-[#288E87]":""}>
+        <Link
+          href={"/user/reservation/Fainalpay"}
+          className={
+            pathName == "/user/reservation/Fainalpay" ? "text-[#288E87]" : ""
+          }
+        >
+          پرونده من
+        </Link>
+        <Link
+          href={"/user/reservation"}
+          className={pathName == "/user/reservation" ? "text-[#288E87]" : ""}
+        >
           رزرو نوبت
         </Link>
         <li>ارسال پیام</li>
