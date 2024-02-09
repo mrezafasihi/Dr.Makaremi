@@ -6,13 +6,15 @@ function PersonalInfoPatient({ onDataUpdate }: any) {
   const [patient, setPatient] = useState<any>([]);
 
   const router = useRouter();
-  console.log(router);
   const query = router.query.patientId;
   console.log(query);
 
   useEffect(() => {
-    getData();
-  }, []);
+    const { patientId } = router.query;
+    {
+      patientId ? getData() : null;
+    }
+  }, [query]);
   const getData = () => {
     const token = localStorage.getItem("token");
     const query = router.query.patientId;

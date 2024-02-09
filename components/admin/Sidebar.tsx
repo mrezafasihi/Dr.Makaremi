@@ -652,7 +652,7 @@ function Sidebar() {
           }
 
           return (
-            <div className="flex flex-col mr-[5%]  ml-[5%] my-[2%] flex-1      group">
+            <div key={item.path} className="flex flex-col mr-[5%]  ml-[5%] my-[2%] flex-1      group">
               {item.subMenu ? (
                 <>
                   <div

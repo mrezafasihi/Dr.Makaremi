@@ -8,11 +8,9 @@ import Link from "next/link";
 
 import { useRouter } from "next/router";
 
-
 function PatientId() {
   const router = useRouter();
-  const [sharedData,setSharedData]=useState([])
-  
+  const [sharedData, setSharedData] = useState<any>([]);
   return (
     <Layout>
       <div>
@@ -38,13 +36,15 @@ function PatientId() {
             />
           </svg>
           <p className="mr-[1%] text-[#757575] font-bold text-[20px]">
-            امیر رئیسی
+            {sharedData.first_name} {sharedData.last_name}
           </p>
         </div>
         <div className="flex justify-center">
-          <PatientInfo  />
+          <PatientInfo />
           <div className="flex flex-col basis-[46.34%] mr-[2%] justify-between">
-            <PersonalInfoPatient onDataUpdate={(data:any)=>setSharedData(data)} />
+            <PersonalInfoPatient
+              onDataUpdate={(data: any) => setSharedData(data)}
+            />
             <ResualtTest data={sharedData} />
           </div>
         </div>
