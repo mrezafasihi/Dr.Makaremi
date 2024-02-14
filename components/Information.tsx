@@ -49,7 +49,9 @@ function Information() {
           reserve_id: idReserve,
         },
         {
-          headers: { Authorization: `Bearer ${token}` },
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
         }
       )
       .then((res) => {
@@ -65,7 +67,8 @@ function Information() {
     console.log(token);
     apiRequests
       .post(`/api/pay-reserve/${factor}`, {
-        headers: { Authorization: `Bearer ${token}` },
+        headers: { Authorization: `Bearer ${token}`,Accept: "application/json",
+      },
       })
       .then((res: any) => {
         console.log(res);

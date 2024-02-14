@@ -256,7 +256,7 @@ function Sidebar() {
         </svg>
       ),
       title: "پرداخت ها",
-      path: "/admin/p",
+      path: "/admin/i",
     },
     {
       icon: (
@@ -328,7 +328,12 @@ function Sidebar() {
         </svg>
       ),
       title: "جدول زمانبندی",
-      path: "/admin/i",
+      path: "",
+      subMenu: true,
+      subMenuItems: [
+        { title: "تعیین زمان‌بندی", path: "/admin/pattern" },
+        { title: "جدول هفتگی", path: "/admin/chart" },
+      ],
     },
     {
       icon: (
@@ -642,9 +647,7 @@ function Sidebar() {
 
           {
             pathName?.includes(item.path)
-              ? // ||
-                // pathName?.match(`^\/${item.path}(\/[a-zA-Z0-9]+)?$`)
-                (style = "bg-[#288E87]  text-white  ")
+              ? (style = "bg-[#288E87]  text-white  ")
               : (style = "");
             // if(index==layoutData.length-1){
             //   color="text-[#C70000]"
@@ -652,7 +655,10 @@ function Sidebar() {
           }
 
           return (
-            <div key={item.path} className="flex flex-col mr-[5%]  ml-[5%] my-[2%] flex-1      group">
+            <div
+              key={item.path}
+              className="flex flex-col mr-[5%]  ml-[5%] my-[2%] flex-1      group"
+            >
               {item.subMenu ? (
                 <>
                   <div
@@ -668,7 +674,9 @@ function Sidebar() {
                       viewBox="0 0 11 6"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
-                      className={`mr-[3%]  ${subMenuOpen?"rotate-180":null}`}
+                      className={`mr-[3%]  ${
+                        subMenuOpen ? "rotate-180" : null
+                      }`}
                     >
                       <path
                         d="M5.5 6C5.2557 6 5.0114 5.91646 4.81853 5.73744L0.279661 1.52461C-0.0932203 1.17852 -0.0932203 0.605669 0.279661 0.259572C0.652542 -0.0865241 1.26973 -0.0865241 1.64261 0.259572L5.5 3.83988L9.35739 0.259572C9.73028 -0.0865241 10.3475 -0.0865241 10.7203 0.259572C11.0932 0.605669 11.0932 1.17852 10.7203 1.52461L6.18147 5.73744C5.9886 5.91646 5.7443 6 5.5 6Z"
@@ -692,15 +700,15 @@ function Sidebar() {
                     })}
                 </>
               ) : (
-                <Link
-                  className={`flex h-[57px] max-w-[298px] items-center rounded-lg font-iranSansLight hover:bg-[#288E87] hover:text-white hover:rounded-lg ${
+                <p
+                  className={`flex h-[57px] max-w-[298px] items-center rounded-lg font-iranSansLight hover:bg-[#288E87] hover:text-white hover:rounded-lg cursor-pointer ${
                     index == layoutData.length - 1 && "text-[#C70000]"
                   }  ${style}`}
-                  href={item.path}
+                  onClick={() => {index == layoutData.length - 1 ? (localStorage.removeItem("token"),route.push("/login")):route.push(item.path)}}
                 >
                   <span className="ml-2  pr-2 ">{item.icon}</span>
                   {item.title}
-                </Link>
+                </p>
               )}
             </div>
           );

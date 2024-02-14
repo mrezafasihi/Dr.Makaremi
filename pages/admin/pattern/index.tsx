@@ -1,29 +1,39 @@
 //@ts-nocheck
 import React, { useState } from "react";
 import Layout from "../Layout";
-import DatePicker, { Calendar } from "react-modern-calendar-datepicker";
+import { utils } from "react-modern-calendar-datepicker";
 import { useForm } from "react-hook-form";
 
 import "react-modern-calendar-datepicker/lib/DatePicker.css";
 import toast, { Toaster } from "react-hot-toast";
 import apiRequests from "@/Axios/config";
 function setPattern() {
+  const nameDaies = [
+    { day: "شنبه", id: 1, value: "saturday", select: false },
+    { day: "یک شنبه", id: 2, value: "Sunday", select: false },
+    { day: "دوشنبه", id: 3, value: "monday", select: false },
+    { day: "سه شنبه", id: 4, value: "tuesday", select: false },
+    { day: "چهارشنبه", id: 5, value: "wednesday", select: false },
+    { day: "پنج شنبه", id: 6, value: "thursday", select: false },
+  ];
+  const [test, setTest] = useState<any>(nameDaies);
   const [selectedDay, setSelectedDay] = useState(null);
   const [data, setData] = useState({});
   const [storeDay, setStoreDay] = useState<any>([]);
+  const [day, setDay] = useState<any>();
   // const [pattern, setPattern] = useState<any>();
   const { register, handleSubmit, reset } = useForm();
-
-  const onSubmit = (dataa, selectedDay) => {
-    let howDay = selectedDay.day;
-    setStoreDay([...storeDay, selectedDay.day]);
+  let month;
+  const onSubmit = (dataa, day, i) => {
+    setStoreDay([...storeDay, day]);
     const repeatDay = storeDay?.some((item) => {
-      return item == selectedDay.day;
+      return item == day;
     });
     if (repeatDay) {
       toast.error("برنامه این روز ساخته شده است");
     } else {
-      setData({...data,  [howDay]: dataa });
+      setData({ ...data, [day]: dataa });
+      test[i - 1].select = true;
     }
     reset({
       visit_length: "",
@@ -33,15 +43,13 @@ function setPattern() {
       visit_cost: "",
     });
   };
-
+  const persianToday = utils("fa").getToday();
   const sendPattern = () => {
     const token = localStorage.getItem("token");
     let pattern = {
-       
-        data,
-      
+      data,
     };
-console.log(pattern)
+    console.log(pattern);
     apiRequests
       .post(
         "/api/time-pattern",
@@ -52,7 +60,46 @@ console.log(pattern)
       )
       .then((res) => console.log(res));
   };
-
+  switch (persianToday.month) {
+    case 1:
+      month = "فروردین";
+      break;
+    case 2:
+      month = "اردیبهشت";
+      break;
+    case 3:
+      month = "خرداد";
+      break;
+    case 4:
+      month = "تیر";
+      break;
+    case 5:
+      month = "مرداد";
+      break;
+    case 6:
+      month = "شهریور";
+      break;
+    case 7:
+      month = "مهر";
+      break;
+    case 8:
+      month = "آبان";
+      break;
+    case 9:
+      month = "آذر";
+      break;
+    case 10:
+      month = "دی";
+      break;
+    case 11:
+      month = "بهمن";
+      break;
+    case 12:
+      month = "اسفند";
+      break;
+    default:
+    // code block
+  }
   return (
     <Layout>
       <h1 className="text-[16px] text-[#45CBC2] font-iranSansBold mt-[5%] mr-[5%]">
@@ -111,15 +158,28 @@ console.log(pattern)
             این زمان‌بندی برای چه روزهایی از ماه آینده می‌باشند؟
           </h1>
 
-          <Calendar
-          
-            value={selectedDay}
-            onChange={handleSubmit(onSubmit)}
-            shouldHighlightWeekends
-            locale="fa"
-            colorPrimary="#D6F3F1"
-            
-          />
+          <div>
+            {/* <h6>{month}</h6> */}
+            <div className="flex flex-wrap  justify-between h-52 ">
+              {test.map((item) => {
+                return (
+                  <p
+                    className={`rounded-[29px]  text-[#064247] w-[30%] items-center justify-center flex h-[35%] hover:scale-110 hover:shadow-lg hover:opacity-90 transition duration-500 ease-in-out cursor-pointer ${
+                      item.select
+                        ? "bg-green-900 border text-white"
+                        : "bg-[#D6F3F1]"
+                    }`}
+                    key={item.id}
+                    onClick={handleSubmit((data) =>
+                      onSubmit(data, item.value, item.id)
+                    )}
+                  >
+                    {item.day}
+                  </p>
+                );
+              })}
+            </div>
+          </div>
 
           <p className="text-[14px] text-[#064247] font-iranSansBold mt-[10%]">
             هزینه ویزیت
@@ -152,7 +212,7 @@ console.log(pattern)
       >
         جدول زمان‌بندی را بساز
       </button>
-      
+
       {/* <button
           onClick={() => {
             let pattern = {

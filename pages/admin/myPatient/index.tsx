@@ -9,7 +9,11 @@ import apiRequests from "@/Axios/config";
 function index() {
   const router = useRouter();
 
-  const [dataPatients,setDataPatients] = useState<any>([]);
+  const myList = ["ی", "گ", "پ", "ژ"];
+  const collator = new Intl.Collator("fa");
+  const sortedLetters = myList.sort(collator.compare);
+
+  const [dataPatients, setDataPatients] = useState<any>([]);
   useEffect(() => {
     getData();
   }, []);
@@ -36,28 +40,34 @@ function index() {
         <p className="text-[#45CBC2] font-iranSansBold my-[35px] ">
           بیماران من
         </p>
-        <Link
-          className="flex mb-[15px] items-center"
-          href={"/admin/myPatient/newfile"}
-        >
-          <div className="border border-[#EDEDEE] p-2 rounded ">
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M19 3H5C3.89 3 3 3.9 3 5V19C3 20.1 3.89 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3ZM19 19H5V5H19V19ZM11 17H13V13H17V11H13V7H11V11H7V13H11V17Z"
-                fill="#45CBC2"
-              />
-            </svg>
-          </div>
-          <p className="text-[#064247] font-iranSansLight text-[14px] mr-[1.5%]">
-            تشکیل پرونده جدید
-          </p>
-        </Link>
+        <div className="flex justify-between">
+          <Link
+            className="flex mb-[15px] items-center  w-[173px]"
+            href={"/admin/myPatient/newfile"}
+          >
+            <div className="border border-[#EDEDEE] p-2 rounded ">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M19 3H5C3.89 3 3 3.9 3 5V19C3 20.1 3.89 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3ZM19 19H5V5H19V19ZM11 17H13V13H17V11H13V7H11V11H7V13H11V17Z"
+                  fill="#45CBC2"
+                />
+              </svg>
+            </div>
+            <p className="text-[#064247] font-iranSansLight text-[14px] mr-[1.5%]">
+              تشکیل پرونده جدید
+            </p>
+          </Link>
+          <select name="" id="">
+            <option value="">براساس نام</option>
+            <option value="">براساس شماره پرونده</option>
+          </select>
+        </div>
         <p className="text-[#757575] font-iranSansLight text-[12px] mb-2 mr-8">
           برای مشاهده و ویرایش پرونده روی آن کلیک کنید
         </p>

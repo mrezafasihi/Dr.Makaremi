@@ -4,9 +4,10 @@ import Layout from "./Layout";
 import { Checkbox } from "@mui/material";
 import apiRequests from "@/Axios/config";
 import moment from "jalali-moment";
+import id from "./messege/[id]";
 
 function chart() {
-  const [date, setDate] = useState<any>();
+  const [workDays, setWorkDays] = useState<any>([]);
   const [showDetailDay, setShowDetailDay] = useState<any>();
   useEffect(() => {
     getData();
@@ -14,48 +15,48 @@ function chart() {
   const getData = () => {
     const token = localStorage.getItem("token");
     apiRequests
-      .get("/api/time", {
+      .get("/api/work-days", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res: any) => {
-        console.log(res), setDate(res.data.data);
+        console.log(res), setWorkDays(res.data.data);
       });
   };
-  console.log(date);
+  console.log(moment(workDays[0]?.date, "YYYY-MM-DD").locale("fa").format("dddd"));
   const daies = [
-    { day: "شنبه" },
-    { day: "یکشنبه" },
-    { day: "دوشنبه" },
-    { day: "سه‌شنبه" },
-    { day: "چهارشنبه" },
+    { day: "شنبه", id: 1 },
+    { day: "یکشنبه", id: 2 },
+    { day: "دوشنبه", id: 3 },
+    { day: "سه‌شنبه", id: 4 },
+    { day: "چهارشنبه", id: 5 },
   ];
   const showTime = (day: any) => {
-    const filterDay = date?.filter((item: any) => {
+    const filterDay = workDays?.filter((item: any) => {
       return (
-        moment(item.day.date, "YYYY/MM/DD").locale("fa").format("dddd") == day
+        moment(item.day.workDays, "YYYY/MM/DD").locale("fa").format("dddd") ==
+        day
       );
     });
     setShowDetailDay(filterDay);
   };
-  console.log(showDetailDay);
   return (
     <Layout>
       <h1 className="text-[#45CBC2] text-[16px] font-iranSansBold mt-[5%] mr-[7%]">
         جدول زمانبندی
       </h1>
       {/* <div>
-        {date?.map((item: any) => {
+        {workDays?.map((item: any) => {
           return (
             <div className="flex justify-between" key={item.id}>
               <p>{item.start_time}-{item.end_time}</p>
               
               <p>
-                {moment(item.day.date, "YYYY/MM/DD")
+                {moment(item.day.workDays, "YYYY/MM/DD")
                   .locale("fa")
                   .format("YYYY/MM/DD")}
               </p>
               <p>
-                {moment(item.day.date, "YYYY/MM/DD")
+                {moment(item.day.workDays, "YYYY/MM/DD")
                   .locale("fa")
                   .format("dddd")}
               </p>
@@ -65,15 +66,15 @@ function chart() {
       </div> */}
       {showDetailDay?.map((item: any) => {
         return (
-          <div>
+          <div key={item.id}>
             <p>
               {item.start_time}-{item.end_time}
             </p>
             <p>
-                {moment(item.day.date, "YYYY/MM/DD")
-                  .locale("fa")
-                  .format("YYYY/MM/DD")}
-              </p>
+              {moment(item.day.workDays, "YYYY/MM/DD")
+                .locale("fa")
+                .format("YYYY/MM/DD")}
+            </p>
           </div>
         );
       })}
@@ -81,7 +82,11 @@ function chart() {
       <div>
         {daies.map((item) => {
           return (
-            <div className="cursor-pointer" onClick={() => showTime(item.day)}>
+            <div
+              key={item.id}
+              className="cursor-pointer"
+              onClick={() => showTime(item.day)}
+            >
               {item.day}
             </div>
           );
