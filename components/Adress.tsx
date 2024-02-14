@@ -1,8 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
+import apiRequests from "@/Axios/config";
 
 function Adress() {
+  useEffect(()=>{api},[])
+ const api =()=>{
+  const token = localStorage.getItem("token");
+  apiRequests.get(`/api/options/:option_id`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  })
+ }
   return (
     <div
       style={{ backgroundImage: `url(images/landin/clinic.png)` }}
