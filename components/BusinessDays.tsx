@@ -9,18 +9,18 @@ function BusinessDays() {
     { day: "چهارشنبه", time: " 8:00 الی 23:00" },
   ];
   return (
-    <div className="mt-[7%] mb-[10%] mx-[7.5%] " >
+    <div className="mt-[7%] mb-[10%] mx-[7.5%] ">
       <h6 className="border-r-[1px] text-2xl px-2 mb-[6%] mr-[2%] border-[#288E87] text-[#064247] basis-1/3 font-iranSansBold">
         روزهای کاری مطب
       </h6>
-      <div className="flex w-full items-center">
+      <div className="flex  items-center justify-between">
         <img
           className="hidden  [@media(min-width:928px)]:flex max-w-xl:w-[454px] md:h-[298px] "
           src="/images/litterGirl.png"
           alt=""
         />
-        <div className="sm:mr-4">
-          <div className="flex flex-col  items-center  justify-center gap-4   sm:flex-row flex-wrap  ">
+        <div className="[@media(min-width:928px)]:mr-4 w-full ">
+          <div className="flex   items-center  justify-center gap-4   sm:flex-row flex-wrap  ">
             {businesDaysData.map((item) => {
               return (
                 <div className="flex flex-col items-center justify-center bg-[#D6F3F1] w-[136px] h-[176px] space-y-8 rounded-[12.55px] ">

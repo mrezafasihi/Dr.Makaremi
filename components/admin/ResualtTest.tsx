@@ -21,7 +21,7 @@ const style = {
   p: 4,
 };
 
-function ResualtTest({data}:any) {
+function ResualtTest({ data }: any) {
   const [titleResult, setTitleResult] = useState<any>();
   const [desc, setDesc] = useState<any>();
   const [testResult, setTestResult] = useState<any>([]);
@@ -32,15 +32,14 @@ function ResualtTest({data}:any) {
   }, []);
   const getTestResult = () => {
     const idTestResult = localStorage.getItem("idTestResult");
-    console.log(idTestResult)
+    console.log(idTestResult);
     const token = localStorage.getItem("token");
     apiRequests
       .get(`/api/results/${idTestResult}`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => {
-        console.log(res),
-         setTestResult([res.data.data]);
+        console.log(res), setTestResult([res.data.data]);
       })
       .catch((err) => {
         console.log(err);
@@ -59,7 +58,7 @@ function ResualtTest({data}:any) {
     const token = localStorage.getItem("token");
 
     const idDocument = route.query.patientId;
-    
+
     apiRequests
       .post(
         "/api/results",
@@ -70,11 +69,11 @@ function ResualtTest({data}:any) {
       )
       .then((res) => {
         console.log(res);
-        route.reload()
+        route.reload();
       })
       .catch((res) => console.log(res));
   };
-  console.log(data);
+
   return (
     <div className="border  border-[#EDEDEE] rounded-[11.94px] text-center w-[482px] h-[189px] overflow-y-auto ">
       <table className=" w-full h-full">
@@ -108,7 +107,10 @@ function ResualtTest({data}:any) {
         <tbody className="h-[141px]  text-center overflow-auto">
           {data.test_result?.map((item: any) => {
             return (
-              <tr className=" text-right h-[47px]   odd:bg-[#f3fffe] " key={item.id}>
+              <tr
+                className=" text-right h-[47px]   odd:bg-[#f3fffe] "
+                key={item.id}
+              >
                 <td className=" text-[#757575]  pr-[4.9%] text-[12px]">
                   {item.test_name}
                 </td>

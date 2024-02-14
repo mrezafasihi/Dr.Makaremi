@@ -2,15 +2,22 @@ import React, { useEffect, useState } from "react";
 import NavbarConfirm from "./user/NavbarConfirm";
 import apiRequests from "@/Axios/config";
 import moment from "jalali-moment";
+import { useRouter } from "next/router";
 function Information() {
   const [shamsi, setShamsi] = useState<any>();
   const [selectedPatient, setSelectedPatient] = useState<any>({});
   const [accept, setAccept] = useState<any>(false);
   const [infoDate, setInfoDate] = useState<any>();
+  const [factor, setFactor] = useState<any>();
+  let test: any;
+  const router = useRouter();
   useEffect(() => {
     getData();
+
     let text: any = localStorage.getItem("selectedPatient");
     setSelectedPatient(JSON.parse(text));
+    test = JSON.parse(text);
+    acceptReserve();
     // setTest(infoDate.day.date)
   }, []);
   const getData = () => {
@@ -27,7 +34,47 @@ function Information() {
         setShamsi(moment(date, "YYYY-MM-DD").locale("fa").format("YYYY/MM/DD"));
       });
   };
-
+  const acceptReserve = () => {
+    const idReserve = localStorage.getItem("idReserve");
+    const token = localStorage.getItem("token");
+    let patient: any = localStorage.getItem("selectedPatient");
+    let patientObj = JSON.parse(patient);
+    console.log(patientObj.id);
+    console.log(idReserve);
+    apiRequests
+      .post(
+        `/api/accept-reserve`,
+        {
+          document_id: patientObj.id,
+          reserve_id: idReserve,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      )
+      .then((res) => {
+        console.log(res), setFactor(res.data.data.factor_id);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+  const pay = () => {
+    const token = localStorage.getItem("token");
+    console.log(factor);
+    console.log(token);
+    apiRequests
+      .post(`/api/pay-reserve/${factor}`, {
+        headers: { Authorization: `Bearer ${token}`,Accept: "application/json",
+      },
+      })
+      .then((res: any) => {
+        console.log(res);
+      })
+      .catch((err) => console.log(err));
+  };
   return (
     <div>
       <p className=" text-[16px]  mr-[23%] mt-[5%] text-[#0D0630] ">
@@ -113,7 +160,10 @@ function Information() {
         </div>
       </div>
       <div className="flex justify-center">
-        <button className="w-[200px] h-[53.226px] rounded-[6.422px] text-white bg-[#288E87] mt-[5%]">
+        <button
+          onClick={pay}
+          className="w-[200px] h-[53.226px] rounded-[6.422px] text-white bg-[#288E87] mt-[5%]"
+        >
           تایید و پرداخت
         </button>
       </div>

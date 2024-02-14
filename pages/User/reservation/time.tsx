@@ -7,14 +7,12 @@ import apiRequests from "@/Axios/config";
 import moment from "jalali-moment";
 import { useRouter } from "next/router";
 import toast, { Toaster } from "react-hot-toast";
-import { all } from "axios";
 function time() {
   const route = useRouter();
   const [reserveId, setReserveId] = useState<any>();
   const [times, setTimes] = useState<any>();
-
   const persianToday = utils("fa").getToday();
-
+  let work: any;
   const [selectedDay, setSelectedDay] = useState<any>(persianToday);
   const [allDate, setAllDate] = useState<any>();
   const [test, setTest] = useState<any>();
@@ -61,7 +59,7 @@ function time() {
   }
   useEffect(() => {
     getData();
-    getTime();
+    getWorkDays();
   }, []);
 
   const getData = () => {
@@ -84,14 +82,27 @@ function time() {
         });
       });
   };
-  const getTime = () => {
+  const getWorkDays = () => {
     const token = localStorage.getItem("token");
     apiRequests
-      .get("/api/time", {
+      .get("/api/work-days", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => {
         console.log(res.data.data), setAllDate(res.data.data);
+      });
+  };
+  const getTime = () => {
+    const token = localStorage.getItem("token");
+    apiRequests
+      .get(`/api/work-days/${work?.id}/reserves`, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .then((res) => {
+        setTimes(res.data);
+      })
+      .catch((err) => {
+        err.response.status == 404;
       });
   };
   // const disabledDays = test;
@@ -109,17 +120,16 @@ function time() {
         .format("YYYY-MM-DD")
     );
 
-    const date = allDate?.filter((item: any) => {
+    work = allDate?.find((item: any) => {
       return (
-        item.day.date ==
+        item.date ==
         moment
           .from(changeToMiladi, "fa", "YYYY/MM/DD")
           .locale("en")
           .format("YYYY-MM-DD")
       );
     });
-    console.log(date);
-    setTimes(date);
+    getTime();
   };
 
   const confirmDate = () => {
@@ -130,6 +140,7 @@ function time() {
         route.push("/user/reservation/pay");
     }
   };
+
   return (
     <div>
       <NavbarConfirm />
@@ -487,7 +498,7 @@ function time() {
           <Calendar
             value={selectedDay}
             onChange={handleDate}
-            // minimumDate={utils("fa").getToday()}
+            minimumDate={utils("fa").getToday()}
             shouldHighlightWeekends
             locale="fa"
             // disabledDays={disabledDays}
@@ -502,7 +513,6 @@ function time() {
           <p className="text-[#064247] text-[14px] font-light">انتخاب ساعت</p>
           <div className="flex justify-between items-center flex-wrap h-[118.462px] overflow-auto w-[262.561px]  ">
             {times?.map((item: any) => {
-              console.log(item.status);
               return (
                 <div
                   className={`

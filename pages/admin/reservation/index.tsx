@@ -6,85 +6,7 @@ import { useRouter } from "next/router";
 
 function Search() {
   const route =useRouter()
-  const patient = [
-    {
-      name: "ستایش الوندی",
-      parvande: "شماره پرونده",
-      shomare: 1552,
-      codemeli: "کد ملی",
-      shomaremeli: 2220336698,
-      lasttime: "آخرین تاریخ مراجعه",
-      lastdate: "23 فروردین 1402",
-      button: "نوبت بده!",
-      img: "/images/landin/smiling.png",
-    },
-    {
-      name: "ستایش الوندی",
-      parvande: "شماره پرونده",
-      shomare: 1552,
-      codemeli: "کد ملی",
-      shomaremeli: 2220336698,
-      lasttime: "آخرین تاریخ مراجعه",
-      lastdate: "23 فروردین 1402",
-      button: "نوبت بده!",
-      img: "/images/landin/smiling.png",
-    },
-    {
-      name: "ستایش الوندی",
-      parvande: "شماره پرونده",
-      shomare: 1552,
-      codemeli: "کد ملی",
-      shomaremeli: 2220336698,
-      lasttime: "آخرین تاریخ مراجعه",
-      lastdate: "23 فروردین 1402",
-      button: "نوبت بده!",
-      img: "/images/landin/smiling.png",
-    },
-    {
-      name: "ستایش الوندی",
-      parvande: "شماره پرونده",
-      shomare: 1552,
-      codemeli: "کد ملی",
-      shomaremeli: 2220336698,
-      lasttime: "آخرین تاریخ مراجعه",
-      lastdate: "23 فروردین 1402",
-      button: "نوبت بده!",
-      img: "/images/landin/smiling.png",
-    },
-    {
-      name: "ستایش الوندی",
-      parvande: "شماره پرونده",
-      shomare: 1552,
-      codemeli: "کد ملی",
-      shomaremeli: 2220336698,
-      lasttime: "آخرین تاریخ مراجعه",
-      lastdate: "23 فروردین 1402",
-      button: "نوبت بده!",
-      img: "/images/landin/smiling.png",
-    },
-    {
-      name: "ستایش الوندی",
-      parvande: "شماره پرونده",
-      shomare: 1552,
-      codemeli: "کد ملی",
-      shomaremeli: 2220336698,
-      lasttime: "آخرین تاریخ مراجعه",
-      lastdate: "23 فروردین 1402",
-      button: "نوبت بده!",
-      img: "/images/landin/smiling.png",
-    },
-    {
-      name: "ستایش الوندی",
-      parvande: "شماره پرونده",
-      shomare: 1552,
-      codemeli: "کد ملی",
-      shomaremeli: 2220336698,
-      lasttime: "آخرین تاریخ مراجعه",
-      lastdate: "23 فروردین 1402",
-      button: "نوبت بده!",
-      img: "/images/landin/smiling.png",
-    },
-  ];
+  
   useEffect(() => {
     getData();
   }, []);
@@ -146,7 +68,7 @@ function Search() {
         </div>
         {illness.map((item: any) => {
           return (
-            <div className="mt-[2%] flex border-[1px] border-gray-200 w-[90%] h-[14%] items-center  rounded-[6.422px] ">
+            <div key={item.id} className="mt-[2%] flex border-[1px] border-gray-200 w-[90%] h-[14%] items-center  rounded-[6.422px] ">
               <img
                 className="w-[56px] h-[57px] rounded-full bg-gray-200 mr-[2%]"
                 src={item.img}

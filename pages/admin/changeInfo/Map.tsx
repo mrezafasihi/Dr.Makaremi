@@ -83,7 +83,7 @@ function Map() {
           <p className="text-[14px] mt-[5%] mb-[2%] ">آدرس صفحه اینستاگرام</p>
           <input
             className="rounded-[6.422px] text-[16px] h-[62px] border-[#CBCBCB] border-[1px] pr-[4%] flex items-center"
-            defaultValue=" https://instagram.com/drmakaremi"
+            defaultValue="https://instagram.com/drmakaremi"
             type="text"
             {...register("instagram")}
           />
@@ -91,7 +91,7 @@ function Map() {
           <p className="text-[14px] mt-[5%] mb-[2%] ">آدرس کانال تلگرام</p>
           <input
             className="rounded-[6.422px] text-[16px] h-[62px] border-[#CBCBCB] border-[1px] pr-[4%] flex items-center"
-            defaultValue="  t.me/drmakaremi"
+            defaultValue="t.me/drmakaremi"
             type="text"
             {...register("telegram")}
           />
