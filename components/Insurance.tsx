@@ -1,13 +1,14 @@
-"use client";
-import React, { useRef } from "react";
+'use client'
+import React, {  useEffect, useRef } from "react";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import { LiaAngleLeftSolid ,LiaAngleRightSolid} from "react-icons/lia";
+import { LiaAngleLeftSolid, LiaAngleRightSolid } from "react-icons/lia";
 import { dividerClasses } from "@mui/material";
+import apiRequests from "@/Axios/config";
 
 export const SwiperButton = () => {
   const swiper = useSwiper();
@@ -22,11 +23,26 @@ export const SwiperButton = () => {
       <div
         onClick={() => swiper.slidePrev()}
         className=" absolute right-0 bg-[#45CBC2] rounded-full top-20 z-10 w-12 h-12 text-white flex items-center justify-center text-xl"
-      ><LiaAngleRightSolid/></div>
+      >
+        <LiaAngleRightSolid />
+      </div>
     </>
   );
 };
-
+// useEffect(()=>{console.log("first")},[])
+const api = () => {
+  const token = localStorage.getItem("token");
+  apiRequests
+    .get(`/api/insurances`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+    .then((res) => console.log(res));
+};
+// useEffect(() => {
+//   // api();
+// }, []);
 function Insurance() {
   const insurance = [
     {
@@ -94,7 +110,7 @@ function Insurance() {
   const swiper = useSwiper();
 
   return (
-    <div className=" mx-[7.5%]" >
+    <div className=" mx-[7.5%]">
       <p className="border-r-[1px] text-2xl px-2 font-iranSansBold border-[#288E87] text-[#064247] ">
         بیمه‌های طرف قرارداد
       </p>
@@ -120,11 +136,16 @@ function Insurance() {
           },
           1241: { slidesPerView: 6 },
         }}
-        scrollbar={{ draggable:true, dragSize: "auto"}}
+        scrollbar={{ draggable: true, dragSize: "auto" }}
         onSwiper={(swiper) => console.log(swiper)}
         onSlideChange={() => console.log("slide change")}
       >
+<<<<<<< HEAD
         {insurance.map((item,index) => {
+=======
+        {insurance.map((item, index) => {
+          console.log("hjjghg", index == insurance.length - 1);
+>>>>>>> b3953462aa8bedcc1545898a63152757b288e7a0
           return (
             <SwiperSlide>
               <div className="flex flex-col  items-center text-[18px] rounded-[15px] hover:shadow-xl h-52">

@@ -1,5 +1,6 @@
+import apiRequests from "@/Axios/config";
 import { dividerClasses } from "@mui/material";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 function Blog() {
   const blogData = [
@@ -31,6 +32,21 @@ function Blog() {
       commentIcon: "/images/message-notif.svg",
     },
   ];
+  const [article, setArticle] = useState<any>();
+  const api = () => {
+    const token = localStorage.getItem("token");
+    apiRequests
+      .get(`/api/article`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((res) => setArticle(res.data.data));
+  };
+  console.log(article);
+  useEffect(() => {
+    api();
+  }, []);
   return (
     <div className="flex flex-col mx-[7.5%] ">
       <p className="border-r-[1px] text-2xl px-2  font-bold border-[#288E87] text-[#064247] font-iranSansBold">
@@ -42,7 +58,7 @@ function Blog() {
       </div>
 
       <div className="flex flex-col gap-[6%] items-center  lg:flex-row lg:justify-center max-w-[1224px]">
-        {blogData.map((item) => {
+        {article?.map((item: any) => {
           return (
             <div className="shadow-lg flex flex-col justify-between lg:basis-1/3   rounded-[10px]  max-w-[347px] h-[460px] hover:shadow-[0_8px_8px_rgb(211,211,211)] text-black bg-white ease-out hover:translate-y-3 transition-all">
               <img
