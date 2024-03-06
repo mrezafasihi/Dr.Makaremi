@@ -1,4 +1,5 @@
-import React from "react";
+import apiRequests from "@/Axios/config";
+import React, { useEffect } from "react";
 
 function BusinessDays() {
   const businesDaysData = [
@@ -8,6 +9,20 @@ function BusinessDays() {
     { day: "سه شنبه", time: " 8:00 الی 23:00" },
     { day: "چهارشنبه", time: " 8:00 الی 23:00" },
   ];
+  // useEffect(() => {
+  //   api();
+  // }, []);
+  // const api = () => {
+  //   const token = localStorage.getItem("token");
+
+  //   apiRequests
+  //     .get(`/api/work-days`, {
+  //       headers: {
+  //         Authorization: `Bearer ${token}`,
+  //       },
+  //     })
+  //     .then((res) => console.log(res));
+  // };
   return (
     <div className="mt-[7%] mb-[10%] mx-[7.5%] ">
       <h6 className="border-r-[1px] text-2xl px-2 mb-[6%] mr-[2%] border-[#288E87] text-[#064247] basis-1/3 font-iranSansBold">

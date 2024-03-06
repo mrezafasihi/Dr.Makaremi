@@ -2,17 +2,19 @@ import React, { useEffect } from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import apiRequests from "@/Axios/config";
+import id from "@/pages/admin/messege/[id]";
 
 function Adress() {
-  useEffect(()=>{api},[])
+  useEffect(()=>{api()},[])
  const api =()=>{
   const token = localStorage.getItem("token");
-  apiRequests.get(`/api/options/:option_id`, {
+  apiRequests.get(`/api/options`, {
     headers: {
       Authorization: `Bearer ${token}`,
     },
-  })
+  }).then((res)=>console.log(res))
  }
+ console.log(id)
   return (
     <div
       style={{ backgroundImage: `url(images/landin/clinic.png)` }}

@@ -6,31 +6,49 @@ import apiRequests from "@/Axios/config";
 import { useForm } from "react-hook-form";
 import { number } from "yup";
 import toast, { Toaster } from "react-hot-toast";
+import Modal from "./user/Modal";
+import { Slide } from "@mui/material";
 function Contact({ placeholder, style, label }: any) {
-  const { register, handleSubmit } = useForm();
+  const [openModal,setOpenModal]=useState<any>()
+  const { register, handleSubmit ,reset} = useForm();
   const [name,setName]=useState<any>()
   const [phone,setPhone]=useState<any>()
   const [token, setToken] = useState<any>();
   useEffect(() => {
-    getData(), setToken(localStorage.getItem("token"));
+    getData()
+    , 
+    setToken(localStorage.getItem("token"));
   }, []);
-  const onSubmit = () => {
+  const onSubmit = (data:any) => {
+
+    console.log(data.name)
+      
     const token = localStorage.getItem("token");
     if (token) {
-      console.log("first")
       apiRequests.post(
         `/api/user/new-comment`,
         {
-          comment: "text",
+          comment: data.text,
         },
         {
           headers: {
             Authorization: `Bearer ${token}`,
           },
         }
-      ).then((res)=>console.log(res)).catch(()=>toast.error("اپتدا ثبت نام "))
+      ).then(()=>
+      {
+        setOpenModal(true)
+        reset({
+          name: "",
+          number: "",
+          text:"",
+        }),setTimeout(() => {
+         setOpenModal(false)
+        },3000 );}
+        ).catch(()=>toast.error(" اپتدا ثبت نام کنید"))
     }
     else{toast.error("اپتدا ثبت نام "),console.log("second")}
+
   };
   const getData = () => {
     const token = localStorage.getItem("token");
@@ -48,6 +66,13 @@ function Contact({ placeholder, style, label }: any) {
         );
     }
   };
+  const icon = (
+    <div className="flex items-center justify-center my-[-220px] z-10">
+            <Modal text="نظر شما با موفقیت ثبت شد و پس از تایید در سایت قرار میگیرد."/>
+
+    </div>
+  );
+  console.log(name)
   return (
     <div className="mt-[8%] flex flex-col justify-center  items-center w-[70%] mx-auto px-5">
       <p className="text-center text-[#064247] text-[20px] font-[700] font-IRANSansXFaNum mb-[5%]">
@@ -59,19 +84,19 @@ function Contact({ placeholder, style, label }: any) {
           label="نام و نام خانوادگی"
           placeholder="مثال : امیر رئیسی"
           style="w-[100%] sm:w-[50%] "
-          {...register("name")}
+          hookForm={register("name")}
           value={name}
         />
         <CustomInput
           label="شماره تلفن"
           placeholder="09223620356 :مثال"
           style="w-[100%] sm:w-[50%] sm:mr-[3%] mt-[2%] sm:mt-[0px] "
-          {...register("number")}
+          hookForm={register("number")}
           value={phone}
 
         />
       </div>
-
+    
      <textarea 
         className=" text-right w-[100%] h-[220px] border-[1px]  rounded-[4.73px] mt-[2%]"
         placeholder="پیام های خود را در اینجا بنویسید..."
@@ -85,6 +110,11 @@ function Contact({ placeholder, style, label }: any) {
         ثبت نظر
       </button>
       <Toaster/>
+      <div >
+      <Slide direction="up" in={openModal}>
+        {icon}
+      </Slide>
+      </div>
     </div>
   );
   
