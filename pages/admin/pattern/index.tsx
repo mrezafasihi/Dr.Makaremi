@@ -10,7 +10,7 @@ import apiRequests from "@/Axios/config";
 function setPattern() {
   const nameDaies = [
     { day: "شنبه", id: 1, value: "saturday", select: false },
-    { day: "یک شنبه", id: 2, value: "Sunday", select: false },
+    { day: "یک شنبه", id: 2, value: "sunday", select: false },
     { day: "دوشنبه", id: 3, value: "monday", select: false },
     { day: "سه شنبه", id: 4, value: "tuesday", select: false },
     { day: "چهارشنبه", id: 5, value: "wednesday", select: false },
@@ -22,9 +22,15 @@ function setPattern() {
   const [storeDay, setStoreDay] = useState<any>([]);
   const [day, setDay] = useState<any>();
   // const [pattern, setPattern] = useState<any>();
-  const { register, handleSubmit, reset } = useForm();
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
   let month;
   const onSubmit = (dataa, day, i) => {
+    console.log(dataa);
     setStoreDay([...storeDay, day]);
     const repeatDay = storeDay?.some((item) => {
       return item == day;
@@ -100,6 +106,7 @@ function setPattern() {
     default:
     // code block
   }
+  console.log(data);
   return (
     <Layout>
       <h1 className="text-[16px] text-[#45CBC2] font-iranSansBold mt-[5%] mr-[5%]">
@@ -111,11 +118,16 @@ function setPattern() {
             مدت‌زمان هر ویزیت
           </p>
           <input
-            {...register("visit_length")}
+            {...register("visit_length", {
+              required: "مدت زمان هر ویزیت را وارد نمایید",
+            })}
             type="text"
             className=" placeholder:text-[#757575] placeholder:text-[12px] rounded-md border-[1px] border-gray-300 w-[386px] h-[63px] placeholder:pr-[8px] my-[2%]"
             placeholder="15 دقیقه"
           />
+          <p className="text-red-600 text-[12px] font-iranSansLight">
+            {errors.visit_length?.message}
+          </p>
           <p className="text-[#CBCBCB] text-[12px]">
             لطفا مدت زمان هر ویزیت را به دقیقه تعیین کنید.
           </p>
@@ -123,11 +135,16 @@ function setPattern() {
             مدت‌زمان استراحت بین هر ویزیت
           </p>
           <input
-            {...register("rest_time")}
+            {...register("rest_time", {
+              required: "مدت زمان استراحت بین هر ویزیت را وارد نمایید",
+            })}
             type="text"
             placeholder="0 دقیقه"
             className=" rounded-md border-[1px] border-gray-300 w-[386px] h-[63px] placeholder:text-[#757575] placeholder:text-[12px] placeholder:pr-[8px] my-[2%]"
           />
+          <p className="text-red-600 text-[12px] font-iranSansLight">
+            {errors.rest_time?.message}
+          </p>
           <p className="text-[#CBCBCB] text-[12px] ">
             لطفا مدت زمان استراحت بین هر ویزیت را به دقیقه تعیین کنید.
           </p>
@@ -135,20 +152,33 @@ function setPattern() {
             ساعت شروع ویزیت‌ها
           </p>
           <input
-            {...register("start_time")}
+            {...register("start_time", {
+              required: "ساعت شروع ویزیت‌ها را وارد نمایید",
+            })}
             type="text"
             placeholder="16:00"
             className=" rounded-md border-[1px] border-gray-300 w-[386px] h-[63px] placeholder:text-[#757575] placeholder:text-[12px] placeholder:pr-[8px] my-[2%]"
           />
+          <p className="text-red-600 text-[12px] font-iranSansLight">
+            {errors.start_time?.message}
+          </p>
+          <p className="text-[#CBCBCB] text-[12px] ">
+            لطفا ساعت دقیق شروع روز را مشخص کنید.
+          </p>
           <p className="text-[#064247] text-[14px] font-iranSansBold mt-[15%]">
             ساعت پایان ویزیت‌ها
           </p>
           <input
-            {...register("end_time")}
+            {...register("end_time", {
+              required: "مدت زمان استراحت بین هر ویزیت را وارد نمایید",
+            })}
             type="text"
             placeholder="20:00"
             className=" rounded-md border-[1px] border-gray-300 w-[386px] h-[63px] placeholder:text-[#757575] placeholder:text-[12px] placeholder:pr-[8px] my-[2%]"
           />
+          <p className="text-red-600 text-[12px] font-iranSansLight">
+            {errors.end_time?.message}
+          </p>
           <p className="text-[#CBCBCB] text-[12px] ">
             لطفا ساعت دقیق پایان روز را مشخص کنید.
           </p>
@@ -185,11 +215,16 @@ function setPattern() {
             هزینه ویزیت
           </p>
           <input
-            {...register("visit_cost")}
+            {...register("visit_cost", {
+              required: "هزینه هر ویزیت را وارد نمایید",
+            })}
             type="text"
             placeholder="300,000 تومان"
             className=" rounded-md border-[1px] border-gray-300 w-[386px] h-[63px] placeholder:text-[#757575] placeholder:text-[12px] placeholder:pr-[8px] my-[2%]"
           />
+          <p className="text-red-600 text-[12px] font-iranSansLight">
+            {errors.end_time?.message}
+          </p>
           <p className="text-[#CBCBCB] text-[12px] ">
             لطفا هزینه هر ویزیت را به تومان وارد کنید.
           </p>

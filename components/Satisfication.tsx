@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { A11y } from "swiper/modules";
 import Buttonswiper from "./Buttonswiper";
 
-function Satisfication({satisfic}:any) {
+function Satisfication({ satisfic }: any) {
   const costomer = [
     {
       img: "/images/landin/smiling.png",
@@ -29,30 +29,32 @@ function Satisfication({satisfic}:any) {
   ];
 
   return (
-    <div className=" sm:mr-[1%]" >
+    <div className=" sm:mr-[1%]">
       <Swiper modules={[A11y]} spaceBetween={50} slidesPerView={1}>
         {costomer.map((item) => {
           return (
             <SwiperSlide>
-              <div className="flex md:flex-row flex-col mx-[10%] md:justify-evenly  ">
-                  <div className="bg-[#ededee] sm:rounded-full rounded-full w-[258px] h-[258px] mt-[8] justify-center">
-                    <img
-                      className="rounded-full sm:rounded-full"
-                      src={item.img}
-                      alt=""
-                    />
+              <div className="flex md:flex-row flex-col mx-[10%] md:justify-evenly   items-center">
+                <div className="bg-[#ededee] sm:rounded-full rounded-full w-[258px] h-[258px] mt-[8] justify-center ">
+                  <img
+                    className="rounded-full sm:rounded-full"
+                    src={item.img}
+                    alt=""
+                  />
+                </div>
+                <div className="mt-[4%]  hidden md:flex ">
+                  <img
+                    className="w-[70px] h-[70px]"
+                    src="images/landin/quote.png"
+                  />
+                </div>
+                <div className=" flex flex-col justify-between  w-[67%] mt-[3%]">
+                  <p>{item.desc}</p>
+                  <div className="flex flex-col ">
+                    <p className="text-[16px] ">{item.name}</p>
+                    <p className=" text-[#757575] text-[12px]">عمل لیزیک</p>
                   </div>
-                  <div className="mt-[4%]  hidden md:flex ">
-                    <img className="w-[70px] h-[70px]" src="images/landin/quote.png" />
-                  </div>
-                  <div className=" flex flex-col justify-between w-[67%] mt-[3%]">
-                    <p>{item.desc}</p>
-                    <div className="flex flex-col ">
-                      <p className="text-[16px] ">{item.name}</p>
-                      <p className=" text-[#757575] text-[12px]">عمل لیزیک</p>
-                    </div>
-                  </div>
-                
+                </div>
               </div>
             </SwiperSlide>
           );

@@ -65,10 +65,11 @@ function time() {
   const getData = () => {
     const token = localStorage.getItem("token");
     apiRequests
-      .get("/api/work-days", {
+      .get("/api/work-days?page=2", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res: any) => {
+        console.log(res)
         let dateVariable: any = [];
 
         res.data.data?.map((item: any) => {

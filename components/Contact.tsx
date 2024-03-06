@@ -8,44 +8,54 @@ import { number } from "yup";
 import toast, { Toaster } from "react-hot-toast";
 function Contact({ placeholder, style, label }: any) {
   const { register, handleSubmit } = useForm();
-  const [name,setName]=useState<any>()
-  const [phone,setPhone]=useState<any>()
+  const [name, setName] = useState<any>();
+  const [phone, setPhone] = useState<any>();
   const [token, setToken] = useState<any>();
+  let role: any;
+  if (typeof window !== "undefined") {
+    role = localStorage.getItem("role");
+  }
   useEffect(() => {
     getData(), setToken(localStorage.getItem("token"));
   }, []);
   const onSubmit = () => {
     const token = localStorage.getItem("token");
-    if (token) {
-      console.log("first")
-      apiRequests.post(
-        `/api/user/new-comment`,
-        {
-          comment: "text",
-        },
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
+    if (token && role == "user") {
+      console.log("first");
+      apiRequests
+        .post(
+          `/api/user/new-comment`,
+          {
+            comment: "text",
           },
-        }
-      ).then((res)=>console.log(res)).catch(()=>toast.error("اپتدا ثبت نام "))
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        )
+        .then((res) => console.log(res))
+        .catch(() => toast.error("اپتدا ثبت نام "));
+    } else {
+      toast.error("اپتدا ثبت نام "), console.log("second");
     }
-    else{toast.error("اپتدا ثبت نام "),console.log("second")}
   };
   const getData = () => {
     const token = localStorage.getItem("token");
-    if (token) {
+    if (token && role == "user") {
       apiRequests
         .get(`/api/user-document`, {
           headers: { Authorization: `Bearer ${token}` },
         })
-        .then((response) =>{
-        setName(
-            response.data.data[0].first_name+'   '+response.data.data[0].last_name 
-
-          ) 
-          setPhone(response.data.data[0].phone_number),console.log(response)}
-        );
+        .then((response) => {
+          setName(
+            response.data.data[0].first_name +
+              "   " +
+              response.data.data[0].last_name
+          );
+          setPhone(response.data.data[0].phone_number);
+          console.log(response);
+        });
     }
   };
   return (
@@ -54,7 +64,7 @@ function Contact({ placeholder, style, label }: any) {
         شما می توانید در این قسمت با ما در تماس باشید
       </p>
 
-    <div className="flex w-[100%] justify-between items-center  flex-col sm:flex-row">
+      <div className="flex w-[100%] justify-between items-center  flex-col sm:flex-row">
         <CustomInput
           label="نام و نام خانوادگی"
           placeholder="مثال : امیر رئیسی"
@@ -68,26 +78,23 @@ function Contact({ placeholder, style, label }: any) {
           style="w-[100%] sm:w-[50%] sm:mr-[3%] mt-[2%] sm:mt-[0px] "
           {...register("number")}
           value={phone}
-
         />
       </div>
 
-     <textarea 
-        className=" text-right w-[100%] h-[220px] border-[1px]  rounded-[4.73px] mt-[2%]"
+      <textarea
+        className=" text-right w-[100%] h-[220px] border-[1px]  rounded-[4.73px] mt-[2%] pr-[19.7px] pt-[20.08px] placeholder:text-[#757575]"
         placeholder="پیام های خود را در اینجا بنویسید..."
         {...register("text")}
-        
       />
       <button
-        className="w-[248px] h-[66px] border-[1px] border-[#288E87] rounded-[7.963px] mt-[2%] text-[#288E87]"
+        className="w-[248px] h-[66px] border-[1px] border-[#288E87] rounded-[7.963px] mt-[2%] text-[#288E87] transition ease-in-out duration-500 hover:bg-[#288E87] hover:text-[#FFF] "
         onClick={handleSubmit(onSubmit)}
       >
         ثبت نظر
       </button>
-      <Toaster/>
+      <Toaster />
     </div>
   );
-  
 }
 
 export default Contact;

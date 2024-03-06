@@ -125,7 +125,6 @@ function Insurance() {
         onSlideChange={() => console.log("slide change")}
       >
         {insurance.map((item,index) => {
-console.log("hjjghg",index==insurance.length-1)
           return (
             <SwiperSlide>
               <div className="flex flex-col  items-center text-[18px] rounded-[15px] hover:shadow-xl h-52">

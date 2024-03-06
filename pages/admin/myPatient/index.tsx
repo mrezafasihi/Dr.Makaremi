@@ -9,10 +9,6 @@ import apiRequests from "@/Axios/config";
 function index() {
   const router = useRouter();
 
-  const myList = ["ی", "گ", "پ", "ژ"];
-  const collator = new Intl.Collator("fa");
-  const sortedLetters = myList.sort(collator.compare);
-
   const [dataPatients, setDataPatients] = useState<any>([]);
   useEffect(() => {
     getData();
@@ -34,6 +30,23 @@ function index() {
     console.log(response);
     router.reload();
   };
+  const patientFilter = (name: any) => {
+    if (name == "name") {
+      const collator = new Intl.Collator("fa");
+      let sortName=[...dataPatients]
+      sortName.sort((a: any, b: any) => {
+        return collator.compare(a.first_name, b.first_name);
+      })
+      setDataPatients(
+       sortName
+      );
+    } else if (name == "number") {
+      let sortNum=[...dataPatients]
+      sortNum.sort((a:any,b:any)=>{return a.id-b.id})
+      setDataPatients(sortNum)
+    }
+  };
+  console.log(dataPatients);
   return (
     <Layout>
       <div className="flex  flex-col w-[84.45%] mx-auto ">
@@ -63,9 +76,10 @@ function index() {
               تشکیل پرونده جدید
             </p>
           </Link>
-          <select name="" id="">
-            <option value="">براساس نام</option>
-            <option value="">براساس شماره پرونده</option>
+          <select name="" id="" onChange={(e) => patientFilter(e.target.value)}>
+            <option value="">فیلتر</option>
+            <option value="name">براساس نام</option>
+            <option value="number">براساس شماره پرونده</option>
           </select>
         </div>
         <p className="text-[#757575] font-iranSansLight text-[12px] mb-2 mr-8">

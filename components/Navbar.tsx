@@ -9,9 +9,19 @@ import { register } from "module";
 import { FaUserDoctor } from "react-icons/fa6";
 
 function Navbar({ ref }: any) {
-  const [token, setToken] = useState<any>();
+  // const [token, setToken] = useState<any>();
   const [register, setRegister] = useState<any>();
   const [dropDown, setDropDown] = useState<any>();
+  const [token, setToken] = useState<any>();
+  // let token:any;
+  // if (typeof window !== 'undefined') {
+
+  //   token = localStorage.getItem("token");
+  // }
+  let role: any;
+  if (typeof window !== "undefined") {
+    role = localStorage.getItem("role");
+  }
 
   const dataDropDown = [
     {
@@ -137,13 +147,16 @@ function Navbar({ ref }: any) {
       path: "",
     },
   ];
+  // let token:any
   useEffect(() => {
-    getData(), setToken(localStorage.getItem("token"));
-  }, []);
+    getData();
+    setToken(localStorage.getItem("token"));
+  }, [token]);
 
   const getData = () => {
-    const token = localStorage.getItem("token");
-    if (token) {
+    // token=localStorage.getItem("token")
+    console.log(token);
+    if (token && role == "user") {
       apiRequests
         .get(`/api/user-document`, {
           headers: { Authorization: `Bearer ${token}` },
@@ -151,7 +164,7 @@ function Navbar({ ref }: any) {
         .then((response) => {
           setRegister(
             response.data.data[0].first_name +
-              "   " +
+              "  " +
               response.data.data[0].last_name
           );
           console.log(response);
@@ -160,10 +173,10 @@ function Navbar({ ref }: any) {
           if (err.response.status == 401) {
             localStorage.removeItem("token");
           }
+          console.log(err);
         });
     }
   };
-  // console.log(register)
   return (
     <nav className="  flex  justify-between  font-iranSans items-center  py-5  fixed z-10 backdrop-blur-sm  backdrop-filter shadow-2xl bg-black bg-opacity-25  w-full">
       <div className="  flex flex-col justify-center mr-[7.56%]">
@@ -212,13 +225,13 @@ function Navbar({ ref }: any) {
         <Link
           href="/login"
           className={`hover:bg-[#45CBC2] rounded-lg px-[1.4%] py-[1.5%] flex justify-center items-center  ${
-            token ? "hidden" : "flex"
+            token && role == "user" ? "hidden" : "flex"
           }`}
         >
           ورود / عضویت
         </Link>
       </ul>
-      {token ? (
+      {token && role == "user" ? (
         <div
           className="text-white ml-[2%] lg:ml-[7.56%] flex items-center relative group  "
           onMouseEnter={() => setDropDown(true)}
